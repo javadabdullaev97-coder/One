@@ -5,15 +5,27 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { routing, type Locale } from "@/i18n/routing";
 
-const labels: Record<Locale, { code: string; name: string }> = {
-  en: { code: "EN", name: "English" },
-  ru: { code: "RU", name: "Русский" },
-  uz: { code: "UZ", name: "O'zbek" },
+const labels: Record<Locale, { code: string; name: string; flag: string }> = {
+  en: { code: "EN", name: "English", flag: "🇬🇧" },
+  ru: { code: "RU", name: "Русский", flag: "🇷🇺" },
+  uz: { code: "UZ", name: "O'zbek", flag: "🇺🇿" },
 };
+
+function FlagBadge({ flag, size = 18 }: { flag: string; size?: number }) {
+  return (
+    <span
+      className="inline-flex items-center justify-center rounded-full overflow-hidden shrink-0 ring-1 ring-white/10"
+      style={{ width: size, height: size, fontSize: size * 0.85, lineHeight: 1 }}
+      aria-hidden="true"
+    >
+      {flag}
+    </span>
+  );
+}
 
 export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
   const locale = useLocale() as Locale;
@@ -58,7 +70,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
             : "text-[12px] text-muted hover:text-foreground"
         )}
       >
-        <Globe className="w-3.5 h-3.5" strokeWidth={1.5} />
+        <FlagBadge flag={labels[locale].flag} size={17} />
         <span className="font-medium tracking-wide">{labels[locale].code}</span>
       </button>
 
@@ -83,7 +95,10 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
                     active ? "text-foreground bg-white/[0.03]" : "text-muted hover:text-foreground hover:bg-white/[0.02]"
                   )}
                 >
-                  <span>{labels[l].name}</span>
+                  <div className="flex items-center gap-2.5">
+                    <FlagBadge flag={labels[l].flag} size={16} />
+                    <span>{labels[l].name}</span>
+                  </div>
                   {active && <Check className="w-3 h-3 text-primary" strokeWidth={2} />}
                 </button>
               );
