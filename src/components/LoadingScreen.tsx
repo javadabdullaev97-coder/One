@@ -4,16 +4,26 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+const LOADING_SHOWN_KEY = "advizen-loading-shown";
+
 export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
   const [fillDuration, setFillDuration] = useState(1.6);
 
   useEffect(() => {
+    if (sessionStorage.getItem(LOADING_SHOWN_KEY)) {
+      setVisible(false);
+      return;
+    }
+
     const alreadyLoaded = document.readyState === "complete";
     const dur = alreadyLoaded ? 0.65 : 1.6;
     setFillDuration(dur);
 
-    const hide = () => setVisible(false);
+    const hide = () => {
+      setVisible(false);
+      sessionStorage.setItem(LOADING_SHOWN_KEY, "1");
+    };
 
     if (alreadyLoaded) {
       setTimeout(hide, dur * 1000 + 300);
