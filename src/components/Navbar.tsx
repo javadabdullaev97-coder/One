@@ -99,7 +99,7 @@ export default function Navbar() {
             href={utilityLink.href}
             style={{ fontFamily: inter }}
             className={`relative hover-line text-[14px] font-medium tracking-[0.04em] transition-colors cursor-pointer ${
-              pathname === utilityLink.href ? "text-primary" : "text-primary/60 hover:text-primary"
+              pathname === utilityLink.href ? "text-foreground" : "text-muted hover:text-foreground"
             }`}
           >
             {utilityLink.label}
@@ -167,7 +167,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 style={{ fontFamily: inter }}
                 className={`block py-3 font-medium tracking-wide transition-colors cursor-pointer ${
-                  pathname === utilityLink.href ? "text-primary" : "text-primary/60 hover:text-primary"
+                  pathname === utilityLink.href ? "text-foreground" : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {utilityLink.label}
