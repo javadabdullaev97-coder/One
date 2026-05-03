@@ -274,7 +274,7 @@
     "stepConfirm": "Confirm",
     "language": {
       "heading": "Choose document language",
-      "subheading": "Both languages are included in the same PDF — fully bilingual.",
+      "subheading": "Both languages are included in the same Word document — fully bilingual.",
       "uz_en": "Uzbek + English",
       "uz_ru": "Uzbek + Russian",
       "en_ru": "English + Russian"
@@ -300,7 +300,7 @@
       "heading": "Payment successful",
       "subheading": "Thank you. Your document is ready to download.",
       "amountLabel": "Amount paid",
-      "download": "Download document",
+      "download": "Download .docx",
       "emailSent": "A receipt and download link have been sent to {email}."
     },
     "error": {
@@ -318,7 +318,8 @@
       "continue": "Continue",
       "back": "Back",
       "payNow": "Pay {amount}",
-      "close": "Close"
+      "close": "Close",
+      "disclaimer": "By proceeding you agree to our <terms>Terms of Sale</terms> and <privacy>Privacy Policy</privacy>."
     }
   },
   "Legal": {

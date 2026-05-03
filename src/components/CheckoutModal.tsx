@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { X, ArrowLeft, ArrowRight, Check, Loader2, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FlagBadge, type FlagCode } from "@/components/Flags";
@@ -37,6 +37,8 @@ interface CheckoutModalProps {
 
 export default function CheckoutModal({ open, onClose, productId, productTitle, priceUSD }: CheckoutModalProps) {
   const tCheckout = useTranslations("Checkout");
+  const locale = useLocale();
+  const localePath = locale === "en" ? "" : `/${locale}`;
   const [step, setStep] = useState<Step>(1);
   const [language, setLanguage] = useState<LanguagePair | null>(null);
   const [method, setMethod] = useState<PaymentMethod | null>(null);
@@ -124,7 +126,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-lg h-[620px] max-h-[calc(100vh-2rem)] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
+            className="relative w-full max-w-xl h-[700px] max-h-[calc(100vh-2rem)] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -454,36 +456,65 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
 
             {/* Footer */}
             {(step === 1 || step === 2) && (
-              <div className="flex-none flex items-center justify-between gap-3 px-6 py-4 border-t border-white/[0.06] bg-black/40">
-                {step > 1 ? (
+              <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
+                <div className="flex items-center justify-between gap-3">
+                  {step > 1 ? (
+                    <button
+                      type="button"
+                      onClick={handleBack}
+                      className="flex items-center gap-1.5 text-[12px] tracking-wide text-white/55 hover:text-foreground transition-colors duration-200 cursor-pointer"
+                    >
+                      <ArrowLeft className="w-3.5 h-3.5" />
+                      {tCheckout("actions.back")}
+                    </button>
+                  ) : (
+                    <span />
+                  )}
+
                   <button
                     type="button"
-                    onClick={handleBack}
-                    className="flex items-center gap-1.5 text-[12px] tracking-wide text-white/55 hover:text-foreground transition-colors duration-200 cursor-pointer"
+                    onClick={handleContinue}
+                    disabled={(step === 1 && !language) || (step === 2 && (!method || !isValidEmail))}
+                    className={cn(
+                      "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
+                      (step === 1 && !language) || (step === 2 && (!method || !isValidEmail))
+                        ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
+                        : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                    )}
                   >
-                    <ArrowLeft className="w-3.5 h-3.5" />
-                    {tCheckout("actions.back")}
+                    {step === 1
+                      ? tCheckout("actions.continue")
+                      : tCheckout("actions.payNow", { amount: `${priceUZSFormatted} so'm` })}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
-                ) : (
-                  <span />
-                )}
+                </div>
 
-                <button
-                  type="button"
-                  onClick={handleContinue}
-                  disabled={(step === 1 && !language) || (step === 2 && (!method || !isValidEmail))}
-                  className={cn(
-                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
-                    (step === 1 && !language) || (step === 2 && (!method || !isValidEmail))
-                      ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
-                      : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
-                  )}
-                >
-                  {step === 1
-                    ? tCheckout("actions.continue")
-                    : tCheckout("actions.payNow", { amount: `${priceUZSFormatted} so'm` })}
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                {step === 2 && (
+                  <p className="mt-2.5 text-[10px] text-white/30 text-center leading-relaxed">
+                    {tCheckout.rich("actions.disclaimer", {
+                      terms: (chunks) => (
+                        <a
+                          href={`${localePath}/terms-of-sale`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 hover:text-white/55 transition-colors"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                      privacy: (chunks) => (
+                        <a
+                          href={`${localePath}/privacy`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 hover:text-white/55 transition-colors"
+                        >
+                          {chunks}
+                        </a>
+                      ),
+                    })}
+                  </p>
+                )}
               </div>
             )}
           </motion.div>

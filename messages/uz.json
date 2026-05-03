@@ -274,7 +274,7 @@
     "stepConfirm": "Tayyor",
     "language": {
       "heading": "Hujjat tilini tanlang",
-      "subheading": "Ikkala til ham bitta PDF-ga kiritilgan — to'liq ikki tilli hujjat.",
+      "subheading": "Ikkala til ham bitta Word hujjatiga kiritilgan — to'liq ikki tilli hujjat.",
       "uz_en": "O'zbek + Ingliz",
       "uz_ru": "O'zbek + Rus",
       "en_ru": "Ingliz + Rus"
@@ -300,7 +300,7 @@
       "heading": "To'lov muvaffaqiyatli amalga oshirildi",
       "subheading": "Rahmat. Hujjatingiz yuklab olishga tayyor.",
       "amountLabel": "To'langan summa",
-      "download": "Hujjatni yuklab olish",
+      "download": ".docx yuklab olish",
       "emailSent": "Chek va yuklab olish havolasi {email} manziliga yuborildi."
     },
     "error": {
@@ -318,7 +318,8 @@
       "continue": "Davom etish",
       "back": "Orqaga",
       "payNow": "{amount} to'lash",
-      "close": "Yopish"
+      "close": "Yopish",
+      "disclaimer": "To'lash tugmasini bosish orqali siz <terms>Sotish shartlari</terms> va <privacy>Maxfiylik siyosati</privacy>ga rozilik bildirasiz."
     }
   },
   "Legal": {
