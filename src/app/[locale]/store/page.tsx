@@ -175,7 +175,7 @@ function StoreFilters({
         <div className="flex items-center gap-3">
 
           {/* Category pills */}
-          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 overflow-x-auto scrollbar-none flex-1 min-w-0">
+          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
