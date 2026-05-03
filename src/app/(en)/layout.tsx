@@ -9,6 +9,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
+import { organizationJsonLd } from "@/lib/seo";
 
 const SITE_URL = "https://www.advizenco.com";
 
@@ -87,41 +88,6 @@ const onest = Onest({
   display: "swap",
 });
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Advizen Consulting",
-  description:
-    "Premier business consulting firm in Uzbekistan offering integrated tax, legal, finance, accounting, and HR services.",
-  url: "https://www.advizenco.com",
-  telephone: "+998334884888",
-  email: "info@advizenco.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Tashkent",
-    addressCountry: "UZ",
-  },
-  areaServed: {
-    "@type": "Place",
-    name: "Central Asia",
-  },
-  serviceType: [
-    "Tax Consulting",
-    "Legal Advisory",
-    "Accounting",
-    "HR Services",
-    "Funding",
-    "Corporate Services",
-    "Entity Management",
-  ],
-  foundingDate: "2016",
-  numberOfEmployees: {
-    "@type": "QuantitativeValue",
-    minValue: 10,
-    maxValue: 50,
-  },
-};
-
 export default async function EnLayout({ children }: { children: ReactNode }) {
   setRequestLocale("en");
 
@@ -134,7 +100,7 @@ export default async function EnLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <GtmScript />
       </head>
