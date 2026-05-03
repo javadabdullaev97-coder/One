@@ -77,47 +77,5 @@
       "primary": "Schedule a consultation",
       "secondary": "Browse our insights"
     }
-  },
-  "HomeFAQ": {
-    "eyebrow": "Common Questions",
-    "heading": "Frequently Asked Questions",
-    "items": [
-      { "q": "What services does Advizen Consulting offer?", "a": "Advizen Consulting provides integrated advisory services including tax consulting, legal advisory, accounting, HR and payroll, funding advisory, M&A, due diligence, entity management, Employer of Record (EOR), and corporate services across Uzbekistan and Central Asia." },
-      { "q": "In which countries does Advizen operate?", "a": "Our primary market is Uzbekistan, with active coverage of Kazakhstan and Kyrgyzstan. We support clients across Central Asia and advise foreign investors entering the region from anywhere in the world." },
-      { "q": "How long has Advizen Consulting been in business?", "a": "Advizen Consulting was founded in 2016 in Tashkent, Uzbekistan. We have over eight years of integrated advisory experience across more than 15 industries in Central Asia." },
-      { "q": "Do you work with foreign companies entering Uzbekistan?", "a": "Yes. A significant part of our practice serves international companies — from multinationals to SMEs — establishing a presence in Uzbekistan. We cover company formation, regulatory licensing, tax structuring, employment, and ongoing compliance." },
-      { "q": "What industries do you serve?", "a": "We have experience across 15+ industries including energy, real estate, banking, technology, FMCG, pharmaceuticals, agriculture, hospitality, retail, construction, and logistics." },
-      { "q": "What is an Employer of Record and do you offer it?", "a": "An Employer of Record (EOR) allows you to hire employees in a country without setting up a local legal entity. We act as the legal employer on your behalf, handling payroll, taxes, and employment law compliance in Uzbekistan, Kazakhstan, and Kyrgyzstan." },
-      { "q": "In which languages do you provide services?", "a": "We provide services in English, Russian, and Uzbek, ensuring seamless communication for both international and local clients." },
-      { "q": "How do I get started with Advizen Consulting?", "a": "You can reach us via the contact form on our website, by email at info@advizenco.com, or via WhatsApp and Telegram. We typically respond within one business day and will arrange an initial consultation to understand your needs." }
-    ]
-  },
-  "ExpertiseFAQ": {
-    "eyebrow": "Common Questions",
-    "heading": "Frequently Asked Questions",
-    "items": [
-      { "q": "What taxes apply to foreign businesses in Uzbekistan?", "a": "Foreign businesses in Uzbekistan are generally subject to corporate income tax (15%), VAT (12%), property tax, and social contributions. Uzbekistan has tax treaties with 55+ countries that may reduce withholding rates. The exact tax burden depends on your legal form, activities, and residency status." },
-      { "q": "How long does company registration take in Uzbekistan?", "a": "A standard LLC can typically be registered in 3–7 business days through Uzbekistan's electronic registration portal. Foreign-owned entities may require additional steps such as capital verification and apostille of founding documents, which can extend the timeline." },
-      { "q": "What corporate structures are available for foreign investors?", "a": "Foreign investors can establish an LLC, Joint Stock Company (JSC), branch or representative office of a foreign company, or operate through a Free Economic Zone (FEZ) entity for eligible activities. Each structure has distinct tax and liability implications." },
-      { "q": "What are the payroll and social contribution requirements in Uzbekistan?", "a": "Employers pay social tax at 12% of gross salary. Employees are subject to personal income tax (PIT) at a flat rate of 12%. Additional contributions apply for pension and social insurance. Our HR team manages full payroll calculation and submission." },
-      { "q": "Can Advizen represent us during a tax audit or dispute?", "a": "Yes. Our tax team provides full representation during state tax inspections, prepares audit response materials, and supports clients through dispute resolution with the Tax Committee of Uzbekistan, including judicial appeal if needed." },
-      { "q": "How does Uzbekistan's transfer pricing regime work?", "a": "Since 2020, Uzbekistan has a formal transfer pricing framework requiring related-party transactions above set thresholds to comply with the arm's-length principle. We assist with documentation, benchmarking studies, and advance pricing agreements." },
-      { "q": "What are the requirements for hiring foreign employees in Uzbekistan?", "a": "Foreign nationals require a work permit issued by the Agency for External Labour Migration. Quotas apply per company. The process involves employer accreditation, individual work permit applications, and visa coordination. Our HR team manages the full process." },
-      { "q": "Does my company need IFRS accounting in Uzbekistan?", "a": "IFRS is mandatory for banks, insurers, and listed companies. Most SMEs use Uzbekistan National Accounting Standards. Many international businesses opt for parallel IFRS reporting for group consolidation, which we prepare alongside statutory accounts." }
-    ]
-  },
-  "TemplatesFAQ": {
-    "eyebrow": "Common Questions",
-    "heading": "Frequently Asked Questions",
-    "items": [
-      { "q": "What format are the document templates delivered in?", "a": "All templates are delivered in Microsoft Word (.docx) format, making them fully editable on any device with Word, Google Docs, or compatible software." },
-      { "q": "Are the templates compliant with Uzbekistan law?", "a": "Yes. Every template is drafted or reviewed by our legal and compliance team to ensure alignment with current Uzbekistan legislation and, where relevant, Central Asian regulatory standards." },
-      { "q": "Can I customize the templates for my specific situation?", "a": "Absolutely. The templates are designed to be easily editable — you can adapt parties, terms, dates, and clauses to fit your circumstances. For complex transactions, we also offer a professional customization service." },
-      { "q": "What types of documents are available in the Templates store?", "a": "The store includes templates for company formation, corporate governance, employment contracts, HR policies, commercial agreements, compliance checklists, tax forms, and more — organized by category." },
-      { "q": "In which languages are the templates available?", "a": "Templates are available in Russian, Uzbek, and bilingual (Russian/Uzbek) versions, in line with Uzbekistan's business documentation requirements. English versions are available for select international-standard documents." },
-      { "q": "Do purchased templates come with guidance or support?", "a": "Each template includes guidance notes explaining key clauses and usage instructions. If you need professional advice on adapting a template, our legal or HR team is available for a consultation." },
-      { "q": "What is the refund policy for purchased templates?", "a": "Due to the digital nature of the products, we do not offer refunds after download. Please review the template description carefully before purchasing. If a template contains a material error, we will provide a corrected version." },
-      { "q": "How often are the templates updated?", "a": "We review and update templates whenever relevant laws or regulations change in Uzbekistan. We recommend downloading fresh copies periodically to ensure you always work from the most current version." }
-    ]
   }
 }
