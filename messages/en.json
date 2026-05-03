@@ -292,6 +292,25 @@
       "heading": "Redirecting to {provider}…",
       "subheading": "You will return to advizenco.com automatically once payment is complete."
     },
+    "success": {
+      "statusLabel": "Order confirmed",
+      "heading": "Payment successful",
+      "subheading": "Thank you. Your document is ready to download.",
+      "amountLabel": "Amount paid",
+      "download": "Download document",
+      "viewOrder": "Email me the receipt"
+    },
+    "error": {
+      "statusLabel": "Payment failed",
+      "heading": "Payment didn't go through",
+      "subheading": "Your payment was not completed and no charges were made. Please try a different method.",
+      "tryAgain": "Try again",
+      "support": "Contact support"
+    },
+    "preview": {
+      "previewSuccess": "Preview success state",
+      "previewError": "Preview error state"
+    },
     "actions": {
       "continue": "Continue",
       "back": "Back",

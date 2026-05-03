@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { X, ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { X, ArrowLeft, ArrowRight, Check, Loader2, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FlagBadge, type FlagCode } from "@/components/Flags";
 
@@ -11,6 +11,7 @@ const UZS_RATE = 12750;
 
 export type LanguagePair = "uz_en" | "uz_ru" | "en_ru";
 export type PaymentMethod = "payme" | "octopay";
+type Step = 1 | 2 | 3 | 4 | 5;
 
 const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [string, string] }[] = [
   { id: "uz_en", flags: ["uz", "en"], codes: ["UZ", "EN"] },
@@ -35,9 +36,8 @@ interface CheckoutModalProps {
 }
 
 export default function CheckoutModal({ open, onClose, productId, productTitle, priceUSD }: CheckoutModalProps) {
-  const t = useTranslations("Checkout");
   const tCheckout = useTranslations("Checkout");
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [step, setStep] = useState<Step>(1);
   const [language, setLanguage] = useState<LanguagePair | null>(null);
   const [method, setMethod] = useState<PaymentMethod | null>(null);
 
@@ -73,21 +73,31 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
   const priceUZS = Math.round((priceUSD * UZS_RATE) / 50000) * 50000;
   const priceUZSFormatted = priceUZS.toLocaleString("en-US");
 
+  // Auto-advance from redirect (step 3) to success (step 4) for preview.
+  // Once real payment is wired, step 3 will redirect to PayMe/OctoPay and
+  // success/error will be shown when the user returns to /store/success or
+  // /store/cancelled.
+  useEffect(() => {
+    if (!open || step !== 3) return;
+    const timer = setTimeout(() => {
+      console.log("[checkout] would redirect", { productId, language, method, amount: priceUZS });
+      setStep(4);
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, [open, step, productId, language, method, priceUZS]);
+
   const handleContinue = () => {
     if (step === 1 && language) setStep(2);
-    else if (step === 2 && method) {
-      setStep(3);
-      // Simulate redirect — wire to /api/checkout/create later
-      setTimeout(() => {
-        // window.location.href = paymentUrl
-        console.log("[checkout] would redirect", { productId, language, method, amount: priceUZS });
-      }, 1800);
-    }
+    else if (step === 2 && method) setStep(3);
   };
 
   const handleBack = () => {
     if (step === 2) setStep(1);
-    else if (step === 3) setStep(2);
+  };
+
+  const handleDownload = () => {
+    console.log("[checkout] download", { productId, language });
+    // Wire to /api/checkout/download/${token} later
   };
 
   return (
@@ -115,12 +125,29 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/[0.06]">
-              <Stepper step={step} labels={[t("stepLanguage"), t("stepPayment"), t("stepConfirm")]} />
+              {step <= 3 ? (
+                <Stepper
+                  step={step as 1 | 2 | 3}
+                  labels={[tCheckout("stepLanguage"), tCheckout("stepPayment"), tCheckout("stepConfirm")]}
+                />
+              ) : (
+                <div className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      "w-1.5 h-1.5 rounded-full",
+                      step === 4 ? "bg-emerald-400" : "bg-rose-400"
+                    )}
+                  />
+                  <span className="text-[11px] tracking-[0.16em] uppercase text-white/55">
+                    {step === 4 ? tCheckout("success.statusLabel") : tCheckout("error.statusLabel")}
+                  </span>
+                </div>
+              )}
               <button
                 type="button"
                 onClick={onClose}
                 className="text-white/40 hover:text-white transition-colors cursor-pointer"
-                aria-label={t("actions.close")}
+                aria-label={tCheckout("actions.close")}
               >
                 <X className="w-4 h-4" />
               </button>
@@ -284,11 +311,130 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                     <p className="text-sm text-white/45 max-w-sm">{tCheckout("redirect.subheading")}</p>
                   </motion.div>
                 )}
+
+                {step === 4 && (
+                  <motion.div
+                    key="step-4"
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.05, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+                      className="w-16 h-16 rounded-full bg-emerald-500/[0.08] ring-1 ring-emerald-500/30 flex items-center justify-center mb-5"
+                    >
+                      <Check className="w-7 h-7 text-emerald-400" strokeWidth={2.5} />
+                    </motion.div>
+                    <h2 className="heading-luxury text-xl text-foreground mb-2">{tCheckout("success.heading")}</h2>
+                    <p className="text-sm text-white/45 max-w-sm mb-5">{tCheckout("success.subheading")}</p>
+
+                    <div className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3.5 mb-5 text-left">
+                      <div className="flex items-baseline justify-between gap-3 mb-2">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
+                          {tCheckout("payment.documentLabel")}
+                        </span>
+                        <span className="text-sm text-foreground/85 text-right truncate">{productTitle}</span>
+                      </div>
+                      <div className="flex items-baseline justify-between gap-3 mb-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
+                          {tCheckout("payment.languageLabel")}
+                        </span>
+                        <span className="text-sm text-foreground/85">
+                          {language && tCheckout(`language.${language}`)}
+                        </span>
+                      </div>
+                      <div className="h-px bg-white/[0.06] mb-3" />
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
+                          {tCheckout("success.amountLabel")}
+                        </span>
+                        <span className="text-base font-semibold text-foreground">
+                          {priceUZSFormatted} <span className="text-white/45 text-sm font-normal">so&apos;m</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleDownload}
+                      className="w-full bg-primary hover:bg-primary-light text-foreground/95 hover:text-white px-5 py-3 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      {tCheckout("success.download")}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={onClose}
+                      className="mt-3 text-[11px] tracking-wide text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+                    >
+                      {tCheckout("success.viewOrder")}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setStep(5)}
+                      className="mt-6 text-[10px] tracking-[0.14em] uppercase text-white/20 hover:text-white/45 transition-colors cursor-pointer"
+                    >
+                      {tCheckout("preview.previewError")}
+                    </button>
+                  </motion.div>
+                )}
+
+                {step === 5 && (
+                  <motion.div
+                    key="step-5"
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center text-center pt-2"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.05, duration: 0.42, ease: [0.34, 1.56, 0.64, 1] }}
+                      className="w-16 h-16 rounded-full bg-rose-500/[0.08] ring-1 ring-rose-500/30 flex items-center justify-center mb-5"
+                    >
+                      <X className="w-7 h-7 text-rose-400" strokeWidth={2.5} />
+                    </motion.div>
+                    <h2 className="heading-luxury text-xl text-foreground mb-2">{tCheckout("error.heading")}</h2>
+                    <p className="text-sm text-white/45 max-w-sm mb-6">{tCheckout("error.subheading")}</p>
+
+                    <button
+                      type="button"
+                      onClick={() => setStep(2)}
+                      className="w-full bg-primary hover:bg-primary-light text-foreground/95 hover:text-white px-5 py-3 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
+                    >
+                      {tCheckout("error.tryAgain")}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={onClose}
+                      className="mt-3 text-[11px] tracking-wide text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+                    >
+                      {tCheckout("error.support")}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setStep(4)}
+                      className="mt-6 text-[10px] tracking-[0.14em] uppercase text-white/20 hover:text-white/45 transition-colors cursor-pointer"
+                    >
+                      {tCheckout("preview.previewSuccess")}
+                    </button>
+                  </motion.div>
+                )}
               </AnimatePresence>
             </div>
 
             {/* Footer */}
-            {step !== 3 && (
+            {(step === 1 || step === 2) && (
               <div className="flex items-center justify-between gap-3 px-6 py-4 border-t border-white/[0.06] bg-black/40">
                 {step > 1 ? (
                   <button

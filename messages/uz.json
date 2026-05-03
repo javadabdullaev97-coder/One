@@ -292,6 +292,25 @@
       "heading": "{provider} sahifasiga o'tkazilmoqda…",
       "subheading": "To'lov tugagach, siz advizenco.com saytiga avtomatik qaytasiz."
     },
+    "success": {
+      "statusLabel": "Buyurtma tasdiqlandi",
+      "heading": "To'lov muvaffaqiyatli amalga oshirildi",
+      "subheading": "Rahmat. Hujjatingiz yuklab olishga tayyor.",
+      "amountLabel": "To'langan summa",
+      "download": "Hujjatni yuklab olish",
+      "viewOrder": "Chekni emailga yuborish"
+    },
+    "error": {
+      "statusLabel": "To'lov amalga oshmadi",
+      "heading": "To'lov bajarilmadi",
+      "subheading": "To'lovingiz yakunlanmadi va hech qanday summa yechib olinmadi. Iltimos, boshqa to'lov usulini sinab ko'ring.",
+      "tryAgain": "Qaytadan urinish",
+      "support": "Qo'llab-quvvatlash bilan bog'lanish"
+    },
+    "preview": {
+      "previewSuccess": "Muvaffaqiyatli to'lov ko'rinishi",
+      "previewError": "Xato ko'rinishini ko'rib chiqish"
+    },
     "actions": {
       "continue": "Davom etish",
       "back": "Orqaga",
