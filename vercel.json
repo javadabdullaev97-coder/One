@@ -1,0 +1,16 @@
+{
+  "buildCommand": "npm run build",
+  "rewrites": [
+    { "source": "/", "destination": "/en" },
+    { "source": "/expertise", "destination": "/en/expertise" },
+    { "source": "/insights", "destination": "/en/insights" },
+    { "source": "/insights/:slug", "destination": "/en/insights/:slug" },
+    { "source": "/store", "destination": "/en/store" },
+    { "source": "/contact", "destination": "/en/contact" },
+    { "source": "/privacy", "destination": "/en/privacy" },
+    { "source": "/terms", "destination": "/en/terms" },
+    { "source": "/cookies", "destination": "/en/cookies" },
+    { "source": "/disclaimer", "destination": "/en/disclaimer" },
+    { "source": "/terms-of-sale", "destination": "/en/terms-of-sale" }
+  ]
+}
