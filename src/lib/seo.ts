@@ -172,6 +172,122 @@ export function articleJsonLd(slug: string, locale: string) {
   };
 }
 
+const FAQ_CONTENT: Record<string, Record<Locale, Array<{ q: string; a: string }>>> = {
+  HomeFAQ: {
+    en: [
+      { q: "What services does Advizen Consulting offer?", a: "Advizen Consulting provides integrated advisory services including tax consulting, legal advisory, accounting, HR and payroll, funding advisory, M&A, due diligence, entity management, Employer of Record (EOR), and corporate services across Uzbekistan and Central Asia." },
+      { q: "In which countries does Advizen operate?", a: "Our primary market is Uzbekistan, with active coverage of Kazakhstan and Kyrgyzstan. We support clients across Central Asia and advise foreign investors entering the region from anywhere in the world." },
+      { q: "How long has Advizen Consulting been in business?", a: "Advizen Consulting was founded in 2016 in Tashkent, Uzbekistan. We have over eight years of integrated advisory experience across more than 15 industries in Central Asia." },
+      { q: "Do you work with foreign companies entering Uzbekistan?", a: "Yes. A significant part of our practice serves international companies establishing a presence in Uzbekistan. We cover company formation, regulatory licensing, tax structuring, employment, and ongoing compliance." },
+      { q: "What industries do you serve?", a: "We have experience across 15+ industries including energy, real estate, banking, technology, FMCG, pharmaceuticals, agriculture, hospitality, retail, construction, and logistics." },
+      { q: "What is an Employer of Record and do you offer it?", a: "An EOR allows you to hire employees without setting up a local legal entity. We act as the legal employer, handling payroll, taxes, and employment law compliance in Uzbekistan, Kazakhstan, and Kyrgyzstan." },
+      { q: "In which languages do you provide services?", a: "We provide services in English, Russian, and Uzbek." },
+      { q: "How do I get started with Advizen Consulting?", a: "Contact us via the form, email info@advizenco.com, or WhatsApp/Telegram. We respond within one business day." },
+    ],
+    ru: [
+      { q: "Какие услуги предоставляет Advizen Consulting?", a: "Advizen Consulting оказывает интегрированные консультационные услуги: налоговое консультирование, правовое сопровождение, бухгалтерский учёт, HR, финансовое консультирование, M&A, due diligence, корпоративные услуги и EOR в Узбекистане и Центральной Азии." },
+      { q: "В каких странах работает Advizen?", a: "Основной рынок — Узбекистан, с активным покрытием Казахстана и Кыргызстана." },
+      { q: "Как давно Advizen Consulting работает на рынке?", a: "Основана в 2016 году в Ташкенте. Более восьми лет интегрированного консультирования в 15+ отраслях Центральной Азии." },
+      { q: "Вы работаете с иностранными компаниями, выходящими на рынок Узбекистана?", a: "Да. Мы сопровождаем регистрацию, лицензирование, налоговое структурирование, трудоустройство и текущий комплаенс." },
+      { q: "Какие отрасли вы обслуживаете?", a: "Более 15 отраслей: энергетика, недвижимость, банки, технологии, FMCG, фармацевтика, сельское хозяйство, гостиничный бизнес, ритейл, строительство и логистика." },
+      { q: "Что такое Employer of Record и предоставляете ли вы эту услугу?", a: "EOR позволяет нанимать сотрудников без создания местного юридического лица. Мы выступаем юридическим работодателем в Узбекистане, Казахстане и Кыргызстане." },
+      { q: "На каких языках вы оказываете услуги?", a: "На русском, английском и узбекском языках." },
+      { q: "Как начать работу с Advizen Consulting?", a: "Свяжитесь через форму, email info@advizenco.com или WhatsApp/Telegram. Мы отвечаем в течение одного рабочего дня." },
+    ],
+    uz: [
+      { q: "Advizen Consulting qanday xizmatlar ko'rsatadi?", a: "Advizen Consulting soliq maslahati, huquqiy yordam, buxgalteriya, HR, moliyaviy maslahat, M&A, due diligence, korporativ xizmatlar va EOR — O'zbekiston va Markaziy Osiyoda integratsiyalashgan maslahat xizmatlarini taqdim etadi." },
+      { q: "Advizen qaysi mamlakatlarda ishlaydi?", a: "Asosiy bozor — O'zbekiston, Qozog'iston va Qirg'iziston ham qamrab olingan." },
+      { q: "Advizen Consulting qancha vaqtdan beri faoliyat yuritadi?", a: "2016 yilda Toshkentda tashkil etilgan. 15 dan ortiq soha bo'yicha 8+ yillik tajriba." },
+      { q: "O'zbekiston bozoriga kirmoqchi bo'lgan xorijiy kompaniyalar bilan ishlaysizmi?", a: "Ha. Ro'yxatdan o'tkazish, litsenziyalash, soliq tuzilmasi, ishga qabul va joriy muvofiqlik masalalarida yordam beramiz." },
+      { q: "Qaysi sohalarda xizmat ko'rsatasiz?", a: "15+ soha: energetika, ko'chmas mulk, bank, texnologiya, FMCG, farmatsevtika, qishloq xo'jaligi, mehmondo'stlik, savdo, qurilish va logistika." },
+      { q: "Employer of Record nima va bu xizmatni taklif qilasizmi?", a: "EOR mahalliy yuridik shaxs tashkil etmasdan xodim yollash imkonini beradi. O'zbekiston, Qozog'iston va Qirg'izistonda qonuniy ish beruvchi sifatida xizmat ko'rsatamiz." },
+      { q: "Xizmatlar qaysi tillarda ko'rsatiladi?", a: "Rus, ingliz va o'zbek tillarida." },
+      { q: "Advizen Consulting bilan qanday boshlash mumkin?", a: "Aloqa formasi, info@advizenco.com yoki WhatsApp/Telegram orqali bog'laning. Bir ish kuni ichida javob beramiz." },
+    ],
+  },
+  ExpertiseFAQ: {
+    en: [
+      { q: "What taxes apply to foreign businesses in Uzbekistan?", a: "Foreign businesses are generally subject to corporate income tax (15%), VAT (12%), property tax, and social contributions. Uzbekistan has tax treaties with 55+ countries that may reduce withholding rates." },
+      { q: "How long does company registration take in Uzbekistan?", a: "A standard LLC can typically be registered in 3–7 business days. Foreign-owned entities may require additional steps such as capital verification and apostille of founding documents." },
+      { q: "What corporate structures are available for foreign investors?", a: "Options include LLC, Joint Stock Company, branch or representative office, or a Free Economic Zone entity for eligible activities." },
+      { q: "What are the payroll and social contribution requirements in Uzbekistan?", a: "Employers pay social tax at 12% of gross salary; employees pay personal income tax at 12%. Our HR team manages full payroll calculation and submission." },
+      { q: "Can Advizen represent us during a tax audit or dispute?", a: "Yes. Our tax team provides full representation during inspections and supports dispute resolution with the Tax Committee of Uzbekistan, including judicial appeal." },
+      { q: "How does Uzbekistan's transfer pricing regime work?", a: "Since 2020, related-party transactions above set thresholds must comply with the arm's-length principle. We assist with documentation, benchmarking, and advance pricing agreements." },
+      { q: "What are the requirements for hiring foreign employees in Uzbekistan?", a: "Foreign nationals need a work permit from the Agency for External Labour Migration. Our HR team manages accreditation, permit applications, and visa coordination." },
+      { q: "Does my company need IFRS accounting in Uzbekistan?", a: "IFRS is mandatory for banks, insurers, and listed companies. Most SMEs use national standards. We prepare parallel IFRS reporting for consolidation purposes alongside statutory accounts." },
+    ],
+    ru: [
+      { q: "Какие налоги применяются к иностранным компаниям в Узбекистане?", a: "Налог на прибыль (15%), НДС (12%), налог на имущество и социальные взносы. Более 55 соглашений об избежании двойного налогообложения могут снизить ставки у источника." },
+      { q: "Сколько времени занимает регистрация компании в Узбекистане?", a: "Стандартное ООО — 3–7 рабочих дней. Для компаний с иностранным участием могут потребоваться подтверждение капитала и апостиль документов." },
+      { q: "Какие корпоративные структуры доступны для иностранных инвесторов?", a: "ООО, АО, филиал или представительство иностранной компании, а также структуры в свободных экономических зонах." },
+      { q: "Каковы требования к расчёту зарплаты и социальным взносам?", a: "Социальный налог работодателя — 12% от ФОТ; НДФЛ — 12%. Наша HR-команда ведёт полный расчёт и перечисление." },
+      { q: "Может ли Advizen представлять нас в налоговой проверке или споре?", a: "Да. Мы сопровождаем проверки, готовим ответные материалы и представляем в Налоговом комитете, включая судебное обжалование." },
+      { q: "Как работает трансфертное ценообразование в Узбекистане?", a: "С 2020 года сделки со связанными сторонами выше порога должны соответствовать принципу «вытянутой руки». Помогаем с документацией и соглашениями." },
+      { q: "Каковы требования к трудоустройству иностранных сотрудников?", a: "Необходимо разрешение на работу от Агентства по внешней трудовой миграции. HR-команда ведёт весь процесс: аккредитацию, разрешения, визы." },
+      { q: "Обязана ли моя компания применять МСФО в Узбекистане?", a: "МСФО обязательны для банков, страховщиков и публичных компаний. МСП применяют НСБУ. Ведём параллельную МСФО-отчётность для консолидации." },
+    ],
+    uz: [
+      { q: "O'zbekistondagi xorijiy kompaniyalarga qanday soliqlar qo'llanadi?", a: "Korporativ daromad solig'i (15%), QQS (12%), mol-mulk solig'i va ijtimoiy to'lovlar. 55+ mamlakat bilan ikki tomonlama shartnomalar manba stavkalarini kamaytirishi mumkin." },
+      { q: "O'zbekistonda kompaniyani ro'yxatdan o'tkazish qancha vaqt oladi?", a: "Standart MChJ — 3–7 ish kuni. Xorijiy ishtirokchi uchun kapital tasdiqlash va apostil qo'shimcha vaqt talab qilishi mumkin." },
+      { q: "Xorijiy investorlar uchun qanday korporativ tuzilmalar mavjud?", a: "MChJ, AJ, xorijiy kompaniya filiali/vakolatxonasi yoki EIZ sub'ekti." },
+      { q: "Ish haqi va ijtimoiy to'lovlarga talablar qanday?", a: "Ijtimoiy soliq — 12%, daromad solig'i — 12%. HR jamoamiz barcha to'lovlarni to'liq hisoblaydi." },
+      { q: "Advizen soliq tekshiruvi yoki nizolarida bizni ifodalay oladimi?", a: "Ha. Tekshiruvlarda vakillik, javob materiallari tayyorlash va Soliq qo'mitasida nizo hal etish, zarur bo'lsa sud — barchasida yordamdamiz." },
+      { q: "O'zbekistonda transfer narxlash qanday ishlaydi?", a: "2020 yildan bog'liq tomon bilan tuzilgan bitimlar mustaqil tomon tamoyiliga mos kelishi shart. Hujjatlashtirish va kelishuvlarda yordam beramiz." },
+      { q: "Xorijiy xodimlarni ishga qabul qilish talablari qanday?", a: "Ish ruxsatnomasi talab etiladi. HR jamoamiz akkreditatsiya, ruxsatnomalar va vizani to'liq boshqaradi." },
+      { q: "Kompaniyam IFRS hisobot standartlarini qo'llashi shartmi?", a: "IFRS banklar, sug'urta va ochiq AJ lar uchun majburiy. Milliy standartlar ko'pchilikning asosi; IFRS parallel hisobotini ham tayyorlaymiz." },
+    ],
+  },
+  TemplatesFAQ: {
+    en: [
+      { q: "What format are the document templates delivered in?", a: "All templates are delivered in Microsoft Word (.docx) format, fully editable on any device." },
+      { q: "Are the templates compliant with Uzbekistan law?", a: "Yes. Every template is drafted or reviewed by our legal team to ensure alignment with current Uzbekistan legislation." },
+      { q: "Can I customize the templates for my specific situation?", a: "Absolutely. Templates are designed to be easily editable. For complex transactions, we also offer a professional customization service." },
+      { q: "What types of documents are available in the Templates store?", a: "Company formation, corporate governance, employment contracts, HR policies, commercial agreements, compliance checklists, tax forms, and more — organized by category." },
+      { q: "In which languages are the templates available?", a: "Templates are available in Russian, Uzbek, and bilingual (Russian/Uzbek) versions. English versions are available for select international-standard documents." },
+      { q: "Do purchased templates come with guidance or support?", a: "Each template includes guidance notes explaining key clauses. Professional consultation on adaptation is available from our legal or HR team." },
+      { q: "What is the refund policy for purchased templates?", a: "We do not offer refunds after download due to the digital nature of the products. If a template contains a material error, we will provide a corrected version." },
+      { q: "How often are the templates updated?", a: "We review and update templates whenever relevant laws change in Uzbekistan. We recommend downloading fresh copies periodically." },
+    ],
+    ru: [
+      { q: "В каком формате поставляются шаблоны документов?", a: "В формате Microsoft Word (.docx) — полностью редактируемые на любом устройстве." },
+      { q: "Соответствуют ли шаблоны законодательству Узбекистана?", a: "Да. Каждый шаблон разработан или проверен нашей юридической командой." },
+      { q: "Можно ли адаптировать шаблоны под свою ситуацию?", a: "Конечно. Шаблоны легко редактируются. Для сложных сделок доступна услуга профессиональной адаптации." },
+      { q: "Какие виды документов представлены в магазине шаблонов?", a: "Регистрация компаний, корпоративное управление, трудовые договоры, HR-политики, коммерческие соглашения, чек-листы комплаенса, налоговые формы и другое." },
+      { q: "На каких языках доступны шаблоны?", a: "На русском, узбекском и в двуязычном варианте (русский/узбекский). Для ряда международных документов доступны версии на английском." },
+      { q: "Прилагается ли к шаблонам пояснительная информация?", a: "Да. К каждому шаблону прилагаются пояснения к ключевым положениям. Профессиональная консультация по адаптации также доступна." },
+      { q: "Какова политика возврата для приобретённых шаблонов?", a: "Возврат после скачивания не предусмотрен. В случае существенной ошибки в шаблоне мы предоставим исправленную версию." },
+      { q: "Как часто обновляются шаблоны?", a: "При изменении законодательства Узбекистана. Рекомендуем периодически загружать актуальные версии." },
+    ],
+    uz: [
+      { q: "Hujjat shablonlari qaysi formatda taqdim etiladi?", a: "Microsoft Word (.docx) formatida — istalgan qurilmada to'liq tahrir qilinadi." },
+      { q: "Shablonlar O'zbekiston qonunchiligiga muvofiqmi?", a: "Ha. Har bir shablon huquqiy jamoamiz tomonidan ishlab chiqilgan yoki ko'rib chiqilgan." },
+      { q: "Shablonlarni o'z vaziyatimga moslashtira olamanmi?", a: "Albatta. Shablonlar qulay tahrirlanishi uchun mo'ljallangan. Murakkab hollar uchun professional moslashtirish xizmati mavjud." },
+      { q: "Shablonlar do'konida qanday hujjat turlari mavjud?", a: "Kompaniya tashkil etish, korporativ boshqaruv, mehnat shartnomalari, HR siyosatlari, tijorat shartnomalari, muvofiqlik varaqlari, soliq shakllari va boshqalar." },
+      { q: "Shablonlar qaysi tillarda mavjud?", a: "Rus, o'zbek va ikki tilli (rus/o'zbek) versiyalarda. Ba'zi xalqaro hujjatlar uchun ingliz tili versiyalari ham mavjud." },
+      { q: "Sotib olingan shablonlarga ko'rsatmalar biriktirilganmi?", a: "Ha. Har bir shablonga asosiy bandlar izohi ilova qilingan. Professional maslahat uchun jamoamiz bilan bog'lanishingiz mumkin." },
+      { q: "Sotib olingan shablonlar uchun qaytarish siyosati qanday?", a: "Yuklab olishdan keyin pulni qaytarish nazarda tutilmagan. Muhim xato bo'lsa, tuzatilgan versiyasini taqdim etamiz." },
+      { q: "Shablonlar qanchalik tez-tez yangilanadi?", a: "O'zbekiston qonunchiligida o'zgarishlar bo'lganda yangilanadi. Vaqti-vaqti bilan yangi nusxalarni yuklab olishingizni tavsiya etamiz." },
+    ],
+  },
+};
+
+export function faqJsonLd(namespace: "HomeFAQ" | "ExpertiseFAQ" | "TemplatesFAQ", locale: string) {
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const items = FAQ_CONTENT[namespace]?.[safe] ?? FAQ_CONTENT[namespace].en;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
 const PAGE_PATHS = {
   expertise: "/expertise",
   store: "/store",
