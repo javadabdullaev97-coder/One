@@ -76,7 +76,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 style={{ fontFamily: inter }}
-                className={`relative hover-line text-[13px] font-medium tracking-wide transition-colors cursor-pointer ${
+                className={`relative hover-line text-[14px] font-medium tracking-[0.04em] transition-colors cursor-pointer ${
                   isActive ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
@@ -98,8 +98,8 @@ export default function Navbar() {
           <Link
             href={utilityLink.href}
             style={{ fontFamily: inter }}
-            className={`relative hover-line text-[12px] tracking-wide transition-colors cursor-pointer ${
-              pathname === utilityLink.href ? "text-foreground" : "text-muted/70 hover:text-foreground"
+            className={`relative hover-line text-[14px] font-medium tracking-[0.04em] transition-colors cursor-pointer ${
+              pathname === utilityLink.href ? "text-primary" : "text-primary/60 hover:text-primary"
             }`}
           >
             {utilityLink.label}
@@ -166,8 +166,8 @@ export default function Navbar() {
                 href={utilityLink.href}
                 onClick={() => setMobileOpen(false)}
                 style={{ fontFamily: inter }}
-                className={`block py-3 text-[13px] tracking-wide transition-colors cursor-pointer ${
-                  pathname === utilityLink.href ? "text-foreground" : "text-foreground/55 hover:text-foreground"
+                className={`block py-3 font-medium tracking-wide transition-colors cursor-pointer ${
+                  pathname === utilityLink.href ? "text-primary" : "text-primary/60 hover:text-primary"
                 }`}
               >
                 {utilityLink.label}
