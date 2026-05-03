@@ -300,7 +300,7 @@
       "heading": "Payment successful",
       "subheading": "Thank you. Your document is ready to download.",
       "amountLabel": "Amount paid",
-      "download": "Download .docx",
+      "download": "Download",
       "emailSent": "A receipt and download link have been sent to {email}."
     },
     "error": {
