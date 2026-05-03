@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FileText, Users, Calculator, Scale, BarChart2, ShieldCheck, ArrowRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import MagneticButton from "@/components/MagneticButton";
+import CheckoutModal from "@/components/CheckoutModal";
 import { cn } from "@/lib/utils";
 
 /* ── Types ──────────────────────────────────────────── */
@@ -64,7 +64,7 @@ function formatPrice(price: number, currency: Currency, locale: string): { main:
 
 /* ── Product card ────────────────────────────────────────────── */
 
-function ProductCard({ product, index, currency }: { product: Product; index: number; currency: Currency }) {
+function ProductCard({ product, index, currency, onPurchase }: { product: Product; index: number; currency: Currency; onPurchase: (p: Product, title: string) => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const meta = CATEGORY_META[product.category];
@@ -146,12 +146,13 @@ function ProductCard({ product, index, currency }: { product: Product; index: nu
         </ul>
 
         {/* CTA */}
-        <Link
-          href={`/contact?ref=${product.id}`}
-          className="mt-auto block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200"
+        <button
+          type="button"
+          onClick={() => onPurchase(product, title)}
+          className="mt-auto block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer"
         >
           {t("purchase")}
-        </Link>
+        </button>
       </div>
     </motion.div>
   );
@@ -231,6 +232,7 @@ function StoreFilters({
 export default function StorePage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [currency, setCurrency] = useState<Currency>("USD");
+  const [checkout, setCheckout] = useState<{ product: Product; title: string } | null>(null);
   const locale = useLocale();
   const tHero = useTranslations("StorePage.hero");
   const tFilters = useTranslations("StorePage.filters");
@@ -243,6 +245,10 @@ export default function StorePage() {
   const filtered = products.filter((p) =>
     activeCategory === "All" || p.category === activeCategory
   );
+
+  const openCheckout = (product: Product, title: string) => {
+    setCheckout({ product, title });
+  };
 
   return (
     <>
@@ -338,7 +344,7 @@ export default function StorePage() {
               ) : (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
                   {filtered.map((p, i) => (
-                    <ProductCard key={p.id} product={p} index={i} currency={effectiveCurrency} />
+                    <ProductCard key={p.id} product={p} index={i} currency={effectiveCurrency} onPurchase={openCheckout} />
                   ))}
                 </div>
               )}
@@ -371,6 +377,14 @@ export default function StorePage() {
           </motion.div>
         </div>
       </section>
+
+      <CheckoutModal
+        open={!!checkout}
+        onClose={() => setCheckout(null)}
+        productId={checkout?.product.id ?? null}
+        productTitle={checkout?.title ?? ""}
+        priceUSD={checkout?.product.price ?? 0}
+      />
     </>
   );
 }
