@@ -75,7 +75,7 @@ const onest = Onest({
 });
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return [{ locale: "ru" }, { locale: "uz" }];
 }
 
 export async function generateMetadata({
