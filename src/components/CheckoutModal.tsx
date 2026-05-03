@@ -328,7 +328,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
   );
 }
 
-/* ── Stepper ───────────────────────────────────────── */
+/* ── Stepper ────────────────────────────────────────── */
 
 function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
   return (

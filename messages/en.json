@@ -268,6 +268,37 @@
       "button": "Talk to our team"
     }
   },
+  "Checkout": {
+    "stepLanguage": "Language",
+    "stepPayment": "Payment",
+    "stepConfirm": "Confirm",
+    "language": {
+      "heading": "Choose document language",
+      "subheading": "Both languages are included in the same PDF — fully bilingual.",
+      "uz_en": "Uzbek + English",
+      "uz_ru": "Uzbek + Russian",
+      "en_ru": "English + Russian"
+    },
+    "payment": {
+      "heading": "Choose payment method",
+      "subheading": "All transactions are processed in Uzbek soum.",
+      "documentLabel": "Document",
+      "languageLabel": "Language",
+      "totalLabel": "Total",
+      "payme": { "name": "Payme" },
+      "octopay": { "name": "OctoPay" }
+    },
+    "redirect": {
+      "heading": "Redirecting to {provider}…",
+      "subheading": "You will return to advizenco.com automatically once payment is complete."
+    },
+    "actions": {
+      "continue": "Continue",
+      "back": "Back",
+      "payNow": "Pay {amount}",
+      "close": "Close"
+    }
+  },
   "Legal": {
     "common": {
       "eyebrow": "Advizen Consulting · Legal",

@@ -268,6 +268,37 @@
       "button": "Связаться с командой"
     }
   },
+  "Checkout": {
+    "stepLanguage": "Язык",
+    "stepPayment": "Оплата",
+    "stepConfirm": "Готово",
+    "language": {
+      "heading": "Выберите язык документа",
+      "subheading": "Оба языка включены в один PDF — полностью двуязычный документ.",
+      "uz_en": "Узбекский + Английский",
+      "uz_ru": "Узбекский + Русский",
+      "en_ru": "Английский + Русский"
+    },
+    "payment": {
+      "heading": "Выберите способ оплаты",
+      "subheading": "Все платежи обрабатываются в узбекских сумах.",
+      "documentLabel": "Документ",
+      "languageLabel": "Язык",
+      "totalLabel": "Итого",
+      "payme": { "name": "Payme" },
+      "octopay": { "name": "OctoPay" }
+    },
+    "redirect": {
+      "heading": "Переход на {provider}…",
+      "subheading": "После завершения оплаты вы автоматически вернётесь на advizenco.com."
+    },
+    "actions": {
+      "continue": "Продолжить",
+      "back": "Назад",
+      "payNow": "Оплатить {amount}",
+      "close": "Закрыть"
+    }
+  },
   "Legal": {
     "common": {
       "eyebrow": "Advizen Consulting · Юридическая информация",
