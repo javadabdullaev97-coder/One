@@ -5,10 +5,13 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LOADING_SHOWN_KEY = "advizen-loading-shown";
+const FILL_DURATION = 0.6;
+const FILL_DURATION_MS = FILL_DURATION * 1000;
+const HIDE_BUFFER_MS = 180;
+const FALLBACK_MAX_MS = 5000;
 
 export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
-  const [fillDuration, setFillDuration] = useState(1.6);
 
   useEffect(() => {
     if (sessionStorage.getItem(LOADING_SHOWN_KEY)) {
@@ -16,21 +19,36 @@ export default function LoadingScreen() {
       return;
     }
 
-    const alreadyLoaded = document.readyState === "complete";
-    const dur = alreadyLoaded ? 0.65 : 1.6;
-    setFillDuration(dur);
+    let pageLoaded = document.readyState === "complete";
+    let fillComplete = false;
 
-    const hide = () => {
-      setVisible(false);
-      sessionStorage.setItem(LOADING_SHOWN_KEY, "1");
+    const tryHide = () => {
+      if (!pageLoaded || !fillComplete) return;
+      setTimeout(() => {
+        setVisible(false);
+        sessionStorage.setItem(LOADING_SHOWN_KEY, "1");
+      }, HIDE_BUFFER_MS);
     };
 
-    if (alreadyLoaded) {
-      setTimeout(hide, dur * 1000 + 300);
-    } else {
-      window.addEventListener("load", () => setTimeout(hide, 350), { once: true });
-      setTimeout(hide, (dur + 0.5) * 1000);
+    const onPageLoaded = () => {
+      pageLoaded = true;
+      tryHide();
+    };
+
+    if (!pageLoaded) {
+      window.addEventListener("load", onPageLoaded, { once: true });
     }
+
+    setTimeout(() => {
+      fillComplete = true;
+      tryHide();
+    }, FILL_DURATION_MS);
+
+    setTimeout(() => {
+      pageLoaded = true;
+      fillComplete = true;
+      tryHide();
+    }, FALLBACK_MAX_MS);
   }, []);
 
   return (
@@ -39,7 +57,7 @@ export default function LoadingScreen() {
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <div className="relative" style={{ width: 340 }}>
             {/* Dim ghost layer — always visible */}
@@ -57,7 +75,7 @@ export default function LoadingScreen() {
               style={{ opacity: 0.5 }}
               initial={{ clipPath: "inset(100% 0 0 0)" }}
               animate={{ clipPath: "inset(0% 0 0 0)" }}
-              transition={{ duration: fillDuration, ease: "easeInOut" }}
+              transition={{ duration: FILL_DURATION, ease: "easeOut" }}
             >
               <Image
                 src="/Loading.png"
