@@ -20,7 +20,8 @@ const STATIC_PATHS = [
 ];
 
 function localizedUrl(path: string, locale: string): string {
-  return `${SITE_URL}/${locale}${path}`;
+  const localePart = locale === routing.defaultLocale ? "" : `/${locale}`;
+  return `${SITE_URL}${localePart}${path}`;
 }
 
 function alternates(path: string): Record<string, string> {
