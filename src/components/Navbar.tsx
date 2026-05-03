@@ -20,10 +20,11 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: t("home") },
     { href: "/expertise", label: t("expertise") },
-    { href: "/store", label: t("store") },
     { href: "/insights", label: t("insights") },
     { href: "/contact", label: t("contact") },
   ];
+
+  const utilityLink = { href: "/store", label: t("store") };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -92,8 +93,25 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right side — Language + Inquire */}
+        {/* Right side — Templates (utility) + Language + Inquire */}
         <div className="hidden md:flex items-center gap-5 ml-auto">
+          <Link
+            href={utilityLink.href}
+            style={{ fontFamily: inter }}
+            className={`relative hover-line text-[12px] tracking-wide transition-colors cursor-pointer ${
+              pathname === utilityLink.href ? "text-foreground" : "text-muted/70 hover:text-foreground"
+            }`}
+          >
+            {utilityLink.label}
+            {pathname === utilityLink.href && (
+              <motion.span
+                layoutId="nav-active"
+                className="absolute bottom-[-2px] left-0 right-0 h-px bg-primary"
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+          </Link>
+          <span className="h-4 w-px bg-white/[0.12]" aria-hidden="true" />
           <LanguageSwitcher />
           <MagneticButton as="a" href="/contact" className="px-6 py-2.5 text-[12px]">
             {t("inquire")}
@@ -139,6 +157,22 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: navLinks.length * 0.05 }}
+            >
+              <Link
+                href={utilityLink.href}
+                onClick={() => setMobileOpen(false)}
+                style={{ fontFamily: inter }}
+                className={`block py-3 text-[13px] tracking-wide transition-colors cursor-pointer ${
+                  pathname === utilityLink.href ? "text-foreground" : "text-foreground/55 hover:text-foreground"
+                }`}
+              >
+                {utilityLink.label}
+              </Link>
+            </motion.div>
             <div className="mt-6 flex items-center justify-between gap-4" onClick={() => setMobileOpen(false)}>
               <LanguageSwitcher compact />
               <MagneticButton as="a" href="/contact" className="flex-1 justify-center px-6 py-3 text-sm">

@@ -2,7 +2,7 @@
   "Nav": {
     "home": "Home",
     "expertise": "Expertise",
-    "store": "Store",
+    "store": "Templates",
     "insights": "Insights",
     "contact": "Contact",
     "inquire": "Inquire"
@@ -14,7 +14,7 @@
     "legal": "Legal",
     "tagline": "Premier business advisory in Uzbekistan. Integrated consulting across tax, legal, finance, and HR — a single point of contact for your entire operation.",
     "rights": "All rights reserved.",
-    "store": "Store",
+    "store": "Templates",
     "insights": "Insights",
     "contact": "Contact",
     "termsOfSale": "Terms of Sale",
@@ -241,7 +241,7 @@
   },
   "StorePage": {
     "hero": {
-      "eyebrow": "Document Store",
+      "eyebrow": "Templates",
       "heading": "Ready-to-use documents for doing business in Uzbekistan",
       "description": "Professionally drafted legal, tax, HR, and compliance templates — built for Uzbekistan's regulatory framework, available in English, Russian, and Uzbek.",
       "feature1": "Instant download",
