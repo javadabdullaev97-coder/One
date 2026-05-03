@@ -198,7 +198,7 @@ function StoreFilters({
 
           {/* Currency toggle — hidden on UZ locale */}
           {locale !== "uz" && (
-            <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shrink-0">
+            <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shrink-0 ml-auto">
               {(["USD", "UZS"] as Currency[]).map((curr) => (
                 <button
                   key={curr}
