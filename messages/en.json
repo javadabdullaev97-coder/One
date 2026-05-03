@@ -285,6 +285,9 @@
       "documentLabel": "Document",
       "languageLabel": "Language",
       "totalLabel": "Total",
+      "emailLabel": "Email for receipt",
+      "emailPlaceholder": "you@example.com",
+      "emailHint": "We'll send your order confirmation and download link here.",
       "payme": { "name": "Payme" },
       "octopay": { "name": "OctoPay" }
     },
@@ -298,7 +301,7 @@
       "subheading": "Thank you. Your document is ready to download.",
       "amountLabel": "Amount paid",
       "download": "Download document",
-      "viewOrder": "Email me the receipt"
+      "emailSent": "A receipt and download link have been sent to {email}."
     },
     "error": {
       "statusLabel": "Payment failed",

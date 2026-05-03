@@ -285,6 +285,9 @@
       "documentLabel": "Документ",
       "languageLabel": "Язык",
       "totalLabel": "Итого",
+      "emailLabel": "Email для чека",
+      "emailPlaceholder": "вы@example.com",
+      "emailHint": "Мы отправим подтверждение заказа и ссылку для скачивания на этот адрес.",
       "payme": { "name": "Payme" },
       "octopay": { "name": "OctoPay" }
     },
@@ -298,7 +301,7 @@
       "subheading": "Спасибо. Ваш документ готов к скачиванию.",
       "amountLabel": "Сумма оплаты",
       "download": "Скачать документ",
-      "viewOrder": "Отправить чек на email"
+      "emailSent": "Чек и ссылка для скачивания отправлены на {email}."
     },
     "error": {
       "statusLabel": "Оплата не прошла",

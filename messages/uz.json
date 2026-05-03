@@ -285,6 +285,9 @@
       "documentLabel": "Hujjat",
       "languageLabel": "Til",
       "totalLabel": "Jami",
+      "emailLabel": "Chek uchun email",
+      "emailPlaceholder": "siz@example.com",
+      "emailHint": "Buyurtma tasdiqi va yuklab olish havolasini ushbu manzilga yuboramiz.",
       "payme": { "name": "Payme" },
       "octopay": { "name": "OctoPay" }
     },
@@ -298,7 +301,7 @@
       "subheading": "Rahmat. Hujjatingiz yuklab olishga tayyor.",
       "amountLabel": "To'langan summa",
       "download": "Hujjatni yuklab olish",
-      "viewOrder": "Chekni emailga yuborish"
+      "emailSent": "Chek va yuklab olish havolasi {email} manziliga yuborildi."
     },
     "error": {
       "statusLabel": "To'lov amalga oshmadi",

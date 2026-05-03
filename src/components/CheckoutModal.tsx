@@ -40,6 +40,9 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
   const [step, setStep] = useState<Step>(1);
   const [language, setLanguage] = useState<LanguagePair | null>(null);
   const [method, setMethod] = useState<PaymentMethod | null>(null);
+  const [email, setEmail] = useState("");
+
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   // Reset state every time modal opens
   useEffect(() => {
@@ -47,6 +50,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
       setStep(1);
       setLanguage(null);
       setMethod(null);
+      setEmail("");
     }
   }, [open]);
 
@@ -88,7 +92,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
 
   const handleContinue = () => {
     if (step === 1 && language) setStep(2);
-    else if (step === 2 && method) setStep(3);
+    else if (step === 2 && method && isValidEmail) setStep(3);
   };
 
   const handleBack = () => {
@@ -120,11 +124,11 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-lg bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
+            className="relative w-full max-w-lg h-[620px] max-h-[calc(100vh-2rem)] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/[0.06]">
+            <div className="flex-none flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/[0.06]">
               {step <= 3 ? (
                 <Stepper
                   step={step as 1 | 2 | 3}
@@ -154,7 +158,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
             </div>
 
             {/* Content */}
-            <div className="px-6 py-6 min-h-[340px]">
+            <div className="flex-1 overflow-y-auto px-6 py-6">
               <AnimatePresence mode="wait">
                 {step === 1 && (
                   <motion.div
@@ -249,6 +253,25 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                           {priceUZSFormatted} <span className="text-white/45 text-sm font-normal">so&apos;m</span>
                         </span>
                       </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="mb-5">
+                      <label htmlFor="checkout-email" className="text-[10px] tracking-[0.16em] uppercase text-white/35 block mb-2">
+                        {tCheckout("payment.emailLabel")}
+                      </label>
+                      <input
+                        id="checkout-email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder={tCheckout("payment.emailPlaceholder")}
+                        autoComplete="email"
+                        className="w-full bg-white/[0.02] border border-white/[0.08] rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-white/25 focus:outline-none focus:border-white/[0.22] transition-colors"
+                      />
+                      <p className="mt-2 text-[11px] text-white/35">
+                        {tCheckout("payment.emailHint")}
+                      </p>
                     </div>
 
                     <div className="grid grid-cols-1 gap-2">
@@ -367,13 +390,9 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                       {tCheckout("success.download")}
                     </button>
 
-                    <button
-                      type="button"
-                      onClick={onClose}
-                      className="mt-3 text-[11px] tracking-wide text-white/40 hover:text-white/70 transition-colors cursor-pointer"
-                    >
-                      {tCheckout("success.viewOrder")}
-                    </button>
+                    <p className="mt-4 text-[11px] text-white/35 max-w-xs">
+                      {tCheckout("success.emailSent", { email })}
+                    </p>
 
                     <button
                       type="button"
@@ -435,7 +454,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
 
             {/* Footer */}
             {(step === 1 || step === 2) && (
-              <div className="flex items-center justify-between gap-3 px-6 py-4 border-t border-white/[0.06] bg-black/40">
+              <div className="flex-none flex items-center justify-between gap-3 px-6 py-4 border-t border-white/[0.06] bg-black/40">
                 {step > 1 ? (
                   <button
                     type="button"
@@ -452,10 +471,10 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                 <button
                   type="button"
                   onClick={handleContinue}
-                  disabled={(step === 1 && !language) || (step === 2 && !method)}
+                  disabled={(step === 1 && !language) || (step === 2 && (!method || !isValidEmail))}
                   className={cn(
                     "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
-                    (step === 1 && !language) || (step === 2 && !method)
+                    (step === 1 && !language) || (step === 2 && (!method || !isValidEmail))
                       ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
                       : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
                   )}
