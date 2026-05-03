@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "node scripts/copy-en-to-root.mjs",
+    "build": "next build && node scripts/copy-en-to-root.mjs",
     "start": "next start",
     "lint": "eslint"
   },
