@@ -46,36 +46,5 @@
     "subtitle": "Strategic counsel for businesses entering and operating across Central Asia.",
     "cta": "Schedule a consultation",
     "location": "Tashkent, Uzbekistan"
-  },
-  "ExpertisePage": {
-    "hero": {
-      "eyebrow": "Our Expertise",
-      "heading": "Integrated services, singular results",
-      "description": "Seven advisory disciplines. Seven managed operations services. One integrated practice built for the complexities of Central Asian markets."
-    },
-    "stats": {
-      "eyebrow": "Our track record",
-      "dealsAdvised": "Deals advised",
-      "registrations": "Registrations",
-      "dueDiligences": "Due diligences",
-      "lawsShaped": "Laws shaped"
-    },
-    "industries": {
-      "eyebrow": "Sector Experience",
-      "heading": "Deep expertise across six sectors",
-      "whatWeOffer": "What we offer",
-      "featuredEngagement": "Featured engagement"
-    },
-    "trackRecord": {
-      "eyebrow": "Track Record",
-      "heading": "Selected engagements of our team members"
-    },
-    "cta": {
-      "eyebrow": "Work with us",
-      "heading": "Ready to work together?",
-      "description": "Tell us about your business — we will identify where we can make the most impact and structure a scope that fits.",
-      "primary": "Schedule a consultation",
-      "secondary": "Browse our insights"
-    }
   }
 }
