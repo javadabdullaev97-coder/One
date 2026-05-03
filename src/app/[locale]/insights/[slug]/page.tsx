@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getAllPublicationSlugs } from "@/lib/publications";
+import { articleMetadata, articleJsonLd } from "@/lib/seo";
 import ArticlePageClient from "./ArticlePageClient";
 
 export function generateStaticParams() {
@@ -7,11 +9,32 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata> {
+  const { slug, locale } = await params;
+  return articleMetadata(slug, locale);
+}
+
 export default async function ArticlePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
-  const { slug } = await params;
-  return <ArticlePageClient slug={slug} />;
+  const { slug, locale } = await params;
+  const jsonLd = articleJsonLd(slug, locale);
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <ArticlePageClient slug={slug} />
+    </>
+  );
 }
