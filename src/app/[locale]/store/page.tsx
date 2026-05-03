@@ -232,7 +232,7 @@ function ProductCard({ product, index, currency }: { product: Product; index: nu
         </div>
 
         {/* Product title */}
-        <p className="relative text-white/55 text-sm mb-3 leading-snug">{title}</p>
+        <p className="relative text-white/55 text-sm mb-3 leading-snug min-h-[2.625rem]">{title}</p>
 
         {/* Price */}
         <div className="relative mb-1 flex items-end gap-1.5">
@@ -253,9 +253,9 @@ function ProductCard({ product, index, currency }: { product: Product; index: nu
       </div>
 
       {/* Body */}
-      <div className="flex flex-col gap-4 p-3">
+      <div className="flex-1 flex flex-col gap-4 p-3">
         {/* Description */}
-        <p className="text-white/40 text-sm leading-relaxed">{description}</p>
+        <p className="text-white/40 text-sm leading-relaxed min-h-[5.25rem]">{description}</p>
 
         {/* Separator */}
         <div className="flex items-center gap-3">
@@ -277,7 +277,7 @@ function ProductCard({ product, index, currency }: { product: Product; index: nu
         {/* CTA */}
         <Link
           href={`/contact?ref=${product.id}`}
-          className="block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200"
+          className="mt-auto block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200"
         >
           {t("purchase")}
         </Link>
