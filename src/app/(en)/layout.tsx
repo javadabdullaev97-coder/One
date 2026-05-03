@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
+import { GtmScript, GtmNoScript } from "@/components/Analytics";
 
 const SITE_URL = "https://www.advizenco.com";
 
@@ -135,8 +136,10 @@ export default async function EnLayout({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <GtmScript />
       </head>
       <body className="min-h-full flex flex-col relative">
+        <GtmNoScript />
         <NextIntlClientProvider>
           <LoadingScreen />
           <ScrollProgress />
