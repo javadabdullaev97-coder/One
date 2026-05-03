@@ -7,6 +7,7 @@ import { FileText, Users, Calculator, Scale, BarChart2, ShieldCheck, ArrowRight 
 import { useTranslations, useLocale } from "next-intl";
 import MagneticButton from "@/components/MagneticButton";
 import CheckoutModal from "@/components/CheckoutModal";
+import FaqSection from "@/components/FaqSection";
 import { cn } from "@/lib/utils";
 
 /* ── Types ──────────────────────────────────────────── */
@@ -352,6 +353,8 @@ export default function StorePage() {
           </AnimatePresence>
         </div>
       </section>
+
+      <FaqSection namespace="TemplatesFAQ" />
 
       {/* ── CTA strip ── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.06] relative overflow-hidden">
