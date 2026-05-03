@@ -35,8 +35,7 @@ const localeMetadata: Record<Locale, { title: string; description: string; ogLoc
 };
 
 function localePath(path: string, locale: string) {
-  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-  return `${SITE_URL}${prefix}${path}`;
+  return `${SITE_URL}/${locale}${path}`;
 }
 
 const syne = Josefin_Sans({
