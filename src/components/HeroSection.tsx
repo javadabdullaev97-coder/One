@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 hero-image-enter">
         <Image
-          src="/Hero and CTA images/Hero Background.webp"
+          src="/industries/Hero Background.png"
           alt=""
           fill
           priority
