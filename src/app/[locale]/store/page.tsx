@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from "next-intl";
 import MagneticButton from "@/components/MagneticButton";
 import CheckoutModal from "@/components/CheckoutModal";
 import { cn } from "@/lib/utils";
+import FaqSection from "@/components/FaqSection";
 
 /* ── Types ─────────────────────────────────── */
 
@@ -151,7 +152,7 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
           onClick={() => onPurchase(product, title)}
           className="mt-auto block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          {t("purchase")}
+          {t("card.purchase")}
         </button>
       </div>
     </motion.div>
@@ -377,6 +378,8 @@ export default function StorePage() {
           </motion.div>
         </div>
       </section>
+
+      <FaqSection page="store" />
 
       <CheckoutModal
         open={!!checkout}

@@ -12,6 +12,7 @@ import AdvisorySection from "@/components/expertise/AdvisorySection";
 import OperationsSection from "@/components/expertise/OperationsSection";
 import { industryGroups, allEngagements } from "@/lib/industries";
 import { cn } from "@/lib/utils";
+import FaqSection from "@/components/FaqSection";
 
 function StatCounter({ to, prefix = "", suffix = "" }: { to: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -410,6 +411,7 @@ export default function ExpertisePage() {
           </AnimatedSection>
         </div>
       </section>
+      <FaqSection page="expertise" />
     </>
   );
 }

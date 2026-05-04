@@ -17,6 +17,7 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import UzbekistanMap from "@/components/UzbekistanMap";
 import DisciplinesIntegration from "@/components/DisciplinesIntegration";
 import InsightsSection from "@/components/InsightsSection";
+import FaqSection from "@/components/FaqSection";
 
 /* ── Region data ───────────────────────── */
 
@@ -437,6 +438,7 @@ export default function Home() {
           </Parallax>
         </div>
       </section>
+      <FaqSection page="home" />
     </>
   );
 }
