@@ -17,13 +17,13 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 hero-image-enter">
         <Image
-          src="/industries/Hero Background.png"
+          src="/Hero and CTA images/hero new.webp"
           alt=""
           fill
           priority
           unoptimized
           className="object-cover"
-          style={{ objectPosition: "50% 0%", transform: "scale(1.4) translateY(-8%)", transformOrigin: "50% 50%" }}
+          style={{ objectPosition: "50% 0%" }}
           aria-hidden
         />
       </div>
