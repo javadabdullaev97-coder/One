@@ -152,7 +152,7 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
           onClick={() => onPurchase(product, title)}
           className="mt-auto block w-full rounded-lg bg-primary hover:bg-primary-light py-2.5 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          {t("card.purchase")}
+          {t("purchase")}
         </button>
       </div>
     </motion.div>
