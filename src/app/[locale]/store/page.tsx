@@ -7,10 +7,9 @@ import { FileText, Users, Calculator, Scale, BarChart2, ShieldCheck, ArrowRight 
 import { useTranslations, useLocale } from "next-intl";
 import MagneticButton from "@/components/MagneticButton";
 import CheckoutModal from "@/components/CheckoutModal";
-import FaqSection from "@/components/FaqSection";
 import { cn } from "@/lib/utils";
 
-/* ── Types ──────────────────────────────────────────── */
+/* ── Types ─────────────────────────────────── */
 
 type Currency = "USD" | "UZS";
 
@@ -21,7 +20,7 @@ interface Product {
   updated: string;
 }
 
-/* ── Constants ──────────────────────────────────────────── */
+/* ── Constants ─────────────────────────────── */
 
 const CATEGORIES = ["All", "Company Formation", "Legal", "HR", "Tax", "Compliance", "Finance"] as const;
 const UZS_RATE = 12750;
@@ -35,7 +34,7 @@ const CATEGORY_META: Record<string, { icon: React.ReactNode }> = {
   "Finance":           { icon: <BarChart2 className="w-3 h-3" /> },
 };
 
-/* ── Data ──────────────────────────────────────────────── */
+/* ── Data ─────────────────────────────────── */
 
 const products: Product[] = [
   { id: "llc-formation",        category: "Company Formation", price: 299, updated: "Mar 2025" },
@@ -52,7 +51,7 @@ const products: Product[] = [
   { id: "due-diligence-pack",   category: "Finance",           price: 499, updated: "Mar 2026" },
 ];
 
-/* ── Helpers ──────────────────────────────────────────── */
+/* ── Helpers ───────────────────────────────── */
 
 function formatPrice(price: number, currency: Currency, locale: string): { main: string; suffix: string } {
   if (currency === "USD") {
@@ -63,7 +62,7 @@ function formatPrice(price: number, currency: Currency, locale: string): { main:
   return { main: rounded.toLocaleString("en-US"), suffix };
 }
 
-/* ── Product card ────────────────────────────────────────────── */
+/* ── Product card ─────────────────────────────── */
 
 function ProductCard({ product, index, currency, onPurchase }: { product: Product; index: number; currency: Currency; onPurchase: (p: Product, title: string) => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -159,7 +158,7 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
   );
 }
 
-/* ── Store filters ────────────────────────────────────────────── */
+/* ── Store filters ────────────────────────────── */
 
 function StoreFilters({
   activeCategory, onCategoryChange,
@@ -228,7 +227,7 @@ function StoreFilters({
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────────────────────────────────────── */
+/* ── Page ─────────────────────────────────────────────────────────────────── */
 
 export default function StorePage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -353,8 +352,6 @@ export default function StorePage() {
           </AnimatePresence>
         </div>
       </section>
-
-      <FaqSection namespace="TemplatesFAQ" />
 
       {/* ── CTA strip ── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.06] relative overflow-hidden">
