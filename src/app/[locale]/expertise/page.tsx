@@ -12,7 +12,6 @@ import AdvisorySection from "@/components/expertise/AdvisorySection";
 import OperationsSection from "@/components/expertise/OperationsSection";
 import { industryGroups, allEngagements } from "@/lib/industries";
 import { cn } from "@/lib/utils";
-import FaqSection from "@/components/FaqSection";
 
 function StatCounter({ to, prefix = "", suffix = "" }: { to: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -75,7 +74,7 @@ function StatsSection() {
   );
 }
 
-// ─── Industries ────────────────────────────────
+// ─── Industries ────────────────
 
 function IndustriesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -256,7 +255,7 @@ function IndustriesSection() {
   );
 }
 
-// ─── Track record ────────────────────────────────
+// ─── Track record ────────────────
 
 function TrackRecord() {
   const t = useTranslations("ExpertisePage.trackRecord");
@@ -329,7 +328,7 @@ function TrackRecord() {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────
+// ─── Page ───────────────────────────────────────────────────
 
 export default function ExpertisePage() {
   const tHero = useTranslations("ExpertisePage.hero");
@@ -384,8 +383,6 @@ export default function ExpertisePage() {
       <OperationsSection />
       <IndustriesSection />
       <TrackRecord />
-
-      <FaqSection namespace="ExpertiseFAQ" />
 
       {/* ── CTA ── */}
       <section className="py-24 md:py-32 bg-black relative overflow-hidden">
