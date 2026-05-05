@@ -287,7 +287,7 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
       },
       {
         q: "Sotib olgandan so'ng shablonlar qanday yetkaziladi?",
-        a: "To'lov tasdiqlanganidan so'ng siz tanlagan formatdagi (DOCX yoki PDF) shablon fayllarini yuklab olish uchun darhol havola olasiz. Shablonlar shaxsiy va tashkiliy foydalanish uchun taqdim etidi.",
+        a: "To'lov tasdiqlanganidan so'ng siz tanlagan formatdagi (DOCX yoki PDF) shablon fayllarini yuklab olish uchun darhol havola olasiz. Shablonlar shaxsiy va tashkiliy foydalanish uchun taqdim etiladi.",
       },
     ],
   },
