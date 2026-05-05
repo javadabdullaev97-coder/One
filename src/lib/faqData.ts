@@ -21,6 +21,26 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
         q: "How do I start working with Advizen Consulting?",
         a: "Schedule a consultation through our contact page. We will discuss your needs, identify where we can add the most value, and propose a tailored scope of engagement.",
       },
+      {
+        q: "What business structures are available in Uzbekistan?",
+        a: "The most common forms are the Limited Liability Company (LLC / MChJ), Joint-Stock Company (JSC / AJ), Branch Office, and Representative Office. LLCs are the preferred vehicle for most foreign investors due to their flexible governance and straightforward registration. Branches and representative offices suit companies that want a local presence without establishing a separate legal entity.",
+      },
+      {
+        q: "Can foreign investors own 100% of a company in Uzbekistan?",
+        a: "Yes. Uzbekistan permits 100% foreign ownership in the vast majority of sectors. The Law on Foreign Investment guarantees equal rights with domestic investors, protection against nationalisation, and the right to repatriate profits. Certain regulated sectors — such as banking, media, and telecommunications — may require additional licensing or impose ownership thresholds, but these are the exception rather than the rule.",
+      },
+      {
+        q: "What are the main tax rates in Uzbekistan?",
+        a: "The key rates for businesses operating in Uzbekistan: corporate profit tax — 15%; VAT — 12%; personal income tax — 12% (flat rate); social tax — 12% (employer contribution). Companies operating in Special Economic Zones or qualifying as small businesses may benefit from reduced rates or full tax holidays. Advizen Consulting provides tax structuring advice to identify the most efficient regime for your specific structure.",
+      },
+      {
+        q: "How long does company registration take in Uzbekistan?",
+        a: "An LLC can be registered within 1–3 business days through Uzbekistan's unified e-government portal. Full operational readiness — including tax registration, corporate bank account opening, and statutory document preparation — typically takes 1–3 weeks depending on the bank and the complexity of the corporate structure. Advizen Consulting manages the entire process end-to-end.",
+      },
+      {
+        q: "Does Advizen Consulting work with foreign companies and international investors?",
+        a: "Yes — foreign investors and multinationals account for a significant share of our client base. We regularly advise on market entry structuring, cross-border transactions, transfer pricing, and regulatory compliance for companies from Europe, the Gulf, Asia, and the CIS entering the Uzbekistan and Central Asia markets.",
+      },
     ],
     ru: [
       {
@@ -39,6 +59,26 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
         q: "Как начать сотрудничество с Advizen Consulting?",
         a: "Запишитесь на консультацию через страницу контактов. Мы обсудим ваши потребности, определим области, где можем принести наибольшую ценность, и предложим индивидуальный объём услуг.",
       },
+      {
+        q: "Какие организационно-правовые формы доступны в Узбекистане?",
+        a: "Наиболее распространённые формы — Общество с ограниченной ответственностью (ООО / MChJ), Акционерное общество (АО / AJ), Филиал и Представительство. Для большинства иностранных инвесторов ООО является предпочтительной формой благодаря гибкому управлению и простой регистрации. Филиалы и представительства подходят компаниям, желающим присутствовать на рынке без создания отдельного юридического лица.",
+      },
+      {
+        q: "Может ли иностранный инвестор владеть 100% компании в Узбекистане?",
+        a: "Да. Узбекистан допускает 100% иностранное владение в большинстве секторов. Закон об иностранных инвестициях гарантирует равные права с отечественными инвесторами, защиту от национализации и право на репатриацию прибыли. Ряд регулируемых отраслей — банковская сфера, СМИ, телекоммуникации — может предусматривать лицензионные требования или пороги владения, однако это скорее исключения.",
+      },
+      {
+        q: "Каковы основные налоговые ставки в Узбекистане?",
+        a: "Ключевые ставки для бизнеса в Узбекистане: налог на прибыль — 15%; НДС — 12%; подоходный налог с физических лиц — 12% (плоская ставка); социальный налог — 12% (взнос работодателя). Компании в Специальных экономических зонах или со статусом малого бизнеса могут пользоваться льготными ставками или налоговыми каникулами. Advizen Consulting консультирует по налоговому структурированию для выбора наиболее эффективного режима.",
+      },
+      {
+        q: "Сколько времени занимает регистрация компании в Узбекистане?",
+        a: "ООО можно зарегистрировать за 1–3 рабочих дня через единый портал электронного правительства. Полная операционная готовность — включая постановку на налоговый учёт, открытие корпоративного банковского счёта и подготовку уставных документов — как правило, занимает 1–3 недели в зависимости от банка и сложности структуры. Advizen Consulting сопровождает весь процесс под ключ.",
+      },
+      {
+        q: "Работает ли Advizen Consulting с иностранными компаниями и международными инвесторами?",
+        a: "Да — иностранные инвесторы и транснациональные компании составляют значительную часть нашей клиентской базы. Мы регулярно консультируем по структурированию выхода на рынок, трансграничным сделкам, трансфертному ценообразованию и регуляторному комплаенсу для компаний из Европы, Персидского залива, Азии и СНГ, входящих на рынки Узбекистана и Центральной Азии.",
+      },
     ],
     uz: [
       {
@@ -56,6 +96,26 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
       {
         q: "Advizen Consulting bilan hamkorlikni qanday boshlash mumkin?",
         a: "Kontakt sahifamiz orqali maslahat uchrashuvini belgilang. Biz sizning ehtiyojlaringizni muhokama qilamiz, eng ko'p qiymat qo'sha oladigan sohalarni aniqlaymiz va moslashtirilgan hamkorlik rejasini taklif etamiz.",
+      },
+      {
+        q: "O'zbekistonda qanday tashkiliy-huquqiy shakllar mavjud?",
+        a: "Eng keng tarqalgan shakllar: Mas'uliyati cheklangan jamiyat (MChJ), Aktsiyadorlik jamiyati (AJ), Filial va Vakilxona. Ko'pgina chet el investorlari uchun MChJ moslashuvchan boshqaruvi va oddiy ro'yxatdan o'tish tartibi tufayli afzal shakl hisoblanadi. Filial va vakilxonalar alohida yuridik shaxs tashkil etmasdan mahalliy mavjudlikni ta'minlashni istagan kompaniyalarga mos keladi.",
+      },
+      {
+        q: "Chet el investori O'zbekistondagi kompaniyaning 100% ulushiga ega bo'la oladimi?",
+        a: "Ha. O'zbekiston ko'pchilik sektorlarda 100% chet el mulkchiligiga ruxsat beradi. Chet el investitsiyalari to'g'risidagi qonun mahalliy investorlar bilan teng huquqlarni, milliylashtiruvdan himoyani va foyda eksportini kafolatlaydi. Bank sektori, OAV va telekommunikatsiya kabi tartibga solinadigan sohalarda litsenziya talablari yoki mulkchilik chegaralari bo'lishi mumkin, ammo bu istisnolar qatoriga kiradi.",
+      },
+      {
+        q: "O'zbekistondagi asosiy soliq stavkalari qanday?",
+        a: "O'zbekistonda faoliyat yurituvchi korxonalar uchun asosiy stavkalar: korporativ foyda solig'i — 15%; QQS — 12%; jismoniy shaxslardan daromad solig'i — 12% (yassi stavka); ijtimoiy soliq — 12% (ish beruvchi ulushi). Maxsus iqtisodiy zonalarda yoki kichik biznes maqomidagi kompaniyalar imtiyozli stavkalar yoki soliq ta'tillaridan foydalanishi mumkin. Advizen Consulting sizning tuzilmangiz uchun eng samarali soliq rejimini aniqlash bo'yicha maslahat beradi.",
+      },
+      {
+        q: "O'zbekistonda kompaniyani ro'yxatdan o'tkazish qancha vaqt oladi?",
+        a: "MChJ yagona elektron hukumat portali orqali 1–3 ish kuni ichida ro'yxatdan o'tkazilishi mumkin. Soliq hisobiga qo'yish, korporativ bank hisobini ochish va nizom hujjatlarini tayyorlashni o'z ichiga olgan to'liq operatsion tayyorlik bank va tuzilma murakkabligiga qarab odatda 1–3 hafta davom etadi. Advizen Consulting butun jarayonni boshidan oxirigacha boshqaradi.",
+      },
+      {
+        q: "Advizen Consulting chet el kompaniyalari va xalqaro investorlar bilan ishlaydimi?",
+        a: "Ha — chet el investorlari va transmilliy kompaniyalar mijozlarimizning katta qismini tashkil etadi. Biz Yevropa, Fors ko'rfazi, Osiyo va MDH davlatlaridan O'zbekiston va Markaziy Osiyo bozorlariga kirayotgan kompaniyalar uchun bozorga kirish tuzilmasini yaratish, chegaralararo bitimlar, transfer narxlash va tartibga solish muvofiqligini muntazam ravishda maslahatlashtiramiz.",
       },
     ],
   },
