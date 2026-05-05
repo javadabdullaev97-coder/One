@@ -253,6 +253,18 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
         q: "How are templates delivered after purchase?",
         a: "After payment is confirmed, you receive an immediate download link to the template files in your chosen format (DOCX or PDF). Templates are available for personal and organisational use.",
       },
+      {
+        q: "Are templates available in Russian and Uzbek, or only in English?",
+        a: "Templates are available primarily in Russian and Uzbek — the working languages of Uzbek courts, regulators, and tax authorities. English versions are available on request for selected templates, typically as bilingual documents (Russian/English or Uzbek/English) suited for foreign-investor-facing transactions.",
+      },
+      {
+        q: "Do you update templates when Uzbek legislation changes?",
+        a: "Yes. Our legal and tax teams continuously monitor amendments to the Tax Code, Labour Code, Civil Code, and key regulatory acts. Templates are revised and re-issued whenever a substantive change affects the document. Customers who purchased a template within the last 12 months receive updated versions free of charge.",
+      },
+      {
+        q: "Can Advizen Consulting draft a custom document for my specific needs?",
+        a: "Yes. If your situation requires a bespoke document — a non-standard transaction structure, a sector-specific regulatory filing, or a multilingual contract with cross-border elements — our advisory team can draft it from scratch or substantially adapt an existing template. Reach out via the contact page and we will scope the work and provide a fixed quote.",
+      },
     ],
     ru: [
       {
@@ -271,6 +283,18 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
         q: "Как доставляются шаблоны после покупки?",
         a: "После подтверждения оплаты вы получаете ссылку для немедленной загрузки файлов шаблона в выбранном формате (DOCX или PDF). Шаблоны доступны для личного и корпоративного использования.",
       },
+      {
+        q: "Доступны ли шаблоны на русском и узбекском, или только на английском?",
+        a: "Шаблоны доступны в первую очередь на русском и узбекском языках — рабочих языках узбекских судов, регуляторов и налоговых органов. Английские версии предоставляются по запросу для отдельных шаблонов, обычно в формате двуязычных документов (русский/английский или узбекский/английский), подходящих для сделок с участием иностранных инвесторов.",
+      },
+      {
+        q: "Обновляете ли вы шаблоны при изменении узбекского законодательства?",
+        a: "Да. Наша юридическая и налоговая команда непрерывно отслеживает изменения в Налоговом кодексе, Трудовом кодексе, Гражданском кодексе и ключевых регуляторных актах. Шаблоны пересматриваются и перевыпускаются при любом существенном изменении, затрагивающем документ. Клиенты, купившие шаблон в течение последних 12 месяцев, получают обновлённые версии бесплатно.",
+      },
+      {
+        q: "Может ли Advizen Consulting подготовить документ под мою конкретную задачу?",
+        a: "Да. Если ситуация требует индивидуального документа — нестандартной структуры сделки, отраслевой регуляторной заявки или многоязычного договора с трансграничными элементами — наша консалтинговая команда подготовит его с нуля или существенно адаптирует существующий шаблон. Свяжитесь с нами через страницу контактов: мы определим объём работ и предоставим фиксированную стоимость.",
+      },
     ],
     uz: [
       {
@@ -288,6 +312,18 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
       {
         q: "Sotib olgandan so'ng shablonlar qanday yetkaziladi?",
         a: "To'lov tasdiqlanganidan so'ng siz tanlagan formatdagi (DOCX yoki PDF) shablon fayllarini yuklab olish uchun darhol havola olasiz. Shablonlar shaxsiy va tashkiliy foydalanish uchun taqdim etiladi.",
+      },
+      {
+        q: "Shablonlar rus va o'zbek tillarida mavjudmi yoki faqat ingliz tilidami?",
+        a: "Shablonlar birinchi navbatda rus va o'zbek tillarida mavjud — bu O'zbekiston sudlari, tartibga soluvchi va soliq organlarining ish tillari. Tanlangan shablonlar uchun ingliz tilidagi versiyalar so'rov asosida taqdim etiladi, odatda chet el investorlari ishtirokidagi bitimlar uchun mos ikki tilli (rus/ingliz yoki o'zbek/ingliz) hujjatlar shaklida.",
+      },
+      {
+        q: "O'zbekiston qonunchiligi o'zgarganda shablonlarni yangilaysizmi?",
+        a: "Ha. Yuridik va soliq jamoalarimiz Soliq kodeksi, Mehnat kodeksi, Fuqarolik kodeksi va asosiy tartibga soluvchi hujjatlardagi o'zgartirishlarni doimiy ravishda kuzatib boradi. Hujjatga ta'sir qiladigan har qanday muhim o'zgarishda shablonlar qayta ko'rib chiqilib qayta chiqariladi. So'nggi 12 oy ichida shablon sotib olgan mijozlar yangilangan versiyalarni bepul oladilar.",
+      },
+      {
+        q: "Advizen Consulting mening aniq vazifalarim uchun maxsus hujjat tayyorlay oladimi?",
+        a: "Ha. Agar vaziyat individual hujjatni talab qilsa — nostandart bitim tuzilmasi, tarmoq bo'yicha tartibga soluvchi ariza yoki chegaralararo elementlarga ega ko'p tilli shartnoma — maslahat jamoamiz uni noldan tayyorlaydi yoki mavjud shablonni jiddiy ravishda moslashtiradi. Kontakt sahifamiz orqali biz bilan bog'laning: ish hajmini aniqlab, qat'iy narxni taklif qilamiz.",
       },
     ],
   },
