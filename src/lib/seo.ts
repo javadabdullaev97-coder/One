@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getArticleBySlug } from "./articles";
+import { servicesData } from "./services";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -296,6 +297,35 @@ const BREADCRUMB_LABELS: Record<Locale, { home: string } & Partial<Record<PageKe
     contact: "Bog'lanish",
   },
 };
+
+export function expertiseServicesJsonLd(locale: string) {
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const expertiseUrl = pagePath("expertise", safe);
+  return {
+    "@context": "https://schema.org",
+    "@graph": servicesData.map((s) => ({
+      "@type": "Service",
+      "@id": `${expertiseUrl}#service-${s.slug}`,
+      name: s.title,
+      description: s.description.join(" "),
+      serviceType: s.category,
+      url: expertiseUrl,
+      provider: { "@id": `${SITE_URL}#organization` },
+      areaServed: [
+        { "@type": "Country", name: "Uzbekistan" },
+        { "@type": "Place",   name: "Central Asia" },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: `${s.title} — Capabilities`,
+        itemListElement: s.capabilities.map((cap) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: cap },
+        })),
+      },
+    })),
+  };
+}
 
 export function pageBreadcrumbJsonLd(key: PageKey, locale: string) {
   const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
