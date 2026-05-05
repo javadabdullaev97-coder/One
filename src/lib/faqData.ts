@@ -6,55 +6,55 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
   home: {
     en: [
       {
-        q: "What is ONE?",
-        a: "ONE is a premier business advisory firm based in Tashkent, Uzbekistan, offering integrated consulting across tax, legal, finance, accounting, and HR — a single point of contact for your entire operation in Central Asia.",
+        q: "What is Advizen Consulting?",
+        a: "Advizen Consulting is a premier business advisory firm based in Tashkent, Uzbekistan, offering integrated consulting across tax, legal, finance, accounting, and HR — a single point of contact for your entire operation in Central Asia.",
       },
       {
         q: "Which markets do you serve?",
         a: "Our primary focus is Uzbekistan, with deep expertise across Central Asian markets. We advise foreign investors, multinationals, and local companies entering or operating in the region.",
       },
       {
-        q: "What makes ONE different from other consultancies?",
+        q: "What makes Advizen Consulting different from other consultancies?",
         a: "We combine seven advisory disciplines and seven managed operations services under one roof — giving clients a fully integrated practice rather than fragmented point solutions across multiple firms.",
       },
       {
-        q: "How do I start working with ONE?",
+        q: "How do I start working with Advizen Consulting?",
         a: "Schedule a consultation through our contact page. We will discuss your needs, identify where we can add the most value, and propose a tailored scope of engagement.",
       },
     ],
     ru: [
       {
-        q: "Что такое ONE?",
-        a: "ONE — ведущая консалтинговая компания, базирующаяся в Ташкенте, Узбекистан. Мы предоставляем интегрированные услуги в области налогов, юридического сопровождения, финансов, бухгалтерии и HR — единая точка контакта для всей вашей деятельности в Центральной Азии.",
+        q: "Что такое Advizen Consulting?",
+        a: "Advizen Consulting — ведущая консалтинговая компания, базирующаяся в Ташкенте, Узбекистан. Мы предоставляем интегрированные услуги в области налогов, юридического сопровождения, финансов, бухгалтерии и HR — единая точка контакта для всей вашей деятельности в Центральной Азии.",
       },
       {
         q: "На каких рынках вы работаете?",
         a: "Наш основной фокус — Узбекистан и рынки Центральной Азии. Мы консультируем иностранных инвесторов, международные компании и местные предприятия, работающие в регионе или планирующие выход на него.",
       },
       {
-        q: "Чем ONE отличается от других консалтинговых компаний?",
+        q: "Чем Advizen Consulting отличается от других консалтинговых компаний?",
         a: "Мы объединяем семь консалтинговых направлений и семь операционных сервисов под одной крышей — предоставляя клиентам полностью интегрированную практику вместо разрозненных решений от разных фирм.",
       },
       {
-        q: "Как начать сотрудничество с ONE?",
+        q: "Как начать сотрудничество с Advizen Consulting?",
         a: "Запишитесь на консультацию через страницу контактов. Мы обсудим ваши потребности, определим области, где можем принести наибольшую ценность, и предложим индивидуальный объём услуг.",
       },
     ],
     uz: [
       {
-        q: "ONE nima?",
-        a: "ONE — Toshkent, O'zbekistonda joylashgan yetakchi biznes maslahat kompaniyasi bo'lib, soliq, yuridik, moliya, buxgalteriya va HR sohalari bo'yicha integratsiyalashgan xizmatlar ko'rsatadi. Markaziy Osiyodagi biznesingiz uchun yagona muloqot nuqtasi.",
+        q: "Advizen Consulting nima?",
+        a: "Advizen Consulting — Toshkent, O'zbekistonda joylashgan yetakchi biznes maslahat kompaniyasi bo'lib, soliq, yuridik, moliya, buxgalteriya va HR sohalari bo'yicha integratsiyalashgan xizmatlar ko'rsatadi. Markaziy Osiyodagi biznesingiz uchun yagona muloqot nuqtasi.",
       },
       {
         q: "Qaysi bozorlarda xizmat ko'rsatasiz?",
         a: "Biz asosan O'zbekiston va Markaziy Osiyo bozorlariga e'tibor qaratamiz. Chet el investorlari, xalqaro kompaniyalar va mintaqada faoliyat yuritayotgan yoki kirib kelayotgan mahalliy firmalar bilan ishlashda keng tajribamiz bor.",
       },
       {
-        q: "ONE boshqa konsalting kompaniyalaridan qanday farq qiladi?",
+        q: "Advizen Consulting boshqa konsalting kompaniyalaridan qanday farq qiladi?",
         a: "Biz yetti maslahat yo'nalishi va yetti operatsion xizmatni bir tomdan birlashtirgan holda mijozlarga turli firmalardan tarqoq yechimlar o'rniga to'liq integratsiyalashgan amaliyot taqdim etamiz.",
       },
       {
-        q: "ONE bilan hamkorlikni qanday boshlash mumkin?",
+        q: "Advizen Consulting bilan hamkorlikni qanday boshlash mumkin?",
         a: "Kontakt sahifamiz orqali maslahat uchrashuvini belgilang. Biz sizning ehtiyojlaringizni muhokama qilamiz, eng ko'p qiymat qo'sha oladigan sohalarni aniqlaymiz va moslashtirilgan hamkorlik rejasini taklif etamiz.",
       },
     ],
@@ -62,7 +62,7 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
   expertise: {
     en: [
       {
-        q: "What advisory disciplines does ONE offer?",
+        q: "What advisory disciplines does Advizen Consulting offer?",
         a: "We offer seven integrated disciplines: tax consulting, legal advisory, accounting, HR services, funding, M&A advisory, and due diligence — all delivered by one coordinated team.",
       },
       {
@@ -80,7 +80,7 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
     ],
     ru: [
       {
-        q: "Какие консалтинговые направления предлагает ONE?",
+        q: "Какие консалтинговые направления предлагает Advizen Consulting?",
         a: "Мы предлагаем семь интегрированных направлений: налоговый консалтинг, юридическое сопровождение, бухгалтерия, HR-услуги, финансирование, консультирование по M&A и due diligence — всё от одной слаженной команды.",
       },
       {
@@ -98,7 +98,7 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
     ],
     uz: [
       {
-        q: "ONE qanday maslahat yo'nalishlarini taklif etadi?",
+        q: "Advizen Consulting qanday maslahat yo'nalishlarini taklif etadi?",
         a: "Biz yetti integratsiyalashgan yo'nalish taklif etamiz: soliq konsaltingi, yuridik maslahat, buxgalteriya, HR xizmatlari, moliyalashtirish, M&A maslahat va due diligence — barchasi bir muvofiqlashtirilgan jamoa tomonidan amalga oshiriladi.",
       },
       {
