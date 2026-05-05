@@ -201,6 +201,68 @@ const PAGE_PATHS = {
 export type PageKey = keyof typeof PAGE_PATHS;
 export { OG_IMAGE };
 
+const STORE_PRODUCTS = [
+  { id: "llc-formation",          name: "LLC Formation Package",                category: "Company Formation", price: 299 },
+  { id: "jsc-formation",          name: "JSC Formation Package",                category: "Company Formation", price: 449 },
+  { id: "shareholder-agreement",  name: "Shareholder Agreement Template",       category: "Legal",             price: 279 },
+  { id: "nda-bilateral",          name: "Bilateral NDA Template",               category: "Legal",             price: 39  },
+  { id: "commercial-lease",       name: "Commercial Lease Agreement",           category: "Legal",             price: 89  },
+  { id: "employment-contract",    name: "Employment Contract Template",         category: "HR",                price: 59  },
+  { id: "hr-policy-manual",       name: "HR Policy Manual",                     category: "HR",                price: 199 },
+  { id: "tax-compliance-starter", name: "Tax Compliance Starter Pack",          category: "Tax",               price: 249 },
+  { id: "transfer-pricing",       name: "Transfer Pricing Documentation Pack",  category: "Tax",               price: 399 },
+  { id: "work-permit-pack",       name: "Work Permit Application Pack",         category: "Compliance",        price: 119 },
+  { id: "sez-entry-pack",         name: "SEZ Entry Pack",                       category: "Compliance",        price: 449 },
+  { id: "due-diligence-pack",     name: "Due Diligence Pack",                   category: "Finance",           price: 499 },
+];
+
+export function storeJsonLd() {
+  const storeUrl = `${SITE_URL}/store`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Business Document Templates — Advizen Consulting",
+    description: "Lawyer-drafted business document templates for companies operating in Uzbekistan.",
+    url: storeUrl,
+    itemListElement: STORE_PRODUCTS.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        "@id": `${storeUrl}#${p.id}`,
+        name: p.name,
+        description: `${p.category} document template for businesses in Uzbekistan. Editable Word format.`,
+        url: storeUrl,
+        brand: { "@type": "Brand", name: ORG_NAME },
+        offers: {
+          "@type": "Offer",
+          price: p.price,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          seller: { "@id": `${SITE_URL}#organization` },
+        },
+        category: p.category,
+      },
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(slug: string, locale: string) {
+  const article = getArticleBySlug(slug, locale);
+  if (!article) return null;
+  const homeUrl = locale === routing.defaultLocale ? SITE_URL : `${SITE_URL}/${locale}`;
+  const insightsUrl = `${homeUrl}/insights`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home",     item: homeUrl },
+      { "@type": "ListItem", position: 2, name: "Insights", item: insightsUrl },
+      { "@type": "ListItem", position: 3, name: article.title, item: articleUrl(slug, locale) },
+    ],
+  };
+}
+
 const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description: string }>> = {
   expertise: {
     en: {

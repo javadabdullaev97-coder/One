@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllPublicationSlugs } from "@/lib/publications";
-import { articleMetadata, articleJsonLd } from "@/lib/seo";
+import { articleMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import ArticlePageClient from "./ArticlePageClient";
 
 export function generateStaticParams() {
@@ -25,6 +25,7 @@ export default async function ArticlePage({
 }) {
   const { slug, locale } = await params;
   const jsonLd = articleJsonLd(slug, locale);
+  const breadcrumb = breadcrumbJsonLd(slug, locale);
 
   return (
     <>
@@ -32,6 +33,12 @@ export default async function ArticlePage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      {breadcrumb && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
         />
       )}
       <ArticlePageClient slug={slug} />
