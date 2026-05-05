@@ -276,6 +276,43 @@ export function breadcrumbJsonLd(slug: string, locale: string) {
   };
 }
 
+const BREADCRUMB_LABELS: Record<Locale, { home: string } & Partial<Record<PageKey, string>>> = {
+  en: {
+    home: "Home",
+    expertise: "Expertise",
+    store: "Store",
+    contact: "Contact",
+  },
+  ru: {
+    home: "Главная",
+    expertise: "Услуги",
+    store: "Магазин",
+    contact: "Контакты",
+  },
+  uz: {
+    home: "Bosh sahifa",
+    expertise: "Xizmatlar",
+    store: "Do'kon",
+    contact: "Bog'lanish",
+  },
+};
+
+export function pageBreadcrumbJsonLd(key: PageKey, locale: string) {
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const labels = BREADCRUMB_LABELS[safe];
+  const homeUrl = safe === routing.defaultLocale ? SITE_URL : `${SITE_URL}/${safe}`;
+  const pageLabel = labels[key];
+  if (!pageLabel) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: labels.home, item: homeUrl },
+      { "@type": "ListItem", position: 2, name: pageLabel,   item: pagePath(key, safe) },
+    ],
+  };
+}
+
 const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description: string }>> = {
   expertise: {
     en: {
