@@ -9,7 +9,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
-import { organizationJsonLd, OG_IMAGE } from "@/lib/seo";
+import { organizationJsonLd, websiteJsonLd, OG_IMAGE } from "@/lib/seo";
 import CookieBanner from "@/components/CookieBanner";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -114,6 +114,10 @@ export default async function EnLayout({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <GtmScript />
       </head>

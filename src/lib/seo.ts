@@ -27,6 +27,19 @@ const SERVICE_CATALOG = [
   { name: "Corporate Services", description: "Registered office, virtual office, nominee directors and ongoing corporate housekeeping for foreign-owned entities." },
 ];
 
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}#website`,
+  url: SITE_URL,
+  name: ORG_NAME,
+  alternateName: "Advizen",
+  description:
+    "Premier business consulting firm in Uzbekistan offering integrated tax, legal, finance, accounting, and HR services across Central Asia.",
+  inLanguage: ["en", "ru", "uz"],
+  publisher: { "@id": `${SITE_URL}#organization` },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
