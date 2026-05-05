@@ -6,6 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 const SITE_URL = "https://www.advizenco.com";
 const ORG_NAME = "Advizen Consulting";
 const ORG_LOGO = `${SITE_URL}/Advizen Logo/android-chrome-512x512.png`;
+const OG_IMAGE = `${SITE_URL}/Advizen Logo/OG-clean.png`;
 
 const OG_LOCALE: Record<Locale, string> = {
   en: "en_US",
@@ -198,6 +199,7 @@ const PAGE_PATHS = {
 } as const;
 
 export type PageKey = keyof typeof PAGE_PATHS;
+export { OG_IMAGE };
 
 const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description: string }>> = {
   expertise: {
@@ -382,11 +384,13 @@ export function pageMetadata(key: PageKey, locale: string): Metadata {
       url: canonical,
       siteName: ORG_NAME,
       locale: OG_LOCALE[safe],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: ORG_NAME }],
     },
     twitter: {
       card: "summary_large_image",
       title: c.title,
       description: c.description,
+      images: [OG_IMAGE],
     },
   };
 }

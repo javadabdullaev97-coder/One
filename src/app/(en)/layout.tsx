@@ -9,7 +9,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
-import { organizationJsonLd } from "@/lib/seo";
+import { organizationJsonLd, OG_IMAGE } from "@/lib/seo";
 
 const SITE_URL = "https://www.advizenco.com";
 
@@ -52,12 +52,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Advizen Consulting",
     url: SITE_URL,
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Advizen Consulting" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Advizen Consulting | Premier Business Advisory in Uzbekistan",
     description:
       "Advizen Consulting — your trusted partner for expert tax, legal, finance, accounting, HR, and business consulting in Uzbekistan. 8+ years of integrated advisory across 15+ industries in Central Asia.",
+    images: [OG_IMAGE],
   },
 };
 

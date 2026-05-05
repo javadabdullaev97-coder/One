@@ -10,7 +10,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
-import { organizationJsonLd } from "@/lib/seo";
+import { organizationJsonLd, OG_IMAGE } from "@/lib/seo";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -125,11 +125,13 @@ export async function generateMetadata({
       locale: m.ogLocale,
       siteName: "Advizen Consulting",
       url: canonical,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Advizen Consulting" }],
     },
     twitter: {
       card: "summary_large_image",
       title: m.title,
       description: m.description,
+      images: [OG_IMAGE],
     },
   };
 }
