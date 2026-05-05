@@ -11,6 +11,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
 import { organizationJsonLd, OG_IMAGE } from "@/lib/seo";
+import CookieBanner from "@/components/CookieBanner";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -156,6 +157,7 @@ export default async function LocaleLayout({
     >
       <head>
         <meta name="theme-color" content="#000000" />
+        <link rel="manifest" href="/Advizen Logo/site.webmanifest" />
         <script dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }} />
         <script
           type="application/ld+json"
@@ -174,6 +176,7 @@ export default async function LocaleLayout({
             <Footer />
           </div>
           <ScrollToTop />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>
