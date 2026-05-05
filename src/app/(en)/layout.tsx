@@ -105,6 +105,7 @@ export default async function EnLayout({ children }: { children: ReactNode }) {
       className={`h-full antialiased ${syne.variable} ${raleway.variable} ${inter.variable} ${interTight.variable} ${onest.variable}`}
     >
       <head>
+        <meta name="theme-color" content="#000000" />
         <script dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }} />
         <script
           type="application/ld+json"
