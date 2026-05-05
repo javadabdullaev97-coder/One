@@ -5,7 +5,7 @@ import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
 const ORG_NAME = "Advizen Consulting";
-const ORG_LOGO = `${SITE_URL}/Logo-v3.png`;
+const ORG_LOGO = `${SITE_URL}/Advizen Logo/android-chrome-512x512.png`;
 
 const OG_LOCALE: Record<Locale, string> = {
   en: "en_US",
@@ -91,7 +91,7 @@ function articleUrl(slug: string, locale: string) {
 }
 
 function articleImage(image: string | undefined) {
-  if (!image) return `${SITE_URL}/Logo-v3.png`;
+  if (!image) return `${SITE_URL}/Advizen Logo/android-chrome-512x512.png`;
   return image.startsWith("http") ? image : `${SITE_URL}${image}`;
 }
 
@@ -101,34 +101,32 @@ export function articleMetadata(slug: string, locale: string): Metadata {
 
   const url = articleUrl(slug, locale);
   const image = articleImage(article.image);
-  const title = `${article.title} | ${ORG_NAME}`;
-  const description = article.subtitle || article.description;
-
-  const languages = Object.fromEntries(
-    routing.locales.map((l: Locale) => [l, articleUrl(slug, l)]),
-  );
+  const ogLocale = OG_LOCALE[locale as Locale] ?? "en_US";
 
   return {
-    title,
-    description,
+    title: article.title,
+    description: article.description,
     alternates: {
       canonical: url,
-      languages: { ...languages, "x-default": articleUrl(slug, routing.defaultLocale) },
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, articleUrl(slug, l)])
+      ),
     },
     openGraph: {
-      title,
-      description,
+      title: article.title,
+      description: article.description,
       type: "article",
       url,
+      locale: ogLocale,
       siteName: ORG_NAME,
-      images: [{ url: image, width: 1200, height: 630, alt: article.title }],
       publishedTime: article.date,
-      authors: article.author ? [article.author] : undefined,
+      authors: [ORG_NAME],
+      images: [{ url: image, width: 1200, height: 630, alt: article.title }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: article.title,
+      description: article.description,
       images: [image],
     },
   };
@@ -145,235 +143,131 @@ export function articleJsonLd(slug: string, locale: string) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
-    description: article.subtitle || article.description,
-    image: [image],
+    description: article.description,
+    image,
     datePublished: article.date,
     dateModified: article.date,
+    url,
+    inLanguage: locale,
     author: {
       "@type": "Organization",
-      name: article.author || ORG_NAME,
+      name: ORG_NAME,
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: ORG_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: ORG_LOGO,
-      },
+      logo: { "@type": "ImageObject", url: ORG_LOGO },
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url,
-    },
-    inLanguage: locale,
-    articleSection: article.category,
-    keywords: [article.category, article.tag, "Uzbekistan", "Tashkent"].filter(Boolean),
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    articleSection: article.tags?.[0] ?? "Advisory",
+    keywords: article.tags?.join(", ") ?? "",
   };
 }
 
-const PAGE_PATHS = {
-  expertise: "/expertise",
-  store: "/store",
-  contact: "/contact",
-  insights: "/insights",
-  privacy: "/privacy",
-  terms: "/terms",
-  "terms-of-sale": "/terms-of-sale",
-  cookies: "/cookies",
-  disclaimer: "/disclaimer",
-} as const;
-
-export type PageKey = keyof typeof PAGE_PATHS;
-
-const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description: string }>> = {
+const PAGE_CONTENT: Record<string, Record<string, { title: string; description: string }>> = {
   expertise: {
     en: {
-      title: "Tax, Legal, HR & Accounting Services in Uzbekistan | Advizen Consulting",
+      title: "Our Expertise | Advizen Consulting",
       description:
-        "Integrated advisory across tax, legal, finance, accounting, HR and corporate services in Uzbekistan. Trusted by 80+ clients across 15+ industries in Central Asia.",
+        "Seven integrated advisory disciplines and seven managed operations services — tax, legal, accounting, HR, M&A, due diligence, and entity management in Uzbekistan.",
     },
     ru: {
-      title: "Налоги, право, HR и бухгалтерия в Узбекистане | Advizen Consulting",
+      title: "Наши компетенции | Advizen Consulting",
       description:
-        "Интегрированное консультирование по налогам, праву, финансам, бухгалтерии, HR и корпоративным услугам в Узбекистане. Доверяют 80+ клиентов в 15+ отраслях.",
+        "Семь интегрированных консалтинговых направлений и семь операционных сервисов — налоги, юридические услуги, бухгалтерия, HR, M&A, due diligence и корпоративный менеджмент в Узбекистане.",
     },
     uz: {
-      title: "O'zbekistonda soliq, huquq, HR va buxgalteriya | Advizen Consulting",
+      title: "Bizning tajribamiz | Advizen Consulting",
       description:
-        "O'zbekistonda soliq, huquq, moliya, buxgalteriya, HR va korporativ xizmatlar bo'yicha integratsiyalashgan konsalting. 15+ sohada 80+ mijoz ishonchini qozongan.",
+        "Yetti integratsiyalashgan maslahat yo'nalishi va yetti operatsion xizmat — soliq, huquqiy, buxgalteriya, HR, M&A, due diligence va korporativ boshqaruv O'zbekistonda.",
     },
   },
   store: {
     en: {
-      title: "Legal & Business Document Templates for Uzbekistan | Advizen Consulting",
+      title: "Document Templates | Advizen Consulting",
       description:
-        "Lawyer-drafted document templates for businesses in Uzbekistan — contracts, HR, compliance, tax forms, corporate filings. Instant download in editable Word format.",
+        "Ready-to-use legal, tax, HR, compliance, and finance document templates drafted for the Uzbek regulatory environment. Download instantly.",
     },
     ru: {
-      title: "Шаблоны правовых и бизнес-документов в Узбекистане | Advizen Consulting",
+      title: "Шаблоны документов | Advizen Consulting",
       description:
-        "Шаблоны документов для бизнеса в Узбекистане — договоры, HR, комплаенс, налоговые формы, корпоративные документы. Мгновенная загрузка в формате Word.",
+        "Готовые юридические, налоговые, HR, комплаенс и финансовые шаблоны документов для узбекской регуляторной среды. Скачайте сразу.",
     },
     uz: {
-      title: "O'zbekistonda biznes va huquqiy hujjat shablonlari | Advizen Consulting",
+      title: "Hujjat shablonlari | Advizen Consulting",
       description:
-        "O'zbekistonda biznes uchun huquqshunoslar tayyorlagan hujjat shablonlari — shartnomalar, HR, kompliayens, soliq formalari. Tez yuklab olish, Word formatida.",
-    },
-  },
-  contact: {
-    en: {
-      title: "Contact Advizen Consulting | Business Advisory in Tashkent, Uzbekistan",
-      description:
-        "Get in touch with Advizen Consulting in Tashkent. Discuss tax, legal, finance, HR, and corporate advisory needs in Uzbekistan and Central Asia.",
-    },
-    ru: {
-      title: "Контакты Advizen Consulting | Бизнес-консалтинг в Ташкенте",
-      description:
-        "Свяжитесь с Advizen Consulting в Ташкенте. Обсудите налоговое, правовое, финансовое, HR и корпоративное консультирование в Узбекистане и Центральной Азии.",
-    },
-    uz: {
-      title: "Advizen Consulting bilan bog'lanish | Toshkentda biznes konsalting",
-      description:
-        "Toshkentda Advizen Consulting bilan bog'laning. O'zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va korporativ konsalting masalalarini muhokama qiling.",
+        "O'zbek huquqiy muhiti uchun tayyor yuridik, soliq, HR, muvofiqlik va moliyaviy hujjat shablonlari. Darhol yuklab oling.",
     },
   },
   insights: {
     en: {
-      title: "Insights on Uzbekistan Business, Tax & Legal Updates | Advizen Consulting",
+      title: "Insights | Advizen Consulting",
       description:
-        "Expert analysis on tax, legal, finance, HR and regulatory developments in Uzbekistan and Central Asia from the Advizen Consulting advisory team.",
+        "Expert analysis, tax briefings, legal updates, and HR guidance on doing business in Uzbekistan and Central Asia.",
     },
     ru: {
-      title: "Аналитика по бизнесу, налогам и праву Узбекистана | Advizen Consulting",
+      title: "Инсайты | Advizen Consulting",
       description:
-        "Экспертная аналитика по налогам, праву, финансам, HR и регуляторным изменениям в Узбекистане и Центральной Азии от команды Advizen Consulting.",
+        "Экспертный анализ, налоговые брифинги, правовые обновления и HR-рекомендации по ведению бизнеса в Узбекистане и Центральной Азии.",
     },
     uz: {
-      title: "O'zbekiston biznesi, soliqlari va huquqi bo'yicha tahlillar | Advizen Consulting",
+      title: "Tahlillar | Advizen Consulting",
       description:
-        "O'zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va tartibga solish o'zgarishlari bo'yicha Advizen Consulting jamoasidan ekspert tahlillari.",
+        "O'zbekiston va Markaziy Osiyoda biznes yuritish bo'yicha ekspert tahlillar, soliq brifinglari, huquqiy yangiliklar va HR ko'rsatmalari.",
     },
   },
-  privacy: {
+  contact: {
     en: {
-      title: "Privacy Policy | Advizen Consulting",
+      title: "Contact Us | Advizen Consulting",
       description:
-        "How Advizen Consulting collects, uses and protects personal data in compliance with applicable privacy laws in Uzbekistan.",
+        "Schedule a consultation with Advizen Consulting. Reach our team in Tashkent for expert business advisory across tax, legal, finance, and HR.",
     },
     ru: {
-      title: "Политика конфиденциальности | Advizen Consulting",
+      title: "Связаться с нами | Advizen Consulting",
       description:
-        "Как Advizen Consulting собирает, использует и защищает персональные данные в соответствии с законодательством Узбекистана.",
+        "Запишитесь на консультацию с Advizen Consulting. Свяжитесь с нашей командой в Ташкенте для получения экспертного консультирования по налогам, праву, финансам и HR.",
     },
     uz: {
-      title: "Maxfiylik siyosati | Advizen Consulting",
+      title: "Biz bilan bog'laning | Advizen Consulting",
       description:
-        "Advizen Consulting O'zbekiston qonunlariga muvofiq shaxsiy ma'lumotlarni qanday yig'ishi, ishlatishi va himoya qilishini bilib oling.",
-    },
-  },
-  terms: {
-    en: {
-      title: "Terms of Use | Advizen Consulting",
-      description:
-        "Terms governing the use of advizenco.com and digital services provided by Advizen Consulting.",
-    },
-    ru: {
-      title: "Условия использования | Advizen Consulting",
-      description:
-        "Условия использования сайта advizenco.com и цифровых сервисов Advizen Consulting.",
-    },
-    uz: {
-      title: "Foydalanish shartlari | Advizen Consulting",
-      description:
-        "advizenco.com saytidan va Advizen Consulting raqamli xizmatlaridan foydalanish shartlari.",
-    },
-  },
-  "terms-of-sale": {
-    en: {
-      title: "Terms of Sale | Advizen Consulting",
-      description:
-        "Terms governing purchases of document templates and digital products from Advizen Consulting.",
-    },
-    ru: {
-      title: "Условия продажи | Advizen Consulting",
-      description:
-        "Условия покупки шаблонов документов и цифровых продуктов Advizen Consulting.",
-    },
-    uz: {
-      title: "Sotish shartlari | Advizen Consulting",
-      description:
-        "Advizen Consultingdan hujjat shablonlari va raqamli mahsulotlarni sotib olish shartlari.",
-    },
-  },
-  cookies: {
-    en: {
-      title: "Cookie Policy | Advizen Consulting",
-      description:
-        "How Advizen Consulting uses cookies and similar technologies on advizenco.com.",
-    },
-    ru: {
-      title: "Политика использования cookie | Advizen Consulting",
-      description:
-        "Как Advizen Consulting использует cookie-файлы и аналогичные технологии на сайте advizenco.com.",
-    },
-    uz: {
-      title: "Cookie siyosati | Advizen Consulting",
-      description:
-        "Advizen Consulting advizenco.com saytida cookie va shunga o'xshash texnologiyalardan qanday foydalanadi.",
-    },
-  },
-  disclaimer: {
-    en: {
-      title: "Disclaimer | Advizen Consulting",
-      description:
-        "Legal disclaimer regarding the content and services provided by Advizen Consulting on advizenco.com.",
-    },
-    ru: {
-      title: "Дисклеймер | Advizen Consulting",
-      description:
-        "Юридический дисклеймер о контенте и услугах Advizen Consulting на сайте advizenco.com.",
-    },
-    uz: {
-      title: "Yuridik ogohlantirish | Advizen Consulting",
-      description:
-        "Advizen Consulting tomonidan advizenco.com saytida taqdim etilgan kontent va xizmatlar haqida yuridik ogohlantirish.",
+        "Advizen Consulting bilan maslahat uchrashuvini belgilang. Soliq, huquqiy, moliya va HR bo'yicha ekspert maslahat uchun Toshkentdagi jamoamiz bilan bog'laning.",
     },
   },
 };
 
-function pagePath(key: PageKey, locale: string) {
-  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-  return `${SITE_URL}${prefix}${PAGE_PATHS[key]}`;
-}
+export function pageMetadata(page: string, locale: string): Metadata {
+  const safe = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const content = PAGE_CONTENT[page]?.[safe] ?? PAGE_CONTENT[page]?.[routing.defaultLocale];
+  if (!content) return {};
 
-export function pageMetadata(key: PageKey, locale: string): Metadata {
-  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
-  const c = PAGE_CONTENT[key][safe];
-  const canonical = pagePath(key, safe);
-  const languages = Object.fromEntries(
-    routing.locales.map((l: Locale) => [l, pagePath(key, l)]),
-  );
+  const prefix = safe === routing.defaultLocale ? "" : `/${safe}`;
+  const url = `${SITE_URL}${prefix}/${page === "store" ? "store" : page}`;
 
   return {
-    title: c.title,
-    description: c.description,
+    title: content.title,
+    description: content.description,
     alternates: {
-      canonical,
-      languages: { ...languages, "x-default": pagePath(key, routing.defaultLocale) },
+      canonical: url,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => {
+          const p = l === routing.defaultLocale ? "" : `/${l}`;
+          return [l, `${SITE_URL}${p}/${page === "store" ? "store" : page}`];
+        })
+      ),
     },
     openGraph: {
-      title: c.title,
-      description: c.description,
+      title: content.title,
+      description: content.description,
       type: "website",
-      url: canonical,
+      url,
+      locale: OG_LOCALE[safe as Locale] ?? "en_US",
       siteName: ORG_NAME,
-      locale: OG_LOCALE[safe],
     },
     twitter: {
       card: "summary_large_image",
-      title: c.title,
-      description: c.description,
+      title: content.title,
+      description: content.description,
     },
   };
 }
