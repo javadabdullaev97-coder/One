@@ -101,7 +101,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-black pt-20">
         {/* Breadcrumb */}
         <div className="border-b border-white/[0.06]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center gap-2 text-xs text-white/35 tracking-wide">
