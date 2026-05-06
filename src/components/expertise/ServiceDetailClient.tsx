@@ -80,7 +80,6 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
   const c = CHROME[locale] ?? CHROME.en;
   const Icon = SERVICE_ICONS[slug] ?? ArrowRight;
   const accent = SERVICE_ACCENTS[slug] ?? "255,255,255";
-  const headlineLines = service.headline.split("\n");
   const descriptions: string[] =
     service.type === "advisory"
       ? [tServices(`${slug}.description`)]
@@ -137,19 +136,16 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             </span>
           </motion.div>
 
-          {/* Headline — single h1 with animated lines */}
+          {/* Headline — translated service title */}
           <h1 className="heading-luxury text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.05] mb-10">
-            {headlineLines.map((line, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.85, delay: 0.18 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: "block" }}
-              >
-                {line}
-              </motion.span>
-            ))}
+            <motion.span
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              style={{ display: "block" }}
+            >
+              {serviceTitle}
+            </motion.span>
           </h1>
 
           <motion.div
