@@ -111,6 +111,13 @@ export const organizationJsonLd = {
       },
     })),
   },
+  sameAs: [
+    "https://uz.linkedin.com/company/advizen-consulting",
+    "https://www.instagram.com/advizen_consulting/",
+    "https://x.com/advizen_consult",
+    "https://www.youtube.com/@AdvizenConsulting",
+    "https://www.facebook.com/people/Advizen-Consulting/61577742804426/",
+  ],
 };
 
 function articleUrl(slug: string, locale: string) {
