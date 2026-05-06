@@ -254,36 +254,12 @@ export default function AdvisorySection() {
                     </p>
                   </motion.div>
 
-                  {/* Capabilities */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2, delay: 0.14 }}
-                  >
-                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/20 mb-3">
-                      {t("capabilities")}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {(tServices.raw(`${active.slug}.capabilities`) as string[]).map((cap, ci) => (
-                        <motion.span
-                          key={cap}
-                          initial={{ opacity: 0, scale: 0.93 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.16 + ci * 0.022, duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                          className="text-[11px] text-white/38 border border-white/[0.07] px-3 py-1.5 hover:border-primary/28 hover:text-white/65 hover:bg-primary/[0.04] transition-all duration-200 cursor-default"
-                        >
-                          {cap}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </motion.div>
-
                   {/* Related article */}
                   {relatedArticle[active.slug] && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.2, delay: 0.22 }}
+                      transition={{ duration: 0.2, delay: 0.14 }}
                     >
                       <p className="text-[10px] tracking-[0.18em] uppercase text-white/20 mb-2.5">
                         {t("relatedReading")}
@@ -308,7 +284,7 @@ export default function AdvisorySection() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2, delay: 0.28 }}
+                    transition={{ duration: 0.2, delay: 0.20 }}
                     className="mt-auto pt-2"
                   >
                     <Link
