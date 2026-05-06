@@ -1,6 +1,5 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
 import { useState, type ComponentType, type SVGProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -23,11 +22,14 @@ import {
   Wallet,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { advisoryServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>;
+
+const MotionLink = motion(Link);
 
 const serviceIcons: Record<string, LucideIcon> = {
   tax: Calculator,
@@ -126,11 +128,10 @@ export default function AdvisorySection() {
               const isActive = i === activeIndex;
               const ItemIcon = serviceIcons[service.slug] ?? ArrowUpRight;
               return (
-                <motion.button
+                <MotionLink
                   key={service.slug}
-                  type="button"
+                  href={`/expertise/${service.slug}`}
                   onMouseEnter={() => handleSelect(i)}
-                  onClick={() => handleSelect(i)}
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
@@ -168,7 +169,7 @@ export default function AdvisorySection() {
                     "w-3.5 h-3.5 shrink-0 transition-all duration-200",
                     isActive ? "text-primary opacity-100" : "opacity-0 group-hover:opacity-25 group-hover:text-white"
                   )} />
-                </motion.button>
+                </MotionLink>
               );
             })}
           </div>
