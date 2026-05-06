@@ -17,6 +17,8 @@ import {
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import CheckoutModal from "@/components/CheckoutModal";
+import FaqSection from "@/components/FaqSection";
+import { type FaqPage } from "@/lib/faqData";
 import { PRODUCTS, getProductById } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
@@ -353,6 +355,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
           )}
         </div>
       </div>
+      <FaqSection page={slug as FaqPage} />
 
       <CheckoutModal
         open={checkoutOpen}

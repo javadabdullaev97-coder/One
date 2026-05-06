@@ -1,8 +1,25 @@
+import { PRODUCT_FAQ_DATA } from "./productFaqData";
+
 type FaqItem = { q: string; a: string };
 type LocaleData = { en: FaqItem[]; ru: FaqItem[]; uz: FaqItem[] };
-export type FaqPage = "home" | "expertise" | "store";
+export type FaqPage =
+  | "home"
+  | "expertise"
+  | "store"
+  | "llc-formation"
+  | "jsc-formation"
+  | "shareholder-agreement"
+  | "nda-bilateral"
+  | "commercial-lease"
+  | "employment-contract"
+  | "hr-policy-manual"
+  | "tax-compliance-starter"
+  | "transfer-pricing"
+  | "work-permit-pack"
+  | "sez-entry-pack"
+  | "due-diligence-pack";
 
-export const FAQ_DATA: Record<FaqPage, LocaleData> = {
+const PAGE_DATA: Record<"home" | "expertise" | "store", LocaleData> = {
   home: {
     en: [
       {
@@ -328,3 +345,8 @@ export const FAQ_DATA: Record<FaqPage, LocaleData> = {
     ],
   },
 };
+
+export const FAQ_DATA: Record<FaqPage, LocaleData> = {
+  ...PAGE_DATA,
+  ...PRODUCT_FAQ_DATA,
+} as Record<FaqPage, LocaleData>;
