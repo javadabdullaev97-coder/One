@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FileText, Users, Calculator, Scale, BarChart2, ShieldCheck, ArrowRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import MagneticButton from "@/components/MagneticButton";
 import CheckoutModal from "@/components/CheckoutModal";
 import { cn } from "@/lib/utils";
@@ -85,44 +86,46 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }}
-      className="group w-full flex flex-col rounded-xl bg-[#080808] border border-white/[0.10] p-1.5 shadow-xl backdrop-blur-xl cursor-default"
+      className="group w-full flex flex-col rounded-xl bg-[#080808] border border-white/[0.10] p-1.5 shadow-xl backdrop-blur-xl"
     >
-      {/* Header inner card */}
-      <div className="bg-[#141414] relative mb-1.5 rounded-[10px] border border-white/[0.07] p-4">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-48 rounded-[inherit] pointer-events-none"
-          style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 40%, rgba(0,0,0,0) 100%)" }}
-        />
+      {/* Header inner card — links to product detail page */}
+      <Link href={`/store/${product.id}`} className="group/hdr block mb-1.5">
+        <div className="bg-[#141414] relative rounded-[10px] border border-white/[0.07] group-hover/hdr:border-white/[0.15] p-4 transition-colors duration-200">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-48 rounded-[inherit] pointer-events-none"
+            style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 40%, rgba(0,0,0,0) 100%)" }}
+          />
 
-        {/* Category + date */}
-        <div className="relative mb-8 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm font-medium text-white/50">
-            {meta?.icon}
-            <span>{categoryLabel}</span>
+          {/* Category + date */}
+          <div className="relative mb-8 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm font-medium text-white/50">
+              {meta?.icon}
+              <span>{categoryLabel}</span>
+            </div>
+            <span className="rounded-full border border-white/[0.12] text-white/40 px-2 py-0.5 text-xs font-mono">
+              {product.updated}
+            </span>
           </div>
-          <span className="rounded-full border border-white/[0.12] text-white/40 px-2 py-0.5 text-xs font-mono">
-            {product.updated}
-          </span>
-        </div>
 
-        {/* Title */}
-        <p className="relative text-white/55 text-sm mb-3 leading-snug min-h-[2.625rem]">{title}</p>
+          {/* Title */}
+          <p className="relative text-white/55 group-hover/hdr:text-white/80 text-sm mb-3 leading-snug min-h-[2.625rem] transition-colors duration-200">{title}</p>
 
-        {/* Price — fixed min-h prevents layout shift on currency switch */}
-        <div className="relative mb-1 flex min-h-[3rem] items-end gap-1.5">
-          <motion.span
-            key={currency}
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            className="font-extrabold tracking-tight text-foreground group-hover:text-white transition-colors duration-200 text-2xl"
-          >
-            {main}
-          </motion.span>
-          <span className="text-foreground/55 pb-0.5 text-sm">{suffix}</span>
+          {/* Price — fixed min-h prevents layout shift on currency switch */}
+          <div className="relative mb-1 flex min-h-[3rem] items-end gap-1.5">
+            <motion.span
+              key={currency}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="font-extrabold tracking-tight text-foreground group-hover:text-white transition-colors duration-200 text-2xl"
+            >
+              {main}
+            </motion.span>
+            <span className="text-foreground/55 pb-0.5 text-sm">{suffix}</span>
+          </div>
         </div>
-      </div>
+      </Link>
 
       {/* Body */}
       <div className="flex-1 flex flex-col gap-4 p-3">
