@@ -22,6 +22,10 @@ export default function FaqSection({ page }: { page: FaqPage }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#faq-section h2", ".faq-question"],
+    },
     mainEntity: items.map(({ q, a }) => ({
       "@type": "Question",
       name: q,
@@ -30,7 +34,7 @@ export default function FaqSection({ page }: { page: FaqPage }) {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-black border-t border-white/5">
+    <section id="faq-section" className="py-24 md:py-32 bg-black border-t border-white/5">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -47,7 +51,7 @@ export default function FaqSection({ page }: { page: FaqPage }) {
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
-                <span className="text-white/90 font-medium">{q}</span>
+                <span className="faq-question text-white/90 font-medium">{q}</span>
                 {open === i ? (
                   <Minus className="w-4 h-4 text-white/40 shrink-0" />
                 ) : (
