@@ -4,10 +4,16 @@ import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ArrowUpRight, FileText } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
+
+const VIEW_LABEL: Record<string, string> = {
+  en: "View full service page",
+  ru: "Посмотреть страницу услуги",
+  uz: "Xizmat sahifasini ko'rish",
+};
 
 const SHOWN_SLUGS = ["entity-management", "eor", "corporate", "virtual-office"];
 const shownServices = SHOWN_SLUGS
@@ -23,6 +29,7 @@ const relatedArticle: Record<string, { slug: string; title: string; tag: string 
 
 export default function OperationsSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const locale = useLocale();
   const t = useTranslations("OperationsSection");
   const tServices = useTranslations("Services");
 
@@ -125,7 +132,7 @@ export default function OperationsSection() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-10 pl-6 pr-4 md:pr-8">
+                      <div className="pb-8 pl-6 pr-4 md:pr-8">
                         <div className="grid md:grid-cols-[3fr_2fr] gap-8 md:gap-12 border-t border-white/[0.04] pt-7">
 
                           {/* Left: description */}
@@ -198,6 +205,22 @@ export default function OperationsSection() {
                             )}
                           </div>
                         </div>
+
+                        {/* Service page link */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.2, delay: 0.24 }}
+                          className="pt-6 border-t border-white/[0.04] mt-2"
+                        >
+                          <Link
+                            href={`/expertise/${service.slug}`}
+                            className="group/svc inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-primary/48 hover:text-primary/80 hover:gap-3 transition-all duration-200"
+                          >
+                            {VIEW_LABEL[locale] ?? VIEW_LABEL.en}
+                            <ArrowUpRight className="w-3 h-3 group-hover/svc:translate-x-0.5 group-hover/svc:-translate-y-0.5 transition-transform duration-200" />
+                          </Link>
+                        </motion.div>
                       </div>
                     </motion.div>
                   )}

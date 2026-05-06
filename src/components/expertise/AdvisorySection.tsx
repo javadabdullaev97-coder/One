@@ -22,7 +22,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { advisoryServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
@@ -67,6 +67,12 @@ const serviceFor: Record<string, string> = {
   "due-diligence":"Buyers, lenders, and investors requiring independent risk assessment before a transaction closes.",
 };
 
+const VIEW_LABEL: Record<string, string> = {
+  en: "View full service page",
+  ru: "Посмотреть страницу услуги",
+  uz: "Xizmat sahifasini ko'rish",
+};
+
 const relatedArticle: Record<string, { slug: string; title: string; tag: string } | null> = {
   tax:            { slug: "permanent-establishment-uzbekistan",  title: "Permanent Establishment Risk in Uzbekistan",    tag: "Tax Briefing"   },
   legal:          { slug: "representative-offices-uzbekistan",   title: "Representative Offices in Uzbekistan",          tag: "Legal Briefing" },
@@ -83,6 +89,7 @@ export default function AdvisorySection() {
   const t = useTranslations("AdvisorySection");
   const tServices = useTranslations("Services");
 
+  const locale = useLocale();
   const active = advisoryServices[activeIndex];
   const ActiveIcon = serviceIcons[active.slug] ?? ArrowUpRight;
   const accent = serviceAccents[active.slug] ?? "255,255,255";
@@ -295,6 +302,25 @@ export default function AdvisorySection() {
                       </Link>
                     </motion.div>
                   )}
+
+                  {/* Service page link */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2, delay: 0.28 }}
+                    className="mt-auto pt-2"
+                  >
+                    <Link
+                      href={`/expertise/${active.slug}`}
+                      className="group/svc inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase transition-all duration-200 hover:gap-3"
+                      style={{ color: `rgba(${accent},0.52)` }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = `rgba(${accent},0.82)`; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = `rgba(${accent},0.52)`; }}
+                    >
+                      {VIEW_LABEL[locale] ?? VIEW_LABEL.en}
+                      <ArrowRight className="w-3 h-3 group-hover/svc:translate-x-0.5 transition-transform duration-200" />
+                    </Link>
+                  </motion.div>
                 </div>
 
               </motion.div>
