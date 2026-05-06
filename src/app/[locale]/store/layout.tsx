@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { pageMetadata, storeJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -11,29 +11,6 @@ export async function generateMetadata({
   return pageMetadata("store", locale);
 }
 
-export default async function Layout({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const jsonLd = storeJsonLd();
-  const breadcrumb = pageBreadcrumbJsonLd("store", locale);
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      {breadcrumb && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-        />
-      )}
-      {children}
-    </>
-  );
+export default function Layout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }
