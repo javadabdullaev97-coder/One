@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getArticleBySlug } from "./articles";
 import { servicesData, getServiceBySlug } from "./services";
+import { PRODUCTS, getProductById } from "./products";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -222,21 +223,6 @@ const PAGE_PATHS = {
 export type PageKey = keyof typeof PAGE_PATHS;
 export { OG_IMAGE };
 
-const STORE_PRODUCTS = [
-  { id: "llc-formation",          name: "LLC Formation Package",                category: "Company Formation", price: 299 },
-  { id: "jsc-formation",          name: "JSC Formation Package",                category: "Company Formation", price: 449 },
-  { id: "shareholder-agreement",  name: "Shareholder Agreement Template",       category: "Legal",             price: 279 },
-  { id: "nda-bilateral",          name: "Bilateral NDA Template",               category: "Legal",             price: 39  },
-  { id: "commercial-lease",       name: "Commercial Lease Agreement",           category: "Legal",             price: 89  },
-  { id: "employment-contract",    name: "Employment Contract Template",         category: "HR",                price: 59  },
-  { id: "hr-policy-manual",       name: "HR Policy Manual",                     category: "HR",                price: 199 },
-  { id: "tax-compliance-starter", name: "Tax Compliance Starter Pack",          category: "Tax",               price: 249 },
-  { id: "transfer-pricing",       name: "Transfer Pricing Documentation Pack",  category: "Tax",               price: 399 },
-  { id: "work-permit-pack",       name: "Work Permit Application Pack",         category: "Compliance",        price: 119 },
-  { id: "sez-entry-pack",         name: "SEZ Entry Pack",                       category: "Compliance",        price: 449 },
-  { id: "due-diligence-pack",     name: "Due Diligence Pack",                   category: "Finance",           price: 499 },
-];
-
 export function storeJsonLd() {
   const storeUrl = `${SITE_URL}/store`;
   return {
@@ -245,15 +231,15 @@ export function storeJsonLd() {
     name: "Business Document Templates — Advizen Consulting",
     description: "Lawyer-drafted business document templates for companies operating in Uzbekistan.",
     url: storeUrl,
-    itemListElement: STORE_PRODUCTS.map((p, i) => ({
+    itemListElement: PRODUCTS.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {
         "@type": "Product",
-        "@id": `${storeUrl}#${p.id}`,
-        name: p.name,
-        description: `${p.category} document template for businesses in Uzbekistan. Editable Word format.`,
-        url: storeUrl,
+        "@id": `${SITE_URL}/store/${p.id}#product`,
+        name: p.nameEn,
+        description: p.descriptionEn,
+        url: `${SITE_URL}/store/${p.id}`,
         brand: { "@type": "Brand", name: ORG_NAME },
         offers: {
           "@type": "Offer",
@@ -465,7 +451,7 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
     ru: {
       title: "Шаблоны правовых и бизнес-документов в Узбекистане | Advizen Consulting",
       description:
-        "Шаблоны документов для бизнеса в Узбекистане — договоры, HR, комплаенс, налоговые формы, корпоративные документы. Мгновенная загрузка в формате Word.",
+        "Шаблоны документов для бизнеса в Узбекистане — договоры, HR, компленс, налоговые формы, корпоративные документы. Мгновенная загрузка в формате Word.",
     },
     uz: {
       title: "O'zbekistonda biznes va huquqiy hujjat shablonlari | Advizen Consulting",
@@ -597,6 +583,98 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
 function pagePath(key: PageKey, locale: string) {
   const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
   return `${SITE_URL}${prefix}${PAGE_PATHS[key]}`;
+}
+
+function productUrl(id: string, locale: string) {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  return `${SITE_URL}${prefix}/store/${id}`;
+}
+
+export function productPageMetadata(id: string, locale: string): Metadata {
+  const product = getProductById(id);
+  if (!product) return {};
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const canonical = productUrl(id, safe);
+  const title = `${product.nameEn} | Advizen Consulting`;
+  const description = product.descriptionEn;
+  const languages = Object.fromEntries(
+    routing.locales.map((l: Locale) => [l, productUrl(id, l)]),
+  );
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: { ...languages, "x-default": productUrl(id, routing.defaultLocale) },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonical,
+      siteName: ORG_NAME,
+      locale: OG_LOCALE[safe],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: `${product.nameEn} | Advizen Consulting` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
+  };
+}
+
+export function productJsonLd(id: string, locale: string) {
+  const product = getProductById(id);
+  if (!product) return null;
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const url = productUrl(id, safe);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${url}#product`,
+    name: product.nameEn,
+    description: product.descriptionEn,
+    sku: id,
+    category: product.category,
+    brand: { "@type": "Brand", name: ORG_NAME },
+    url,
+    image: OG_IMAGE,
+    additionalProperty: product.includesEn.map((item) => ({
+      "@type": "PropertyValue",
+      name: "Includes",
+      value: item,
+    })),
+    offers: {
+      "@type": "Offer",
+      "@id": `${url}#offer`,
+      url,
+      price: product.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: { "@id": `${SITE_URL}#organization` },
+    },
+  };
+}
+
+export function productPageBreadcrumbJsonLd(id: string, locale: string) {
+  const product = getProductById(id);
+  if (!product) return null;
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const labels = BREADCRUMB_LABELS[safe];
+  const homeUrl = safe === routing.defaultLocale ? SITE_URL : `${SITE_URL}/${safe}`;
+  const storeUrl = `${homeUrl}/store`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: labels.home,         item: homeUrl },
+      { "@type": "ListItem", position: 2, name: labels.store ?? "Store", item: storeUrl },
+      { "@type": "ListItem", position: 3, name: product.nameEn,      item: productUrl(id, safe) },
+    ],
+  };
 }
 
 export function pageMetadata(key: PageKey, locale: string): Metadata {
