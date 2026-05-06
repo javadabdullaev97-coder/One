@@ -34,7 +34,7 @@ export default function Footer() {
       { label: t("virtualOffice"),       href: "/expertise#operations" },
     ],
     [t("firm")]: [
-      { label: t("store"),    href: "/store" },
+      { label: "Store",       href: "/store" },
       { label: t("insights"), href: "/insights" },
       { label: t("contact"),  href: "/contact" },
     ],
