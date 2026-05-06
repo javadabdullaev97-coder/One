@@ -1,0 +1,261 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, ArrowLeft, Calculator, Scale, LineChart, Users, Landmark, Handshake, ScanSearch, LayoutDashboard, Briefcase, UserCheck, Wallet, Globe, MapPin, ShieldCheck } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { getServiceBySlug } from "@/lib/services";
+import MagneticButton from "@/components/MagneticButton";
+import AnimatedSection from "@/components/AnimatedSection";
+import { cn } from "@/lib/utils";
+import type { ComponentType, SVGProps } from "react";
+
+type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>;
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  tax:               Calculator,
+  legal:             Scale,
+  finance:           LineChart,
+  hr:                Users,
+  funding:           Landmark,
+  "ma-advisory":     Handshake,
+  "due-diligence":   ScanSearch,
+  "entity-management": LayoutDashboard,
+  corporate:         Briefcase,
+  eor:               UserCheck,
+  payroll:           Wallet,
+  immigration:       Globe,
+  "virtual-office":  MapPin,
+  compliance:        ShieldCheck,
+};
+
+const SERVICE_ACCENTS: Record<string, string> = {
+  tax:               "184,146,42",
+  legal:             "30,64,175",
+  finance:           "13,148,136",
+  hr:                "124,58,237",
+  funding:           "22,163,74",
+  "ma-advisory":     "139,26,26",
+  "due-diligence":   "194,65,12",
+  "entity-management": "16,185,129",
+  corporate:         "99,102,241",
+  eor:               "236,72,153",
+  payroll:           "14,165,233",
+  immigration:       "245,158,11",
+  "virtual-office":  "168,85,247",
+  compliance:        "34,197,94",
+};
+
+const SERVICE_FOR: Record<string, string> = {
+  tax:               "Foreign-invested companies, holding structures, and cross-border operators navigating Uzbekistan's fiscal complexity.",
+  legal:             "International businesses entering Uzbekistan, M&A counterparties, and companies requiring regulatory clearances.",
+  finance:           "Foreign subsidiaries needing IFRS-compliant reporting, investor-ready financials, or audit-prepared books.",
+  hr:                "Growing businesses requiring compliant HR infrastructure, executive hiring, or workforce compliance reviews.",
+  funding:           "Startups seeking grants, companies preparing for investment rounds, and businesses applying for state incentives.",
+  "ma-advisory":     "Strategic acquirers, PE funds, and founders seeking M&A transactions in Uzbekistan and Central Asia.",
+  "due-diligence":   "Buyers, lenders, and investors requiring independent risk assessment before a transaction closes.",
+  "entity-management": "Foreign companies that need a complete operational presence in Uzbekistan without building an in-house management team.",
+  corporate:         "International businesses establishing or maintaining a legal presence in Uzbekistan — from incorporation to ongoing secretarial administration.",
+  eor:               "International companies that want to hire staff in Uzbekistan immediately, without first incorporating a local entity.",
+  payroll:           "Companies with Uzbekistan-based employees that need accurate, fully compliant payroll processing every cycle.",
+  immigration:       "Foreign nationals relocating to Uzbekistan for work, and the international companies employing them.",
+  "virtual-office":  "Overseas companies exploring the Uzbekistan market, or businesses that need a registered address without committing to physical office space.",
+  compliance:        "Entities that need continuous assurance their Uzbekistan operations are meeting every regulatory, tax, and filing obligation.",
+};
+
+const CHROME: Record<string, Record<string, string>> = {
+  en: { about: "About this service", whoFor: "Who this is for", capabilities: "Capabilities", deliver: "What we deliver", discuss: "Discuss this service", ctaPrefix: "Ready to discuss", ctaBody: "Our team is available to scope your engagement and answer initial questions.", start: "Start a conversation" },
+  ru: { about: "Об этой услуге", whoFor: "Кому подходит", capabilities: "Возможности", deliver: "Что мы делаем", discuss: "Обсудить эту услугу", ctaPrefix: "Готовы обсудить", ctaBody: "Наша команда готова обсудить объём работ и ответить на ваши вопросы.", start: "Начать диалог" },
+  uz: { about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz", discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash" },
+};
+
+export default function ServiceDetailClient({ slug }: { slug: string }) {
+  const locale = useLocale();
+  const tNav = useTranslations("Nav");
+  const tServices = useTranslations("Services");
+  const service = getServiceBySlug(slug);
+
+  if (!service) return null;
+
+  const c = CHROME[locale] ?? CHROME.en;
+  const Icon = SERVICE_ICONS[slug] ?? ArrowRight;
+  const accent = SERVICE_ACCENTS[slug] ?? "255,255,255";
+  const headlineLines = service.headline.split("\n");
+  const descriptions: string[] =
+    service.type === "advisory"
+      ? [tServices(`${slug}.description`)]
+      : [tServices(`${slug}.description1`), tServices(`${slug}.description2`)];
+  const capabilities = tServices.raw(`${slug}.capabilities`) as string[];
+  const serviceTitle = tServices(`${slug}.title`);
+
+  return (
+    <>
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="relative overflow-hidden flex flex-col" style={{ minHeight: "65vh" }}>
+        <div
+          className="absolute w-[800px] h-[800px] rounded-full -top-64 -left-64 opacity-[0.12] blur-[140px] pointer-events-none"
+          style={{ background: `rgba(${accent},1)` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 pointer-events-none" />
+
+        <div className="relative z-10 flex-1 flex flex-col pt-28 pb-16 md:pt-36 md:pb-20 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+          {/* Back + num */}
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center justify-between mb-14 md:mb-18"
+          >
+            <Link
+              href="/expertise"
+              className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/38 hover:text-white/70 transition-colors duration-200"
+            >
+              <ArrowLeft className="w-3 h-3" />
+              {tNav("expertise")}
+            </Link>
+            <span className="font-serif text-xs tabular-nums text-white/14">{service.num}</span>
+          </motion.div>
+
+          {/* Category badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <span
+              className="w-8 h-8 rounded-lg flex items-center justify-center border shrink-0"
+              style={{ borderColor: `rgba(${accent},0.28)`, background: `rgba(${accent},0.1)` }}
+            >
+              <Icon className="w-4 h-4" style={{ color: `rgba(${accent},0.85)` }} strokeWidth={1.5} />
+            </span>
+            <span
+              className="text-[10px] tracking-[0.3em] uppercase"
+              style={{ color: `rgba(${accent},0.65)` }}
+            >
+              {service.category}
+            </span>
+          </motion.div>
+
+          {/* Headline — single h1 with animated lines */}
+          <h1 className="heading-luxury text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.05] mb-10">
+            {headlineLines.map((line, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.18 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: "block" }}
+              >
+                {line}
+              </motion.span>
+            ))}
+          </h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <MagneticButton variant="primary" as="a" href="/contact">
+              {c.discuss}
+              <ArrowRight className="w-4 h-4" />
+            </MagneticButton>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Description ──────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
+            <AnimatedSection>
+              <p className="tracking-luxury text-white/40 mb-4">{c.about}</p>
+              <h2 className="heading-luxury text-2xl md:text-3xl text-foreground leading-snug">
+                {serviceTitle}
+              </h2>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="flex flex-col gap-5">
+                {descriptions.map((para, i) => (
+                  <p
+                    key={i}
+                    className={cn("leading-relaxed text-[15px]", i === 0 ? "text-white/60" : "text-white/42")}
+                  >
+                    {para}
+                  </p>
+                ))}
+
+                {SERVICE_FOR[slug] && (
+                  <div
+                    className="mt-2 border-l-2 pl-4 py-1"
+                    style={{ borderColor: `rgba(${accent},0.35)` }}
+                  >
+                    <p
+                      className="text-[10px] tracking-[0.18em] uppercase mb-1.5"
+                      style={{ color: `rgba(${accent},0.62)` }}
+                    >
+                      {c.whoFor}
+                    </p>
+                    <p className="text-[13px] text-white/48 leading-relaxed">{SERVICE_FOR[slug]}</p>
+                  </div>
+                )}
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Capabilities ─────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection className="mb-10">
+            <p className="tracking-luxury text-white/40 mb-3">{c.capabilities}</p>
+            <h2 className="heading-luxury text-2xl md:text-3xl text-foreground">{c.deliver}</h2>
+          </AnimatedSection>
+
+          <div className="flex flex-wrap gap-2">
+            {capabilities.map((cap, i) => (
+              <motion.span
+                key={cap}
+                initial={{ opacity: 0, scale: 0.94 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.25, delay: i * 0.028, ease: [0.16, 1, 0.3, 1] }}
+                className="flex items-center gap-2 px-4 py-2.5 border border-white/[0.07] bg-white/[0.02] text-[12px] text-white/50 hover:border-primary/28 hover:bg-primary/[0.03] hover:text-white/78 transition-all duration-200"
+              >
+                <span
+                  className="w-[5px] h-[5px] rounded-full shrink-0"
+                  style={{ background: `rgba(${accent},0.55)` }}
+                />
+                {cap}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
+        <div
+          className="absolute w-[600px] h-[600px] rounded-full -bottom-48 left-1/2 -translate-x-1/2 opacity-[0.08] blur-[110px] pointer-events-none"
+          style={{ background: `rgba(${accent},1)` }}
+        />
+        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <p className="tracking-luxury text-white/40 mb-6">{service.category}</p>
+            <h2 className="heading-luxury text-3xl md:text-4xl text-foreground mb-6 leading-tight">
+              {c.ctaPrefix} {serviceTitle}?
+            </h2>
+            <p className="text-white/45 max-w-md mx-auto mb-10 leading-relaxed">{c.ctaBody}</p>
+            <MagneticButton variant="primary" as="a" href="/contact">
+              {c.start}
+              <ArrowRight className="w-4 h-4" />
+            </MagneticButton>
+          </AnimatedSection>
+        </div>
+      </section>
+    </>
+  );
+}

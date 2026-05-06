@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getArticleBySlug } from "./articles";
-import { servicesData } from "./services";
+import { servicesData, getServiceBySlug } from "./services";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -347,6 +347,94 @@ export function pageBreadcrumbJsonLd(key: PageKey, locale: string) {
       { "@type": "ListItem", position: 1, name: labels.home, item: homeUrl },
       { "@type": "ListItem", position: 2, name: pageLabel,   item: pagePath(key, safe) },
     ],
+  };
+}
+
+export function serviceJsonLd(slug: string, locale: string) {
+  const service = getServiceBySlug(slug);
+  if (!service) return null;
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const prefix = safe === routing.defaultLocale ? "" : `/${safe}`;
+  const serviceUrl = `${SITE_URL}${prefix}/expertise/${slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${serviceUrl}#service`,
+    name: service.title,
+    description: service.description.join(" "),
+    serviceType: service.category,
+    url: serviceUrl,
+    provider: { "@id": `${SITE_URL}#organization` },
+    areaServed: [
+      { "@type": "Country", name: "Uzbekistan" },
+      { "@type": "Place",   name: "Central Asia" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.title} — Capabilities`,
+      itemListElement: service.capabilities.map((cap) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: cap },
+      })),
+    },
+  };
+}
+
+export function servicePageBreadcrumbJsonLd(slug: string, locale: string) {
+  const service = getServiceBySlug(slug);
+  if (!service) return null;
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const homeUrl = safe === routing.defaultLocale ? SITE_URL : `${SITE_URL}/${safe}`;
+  const expertiseUrl = `${homeUrl}/expertise`;
+  const serviceUrl = `${expertiseUrl}/${slug}`;
+  const expertiseLabel = BREADCRUMB_LABELS[safe].expertise ?? "Expertise";
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: BREADCRUMB_LABELS[safe].home, item: homeUrl },
+      { "@type": "ListItem", position: 2, name: expertiseLabel,               item: expertiseUrl },
+      { "@type": "ListItem", position: 3, name: service.title,                item: serviceUrl },
+    ],
+  };
+}
+
+export function servicePageMetadata(slug: string, locale: string): Metadata {
+  const service = getServiceBySlug(slug);
+  if (!service) return {};
+  const safe: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  const prefix = safe === routing.defaultLocale ? "" : `/${safe}`;
+  const canonical = `${SITE_URL}${prefix}/expertise/${slug}`;
+  const title = `${service.title} Services in Uzbekistan | Advizen Consulting`;
+  const description = service.description[0];
+  const languages = Object.fromEntries(
+    routing.locales.map((l: Locale) => {
+      const lPrefix = l === routing.defaultLocale ? "" : `/${l}`;
+      return [l, `${SITE_URL}${lPrefix}/expertise/${slug}`];
+    }),
+  );
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: { ...languages, "x-default": `${SITE_URL}/expertise/${slug}` },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonical,
+      siteName: ORG_NAME,
+      locale: OG_LOCALE[safe],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: `${service.title} | Advizen Consulting` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
   };
 }
 
