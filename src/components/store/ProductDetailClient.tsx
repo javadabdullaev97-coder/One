@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
+  AlertTriangle,
   ArrowLeft,
   ArrowRight,
   BarChart2,
@@ -19,10 +20,12 @@ import { useTranslations, useLocale } from "next-intl";
 import CheckoutModal from "@/components/CheckoutModal";
 import FaqSection from "@/components/FaqSection";
 import { type FaqPage } from "@/lib/faqData";
+import { PRODUCT_DETAIL_DATA } from "@/lib/productDetailData";
 import { PRODUCTS, getProductById } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 type Currency = "USD" | "UZS";
+type Locale = "en" | "ru" | "uz";
 const UZS_RATE = 12750;
 
 const CATEGORY_ICONS: Record<string, React.ElementType> = {
@@ -76,11 +79,29 @@ const VIEW_ALL_LABEL: Record<string, string> = {
   uz: "Hammasini ko'rish",
 };
 
+const FOR_WHO_LABEL: Record<string, string> = {
+  en: "Who It's For",
+  ru: "Для кого",
+  uz: "Kim uchun",
+};
+
+const WHY_NEEDED_LABEL: Record<string, string> = {
+  en: "Why You Need It",
+  ru: "Зачем это нужно",
+  uz: "Nima uchun kerak",
+};
+
+const AT_RISK_LABEL: Record<string, string> = {
+  en: "Risks Without It",
+  ru: "Риски без него",
+  uz: "Bu holatsiz xatarlar",
+};
+
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const product = getProductById(slug);
   const [currency, setCurrency] = useState<Currency>("USD");
   const [checkoutOpen, setCheckoutOpen] = useState(false);
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const tProducts = useTranslations("StoreProducts");
   const t = useTranslations("StorePage.card");
 
@@ -91,6 +112,8 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   const includes = tProducts.raw(`items.${slug}.includes`) as string[];
   const categoryLabel = tProducts(`categories.${product.category}`);
   const CategoryIcon = CATEGORY_ICONS[product.category] ?? FileText;
+
+  const detailContent = PRODUCT_DETAIL_DATA[slug]?.[locale] ?? PRODUCT_DETAIL_DATA[slug]?.en;
 
   const effectiveCurrency: Currency = locale === "uz" ? "UZS" : currency;
   const uzsPrice = Math.round((product.price * UZS_RATE) / 50000) * 50000;
@@ -121,7 +144,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
         {/* Main */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14 md:py-20">
-          <div className="grid lg:grid-cols-[1fr_360px] gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
 
             {/* Left column */}
             <div>
@@ -161,11 +184,70 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                 {description}
               </motion.p>
 
+              {detailContent && (
+                <>
+                  {/* Who It's For */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-10"
+                  >
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                      {FOR_WHO_LABEL[locale] ?? FOR_WHO_LABEL.en}
+                    </p>
+                    <ul className="space-y-3">
+                      {detailContent.forWho.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-[7px]" />
+                          <span className="text-[14px] text-white/55 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  {/* Why You Need It */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-10"
+                  >
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                      {WHY_NEEDED_LABEL[locale] ?? WHY_NEEDED_LABEL.en}
+                    </p>
+                    <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
+                      {detailContent.whyNeeded}
+                    </p>
+                  </motion.div>
+
+                  {/* Risks Without It */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-12"
+                  >
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                      {AT_RISK_LABEL[locale] ?? AT_RISK_LABEL.en}
+                    </p>
+                    <ul className="space-y-3">
+                      {detailContent.atRisk.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-500/55 shrink-0 mt-0.5" strokeWidth={1.5} />
+                          <span className="text-[14px] text-white/50 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </>
+              )}
+
               {/* What's included */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.4, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
                   {INCLUDES_LABEL[locale] ?? INCLUDES_LABEL.en}
@@ -176,7 +258,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                       key={item}
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.2 + i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.3, delay: 0.3 + i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                       className="flex items-start gap-3"
                     >
                       <span className="w-5 h-5 rounded-full border border-primary/30 bg-primary/[0.08] flex items-center justify-center shrink-0 mt-0.5">
@@ -192,7 +274,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.35, delay: 0.35 }}
+                transition={{ duration: 0.35, delay: 0.4 }}
                 className="mt-14"
               >
                 <Link
@@ -205,90 +287,96 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
               </motion.div>
             </div>
 
-            {/* Right column — sticky price card */}
+            {/* Right column — sticky price card + FAQ */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="sticky top-24 bg-[#080808] border border-white/[0.10] rounded-xl p-6">
-                {/* Inner gradient card */}
-                <div className="relative bg-[#141414] rounded-[10px] border border-white/[0.07] p-5 mb-5 overflow-hidden">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 top-0 h-32 pointer-events-none"
-                    style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%)" }}
-                  />
+              <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {/* Price card */}
+                <div className="bg-[#080808] border border-white/[0.10] rounded-xl p-6">
+                  {/* Inner gradient card */}
+                  <div className="relative bg-[#141414] rounded-[10px] border border-white/[0.07] p-5 mb-5 overflow-hidden">
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-x-0 top-0 h-32 pointer-events-none"
+                      style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%)" }}
+                    />
 
-                  {/* Currency toggle */}
-                  {locale !== "uz" && (
-                    <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 w-fit mb-5">
-                      {(["USD", "UZS"] as Currency[]).map((curr) => (
-                        <button
-                          key={curr}
-                          type="button"
-                          onClick={() => setCurrency(curr)}
-                          className="relative px-4 py-1.5 rounded-full text-[10px] uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer"
-                        >
-                          {effectiveCurrency === curr && (
-                            <motion.div
-                              layoutId="prod-curr-pill"
-                              className="absolute inset-0 rounded-full bg-primary"
-                              transition={{ type: "spring", stiffness: 500, damping: 35 }}
-                            />
-                          )}
-                          <span className={cn(
-                            "relative z-10 transition-colors duration-200",
-                            effectiveCurrency === curr ? "text-white" : "text-white/40"
-                          )}>
-                            {curr}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Price */}
-                  <motion.div
-                    key={effectiveCurrency}
-                    initial={{ opacity: 0, y: 4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-end gap-1 mb-1"
-                  >
-                    <span className="text-3xl font-extrabold tracking-tight text-foreground">
-                      {priceMain}
-                    </span>
-                    {priceSuffix && (
-                      <span className="text-white/45 pb-0.5 text-sm">{priceSuffix}</span>
+                    {/* Currency toggle */}
+                    {locale !== "uz" && (
+                      <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 w-fit mb-5">
+                        {(["USD", "UZS"] as Currency[]).map((curr) => (
+                          <button
+                            key={curr}
+                            type="button"
+                            onClick={() => setCurrency(curr)}
+                            className="relative px-4 py-1.5 rounded-full text-[10px] uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer"
+                          >
+                            {effectiveCurrency === curr && (
+                              <motion.div
+                                layoutId="prod-curr-pill"
+                                className="absolute inset-0 rounded-full bg-primary"
+                                transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                              />
+                            )}
+                            <span className={cn(
+                              "relative z-10 transition-colors duration-200",
+                              effectiveCurrency === curr ? "text-white" : "text-white/40"
+                            )}>
+                              {curr}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
                     )}
-                  </motion.div>
-                  <p className="text-[11px] text-white/30">
-                    {ONE_TIME_LABEL[locale] ?? ONE_TIME_LABEL.en}
-                  </p>
+
+                    {/* Price */}
+                    <motion.div
+                      key={effectiveCurrency}
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex items-end gap-1 mb-1"
+                    >
+                      <span className="text-3xl font-extrabold tracking-tight text-foreground">
+                        {priceMain}
+                      </span>
+                      {priceSuffix && (
+                        <span className="text-white/45 pb-0.5 text-sm">{priceSuffix}</span>
+                      )}
+                    </motion.div>
+                    <p className="text-[11px] text-white/30">
+                      {ONE_TIME_LABEL[locale] ?? ONE_TIME_LABEL.en}
+                    </p>
+                  </div>
+
+                  {/* Purchase button */}
+                  <button
+                    type="button"
+                    onClick={() => setCheckoutOpen(true)}
+                    className="w-full rounded-lg bg-primary hover:bg-primary-light py-3 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer mb-5"
+                  >
+                    {t("purchase")}
+                  </button>
+
+                  {/* Feature list */}
+                  <ul className="space-y-2.5">
+                    {featureLabels.map((feat, i) => {
+                      const Icon = featureIcons[i];
+                      return (
+                        <li key={feat} className="flex items-center gap-2.5 text-[12px] text-white/38">
+                          <Icon className="w-3.5 h-3.5 text-white/22 shrink-0" strokeWidth={1.5} />
+                          {feat}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
-                {/* Purchase button */}
-                <button
-                  type="button"
-                  onClick={() => setCheckoutOpen(true)}
-                  className="w-full rounded-lg bg-primary hover:bg-primary-light py-3 text-center text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer mb-5"
-                >
-                  {t("purchase")}
-                </button>
-
-                {/* Feature list */}
-                <ul className="space-y-2.5">
-                  {featureLabels.map((feat, i) => {
-                    const Icon = featureIcons[i];
-                    return (
-                      <li key={feat} className="flex items-center gap-2.5 text-[12px] text-white/38">
-                        <Icon className="w-3.5 h-3.5 text-white/22 shrink-0" strokeWidth={1.5} />
-                        {feat}
-                      </li>
-                    );
-                  })}
-                </ul>
+                {/* FAQ — separate card below price card */}
+                <FaqSection page={slug as FaqPage} variant="sidebar" />
               </div>
             </motion.div>
           </div>
@@ -355,7 +443,6 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
           )}
         </div>
       </div>
-      <FaqSection page={slug as FaqPage} />
 
       <CheckoutModal
         open={checkoutOpen}

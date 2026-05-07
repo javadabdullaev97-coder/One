@@ -14,7 +14,13 @@ const HEADINGS: Record<Locale, string> = {
   uz: "Ko'p so'raladigan savollar",
 };
 
-export default function FaqSection({ page }: { page: FaqPage }) {
+export default function FaqSection({
+  page,
+  variant = "page",
+}: {
+  page: FaqPage;
+  variant?: "page" | "sidebar";
+}) {
   const locale = useLocale() as Locale;
   const [open, setOpen] = useState<number | null>(null);
   const items = FAQ_DATA[page][locale] ?? FAQ_DATA[page].en;
@@ -32,6 +38,50 @@ export default function FaqSection({ page }: { page: FaqPage }) {
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   };
+
+  if (variant === "sidebar") {
+    return (
+      <div className="bg-[#080808] border border-white/[0.10] rounded-xl p-6 mt-3">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-4">FAQ</p>
+        <div className="space-y-px">
+          {items.map(({ q, a }, i) => (
+            <div key={i} className="border-b border-white/[0.07] last:border-b-0">
+              <button
+                className="w-full flex items-start justify-between py-3 text-left gap-3 focus-visible:outline-none"
+                onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+              >
+                <span className="text-[12px] text-white/65 font-medium leading-snug">{q}</span>
+                {open === i ? (
+                  <Minus className="w-3 h-3 text-white/30 shrink-0 mt-0.5" />
+                ) : (
+                  <Plus className="w-3 h-3 text-white/30 shrink-0 mt-0.5" />
+                )}
+              </button>
+              <AnimatePresence initial={false}>
+                {open === i && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-3 text-[11px] text-white/42 leading-relaxed">{a}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section id="faq-section" className="py-24 md:py-32 bg-black border-t border-white/5">
