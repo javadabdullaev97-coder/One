@@ -5,56 +5,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "llc-formation": {
     en: [
       {
-        q: "What documents are included in the LLC Formation Pack?",
-        a: "The pack contains a bilingual company charter, founder's decision, registration application forms, and a regulatory checklist — everything required for submitting an LLC registration in Uzbekistan.",
+        q: "Is there a minimum charter capital requirement?",
+        a: "No. Uzbek law sets no minimum charter capital for an LLC. You can register with 1 UZS of declared capital — though a realistic amount is advisable for credibility with banks and counterparties.",
       },
       {
-        q: "Is this pack sufficient to register an LLC without a lawyer?",
-        a: "Yes. The documents are fully drafted and annotated for self-use. For complex shareholder structures or regulated industries, pairing the pack with a short consultation is advisable.",
+        q: "Can a foreigner be the sole founder?",
+        a: "Yes. A single foreign national or foreign legal entity can be the sole founder of an Uzbek LLC. No Uzbek co-founder or local shareholder is required.",
       },
       {
-        q: "How do I customise the charter for my business?",
-        a: "Open the Word file and fill in the highlighted fields — company name, registered address, share structure, and management model. The annotation guide explains each clause and the options available under Uzbek law.",
+        q: "Does the company director need to be an Uzbek citizen?",
+        a: "No. The director can be of any nationality. However, if a foreign national acts as director and is physically working in Uzbekistan, they will need a work permit — the same as any other foreign employee.",
       },
       {
-        q: "Is the charter compliant with current Uzbek law?",
-        a: "Yes. All documents reflect the Civil Code of the Republic of Uzbekistan and the Law on Limited Liability Companies, updated as of March 2025.",
+        q: "Can the company trade under an English name?",
+        a: "Yes, with conditions. The company must have an official Uzbek-language legal name, but can also register an English trade name alongside it. Both will appear on official documents.",
       },
     ],
     ru: [
       {
-        q: "Какие документы входят в пакет для регистрации ООО?",
-        a: "Пакет включает двуязычный устав, решение учредителей, формы заявлений и регуляторный чеклист — всё необходимое для подачи документов на регистрацию ООО в Узбекистане.",
+        q: "Существует ли минимальный размер уставного капитала?",
+        a: "Нет. Законодательство Узбекистана не устанавливает минимального размера уставного капитала для ООО. Формально можно зарегистрироваться с 1 сум объявленного капитала, хотя разумная сумма важна для доверия со стороны банков и контрагентов.",
       },
       {
-        q: "Можно ли зарегистрировать ООО самостоятельно, без юриста?",
-        a: "Да. Документы полностью составлены и аннотированы для самостоятельного использования. При сложных структурах владения или регулируемых видах деятельности рекомендуем дополнить пакет краткой консультацией.",
+        q: "Может ли иностранец быть единственным учредителем?",
+        a: "Да. Единственным учредителем узбекского ООО может быть как иностранный гражданин, так и иностранное юридическое лицо. Узбекский соучредитель или местный акционер не требуется.",
       },
       {
-        q: "Как адаптировать устав под мою компанию?",
-        a: "Откройте файл Word и заполните выделенные поля: наименование, юридический адрес, структура долей и модель управления. Руководство с аннотациями объясняет каждый пункт и допустимые варианты по законодательству Узбекистана.",
+        q: "Должен ли директор компании быть гражданином Узбекистана?",
+        a: "Нет. Директором может быть гражданин любого государства. Однако если иностранный гражданин фактически работает директором в Узбекистане, ему потребуется разрешение на работу — как и любому другому иностранному сотруднику.",
       },
       {
-        q: "Соответствует ли устав действующему законодательству Узбекистана?",
-        a: "Да. Все документы соответствуют Гражданскому кодексу Республики Узбекистан и Закону об обществах с ограниченной ответственностью в редакции, актуальной на март 2025 года.",
+        q: "Может ли компания использовать английское торговое наименование?",
+        a: "Да, при условии. Компания обязана иметь официальное юридическое наименование на узбекском языке, однако может зарегистрировать и английское торговое наименование. Оба варианта будут фигурировать в официальных документах.",
       },
     ],
     uz: [
       {
-        q: "MChJ tashkil etish to'plamiga qanday hujjatlar kiradi?",
-        a: "To'plamga ikki tilli kompaniya nizomi, ta'sischilar qarori, ro'yxatga olish ariza shakllari va tartibga soluvchi tekshiruv ro'yxati kiradi — O'zbekistonda MChJ ro'yxatdan o'tkazish uchun zarur bo'lgan barcha hujjatlar.",
+        q: "Minimal ustav kapitali talabi bormi?",
+        a: "Yo'q. O'zbekiston qonunchiligi MChJ uchun minimal ustav kapitali belgilamaydi. Rasman 1 so'm e'lon qilingan kapital bilan ro'yxatdan o'tish mumkin — ammo banklar va kontragentlar uchun ishonchlilik nuqtai nazaridan maqbul miqdor tavsiya etiladi.",
       },
       {
-        q: "Huquqshunossiz MChJni ro'yxatdan o'tkazish mumkinmi?",
-        a: "Ha. Hujjatlar mustaqil foydalanish uchun to'liq tuzilgan va izohlar bilan ta'minlangan. Murakkab aksiyadorlik tuzilmalari yoki litsenziyalanadigan faoliyat turlari uchun qisqa konsultatsiya tavsiya etiladi.",
+        q: "Xorijiy fuqaro yagona ta'sischi bo'la oladimi?",
+        a: "Ha. Yagona xorijiy fuqaro yoki xorijiy yuridik shaxs O'zbekiston MChJining yagona ta'sischisi bo'lishi mumkin. O'zbek hamta'sischi yoki mahalliy aksiyador talab qilinmaydi.",
       },
       {
-        q: "Nizomni o'z biznesimga moslashtirish uchun nima qilishim kerak?",
-        a: "Word faylini oching va belgilangan maydonlarni to'ldiring: kompaniya nomi, yuridik manzil, ulushlar tuzilishi va boshqaruv modeli. Izoh qo'llanmasi har bir bandni va O'zbekiston qonunchiligi bo'yicha mavjud variantlarni tushuntiradi.",
+        q: "Kompaniya direktori O'zbekiston fuqarosi bo'lishi shart?",
+        a: "Yo'q. Direktor istalgan millat vakili bo'lishi mumkin. Ammo xorijiy fuqaro direktor sifatida O'zbekistonda jismonan ishlasa, boshqa xorijiy xodimlar kabi ish ruxsatnomasiga muhtoj bo'ladi.",
       },
       {
-        q: "Nizom O'zbekiston qonunchiligi talablariga javob beradimi?",
-        a: "Ha. Barcha hujjatlar O'zbekiston Respublikasi Fuqarolik kodeksi va Mas'uliyati cheklangan jamiyatlar to'g'risidagi qonunga mos keladi, 2025 yil mart oyigacha yangilangan.",
+        q: "Kompaniya inglizcha savdo nomidan foydalana oladimi?",
+        a: "Ha, shartlar bilan. Kompaniya rasmiy o'zbekcha huquqiy nomga ega bo'lishi shart, lekin undan tashqari inglizcha savdo nomini ham ro'yxatdan o'tkazishi mumkin. Ikkalasi ham rasmiy hujjatlarda aks etadi.",
       },
     ],
   },
@@ -62,56 +62,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "jsc-formation": {
     en: [
       {
-        q: "What is the difference between an LLC and a JSC in Uzbekistan?",
-        a: "A JSC issues shares and is required when there are more than 50 shareholders or when a public offering is planned. It requires a board of directors and supervisory board, making governance more formal than an LLC.",
+        q: "What is the minimum authorized capital for a JSC?",
+        a: "The minimum is 400 times the Base Calculation Index (BCI). With the current BCI at approximately 395,000 UZS, this works out to around 158 million UZS (~$12,000–14,000 USD), and is revised annually.",
       },
       {
-        q: "Does the pack cover both open and closed JSCs?",
-        a: "Yes. Templates for both closed (CJSC) and open (OJSC) joint-stock companies are included, with notes explaining where registration and disclosure requirements differ between the two forms.",
+        q: "Is a supervisory board always mandatory?",
+        a: "No. A supervisory board is only required when the JSC has more than 50 shareholders. Below that threshold, a simpler governance structure — such as a general meeting and a single executive — is legally sufficient.",
       },
       {
-        q: "Can foreign nationals be founding shareholders?",
-        a: "Yes. The documents support foreign founding shareholders. The checklist in the pack specifies the notarisation and apostille requirements for foreign identity documents.",
+        q: "Can shares be placed privately without a public prospectus?",
+        a: "Yes. A private placement to a defined circle of investors is permitted without publishing a full prospectus. This is the common route for closed JSCs (non-public JSCs under current Uzbek law).",
       },
       {
-        q: "How long does JSC registration take?",
-        a: "Initial registration typically takes 3–5 business days. Full operational readiness — including the Ministry of Justice filing, share issuance, and opening a corporate bank account — usually takes 2–4 weeks.",
+        q: "What is the difference between a public and non-public JSC?",
+        a: "Since 2022, Uzbek law formally distinguishes public JSCs (listed or with open subscription) from non-public JSCs (closed circle of shareholders). Most startups and family businesses use the non-public form to avoid continuous disclosure obligations.",
       },
     ],
     ru: [
       {
-        q: "В чём отличие ООО от АО в Узбекистане?",
-        a: "АО выпускает акции и требуется при наличии более 50 акционеров или при планировании публичного размещения. Оно предполагает совет директоров и наблюдательный совет, что делает управление более формализованным, чем в ООО.",
+        q: "Каков минимальный уставный капитал для АО?",
+        a: "Минимальный размер составляет 400-кратную величину базовой расчётной величины (БРВ). При текущей БРВ около 395 000 сум это составляет примерно 158 млн сум (~12 000–14 000 долл. США) и пересматривается ежегодно.",
       },
       {
-        q: "Охватывает ли пакет как открытые, так и закрытые АО?",
-        a: "Да. Пакет включает шаблоны для закрытых (ЗАО) и открытых (ОАО) акционерных обществ с пояснениями о различиях в требованиях к регистрации и раскрытию информации.",
+        q: "Наблюдательный совет всегда обязателен?",
+        a: "Нет. Наблюдательный совет обязателен только при наличии более 50 акционеров. При меньшем количестве достаточна упрощённая структура управления — например, общее собрание и единоличный исполнительный орган.",
       },
       {
-        q: "Могут ли иностранные граждане быть учредителями АО?",
-        a: "Да. Документы поддерживают иностранных учредителей. Чеклист в пакете содержит требования к нотариальному заверению и апостилю иностранных документов.",
+        q: "Можно ли разместить акции в частном порядке без публичного проспекта?",
+        a: "Да. Частное размещение среди заранее определённого круга инвесторов допустимо без публикации полного проспекта. Это стандартный маршрут для закрытых (непубличных) АО по действующему законодательству Узбекистана.",
       },
       {
-        q: "Сколько времени занимает регистрация АО?",
-        a: "Первичная регистрация обычно занимает 3–5 рабочих дней. Полная операционная готовность — с учётом регистрации в Министерстве юстиции, выпуска акций и открытия расчётного счёта — как правило, занимает 2–4 недели.",
+        q: "В чём разница между публичным и непубличным АО?",
+        a: "С 2022 года в Узбекистане формально разграничены публичные АО (биржевые или с открытой подпиской) и непубличные АО (с закрытым кругом акционеров). Большинство стартапов и семейных компаний выбирают непубличную форму, чтобы избежать требований о постоянном раскрытии информации.",
       },
     ],
     uz: [
       {
-        q: "O'zbekistonda MChJ va AJ o'rtasidagi farq nima?",
-        a: "AJ aksiyalar chiqaradi va 50 dan ortiq aksiyadorlar bo'lganida yoki ommaviy taklif rejalashtirilganda talab qilinadi. U boshqaruvni MChJga qaraganda rasmiyroq qiladigan direktorlar kengashi va kuzatuv kengashini talab qiladi.",
+        q: "AJ uchun minimal ustav kapitali qancha?",
+        a: "Minimal miqdor bazaviy hisoblash miqdorining (BHM) 400 baravariga teng. Joriy BHM taxminan 395 000 so'm bo'lganda, bu ~158 million so'm (~12 000–14 000 AQSh dollari) ni tashkil etadi va yillik qayta ko'rib chiqiladi.",
       },
       {
-        q: "To'plam ochiq va yopiq AJlarni qamrab oladimi?",
-        a: "Ha. Yopiq (YoAJ) va ochiq (OAJ) aksiyadorlik jamiyatlari uchun shablonlar kiritilgan, ro'yxatga olish va ma'lumot oshkor qilish talablarining farqlari tushuntirib berilgan.",
+        q: "Kuzatuv kengashi har doim majburiy?",
+        a: "Yo'q. Kuzatuv kengashi faqat AJda 50 dan ortiq aksiyador bo'lganda talab qilinadi. Undan kam bo'lganda soddalashtirilgan boshqaruv tuzilmasi — masalan, umumiy majlis va yagona ijro organi — qonuniy jihatdan yetarli.",
       },
       {
-        q: "Xorijiy fuqarolar AJning ta'sischilari bo'la oladimi?",
-        a: "Ha. Hujjatlar xorijiy ta'sischilarga mo'ljallangan. To'plamdagi tekshiruv ro'yxati xorijiy shaxsiy hujjatlar uchun notarial tasdiqlash va apostil talablarini ko'rsatadi.",
+        q: "Aksiyalarni ommaviy prospektsiz xususiy tarzda joylashtirish mumkinmi?",
+        a: "Ha. Belgilangan investorlar doirasiga xususiy joylashtirish to'liq prospekt nashr etmasdan ruxsat etiladi. Bu amaldagi O'zbekiston qonunchiligi bo'yicha yopiq (ochiq bo'lmagan) AJlar uchun odatiy yo'nalish.",
       },
       {
-        q: "AJni ro'yxatdan o'tkazish qancha vaqt oladi?",
-        a: "Dastlabki ro'yxatga olish odatda 3–5 ish kunini oladi. To'liq operatsion tayyorlik — Adliya vazirligi ro'yxatidan o'tish, aksiyalar chiqarish va korporativ hisob ochish bilan — odatda 2–4 hafta davom etadi.",
+        q: "Ochiq va ochiq bo'lmagan AJ o'rtasidagi farq nima?",
+        a: "2022 yildan beri O'zbekiston qonunchiligi rasman ochiq AJlarni (ro'yxatga olingan yoki ochiq obuna bilan) ochiq bo'lmagan AJlardan (yopiq aksiyadorlar doirasi bilan) farqlaydi. Ko'pgina startaplar va oilaviy kompaniyalar doimiy oshkor qilish majburiyatlaridan qochish uchun ochiq bo'lmagan shaklni tanlaydi.",
       },
     ],
   },
@@ -119,56 +119,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "shareholder-agreement": {
     en: [
       {
-        q: "When do I need a shareholder agreement?",
-        a: "Whenever two or more shareholders jointly own a company, a SHA prevents disputes by pre-agreeing decision-making rules, dividend policy, transfer restrictions, and exit mechanisms.",
+        q: "Does the SHA need to be filed with any government authority?",
+        a: "No. An SHA in Uzbekistan is a purely private document between the shareholders. It does not need to be registered with or disclosed to any state body, unlike the company charter which is a public document.",
       },
       {
-        q: "Does the agreement include drag-along and tag-along rights?",
-        a: "Yes. Both drag-along and tag-along provisions are included alongside a right of first refusal clause. The annotation guide explains how to calibrate the thresholds for your specific deal.",
+        q: "What happens if the SHA conflicts with the company charter?",
+        a: "The charter prevails for third-party relations and corporate governance disputes. The SHA is binding only between the parties to it. This is why key governance rules (veto rights, board composition) should also be reflected in the charter.",
       },
       {
-        q: "Is the SHA enforceable under Uzbek law?",
-        a: "The SHA is structured under the Civil Code of Uzbekistan. Key provisions are also designed to function under English or UAE law if the parties choose a foreign governing law — the guide explains available options.",
+        q: "How does a deadlock clause work in practice?",
+        a: "A deadlock clause triggers when shareholders cannot agree on a matter requiring unanimous consent. Typical mechanisms include a buyout right at a pre-agreed formula, appointment of a third-party arbitrator, or a forced sale to a neutral party.",
       },
       {
-        q: "What does the annotation guide cover?",
-        a: "The annotation guide explains the purpose of each major clause, flags the items most frequently negotiated, and outlines the legal constraints and commercial practice applicable in Uzbekistan.",
+        q: "Should the SHA address a founder's death or incapacity?",
+        a: "Yes — this is often overlooked. Without a clause addressing death or incapacity, shares may transfer to heirs with no business relationship to the company. The SHA should specify transfer restrictions and compulsory buyout rights in such events.",
       },
     ],
     ru: [
       {
-        q: "Когда нужно акционерное соглашение?",
-        a: "Когда два и более акционера совместно владеют компанией, SHA предотвращает споры, заранее согласовывая правила принятия решений, дивидендную политику, ограничения на передачу долей и механизмы выхода.",
+        q: "Нужно ли регистрировать SHA в государственных органах?",
+        a: "Нет. SHA в Узбекистане является исключительно частным документом между акционерами. В отличие от устава компании, который является публичным документом, SHA не подлежит регистрации или раскрытию перед государственными органами.",
       },
       {
-        q: "Включает ли соглашение права drag-along и tag-along?",
-        a: "Да. Оба положения включены вместе с правом первоочередного выкупа. Руководство с аннотациями объясняет, как настроить пороговые значения под конкретную сделку.",
+        q: "Что происходит при конфликте SHA с уставом компании?",
+        a: "В отношениях с третьими лицами и при корпоративных спорах устав имеет приоритет. SHA обязателен только для его сторон. Именно поэтому ключевые правила управления (право вето, состав совета директоров) должны быть отражены и в уставе.",
       },
       {
-        q: "Подлежит ли SHA исполнению по законодательству Узбекистана?",
-        a: "SHA составлено в соответствии с Гражданским кодексом Узбекистана. Ключевые положения также совместимы с английским или эмиратским правом, если стороны выберут иностранное применимое право — возможные варианты описаны в руководстве.",
+        q: "Как работает тупиковая оговорка на практике?",
+        a: "Тупиковая оговорка срабатывает, когда акционеры не могут прийти к единогласному решению. Типичные механизмы: право выкупа по заранее согласованной формуле, назначение третейского арбитра или принудительная продажа нейтральной стороне.",
       },
       {
-        q: "Что охватывает руководство с аннотациями?",
-        a: "Руководство объясняет назначение каждого ключевого пункта, выделяет наиболее часто обсуждаемые условия и описывает применимые правовые ограничения и коммерческую практику в Узбекистане.",
+        q: "Должен ли SHA учитывать смерть или недееспособность учредителя?",
+        a: "Да — этот аспект часто упускают из виду. Без соответствующего положения акции могут перейти к наследникам, не имеющим отношения к бизнесу. В SHA следует предусмотреть ограничения на передачу акций и право обязательного выкупа в таких случаях.",
       },
     ],
     uz: [
       {
-        q: "Aksiyadorlar shartnomasi qachon kerak?",
-        a: "Ikki yoki undan ortiq aksiyadorlar birgalikda kompaniyaga egalik qilganda, SHA qaror qabul qilish qoidalari, dividend siyosati, ulushlarni o'tkazish cheklovlari va chiqish mexanizmlarini oldindan kelishib, nizolarning oldini oladi.",
+        q: "SHA biron davlat organiga topshirilishi kerakmi?",
+        a: "Yo'q. O'zbekistondagi SHA aksiyadorlar o'rtasida faqat xususiy hujjat hisoblanadi. Ommaviy hujjat bo'lgan kompaniya nizomidan farqli o'laroq, SHA hech qanday davlat organiga ro'yxatdan o'tkazilishi yoki oshkor qilinishi shart emas.",
       },
       {
-        q: "Shartnomaga drag-along va tag-along huquqlari kiritilganmi?",
-        a: "Ha. Drag-along va tag-along qoidalari birinchi sotib olish huquqi bilan birga kiritilgan. Izoh qo'llanmasi muayyan bitim uchun chegaralarni qanday sozlashni tushuntiradi.",
+        q: "SHA kompaniya nizomi bilan ziddiyatga kirsa nima bo'ladi?",
+        a: "Uchinchi shaxslar bilan munosabatlarda va korporativ nizolarda nizom ustun turadi. SHA faqat tomonlar o'rtasida majburiy kuchga ega. Shuning uchun asosiy boshqaruv qoidalari (veto huquqi, kengash tarkibi) nizomda ham aks ettirilishi kerak.",
       },
       {
-        q: "SHA O'zbekiston qonunchiligi bo'yicha ijro etilishi mumkinmi?",
-        a: "SHA O'zbekiston Fuqarolik kodeksi asosida tuzilgan. Asosiy qoidalar ingliz yoki BAA huquqi bo'yicha ham qo'llashga mo'ljallangan — mavjud variantlar qo'llanmada tushuntirilgan.",
+        q: "Amalda to'xtab qolish bandi qanday ishlaydi?",
+        a: "To'xtab qolish bandi aksiyadorlar bir ovozdan qaror talab qiladigan masalada kelisha olmasa ishga tushadi. Odatiy mexanizmlar: oldindan kelishilgan formula bo'yicha sotib olish huquqi, uchinchi tomon hakamini tayinlash yoki neytral tomonga majburiy sotuv.",
       },
       {
-        q: "Izoh qo'llanmasi nimani qamrab oladi?",
-        a: "Izoh qo'llanmasi har bir asosiy bandning maqsadini tushuntiradi, eng ko'p muzokaraga qo'yiladigan shartlarni belgilaydi va O'zbekistonda amal qiladigan qonuniy cheklovlar hamda tijorat amaliyotini bayon etadi.",
+        q: "SHA ta'sischi vafoti yoki muomalaga layoqatsizligini ko'rib chiqishi kerakmi?",
+        a: "Ha — bu ko'pincha e'tibordan chetda qoladi. Tegishli band bo'lmasa, aksiyalar kompaniya bilan hech qanday aloqasi bo'lmagan vorislarga o'tib ketishi mumkin. SHA bunday holatlarda ulushlarni o'tkazish cheklovlari va majburiy sotib olish huquqlarini belgilashi kerak.",
       },
     ],
   },
@@ -176,44 +176,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "nda-bilateral": {
     en: [
       {
-        q: "What is the difference between the bilateral and unilateral NDA variants?",
-        a: "The bilateral (mutual) NDA is used when both parties share confidential information — typical for partnership discussions. The unilateral variant suits situations where only one party discloses, such as engaging a contractor.",
+        q: "How long is the statute of limitations for an NDA breach?",
+        a: "The general limitation period under Uzbek civil law is 3 years from the date the breach was discovered or should have been discovered. Specifying when the clock starts is important — build this into the NDA's breach notification clause.",
       },
       {
-        q: "What types of information does the NDA protect?",
-        a: "The template covers trade secrets, business plans, financial data, technical information, client lists, and any other information marked as confidential — consistent with Uzbek Civil Code protections.",
+        q: "Are non-compete clauses enforceable under Uzbek law?",
+        a: "Only in limited form. Post-termination non-compete clauses must be reasonable in scope — Uzbek courts are reluctant to enforce restrictions exceeding 2 years or covering an unreasonably broad geography or industry.",
       },
       {
-        q: "Can this NDA be used with international counterparties?",
-        a: "Yes. The template includes a choice-of-law clause that can be set to Uzbek, English, or another governing law, making it suitable for cross-border transactions.",
+        q: "Does the NDA cover verbal disclosures?",
+        a: "It can, but with conditions. To protect verbal disclosures, the disclosing party should confirm them in writing within 10–15 days — the NDA includes a provision for this. Without written confirmation, verbal disclosures are difficult to prove and enforce.",
+      },
+      {
+        q: "Can employees and advisers receive confidential information shared under the NDA?",
+        a: "The NDA includes a 'need-to-know' clause: each party may share confidential information with employees and professional advisers who need it for the permitted purpose, provided those individuals are bound by equivalent obligations.",
       },
     ],
     ru: [
       {
-        q: "В чём разница между двусторонним и односторонним NDA?",
-        a: "Двустороннее (взаимное) NDA используется, когда обе стороны передают конфиденциальную информацию — типично для переговоров о партнёрстве. Односторонний вариант подходит для ситуаций, когда информацию раскрывает только одна сторона, например при привлечении подрядчика.",
+        q: "Каков срок исковой давности по нарушению NDA?",
+        a: "Общий срок исковой давности по гражданскому законодательству Узбекистана составляет 3 года с момента обнаружения нарушения или с момента, когда оно должно было быть обнаружено. Важно чётко прописать, с какого момента начинается этот срок — это следует отразить в положении NDA об уведомлении о нарушении.",
       },
       {
-        q: "Какие виды информации защищает NDA?",
-        a: "Шаблон охватывает коммерческие тайны, бизнес-планы, финансовые данные, техническую информацию, клиентские базы и любые другие сведения, обозначенные как конфиденциальные — в соответствии с нормами Гражданского кодекса Узбекистана.",
+        q: "Являются ли ограничения конкуренции исполнимыми по законодательству Узбекистана?",
+        a: "Только в ограниченном виде. Суды Узбекистана неохотно применяют постконтрактные ограничения конкуренции сроком более 2 лет или распространяющиеся на слишком широкую географию или отрасль.",
       },
       {
-        q: "Можно ли использовать это NDA с иностранными контрагентами?",
-        a: "Да. Шаблон содержит оговорку о применимом праве, которую можно установить на узбекское, английское или иное право, что делает документ пригодным для трансграничных сделок.",
+        q: "Распространяется ли NDA на устные раскрытия?",
+        a: "Может, но при условии. Для защиты устных раскрытий раскрывающая сторона должна подтвердить их в письменной форме в течение 10–15 дней — в NDA предусмотрено соответствующее положение. Без письменного подтверждения устные раскрытия сложно доказать и защитить в суде.",
+      },
+      {
+        q: "Могут ли сотрудники и советники получать конфиденциальную информацию по NDA?",
+        a: "NDA включает оговорку о праве «знать только то, что необходимо»: каждая сторона может передавать конфиденциальную информацию сотрудникам и профессиональным советникам, которым она нужна для разрешённой цели, при условии что они связаны эквивалентными обязательствами.",
       },
     ],
     uz: [
       {
-        q: "Ikki tomonlama va bir tomonlama NDA o'rtasidagi farq nima?",
-        a: "Ikki tomonlama (o'zaro) NDA ikkala tomon ham maxfiy ma'lumot ulashganda qo'llaniladi — odatda sheriklik muzokaralari uchun. Bir tomonlama variant faqat bir tomon ma'lumot oshkor qilganda, masalan pudratchi jalb qilishda qo'llaniladi.",
+        q: "NDA buzilishi uchun da'vo muddati qancha?",
+        a: "O'zbekiston fuqarolik qonunchiligi bo'yicha umumiy da'vo muddati buzilish aniqlangan yoki aniqlanishi kerak bo'lgan kundan boshlab 3 yil. Bu muddatning qachon boshlanishini aniq belgilash muhim — NDAning buzilish to'g'risida bildirishnoma bandiga kiritilishi kerak.",
       },
       {
-        q: "NDA qanday turdagi ma'lumotlarni himoya qiladi?",
-        a: "Shablon savdo sirlari, biznes-rejalar, moliyaviy ma'lumotlar, texnik axborot, mijozlar ro'yxatlari va maxfiy deb belgilangan boshqa har qanday ma'lumotlarni qamrab oladi — O'zbekiston Fuqarolik kodeksi himoyalariga mos ravishda.",
+        q: "Raqobatni cheklash bandlari O'zbekiston qonunchiligi bo'yicha ijro etilishi mumkinmi?",
+        a: "Faqat cheklangan shaklda. O'zbekiston sudlari 2 yildan oshiq muddatli yoki haddan tashqari keng geografiya yoki tarmoqni qamraydigan shartnomadan keyingi raqobatni cheklash bandlarini ijro etishga moyil emas.",
       },
       {
-        q: "Bu NDA xalqaro kontragentlar bilan ishlatilishi mumkinmi?",
-        a: "Ha. Shablon O'zbekiston, ingliz yoki boshqa qonun bo'yicha belgilanishi mumkin bo'lgan qonunga muvofiqligi bo'yicha bandni o'z ichiga oladi, bu esa uni transchegaraviy bitimlar uchun mos qiladi.",
+        q: "NDA og'zaki oshkor qilishlarni qamrab oladimi?",
+        a: "Qamrab olishi mumkin, lekin shartlar bilan. Og'zaki oshkor qilishlarni himoya qilish uchun oshkor qiluvchi tomon ularni 10–15 kun ichida yozma ravishda tasdiqlashi kerak — NDAda bunga tegishli band mavjud. Yozma tasdiqsiz og'zaki oshkor qilishlarni isbotlash va himoya qilish qiyin.",
+      },
+      {
+        q: "Xodimlar va maslahatchilar NDA bo'yicha ulashilgan maxfiy ma'lumotlarni olishi mumkinmi?",
+        a: "NDA 'bilish zarur' bandini o'z ichiga oladi: har bir tomon ruxsat etilgan maqsad uchun zarur bo'lgan xodimlari va professional maslahatchilariga maxfiy ma'lumot uzatishi mumkin, ular teng majburiyatlar bilan bog'liq bo'lgan taqdirda.",
       },
     ],
   },
@@ -221,56 +233,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "commercial-lease": {
     en: [
       {
-        q: "What types of premises does this lease cover?",
-        a: "The pack covers office, retail, and warehouse/industrial premises under Uzbek civil law. Property-specific clauses are clearly labelled so you include only what applies to your premises.",
+        q: "Does a commercial lease need state registration?",
+        a: "Yes, if the term is 1 year or longer. Leases of 12 months or more must be registered with the State Cadastre — an unregistered long-term lease can be challenged or voided. Short-term leases (under 1 year) are exempt, which is why the pack includes a short-term variant.",
       },
       {
-        q: "Are renewal and early exit provisions included?",
-        a: "Yes. The lease includes an automatic renewal clause with notice periods, tenant improvement rights, and an early exit provision with penalty calculation formulas.",
+        q: "Can the landlord raise rent during the lease term?",
+        a: "Only if the contract includes an escalation clause. Without one, the rent is fixed for the entire term under Uzbek civil law. If you want index-linked or periodic rent reviews, this must be explicitly written into the agreement.",
       },
       {
-        q: "Is the lease bilingual?",
-        a: "Yes. The standard lease is provided in Russian and English as required by Uzbek practice for agreements involving foreign parties. A Uzbek-language version is included as an addendum.",
+        q: "Who is responsible for major structural repairs?",
+        a: "By default, the landlord. Under the Civil Code, major repairs (structural, roof, utilities infrastructure) remain the landlord's obligation unless the contract explicitly transfers this to the tenant. Verify what the lease actually says before signing.",
       },
       {
-        q: "Does the pack include a short-term lease?",
-        a: "Yes. A short-term variant for leases under one year (not subject to mandatory state registration) is included alongside the standard multi-year form.",
+        q: "What happens to tenant improvements at the end of the lease?",
+        a: "Inseparable improvements — those that cannot be removed without damaging the property — automatically become the landlord's property at lease end, unless the contract provides for compensation. Negotiate a reimbursement clause before making any significant fit-out.",
       },
     ],
     ru: [
       {
-        q: "Какие типы помещений охватывает этот договор аренды?",
-        a: "Пакет охватывает офисные, торговые и складские/производственные помещения по законодательству Узбекистана. Условия, специфичные для каждого типа объектов, чётко обозначены, что позволяет использовать только применимые положения.",
+        q: "Требуется ли государственная регистрация коммерческой аренды?",
+        a: "Да, если срок аренды составляет 1 год и более. Договоры сроком от 12 месяцев подлежат обязательной регистрации в Государственном кадастре — незарегистрированный долгосрочный договор может быть оспорен или признан недействительным. Краткосрочная аренда (до 1 года) освобождена от этого требования, поэтому в пакет включён соответствующий вариант.",
       },
       {
-        q: "Включены ли положения о продлении и досрочном расторжении?",
-        a: "Да. Договор содержит условие об автоматической пролонгации с уведомительными сроками, права арендатора на улучшение имущества и условие о досрочном расторжении с формулами расчёта неустойки.",
+        q: "Может ли арендодатель повысить арендную плату в течение срока аренды?",
+        a: "Только при наличии в договоре оговорки об индексации. Без неё размер арендной платы фиксируется на весь срок по нормам Гражданского кодекса Узбекистана. Если требуется индексируемая или периодически пересматриваемая арендная плата — это необходимо явно прописать в договоре.",
       },
       {
-        q: "Является ли договор двуязычным?",
-        a: "Да. Стандартный договор предоставляется на русском и английском языках, что соответствует практике Узбекистана для соглашений с участием иностранных сторон. В приложении также предусмотрен вариант на узбекском языке.",
+        q: "Кто несёт ответственность за капитальный ремонт?",
+        a: "По умолчанию — арендодатель. В соответствии с Гражданским кодексом капитальный ремонт (несущие конструкции, кровля, инженерные сети) остаётся обязанностью арендодателя, если иное явно не предусмотрено договором. Перед подписанием проверьте, что написано в конкретном договоре.",
       },
       {
-        q: "Включён ли краткосрочный договор аренды?",
-        a: "Да. Вариант краткосрочной аренды сроком до одного года (не подлежащий обязательной государственной регистрации) включён наряду со стандартной долгосрочной формой.",
+        q: "Что происходит с улучшениями арендатора по окончании аренды?",
+        a: "Неотделимые улучшения — те, что нельзя убрать без ущерба для имущества, — автоматически переходят к арендодателю по истечении срока аренды, если договором не предусмотрена компенсация. Согласуйте условие о возмещении расходов до начала отделочных работ.",
       },
     ],
     uz: [
       {
-        q: "Bu ijara shartnomasi qanday turdagi binolarni qamrab oladi?",
-        a: "To'plam O'zbekiston fuqarolik qonunchiligi bo'yicha ofis, savdo va ombor/sanoat binolarini qamrab oladi. Har bir bino turiga xos bandlar aniq belgilangan, shuning uchun faqat tegishli qoidalarni qo'llashingiz mumkin.",
+        q: "Tijorat ijarasi davlat ro'yxatidan o'tishi kerakmi?",
+        a: "Ha, agar muddat 1 yil yoki undan uzun bo'lsa. 12 oy va undan uzoq muddatli shartnomalar Davlat kadastrida ro'yxatdan o'tkazilishi shart — ro'yxatdan o'tmagan uzoq muddatli ijara bahsli bo'lishi yoki bekor qilinishi mumkin. Qisqa muddatli ijara (1 yildan kam) bu talabdan ozod, shuning uchun to'plamda qisqa muddatli variant mavjud.",
       },
       {
-        q: "Uzaytirish va muddatidan oldin fesxlash shartlari kiritilganmi?",
-        a: "Ha. Shartnomada bildirish muddatlari bilan avtomatik uzaytirish bandi, ijarachilarning yaxshilash huquqlari va jarimalarni hisoblash formulalari bilan muddatidan oldin fesxlash bandi mavjud.",
+        q: "Uy egasi ijara muddati davomida ijarani oshira oladimi?",
+        a: "Faqat shartnomada indeksatsiya bandi bo'lsa. Bunday band bo'lmasa, O'zbekiston fuqarolik qonunchiligi bo'yicha butun muddat davomida ijara narxi belgilanadi. Indeksga bog'liq yoki davriy ko'rib chiqiladigan ijara kerak bo'lsa, bu shartnomaga aniq yozilishi kerak.",
       },
       {
-        q: "Shartnoma ikki tildami?",
-        a: "Ha. Standart ijara shartnomasi xorijiy taraflar ishtirokidagi kelishuvlar uchun O'zbekiston amaliyotida talab qilinadigan rus va ingliz tillarida taqdim etiladi. Qo'shimchada o'zbekcha variant ham berilgan.",
+        q: "Kapital ta'mirga kim javobgar?",
+        a: "Standart holda — uy egasi. Fuqarolik kodeksiga ko'ra, kapital ta'mir (konstruktiv, tom, kommunikatsiya infratuzilmasi) shartnomada bu majburiyat aniq ijarachiga o'tkazilmasa, uy egasining majburiyati bo'lib qoladi. Imzolashdan oldin shartnomada nima yozilganini tekshiring.",
       },
       {
-        q: "To'plamda qisqa muddatli ijara shartnomasi bormi?",
-        a: "Ha. Bir yildan kam muddatga mo'ljallangan qisqa muddatli variant (majburiy davlat ro'yxatiga almashinmaydigan) standart ko'p yillik shakl bilan birga kiritilgan.",
+        q: "Ijara muddati tugagach ijarachi yaxshilanishlar bilan nima qiladi?",
+        a: "Ajralmas yaxshilanishlar — mulkka zarar bermasdan olib tashlab bo'lmaydigan — shartnomada kompensatsiya nazarda tutilmagan bo'lsa, ijara muddati tugagach avtomatik ravishda uy egasining mulkiga aylanadi. Katta ta'mirlash ishlarini boshlashdan oldin kompensatsiya bandini muzokaraga qiling.",
       },
     ],
   },
@@ -278,56 +290,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "employment-contract": {
     en: [
       {
-        q: "Is this contract compliant with the Uzbekistan Labour Code?",
-        a: "Yes. The contract reflects the current Labour Code of the Republic of Uzbekistan, including mandatory clauses on working hours, leave entitlements, and termination procedures, updated as of February 2026.",
+        q: "How long can a probation period last?",
+        a: "Under the Uzbekistan Labour Code, probation cannot exceed 3 months for general employees or 6 months for senior management positions. Setting a longer probation period is not enforceable, even if the employee agrees to it.",
       },
       {
-        q: "Does the pack cover both fixed-term and open-ended contracts?",
-        a: "Yes. The standard template is for open-ended employment; a separate fixed-term variant is included for project-based or seasonal roles.",
+        q: "What social contributions does the employer pay?",
+        a: "Employers contribute 12% of gross salary as social tax, paid entirely by the employer — it is not deducted from the employee's wage. This is in addition to the 12% personal income tax withheld from the employee's salary.",
       },
       {
-        q: "What does the probation addendum include?",
-        a: "The probation addendum sets out the trial period duration (up to 3 months under Uzbek law), evaluation criteria, and the procedure for termination if the employee does not pass probation.",
+        q: "What is the minimum annual leave entitlement?",
+        a: "The Labour Code mandates a minimum of 15 working days of paid annual leave. This cannot be waived, reduced, or replaced by cash in lieu except on termination of employment. Certain categories of workers (hazardous roles, young workers) are entitled to more.",
       },
       {
-        q: "Can I use this contract for foreign employees?",
-        a: "Yes, with one caveat: foreign nationals require a valid work permit. The contract includes a clause linking employment commencement to work authorisation. See the Work Permit Application Pack for supporting documentation.",
+        q: "Are post-termination non-compete clauses enforceable?",
+        a: "This is legally uncertain in Uzbekistan. Unlike employment law in some jurisdictions, the Labour Code does not explicitly authorise post-termination non-competes, and courts have historically been reluctant to enforce them against employees.",
       },
     ],
     ru: [
       {
-        q: "Соответствует ли договор Трудовому кодексу Узбекистана?",
-        a: "Да. Договор отражает действующий Трудовой кодекс Республики Узбекистан, включая обязательные условия о рабочем времени, отпусках и процедуре увольнения в редакции, актуальной на февраль 2026 года.",
+        q: "Какова максимальная продолжительность испытательного срока?",
+        a: "Согласно Трудовому кодексу Узбекистана, испытательный срок не может превышать 3 месяцев для рядовых сотрудников и 6 месяцев — для руководящих должностей. Более длительный испытательный срок не имеет юридической силы, даже при согласии работника.",
       },
       {
-        q: "Охватывает ли пакет как срочные, так и бессрочные трудовые договоры?",
-        a: "Да. Стандартный шаблон предназначен для бессрочного трудоустройства; отдельный вариант срочного договора включён для проектной или сезонной занятости.",
+        q: "Какие социальные взносы уплачивает работодатель?",
+        a: "Работодатель уплачивает социальный налог в размере 12% от фонда оплаты труда — полностью за счёт работодателя, без вычета из зарплаты сотрудника. Это дополняется 12% НДФЛ, удерживаемым из заработной платы работника.",
       },
       {
-        q: "Что включает приложение об испытательном сроке?",
-        a: "Приложение определяет продолжительность испытательного срока (до 3 месяцев по законодательству Узбекистана), критерии оценки и процедуру расторжения договора при неудовлетворительном прохождении испытания.",
+        q: "Какова минимальная продолжительность ежегодного отпуска?",
+        a: "Трудовой кодекс устанавливает минимум 15 рабочих дней оплачиваемого ежегодного отпуска. Это право не может быть отменено, сокращено или заменено денежной компенсацией, за исключением случаев увольнения. Для отдельных категорий работников (вредные условия, молодые специалисты) продолжительность отпуска больше.",
       },
       {
-        q: "Можно ли использовать этот договор для иностранных сотрудников?",
-        a: "Да, с одной оговоркой: иностранным гражданам необходимо разрешение на работу. Договор содержит условие, связывающее начало трудовой деятельности с наличием действующего разрешения. Сопутствующие документы — в пакете «Work Permit Application Pack».",
+        q: "Применимы ли постконтрактные ограничения конкуренции?",
+        a: "В Узбекистане это юридически неоднозначный вопрос. В отличие от некоторых юрисдикций, Трудовой кодекс прямо не предусматривает постконтрактных ограничений конкуренции, и исторически суды не склонны их применять против работников.",
       },
     ],
     uz: [
       {
-        q: "Shartnoma O'zbekiston Mehnat kodeksiga muvofiq kompilyansli?",
-        a: "Ha. Shartnoma ish vaqti, ta'til huquqlari va ishdan bo'shatish tartiblari bo'yicha majburiy bandlarni o'z ichiga olgan O'zbekiston Respublikasining amaldagi Mehnat kodeksini aks ettiradi, 2026 yil fevral oyigacha yangilangan.",
+        q: "Sinov muddati qancha davom etishi mumkin?",
+        a: "O'zbekiston Mehnat kodeksiga ko'ra, sinov muddati oddiy xodimlar uchun 3 oydan, rahbarlik lavozimlarida 6 oydan oshmasligi kerak. Xodim rozilik bildirsada, undan uzun sinov muddati ijro etilmaydi.",
       },
       {
-        q: "To'plam belgilangan muddatli va muddatsiz shartnomalarni qamrab oladimi?",
-        a: "Ha. Standart shablon muddatsiz mehnat munosabatlari uchun; loyiha yoki mavsumiy rollar uchun alohida belgilangan muddatli variant kiritilgan.",
+        q: "Ish beruvchi qanday ijtimoiy badal to'laydi?",
+        a: "Ish beruvchilar brutto ish haqining 12 foizini ijtimoiy soliq sifatida to'laydi — bu to'liq ish beruvchi tomonidan to'lanadi, xodimning ish haqidan ushlanmaydi. Bu xodim ish haqidan ushlanuvchi 12% daromad solig'iga qo'shimcha.",
       },
       {
-        q: "Sinov muddati qo'shimchasi nimani o'z ichiga oladi?",
-        a: "Qo'shimcha sinov muddatini (O'zbekiston qonunchiligi bo'yicha 3 oygacha), baholash mezonlarini va xodim sinov muddatini o'ta olmasa shartnomani bekor qilish tartibini belgilaydi.",
+        q: "Minimal yillik ta'til huquqi qancha?",
+        a: "Mehnat kodeksi kamida 15 ish kunlik pullik yillik ta'tilni majburiy qiladi. Bu huquqdan voz kechish, uni qisqartirish yoki ishdan bo'shatishdan tashqari pul bilan almashtirish mumkin emas. Ba'zi toifadagi ishchilar (zararli sharoitlar, yosh ishchilar) ko'proq ta'tilga haqlidirlar.",
       },
       {
-        q: "Bu shartnomani xorijiy xodimlar uchun ishlatish mumkinmi?",
-        a: "Ha, bitta shart bilan: xorijiy fuqarolar ish ruxsatnomasi talab qiladi. Shartnomada ish boshlashni mehnat ruxsatnomasiga bog'laydigan band mavjud. Qo'llab-quvvatlovchi hujjatlar uchun Work Permit Application Pack-ga qarang.",
+        q: "Ishdan bo'shatishdan keyingi raqobatni cheklash bandlari ijro etilishi mumkinmi?",
+        a: "Bu O'zbekistonda huquqiy jihatdan noaniq. Ba'zi yurisdiktsiyalardan farqli o'laroq, Mehnat kodeksi shartnomadan keyingi raqobatni cheklashni aniq ruxsat etmaydi va tarixan sudlar ularni xodimlar tashida ijro etishga moyil bo'lmagan.",
       },
     ],
   },
@@ -335,56 +347,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "hr-policy-manual": {
     en: [
       {
-        q: "What HR policies are included in the manual?",
-        a: "The manual contains 12 policy modules: recruitment, on-boarding, code of conduct, performance management, disciplinary procedure, grievance handling, leave policy, business expenses, IT usage, data protection, health & safety, and off-boarding.",
+        q: "Does Uzbek law require a formal disciplinary procedure?",
+        a: "Yes. The Labour Code requires that any disciplinary action — reprimand, severe reprimand, or termination — follow a documented procedure: written explanation from the employee, review, and written decision. Verbal warnings alone are not a valid legal basis for dismissal.",
       },
       {
-        q: "How do I adapt the manual for my company?",
-        a: "Each module has placeholder fields for company name, headcount thresholds, approval chains, and local office rules. An adaptation guide explains which sections are mandatory under Uzbek labour law and which are fully customisable.",
+        q: "Can employers monitor employee devices and communications?",
+        a: "Employers may monitor company-owned devices and communications used for work, but employees must be informed of this monitoring in writing before it begins. Undisclosed monitoring can be challenged under privacy regulations.",
       },
       {
-        q: "Is the manual suitable for small businesses?",
-        a: "Yes. The manual includes a 'simplified track' — a condensed set of core policies for companies with fewer than 20 employees who need legally compliant documentation without the full enterprise framework.",
+        q: "How long must personnel records be kept?",
+        a: "Under Uzbek archival regulations, personnel files must be retained for 75 years. Employment orders, salary records, and leave documents must be kept for a minimum of 5 years. The manual includes a document retention schedule aligned with these requirements.",
       },
       {
-        q: "Does the manual cover remote and hybrid work arrangements?",
-        a: "Yes. The leave policy and IT usage modules include provisions for remote and hybrid work arrangements, consistent with current Uzbek labour law guidance.",
+        q: "What are the rules on overtime?",
+        a: "Overtime must be compensated at a minimum of 1.5× the normal rate. The Labour Code caps overtime at 120 hours per employee per year. Exceeding this limit — even with the employee's consent — is a Labour Inspection violation.",
       },
     ],
     ru: [
       {
-        q: "Какие кадровые политики включены в руководство?",
-        a: "Руководство содержит 12 модулей: подбор персонала, адаптация, кодекс поведения, управление эффективностью, дисциплинарная процедура, рассмотрение жалоб, политика отпусков, командировочные расходы, использование ИТ, защита данных, охрана труда и офбординг.",
+        q: "Требует ли законодательство Узбекистана формальной дисциплинарной процедуры?",
+        a: "Да. Трудовой кодекс обязывает оформлять любые дисциплинарные меры — замечание, выговор или увольнение — по установленной процедуре: письменное объяснение от работника, проверка и письменное решение. Только устного предупреждения недостаточно как правового основания для увольнения.",
       },
       {
-        q: "Как адаптировать руководство под мою компанию?",
-        a: "Каждый модуль содержит поля-заглушки для наименования компании, численности персонала, цепочек согласования и правил конкретного офиса. Руководство по адаптации объясняет, какие разделы обязательны по трудовому законодательству Узбекистана, а какие можно свободно настраивать.",
+        q: "Вправе ли работодатели контролировать устройства и переписку сотрудников?",
+        a: "Работодатели могут контролировать принадлежащие компании устройства и рабочую переписку, однако работники должны быть уведомлены об этом в письменной форме до начала мониторинга. Скрытое наблюдение может быть оспорено с точки зрения норм о защите персональных данных.",
       },
       {
-        q: "Подходит ли руководство для малого бизнеса?",
-        a: "Да. Руководство включает «упрощённый трек» — сокращённый набор основных политик для компаний с численностью до 20 сотрудников, которым нужна юридически корректная документация без полной корпоративной системы.",
+        q: "Как долго должны храниться кадровые документы?",
+        a: "Согласно архивному законодательству Узбекистана, личные дела сотрудников хранятся 75 лет. Приказы о приёме на работу, документы по заработной плате и отпускам — не менее 5 лет. В руководстве предусмотрен график хранения документов с учётом этих требований.",
       },
       {
-        q: "Охватывает ли руководство дистанционный и гибридный режим работы?",
-        a: "Да. Модули политики отпусков и использования ИТ включают положения об удалённой и гибридной работе в соответствии с актуальными разъяснениями по трудовому законодательству Узбекистана.",
+        q: "Каковы правила оплаты сверхурочной работы?",
+        a: "Сверхурочная работа оплачивается не менее чем в 1,5-кратном размере от обычного тарифа. Трудовой кодекс ограничивает сверхурочные 120 часами в год на одного работника. Превышение этого лимита — даже с согласия сотрудника — является нарушением при инспекции труда.",
       },
     ],
     uz: [
       {
-        q: "Qo'llanmaga qanday HR siyosatlari kiritilgan?",
-        a: "Qo'llanma 12 ta siyosat modulini o'z ichiga oladi: yollash, adaptatsiya, xulq-atvor kodeksi, samaradorlikni boshqarish, intizomiy tartib, shikoyatlarni ko'rib chiqish, ta'til siyosati, xizmat safari xarajatlari, IT foydalanish, ma'lumotlarni himoya qilish, mehnat muhofazasi va offboarding.",
+        q: "O'zbekiston qonunchiligi rasmiy intizomiy tartibni talab qiladimi?",
+        a: "Ha. Mehnat kodeksi har qanday intizomiy chora — hayfsan, qattiq hayfsan yoki ishdan bo'shatish — uchun hujjatlashtirilgan tartibni talab qiladi: xodimdan yozma tushuntirish, ko'rib chiqish va yozma qaror. Faqat og'zaki ogohlantirish ishdan bo'shatish uchun qonuniy asos bo'la olmaydi.",
       },
       {
-        q: "Qo'llanmani o'z kompaniyamga qanday moslashtiraman?",
-        a: "Har bir modulda kompaniya nomi, xodimlar soni chegaralari, tasdiqlash zanjirlari va mahalliy ofis qoidalari uchun to'ldiriladigan maydonlar mavjud. Moslashtirish qo'llanmasi O'zbekiston mehnat qonunchiligi bo'yicha qaysi bo'limlar majburiy va qaysilari to'liq sozlanishi mumkinligini tushuntiradi.",
+        q: "Ish beruvchilar xodimlarning qurilmalari va muloqotlarini kuzatishi mumkinmi?",
+        a: "Ish beruvchilar kompaniyaga tegishli qurilmalar va ish muloqotlarini kuzatishi mumkin, lekin kuzatish boshlanishidan oldin xodimlar yozma ravishda xabardor qilinishi kerak. Yashirin kuzatish maxfiylik qoidalari bo'yicha bahsli bo'lishi mumkin.",
       },
       {
-        q: "Qo'llanma kichik biznes uchun mos keladi?",
-        a: "Ha. Qo'llanmada to'liq korporativ tizimisiz huquqiy jihatdan mos hujjatlarga muhtoj bo'lgan 20 dan kam xodimli kompaniyalar uchun asosiy siyosatlarning qisqartirilgan to'plami — 'soddalashtirilgan yo'l' kiritilgan.",
+        q: "Xodim yozuvlari qancha vaqt saqlanishi kerak?",
+        a: "O'zbekiston arxiv qoidalariga ko'ra, xodimlarning shaxsiy ishlari 75 yil saqlanishi kerak. Mehnat buyruqlari, ish haqi va ta'til hujjatlari kamida 5 yil saqlanishi shart. Qo'llanmada ushbu talablarga mos hujjatlarni saqlash jadvali mavjud.",
       },
       {
-        q: "Qo'llanma masofaviy va gibrid ish rejimlarini qamrab oladimi?",
-        a: "Ha. Ta'til siyosati va IT foydalanish modullari O'zbekiston mehnat qonunchiligi bo'yicha amaldagi ko'rsatmalar bilan muvofiq ravishda masofaviy va gibrid ish rejimlariga oid qoidalarni o'z ichiga oladi.",
+        q: "Qo'shimcha ish vaqtiga qoidalar qanday?",
+        a: "Qo'shimcha ish vaqti oddiy stavkadan kamida 1,5 barobar to'lanishi kerak. Mehnat kodeksi qo'shimcha ish vaqtini bir xodim uchun yiliga 120 soat bilan cheklaydi. Bu chegarani oshirish — xodimning roziligi bilan ham bo'lsa — Mehnat inspeksiyasi tomonidan qoidabuzarlik hisoblanadi.",
       },
     ],
   },
@@ -392,56 +404,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "tax-compliance-starter": {
     en: [
       {
-        q: "Which taxes does this pack cover?",
-        a: "The pack covers corporate income tax (CIT), VAT, personal income tax (PIT), and employer social tax — the four taxes most businesses in Uzbekistan encounter in their first year of operation.",
+        q: "When does a business become obligated to register for VAT?",
+        a: "VAT registration is mandatory once annual turnover exceeds 1 billion UZS (approximately $78,000 at current rates). Below this threshold, VAT registration is voluntary. Exceeding the threshold without registering attracts penalties.",
       },
       {
-        q: "What is the compliance calendar?",
-        a: "A monthly and quarterly schedule listing every filing deadline, payment due date, and reporting obligation for a standard LLC in Uzbekistan, with notes on penalties for late submission.",
+        q: "What is the simplified tax system and who qualifies?",
+        a: "Small businesses with turnover below 1 billion UZS can opt for the Simplified Tax System (SoTS): a flat 4% on revenue for service businesses or 6% for trade and production — replacing both CIT and VAT. The pack includes a comparison worksheet.",
       },
       {
-        q: "Are the tax rates and forms current?",
-        a: "Yes. The pack reflects the tax rates and forms in force as of March 2026: 15% CIT, 12% VAT, 12% PIT, and 12% employer social tax.",
+        q: "How often are tax filings due?",
+        a: "VAT returns are filed monthly. CIT advance payments are made quarterly. The annual CIT declaration is due by March 1 of the following year. The compliance calendar lists every deadline with the applicable penalty for late filing.",
       },
       {
-        q: "Is this pack suitable for a newly registered company?",
-        a: "Yes — the pack is specifically designed for businesses in their first year, covering initial tax registration steps as well as ongoing quarterly and annual compliance obligations.",
+        q: "What triggers a tax audit in Uzbekistan?",
+        a: "Common triggers include: claiming VAT refunds for three or more consecutive months, declaring losses for two or more years running, and significant discrepancies between reported turnover and banking transactions. The pack's compliance tips cover how to reduce audit risk.",
       },
     ],
     ru: [
       {
-        q: "Какие налоги охватывает этот пакет?",
-        a: "Пакет охватывает налог на прибыль (НП), НДС, налог на доходы физических лиц (НДФЛ) и социальный налог работодателя — четыре налога, с которыми большинство компаний в Узбекистане сталкивается в первый год работы.",
+        q: "Когда у компании возникает обязанность зарегистрироваться в качестве плательщика НДС?",
+        a: "Регистрация в качестве плательщика НДС становится обязательной, когда годовой оборот превышает 1 миллиард сум (примерно 78 000 долл. США по текущему курсу). Ниже этого порога регистрация добровольная. Превышение порога без регистрации влечёт штрафные санкции.",
       },
       {
-        q: "Что представляет собой календарь соответствия?",
-        a: "Ежемесячный и ежеквартальный план с указанием всех сроков подачи деклараций, дат уплаты налогов и отчётных обязательств для стандартного ООО в Узбекистане, с примечаниями о санкциях за просрочку.",
+        q: "Что такое упрощённая система налогообложения и кто может её применять?",
+        a: "Малый бизнес с оборотом ниже 1 миллиарда сум может перейти на упрощённую систему налогообложения (УНС): фиксированная ставка 4% на выручку для сферы услуг или 6% для торговли и производства, заменяющая и НП, и НДС. В пакет включена сравнительная таблица.",
       },
       {
-        q: "Актуальны ли налоговые ставки и формы?",
-        a: "Да. Пакет отражает налоговые ставки и формы, действующие по состоянию на март 2026 года: 15% НП, 12% НДС, 12% НДФЛ и 12% социальный налог работодателя.",
+        q: "Как часто нужно подавать налоговую отчётность?",
+        a: "Декларации по НДС подаются ежемесячно. Авансовые платежи по налогу на прибыль — ежеквартально. Годовая декларация по налогу на прибыль подаётся до 1 марта следующего года. Календарь соответствия содержит все сроки с указанием штрафов за просрочку.",
       },
       {
-        q: "Подходит ли пакет для только что зарегистрированной компании?",
-        a: "Да — пакет специально разработан для компаний в первый год деятельности, охватывая шаги по первичной постановке на налоговый учёт и текущие квартальные и годовые обязательства по соответствию.",
+        q: "Что вызывает налоговую проверку в Узбекистане?",
+        a: "Типичные основания: требование возврата НДС три и более месяца подряд, декларирование убытков два и более года подряд, а также существенные расхождения между задекларированным оборотом и банковскими операциями. Раздел практических советов по комплаенсу охватывает меры по снижению налогового риска.",
       },
     ],
     uz: [
       {
-        q: "Bu to'plam qaysi soliqlarni qamrab oladi?",
-        a: "To'plam korporativ daromad solig'i (KDS), QQS, jismoniy shaxslar daromad solig'i (JSHDS) va ish beruvchining ijtimoiy soliq — O'zbekistondagi aksariyat korxonalar birinchi ish yilida duch keladigan to'rt soliqni qamrab oladi.",
+        q: "Kompaniya qachon QQS to'lovchisi sifatida ro'yxatdan o'tishi shart?",
+        a: "Yillik aylanma 1 milliard so'mdan (joriy kurs bo'yicha taxminan 78 000 AQSh dollari) oshganda QQS ro'yxatdan o'tish majburiy bo'ladi. Bu chegaradan past ro'yxatdan o'tish ixtiyoriy. Chegarani ro'yxatdan o'tmasdan oshirish jarimaga sabab bo'ladi.",
       },
       {
-        q: "Komplayans kalendarigacha nima?",
-        a: "O'zbekistondagi standart MChJ uchun barcha ariza topshirish muddatlari, to'lov sanalari va hisobot majburiyatlarini ko'rsatadigan oylik va choraklik jadval, kech topshirish uchun jarimalari to'g'risidagi izohlar bilan.",
+        q: "Soddalashtirilgan soliq tizimi nima va kim uchun mos keladi?",
+        a: "Aylanmasi 1 milliard so'mdan past kichik biznes Soddalashtirilgan Soliq Tizimiga (SST) o'tishi mumkin: xizmat ko'rsatuvchi korxonalar uchun 4%, savdo va ishlab chiqarish uchun 6% — KDS va QQSning o'rnini bosadi. To'plamga taqqoslash jadvali kiritilgan.",
       },
       {
-        q: "Soliq stavkalari va shakllar joriyga muvofiqmi?",
-        a: "Ha. To'plam 2026 yil mart holatiga ko'ra amalda bo'lgan soliq stavkalari va shakllarni aks ettiradi: 15% KDS, 12% QQS, 12% JSHDS va 12% ish beruvchining ijtimoiy solig'i.",
+        q: "Soliq hisobotlari qanchalik tez-tez topshiriladi?",
+        a: "QQS deklaratsiyalari oylik topshiriladi. KDS bo'yicha avans to'lovlari choraklik amalga oshiriladi. Yillik KDS deklaratsiyasi keyingi yilning 1 martiga qadar topshirilishi shart. Komplayans kalendarida kech topshirish uchun jarimalar bilan barcha muddatlar ko'rsatilgan.",
       },
       {
-        q: "Bu to'plam yangi ro'yxatga olingan kompaniya uchun mos keladimi?",
-        a: "Ha — to'plam birinchi yilida faoliyat yuritayotgan korxonalar uchun maxsus ishlab chiqilgan va dastlabki soliq ro'yxatidan o'tish qadamlari hamda joriy choraklik va yillik komplayans majburiyatlarini qamrab oladi.",
+        q: "O'zbekistonda soliq tekshiruvini nima keltirib chiqaradi?",
+        a: "Keng tarqalgan sabablar: ketma-ket uch oy va undan ko'proq QQS qaytarimini talab qilish, ikki yil va undan ko'proq zarar e'lon qilish, e'lon qilingan aylanma va bank operatsiyalari o'rtasidagi sezilarli nomuvofiqlik. To'plamdagi komplayans maslahatlari audit xavfini kamaytirish choralarini o'z ichiga oladi.",
       },
     ],
   },
@@ -449,56 +461,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "transfer-pricing": {
     en: [
       {
-        q: "When is transfer pricing documentation required in Uzbekistan?",
-        a: "Documentation is required for controlled transactions between related parties exceeding the thresholds set by the Tax Code — typically intercompany sales, loans, services, or IP licensing arrangements within a group.",
+        q: "What is the documentation threshold in Uzbekistan?",
+        a: "Transfer pricing documentation is required when controlled transactions between related parties exceed 1 billion UZS in a tax year. Below this threshold, documentation is not mandatory but may still be requested during an audit.",
       },
       {
-        q: "Is the documentation aligned with OECD guidelines?",
-        a: "Yes. The master file and local file follow the OECD BEPS Action 13 format, which Uzbekistan has adopted. This is particularly relevant if your group also files in OECD-member jurisdictions.",
+        q: "Which transfer pricing method do Uzbek authorities prefer?",
+        a: "In practice, the Transactional Net Margin Method (TNMM) is most commonly accepted by Uzbek tax authorities — particularly for intercompany services and routine distribution transactions. The pack's benchmarking guide explains how to apply it correctly.",
       },
       {
-        q: "How often should transfer pricing documentation be updated?",
-        a: "Documentation should be reviewed and updated annually, and whenever there is a material change in group structure, pricing policy, or transaction volumes.",
+        q: "How far back can tax authorities look for adjustments?",
+        a: "The standard audit limitation period is 3 years. However, if fraud or intentional tax evasion is established, authorities can look back up to 5 years. This is why documentation should be prepared contemporaneously, not retroactively.",
       },
       {
-        q: "What does the benchmarking guide explain?",
-        a: "It explains how to identify comparable uncontrolled transactions using public databases, document the arm's length range, and prepare the functional analysis required by the Uzbek tax authorities.",
+        q: "Is an Advance Pricing Agreement available in Uzbekistan?",
+        a: "Yes. The Uzbek Tax Service accepts APA applications for large recurring intercompany transactions. An APA locks in an agreed pricing methodology for a set period, eliminating the risk of future adjustments. The policy statement template in the pack can form the basis of an APA submission.",
       },
     ],
     ru: [
       {
-        q: "Когда в Узбекистане требуется документация по трансфертному ценообразованию?",
-        a: "Документация требуется для контролируемых сделок между связанными лицами, превышающих пороги, установленные Налоговым кодексом, — как правило, внутригрупповые продажи, займы, услуги или лицензирование интеллектуальной собственности.",
+        q: "Каков порог документирования для ТЦО в Узбекистане?",
+        a: "Документация по трансфертному ценообразованию требуется, когда контролируемые сделки между связанными лицами превышают 1 миллиард сум в налоговом году. Ниже этого порога документация не обязательна, но может быть запрошена в ходе проверки.",
       },
       {
-        q: "Соответствует ли документация руководящим принципам ОЭСР?",
-        a: "Да. Мастер-файл и локальный файл составлены по формату BEPS Action 13 ОЭСР, принятому Узбекистаном. Это особенно актуально, если группа также отчитывается в юрисдикциях — членах ОЭСР.",
+        q: "Какой метод ТЦО предпочитают налоговые органы Узбекистана?",
+        a: "На практике метод чистой прибыли от сделки (МЧПС/TNMM) наиболее часто принимается узбекскими налоговыми органами — особенно для внутригрупповых услуг и типовых дистрибьюторских операций. Руководство по бенчмаркингу в пакете объясняет его правильное применение.",
       },
       {
-        q: "Как часто следует обновлять документацию по ТЦО?",
-        a: "Документацию необходимо пересматривать и обновлять ежегодно, а также при существенных изменениях в структуре группы, ценовой политике или объёмах сделок.",
+        q: "За какой период налоговые органы могут проводить корректировки?",
+        a: "Стандартный срок исковой давности по проверке составляет 3 года. Однако при установлении факта мошенничества или умышленного уклонения от уплаты налогов этот срок может быть увеличен до 5 лет. Именно поэтому документацию следует готовить в текущем режиме, а не задним числом.",
       },
       {
-        q: "Что объясняет руководство по бенчмаркингу?",
-        a: "Руководство объясняет, как выявить сопоставимые неконтролируемые сделки с использованием публичных баз данных, задокументировать рыночный диапазон и подготовить функциональный анализ, требуемый налоговыми органами Узбекистана.",
+        q: "Доступно ли в Узбекистане соглашение о ценообразовании (APA)?",
+        a: "Да. Налоговая служба Узбекистана принимает заявки на APA для крупных повторяющихся внутригрупповых операций. APA фиксирует согласованную методологию ценообразования на определённый период, устраняя риск будущих корректировок. Шаблон политики в пакете может стать основой заявки на APA.",
       },
     ],
     uz: [
       {
-        q: "O'zbekistonda transfer narxlash hujjatlari qachon talab qilinadi?",
-        a: "Soliq kodeksi belgilagan chegaralardan oshgan bog'liq tomonlar o'rtasidagi nazorat ostidagi bitimlar — odatda guruh ichidagi savdolar, qarzlar, xizmatlar yoki intellektual mulkni litsenziyalash uchun hujjat talab qilinadi.",
+        q: "O'zbekistonda transfer narxlash hujjatlash chegarasi qancha?",
+        a: "Transfer narxlash hujjatlari soliq yilida bog'liq tomonlar o'rtasidagi nazorat ostidagi bitimlar 1 milliard so'mdan oshganda talab qilinadi. Bu chegaradan past hujjat majburiy emas, lekin tekshiruv davomida so'ralishi mumkin.",
       },
       {
-        q: "Hujjatlar OECD ko'rsatmalariga muvofiqmi?",
-        a: "Ha. Master fayl va mahalliy fayl O'zbekiston tomonidan qabul qilingan OECD BEPS Harakat 13 formatiga amal qiladi. Bu ayniqsa guruhingiz OECD a'zo yurisdiktsiyalarida ham hisobot topshiradigan bo'lsa muhim.",
+        q: "O'zbekiston soliq organlari qaysi transfer narxlash usulini afzal ko'radi?",
+        a: "Amalda, Bitim sof foydasi usuli (BSFU/TNMM) O'zbekiston soliq organlari tomonidan eng ko'p qabul qilinadi — ayniqsa guruh ichidagi xizmatlar va oddiy taqsimot operatsiyalari uchun. To'plamdagi taqqoslash qo'llanmasi uni to'g'ri qo'llashni tushuntiradi.",
       },
       {
-        q: "Transfer narxlash hujjatlari qanchalik tez-tez yangilanishi kerak?",
-        a: "Hujjatlar yillik ko'rib chiqilishi va yangilanishi kerak, shuningdek guruh tuzilmasi, narxlash siyosati yoki bitim hajmlarida muhim o'zgarishlar bo'lganda ham.",
+        q: "Soliq organlari tuzatishlar uchun qanchalik orqaga qaray oladi?",
+        a: "Standart tekshiruv da'vo muddati 3 yil. Biroq firibgarlik yoki qasddan soliq to'lashdan bo'yin tovlash aniqlansa, organlar 5 yilgacha orqaga qaray oladi. Shuning uchun hujjatlar retrospektiv emas, joriy tartibda tayyorlanishi kerak.",
       },
       {
-        q: "Taqqoslash qo'llanmasi nimani tushuntiradi?",
-        a: "U ommaviy ma'lumotlar bazalaridan foydalanib taqqoslanadigan nazorat ostidagi bo'lmagan bitimlarni qanday aniqlash, bozor diapazonini hujjatlashtirish va O'zbekiston soliq organlari tomonidan talab qilinadigan funksional tahlilni tayyorlashni tushuntiradi.",
+        q: "O'zbekistonda Oldindan narxlash kelishuvi (APA) mavjudmi?",
+        a: "Ha. O'zbekiston Soliq xizmati katta muntazam guruh ichi bitimlar uchun APA arizalarini qabul qiladi. APA belgilangan muddat uchun kelishilgan narxlash metodologiyasini mustahkamlaydi va kelajakdagi tuzatishlar xavfini bartaraf etadi. To'plamdagi siyosat bayoni shabloni APA ariza asosi bo'lishi mumkin.",
       },
     ],
   },
@@ -506,56 +518,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "work-permit-pack": {
     en: [
       {
-        q: "Which types of work permit does this pack cover?",
-        a: "The pack covers the standard work permit for foreign nationals employed by an Uzbek legal entity, including initial applications, annual renewals, and employer notification obligations.",
+        q: "Is there an annual quota on work permits?",
+        a: "Yes. The government sets annual regional quotas for foreign work permits. Certain industries and regions fill their quotas early in the year — if you are hiring late in the year, check the remaining quota for your region before starting the application.",
       },
       {
-        q: "Does it apply to all nationalities?",
-        a: "Yes. The documents are applicable to foreign nationals of any citizenship. CIS nationals and citizens of countries with bilateral labour agreements may follow a simplified procedure; the checklist notes where these differences apply.",
+        q: "Are there categories exempt from the quota?",
+        a: "Yes. Highly Qualified Specialists (HQS) — those meeting the salary and qualification criteria set by the Ministry of Employment — are exempt from quotas and benefit from a simplified permit process with fewer requirements.",
       },
       {
-        q: "How long does a work permit take to obtain?",
-        a: "Processing typically takes 15–30 working days from submission of a complete application. The employer letter templates are formatted to meet Agency for External Labour Migration requirements.",
+        q: "Can an employee transfer a work permit to a new employer?",
+        a: "No. Work permits in Uzbekistan are tied to the specific employer who applied for them. If an employee changes employer, the old employer must cancel the permit and the new employer must apply for a new one from scratch.",
       },
       {
-        q: "What if the employee's permit needs renewing?",
-        a: "The extension guide covers the renewal timeline, required documents, and the grace period for continued employment during processing — helping employers avoid compliance gaps.",
+        q: "How long does processing actually take?",
+        a: "Officially 15–30 working days from submission of a complete set of documents. Incomplete applications are the main cause of delay — the checklist in the pack flags every required document to avoid back-and-forth with the Agency for External Labour Migration.",
       },
     ],
     ru: [
       {
-        q: "Какие виды разрешений на работу охватывает этот пакет?",
-        a: "Пакет охватывает стандартное разрешение на работу для иностранных граждан, трудоустроенных у узбекского юридического лица, включая первичные заявки, ежегодные продления и обязательства работодателя по уведомлению.",
+        q: "Существует ли ежегодная квота на разрешения на работу?",
+        a: "Да. Правительство устанавливает ежегодные региональные квоты на иностранные разрешения на работу. Ряд отраслей и регионов исчерпывает квоты уже в начале года — если вы нанимаете во второй половине года, заранее проверьте остаток квоты по вашему региону.",
       },
       {
-        q: "Применим ли пакет ко всем гражданствам?",
-        a: "Да. Документы применимы к иностранным гражданам любого гражданства. Граждане СНГ и стран с двусторонними соглашениями о труде могут проходить упрощённую процедуру; в чеклисте указаны соответствующие различия.",
+        q: "Есть ли категории, освобождённые от квоты?",
+        a: "Да. Высококвалифицированные специалисты (ВКС) — соответствующие зарплатным и квалификационным критериям Министерства занятости — освобождены от квот и проходят упрощённую процедуру получения разрешения с меньшим числом требований.",
       },
       {
-        q: "Сколько времени занимает оформление разрешения на работу?",
-        a: "Обработка заявки обычно занимает 15–30 рабочих дней с момента подачи полного пакета документов. Шаблоны письма работодателя составлены в соответствии с требованиями Агентства по внешней трудовой миграции.",
+        q: "Может ли сотрудник перевести разрешение на работу к новому работодателю?",
+        a: "Нет. Разрешения на работу в Узбекистане привязаны к конкретному работодателю, который их оформлял. При смене работодателя прежний обязан аннулировать разрешение, а новый должен подавать заявление заново с нуля.",
       },
       {
-        q: "Что делать, если разрешение нужно продлить?",
-        a: "Руководство по продлению охватывает сроки, перечень необходимых документов и льготный период для продолжения работы в период рассмотрения заявки — что помогает работодателям избегать нарушений в сфере соответствия.",
+        q: "Сколько времени фактически занимает рассмотрение?",
+        a: "Официально — 15–30 рабочих дней с момента подачи полного пакета документов. Основная причина задержек — неполный комплект документов. Чеклист в пакете охватывает каждый обязательный документ, чтобы избежать переписки с Агентством по внешней трудовой миграции.",
       },
     ],
     uz: [
       {
-        q: "Bu to'plam qanday turdagi ish ruxsatnomalarini qamrab oladi?",
-        a: "To'plam O'zbekiston yuridik shaxsida ishlaydigan xorijiy fuqarolar uchun standart ish ruxsatnomasini, jumladan dastlabki arizalar, yillik uzaytirish va ish beruvchining bildirishnoma majburiyatlarini qamrab oladi.",
+        q: "Ish ruxsatnomalari uchun yillik kvota bormi?",
+        a: "Ha. Hukumat xorijiy ish ruxsatnomalari uchun yillik mintaqaviy kvotalar belgilaydi. Ba'zi tarmoqlar va mintaqalar yil boshida kvotalarini to'ldiradi — yil oxirida yollayotgan bo'lsangiz, arizani boshlashdan oldin mintaqangiz uchun qolgan kvotani tekshiring.",
       },
       {
-        q: "U barcha millatlarga tatbiq etiladi?",
-        a: "Ha. Hujjatlar istalgan fuqarolikdagi xorijiy fuqarolarga tatbiq etiladi. MDH fuqarolari va ikki tomonlama mehnat shartnomalari bo'lgan mamlakatlar fuqarolari soddalashtirilgan tartibdan o'tishi mumkin; tekshiruv ro'yxatida ushbu farqlar ko'rsatilgan.",
+        q: "Kvotadan ozod qilingan toifalar bormi?",
+        a: "Ha. Yuqori malakali mutaxassislar (YMM) — Bandlik vazirligi belgilagan ish haqi va malaka mezonlariga javob beradiganlar — kvotalardan ozod va kamroq talablar bilan soddalashtirilgan ruxsatnoma jarayonidan foydalanadilar.",
       },
       {
-        q: "Ish ruxsatnomasini olish qancha vaqt oladi?",
-        a: "To'liq ariza topshirilgandan keyin ko'rib chiqish odatda 15–30 ish kunini oladi. Ish beruvchi xati shablonlari Tashqi mehnat migratsiyasi agentligi talablariga muvofiq formatda tayyorlangan.",
+        q: "Xodim ish ruxsatnomasini yangi ish beruvchiga o'tkaza oladimi?",
+        a: "Yo'q. O'zbekistondagi ish ruxsatnomalari ularni rasmiylashtirgan muayyan ish beruvchiga bog'liq. Xodim ish beruvchini o'zgartirsa, eski ish beruvchi ruxsatnomani bekor qilishi va yangi ish beruvchi sifirdan yangi ariza berishi shart.",
       },
       {
-        q: "Xodimning ruxsatnomasini uzaytirish kerak bo'lsa nima qilish kerak?",
-        a: "Uzaytirish qo'llanmasi muddat, kerakli hujjatlar va ko'rib chiqish davomida ish faoliyatini davom ettirishning imtiyozli muddatini qamrab oladi — ish beruvchilarga komplayans bo'shliqlarini oldini olishda yordam beradi.",
+        q: "Ko'rib chiqish aslida qancha vaqt oladi?",
+        a: "Rasmiy — to'liq hujjatlar to'plami topshirilgandan 15–30 ish kuni. Kechikishlarning asosiy sababi — to'liq bo'lmagan arizalar. To'plamdagi tekshiruv ro'yxati Tashqi mehnat migratsiyasi agentligi bilan aloqalarni oldini olish uchun har bir talab qilinadigan hujjatni belgilaydi.",
       },
     ],
   },
@@ -563,56 +575,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "sez-entry-pack": {
     en: [
       {
-        q: "Which Special Economic Zones does this pack apply to?",
-        a: "The documents are drafted for universal use across Uzbekistan's SEZs and free economic zones, including Navoi, Urgut, Jizzakh, and the technology-focused zones. Zone-specific notes are included where requirements differ.",
+        q: "What tax exemptions do SEZ residents receive?",
+        a: "SEZ residents typically receive a 10-year exemption from corporate income tax, VAT, property tax, and land tax. Some zones also offer customs duty exemptions on imported equipment. The regulatory overview in the pack details the current incentives for each major zone.",
       },
       {
-        q: "What tax benefits do SEZ residents receive?",
-        a: "SEZ residents typically benefit from full exemptions from CIT, VAT, property tax, and customs duties for periods of 3–10 years depending on the zone and investment size. The regulatory overview details current incentives.",
+        q: "What is the minimum investment to qualify?",
+        a: "Thresholds vary by zone and activity type — typically $300,000 for standard zones and up to $3 million for large industrial zones. Investment must be documented and the financial projections model in the pack is structured to meet Ministry requirements.",
       },
       {
-        q: "Is the investment plan template ready to submit to authorities?",
-        a: "The template is structured to meet Ministry of Investment requirements for SEZ applications. You fill in your project data, financial projections, and employment targets; the template provides the required formatting and section structure.",
+        q: "Are there restrictions on selling products domestically?",
+        a: "Yes. SEZ residents are primarily expected to export their goods or supply other SEZ residents. Domestic sales to the general Uzbek market are permitted but are subject to standard taxes — the tax exemptions apply only to export-oriented activity.",
       },
       {
-        q: "What is the minimum investment threshold for SEZ entry?",
-        a: "Thresholds vary by zone, typically starting from USD 300,000 for standard zones. The regulatory overview in the pack lists the current minimum investment amounts and permissible activity types for each major SEZ.",
+        q: "Can a foreign company enter an SEZ without setting up a local entity?",
+        a: "No. Foreign companies must establish a local Uzbek legal entity (LLC or JSC) to operate within an SEZ. Direct operation by a foreign branch or representative office is not permitted for SEZ residency purposes.",
       },
     ],
     ru: [
       {
-        q: "На какие СЭЗ распространяется данный пакет?",
-        a: "Документы составлены для универсального применения во всех СЭЗ и свободных экономических зонах Узбекистана, включая Навои, Ургут, Джизак и технологические зоны. Специфические примечания по зонам включены там, где требования различаются.",
-      },
-      {
         q: "Какие налоговые льготы получают резиденты СЭЗ?",
-        a: "Резиденты СЭЗ, как правило, пользуются полным освобождением от налога на прибыль, НДС, налога на имущество и таможенных пошлин на 3–10 лет в зависимости от зоны и объёма инвестиций. Обзор нормативной базы содержит актуальные льготы.",
+        a: "Резиденты СЭЗ, как правило, получают освобождение от налога на прибыль, НДС, налога на имущество и земельного налога сроком на 10 лет. В ряде зон предусмотрено также освобождение от таможенных пошлин на ввозимое оборудование. Обзор нормативной базы содержит актуальные льготы для каждой крупной зоны.",
       },
       {
-        q: "Готов ли шаблон инвестиционного плана к подаче в органы власти?",
-        a: "Шаблон структурирован в соответствии с требованиями Министерства инвестиций для заявок на вступление в СЭЗ. Вы заполняете данные проекта, финансовые прогнозы и целевые показатели занятости; структура разделов и форматирование уже предусмотрены.",
+        q: "Каков минимальный объём инвестиций для получения статуса резидента?",
+        a: "Пороги варьируются в зависимости от зоны и вида деятельности: как правило, от 300 000 долл. США для стандартных зон и до 3 млн долл. США для крупных промышленных зон. Инвестиции должны быть документально подтверждены; финансовая модель прогнозов в пакете составлена в соответствии с требованиями Министерства.",
       },
       {
-        q: "Каков минимальный инвестиционный порог для входа в СЭЗ?",
-        a: "Пороги варьируются по зонам — как правило, от 300 000 долларов США для стандартных зон. В обзоре нормативной базы в пакете указаны актуальные минимальные объёмы инвестиций и допустимые виды деятельности для каждой крупной СЭЗ.",
+        q: "Есть ли ограничения на продажу продукции на внутреннем рынке?",
+        a: "Да. Резиденты СЭЗ в первую очередь ориентированы на экспорт или поставки другим резидентам СЭЗ. Продажи на общем внутреннем рынке Узбекистана разрешены, но облагаются стандартными налогами — льготы применяются исключительно к экспортоориентированной деятельности.",
+      },
+      {
+        q: "Может ли иностранная компания войти в СЭЗ без создания местного юридического лица?",
+        a: "Нет. Для работы в СЭЗ иностранные компании обязаны создать местное юридическое лицо в Узбекистане (ООО или АО). Прямая деятельность иностранного филиала или представительства в качестве резидента СЭЗ не допускается.",
       },
     ],
     uz: [
       {
-        q: "Bu to'plam qaysi Maxsus Iqtisodiy Zonalarga tegishli?",
-        a: "Hujjatlar Navoiy, Urgut, Jizzax va texnologiyaga yo'naltirilgan zonalar kabi O'zbekistonning barcha SEZ va erkin iqtisodiy zonalari bo'ylab universal foydalanish uchun tuzilgan. Talablar farq qiladigan joylar uchun zona-spesifik izohlar kiritilgan.",
+        q: "SEZ rezidentlari qanday soliq imtiyozlarini oladilar?",
+        a: "SEZ rezidentlari odatda 10 yil davomida korporativ daromad solig'i, QQS, mulk solig'i va yer solig'idan ozod bo'ladilar. Ba'zi zonalarda import qilinadigan uskunalarga bojxona to'lovlaridan ozod qilish ham nazarda tutilgan. To'plamdagi normativ sharh har bir asosiy zona uchun joriy imtiyozlarni batafsil bayon etadi.",
       },
       {
-        q: "SEZ rezidentlari qanday soliq imtiyozlaridan foydalanadi?",
-        a: "SEZ rezidentlari odatda zona va investitsiya hajmiga qarab 3–10 yil davomida KDS, QQS, mulk solig'i va bojxona to'lovlaridan to'liq ozod bo'ladi. Normativ hujjatlarga sharh amaldagi imtiyozlarni batafsil bayon etadi.",
+        q: "Sifatlash uchun minimal investitsiya qancha?",
+        a: "Chegaralar zona va faoliyat turiga qarab farq qiladi — standart zonalar uchun odatda 300 000 AQSh dollari, yirik sanoat zonalari uchun 3 million AQSh dollarigacha. Investitsiyalar hujjatlashtirilishi kerak; to'plamdagi moliyaviy prognozlar modeli Vazirlik talablariga javob beradigan tarzda tuzilgan.",
       },
       {
-        q: "Investitsiya rejasi shabloni organlarga topshirishga tayyor?",
-        a: "Shablon SEZ arizalari uchun Investitsiyalar vazirligi talablariga javob beradigan tarzda tuzilgan. Loyiha ma'lumotlari, moliyaviy prognozlar va bandlik maqsadlarini to'ldirasiz; shablon kerakli formatlash va bo'lim tuzilmasini ta'minlaydi.",
+        q: "Mahalliy bozorda mahsulot sotishda cheklovlar bormi?",
+        a: "Ha. SEZ rezidentlari asosan tovarlarni eksport qilish yoki boshqa SEZ rezidentlariga yetkazib berish uchun mo'ljallangan. O'zbekistonning umumiy ichki bozoriga sotuv ruxsat etilgan, lekin standart soliqlarga bo'ysunadi — imtiyozlar faqat eksportga yo'naltirilgan faoliyatga tatbiq etiladi.",
       },
       {
-        q: "SEZga kirish uchun minimal investitsiya chegarasi qancha?",
-        a: "Chegaralar zonaga qarab farq qiladi — standart zonalar uchun odatda 300,000 AQSh dollaridan boshlanadi. To'plamdagi normativ hujjatlarga sharh har bir asosiy SEZ uchun joriy minimal investitsiya miqdorlari va ruxsat etilgan faoliyat turlarini ko'rsatadi.",
+        q: "Xorijiy kompaniya mahalliy yuridik shaxs tashkil etmasdan SEZga kira oladimi?",
+        a: "Yo'q. Xorijiy kompaniyalar SEZ doirasida faoliyat yuritish uchun O'zbekistonda mahalliy yuridik shaxs (MChJ yoki AJ) tashkil etishi shart. Xorijiy filial yoki vakolatxona tomonidan to'g'ridan-to'g'ri faoliyat SEZ rezidentligi uchun ruxsat etilmaydi.",
       },
     ],
   },
@@ -620,56 +632,56 @@ export const PRODUCT_FAQ_DATA: Record<string, LocaleData> = {
   "due-diligence-pack": {
     en: [
       {
-        q: "What types of transactions is this pack designed for?",
-        a: "The pack is designed for M&A transactions, private equity investments, and joint-venture formations in Uzbekistan — any situation where a buyer, investor, or lender needs a structured review of a target company.",
+        q: "What are the most common red flags in Uzbek company reviews?",
+        a: "The three most frequent issues: undocumented related-party transactions (loans, asset transfers, management fees with no supporting agreements), gaps in property title chains (especially for real estate acquired before 2010), and informal employment — staff paid off-payroll exposes the buyer to inherited tax liabilities.",
       },
       {
-        q: "What is a data room index?",
-        a: "A structured table of contents for an electronic data room, organising documents the target must provide under categories such as corporate, legal, financial, tax, HR, and real estate.",
+        q: "How early should the due diligence process start?",
+        a: "For Uzbek targets, start requesting documents 6–12 months before anticipated deal signing. Companies often lack an organised data room and document retrieval from state registers can take weeks. Starting late compresses the review and increases the risk of missing issues.",
       },
       {
-        q: "Does the pack include a legal opinion template?",
-        a: "Yes. The legal opinion template is structured for a Uzbek law firm to confirm the target's corporate standing, absence of material litigation, and regulatory compliance — commonly required by foreign investors.",
+        q: "How should a data room for an Uzbek company be structured?",
+        a: "Organise it by: corporate documents, title documents, contracts (material), employment, tax, litigation/permits, and financial statements. The data room index in the pack mirrors this structure and is pre-formatted to send directly to the target company's management.",
       },
       {
-        q: "How is the red flag checklist used?",
-        a: "Reviewers use the checklist to flag material issues found during document review — missing permits, disputed titles, undisclosed liabilities — feeding them into the overall deal risk assessment.",
+        q: "How is the red flag checklist used in practice?",
+        a: "Each flagged issue is categorised by severity (deal-breaker, price adjustment, or condition precedent) rather than treated as a binary pass/fail. The checklist feeds into the legal opinion and the SPA representations and warranties — items left unresolved become the seller's risk allocation.",
       },
     ],
     ru: [
       {
-        q: "Для каких видов сделок предназначен этот пакет?",
-        a: "Пакет предназначен для сделок M&A, прямых инвестиций и создания совместных предприятий в Узбекистане — во всех случаях, когда покупатель, инвестор или кредитор проводит структурированный анализ целевой компании.",
+        q: "Каковы наиболее распространённые красные флаги при проверке узбекских компаний?",
+        a: "Три наиболее частые проблемы: недокументированные сделки со связанными сторонами (займы, передача активов, управленческие вознаграждения без подтверждающих соглашений), пробелы в цепочке правоустанавливающих документов на имущество (особенно на недвижимость, приобретённую до 2010 года) и неофициальная занятость — сотрудники на неофициальной зарплате создают для покупателя унаследованные налоговые обязательства.",
       },
       {
-        q: "Что такое индекс дата-рума?",
-        a: "Структурированное оглавление для электронного дата-рума, организующее документы, которые должна предоставить целевая компания, по категориям: корпоративные, правовые, финансовые, налоговые, HR и недвижимость.",
+        q: "Когда следует начинать процесс due diligence?",
+        a: "Для узбекских объектов запрашивайте документы за 6–12 месяцев до предполагаемого подписания сделки. Компании часто не имеют организованного дата-рума, а получение документов из государственных реестров может занимать недели. Поздний старт сжимает сроки проверки и повышает риск пропустить существенные проблемы.",
       },
       {
-        q: "Включает ли пакет шаблон юридического заключения?",
-        a: "Да. Шаблон юридического заключения структурирован для подготовки узбекской юридической фирмой в целях подтверждения корпоративного статуса объекта, отсутствия существенных судебных разбирательств и соответствия регуляторным требованиям — что обычно требуется иностранным инвесторам.",
+        q: "Как должен быть структурирован дата-рум для узбекской компании?",
+        a: "Рекомендуется следующая структура: корпоративные документы, правоустанавливающие документы, договоры (существенные), трудовые, налоговые, судебные дела/разрешения и финансовая отчётность. Индекс дата-рума в пакете соответствует этой структуре и готов к отправке руководству целевой компании.",
       },
       {
-        q: "Как используется чеклист красных флагов?",
-        a: "Проверяющие используют чеклист для фиксации существенных проблем, выявленных в ходе проверки документов, — отсутствующих разрешений, спорных прав собственности, нераскрытых обязательств — для их включения в общую оценку рисков сделки.",
+        q: "Как на практике используется чеклист красных флагов?",
+        a: "Каждый выявленный вопрос классифицируется по степени серьёзности (блокирующий сделку, основание для корректировки цены или отлагательное условие) — а не как бинарный «прошёл / не прошёл». Результаты чеклиста отражаются в юридическом заключении и заверениях и гарантиях ДКП: нерешённые вопросы переходят в зону ответственности продавца.",
       },
     ],
     uz: [
       {
-        q: "Bu to'plam qanday turdagi bitimlar uchun mo'ljallangan?",
-        a: "To'plam O'zbekistondagi M&A bitimlari, xususiy kapital investitsiyalari va qo'shma korxonalar tashkil etish uchun mo'ljallangan — xaridor, investor yoki qarz beruvchi nishon kompaniyani tizimli ko'rib chiqishni talab qiladigan har qanday vaziyat uchun.",
+        q: "O'zbek kompaniyalarini tekshirishda eng keng tarqalgan qizil bayroqlar nimalar?",
+        a: "Uchta eng tez-tez uchraydigan muammo: hujjatlashtirilmagan bog'liq tomonlar bilan bitimlar (qarzlar, aktivlarni o'tkazish, qo'llab-quvvatlovchi kelishuvlarsiz boshqaruv to'lovlari), mulk huquqi zanjirida bo'shliqlar (ayniqsa 2010 yilgacha sotib olingan ko'chmas mulk uchun) va norasmiy bandlik — norasmiy ish haqiga ega xodimlar xaridorga meros bo'lib o'tadigan soliq majburiyatlarini keltirib chiqaradi.",
       },
       {
-        q: "Data room indeksi nima?",
-        a: "Elektron data room uchun tuzilgan mundarija — korporativ, huquqiy, moliyaviy, soliq, HR va ko'chmas mulk kabi kategoriyalar bo'yicha nishon tomonidan taqdim etilishi kerak bo'lgan hujjatlarni tashkil etadi.",
+        q: "Due diligence jarayoni qachon boshlanishi kerak?",
+        a: "O'zbek nishonlari uchun, kutilayotgan bitimni imzolashdan 6–12 oy oldin hujjatlarni so'rash boshlang. Kompaniyalar ko'pincha tartibli data roomga ega emas va davlat ro'yxatlaridan hujjat olish haftalar olishi mumkin. Kech boshlash ko'rib chiqish muddatini qisqartiradi va muhim muammolarni o'tkazib yuborish xavfini oshiradi.",
       },
       {
-        q: "To'plamga yuridik xulosa shabloni kiritilganmi?",
-        a: "Ha. Yuridik xulosa shabloni O'zbekiston huquq firmasi tomonidan nishonning korporativ maqomi, muhim da'volarning yo'qligi va normativ talablarga muvofiqligi bo'yicha tasdiqlash uchun tuzilgan — xorijiy investorlar tomonidan odatda talab qilinadi.",
+        q: "O'zbek kompaniyasi uchun data room qanday tuzilishi kerak?",
+        a: "Quyidagicha tartibda tashkil eting: korporativ hujjatlar, mulk huquqi hujjatlari, shartnomalar (muhim), mehnat, soliq, sud ishlari/ruxsatnomalar va moliyaviy hisobotlar. To'plamdagi data room indeksi ushbu tuzilmaga mos keladi va bevosita nishon kompaniya rahbariyatiga yuborishga tayyor.",
       },
       {
-        q: "Qizil bayroqlar tekshiruv ro'yxati qanday ishlatiladi?",
-        a: "Ko'rib chiquvchilar hujjatlarni ko'rib chiqish davomida topilgan muhim muammolarni — yo'q ruxsatnomalar, bahsli mulk huquqlari, oshkor qilinmagan majburiyatlarni — belgilash uchun ro'yxatdan foydalanadi va ularni umumiy bitim xavfini baholashga kiritadi.",
+        q: "Qizil bayroqlar tekshiruv ro'yxati amalda qanday ishlatiladi?",
+        a: "Har bir belgilangan masala ikkilik 'o'tdi/o'tmadi' sifatida emas, jiddiylik darajasi bo'yicha tasniflanadi (bitimni blokirovka qiluvchi, narxni tuzatish asosi yoki to'xtatuvchi shart). Tekshiruv ro'yxati natijalari yuridik xulosa va SPA kafolat va tasdiqlarda aks etadi — hal qilinmagan masalalar sotuvchining xavf taqsimotiga o'tadi.",
       },
     ],
   },
