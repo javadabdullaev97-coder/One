@@ -292,8 +292,8 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="sticky top-24"
             >
-              <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 {/* Price card */}
                 <div className="bg-[#080808] border border-white/[0.10] rounded-xl p-6">
                   {/* Inner gradient card */}
@@ -377,7 +377,6 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
                 {/* FAQ — separate card below price card */}
                 <FaqSection page={slug as FaqPage} variant="sidebar" />
-              </div>
             </motion.div>
           </div>
 
