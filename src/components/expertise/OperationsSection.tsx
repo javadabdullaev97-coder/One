@@ -3,7 +3,7 @@
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ArrowUpRight, FileText } from "lucide-react";
+import { Plus, ArrowUpRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
@@ -20,12 +20,6 @@ const shownServices = SHOWN_SLUGS
   .map(slug => operationsServices.find(s => s.slug === slug))
   .filter(Boolean) as typeof operationsServices;
 
-const relatedArticle: Record<string, { slug: string; title: string; tag: string } | null> = {
-  "entity-management": null,
-  "eor":               { slug: "employer-of-record-central-asia",    title: "Employer of Record in Central Asia",       tag: "HR Briefing"    },
-  "corporate":         { slug: "representative-offices-uzbekistan",  title: "Representative Offices in Uzbekistan",    tag: "Legal Briefing" },
-  "virtual-office":    null,
-};
 
 export default function OperationsSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -58,7 +52,6 @@ export default function OperationsSection() {
         <div className="border-t border-white/[0.07]">
           {shownServices.map((service, i) => {
             const isOpen = activeIndex === i;
-            const article = relatedArticle[service.slug];
 
             return (
               <motion.div
@@ -133,86 +126,32 @@ export default function OperationsSection() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-8 pl-6 pr-4 md:pr-8">
-                        <div className="grid md:grid-cols-[3fr_2fr] gap-8 md:gap-12 border-t border-white/[0.04] pt-7">
+                      <div className="pb-8 pl-6 pr-4 md:pr-8 border-t border-white/[0.04] pt-7">
+                        <div className="flex flex-col gap-5 max-w-2xl">
+                          <motion.p
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.25, delay: 0.06 }}
+                            className="text-[14px] text-white/52 leading-relaxed"
+                          >
+                            {tServices(`${service.slug}.description1`)}
+                          </motion.p>
 
-                          {/* Left: description */}
-                          <div className="flex flex-col gap-5">
-                            <motion.p
-                              initial={{ opacity: 0, y: 6 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.25, delay: 0.06 }}
-                              className="text-[14px] text-white/52 leading-relaxed"
-                            >
-                              {tServices(`${service.slug}.description1`)}
-                            </motion.p>
-
-                            <motion.p
-                              initial={{ opacity: 0, y: 6 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.25, delay: 0.1 }}
-                              className="text-[14px] text-white/38 leading-relaxed"
-                            >
-                              {tServices(`${service.slug}.description2`)}
-                            </motion.p>
-
-                          </div>
-
-                          {/* Right: capabilities + related article */}
-                          <div className="flex flex-col gap-5">
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ duration: 0.2, delay: 0.12 }}
-                            >
-                              <p className="text-[10px] tracking-[0.18em] uppercase text-white/20 mb-3">
-                                {t("capabilities")}
-                              </p>
-                              <div className="flex flex-wrap gap-1.5">
-                                {(tServices.raw(`${service.slug}.capabilities`) as string[]).map((cap, ci) => (
-                                  <motion.span
-                                    key={cap}
-                                    initial={{ opacity: 0, scale: 0.93 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.14 + ci * 0.018, duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                                    className="text-[11px] text-white/35 border border-white/[0.07] px-3 py-1.5 hover:border-primary/25 hover:text-white/55 hover:bg-primary/[0.03] transition-all duration-200 cursor-default"
-                                  >
-                                    {cap}
-                                  </motion.span>
-                                ))}
-                              </div>
-                            </motion.div>
-
-                            {article && (
-                              <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.2, delay: 0.2 }}
-                              >
-                                <p className="text-[10px] tracking-[0.18em] uppercase text-white/20 mb-2.5">
-                                  {t("relatedReading")}
-                                </p>
-                                <Link
-                                  href={`/insights/${article.slug}`}
-                                  className="group/art flex items-center gap-3 border border-white/[0.06] hover:border-white/[0.12] px-4 py-3 transition-colors duration-200"
-                                >
-                                  <FileText className="w-3.5 h-3.5 text-white/25 shrink-0 group-hover/art:text-white/50 transition-colors duration-200" />
-                                  <span className="text-[12px] text-white/40 group-hover/art:text-white/65 transition-colors duration-200 flex-1 line-clamp-1">
-                                    {article.title}
-                                  </span>
-                                  <ArrowUpRight className="w-3 h-3 text-white/20 shrink-0 group-hover/art:text-white/50 group-hover/art:translate-x-0.5 group-hover/art:-translate-y-0.5 transition-all duration-200" />
-                                </Link>
-                              </motion.div>
-                            )}
-                          </div>
+                          <motion.p
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.25, delay: 0.1 }}
+                            className="text-[14px] text-white/38 leading-relaxed"
+                          >
+                            {tServices(`${service.slug}.description2`)}
+                          </motion.p>
                         </div>
 
-                        {/* Service page link */}
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.2, delay: 0.24 }}
-                          className="pt-6 border-t border-white/[0.04] mt-2"
+                          transition={{ duration: 0.2, delay: 0.18 }}
+                          className="pt-6 mt-4"
                         >
                           <Link
                             href={`/expertise/${service.slug}`}
