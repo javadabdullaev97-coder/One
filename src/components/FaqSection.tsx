@@ -55,7 +55,7 @@ export default function FaqSection({
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
-                <span className="text-[12px] text-white/65 font-medium leading-snug">{q}</span>
+                <span className="text-[12px] text-white/80 font-medium leading-snug">{q}</span>
                 {open === i ? (
                   <Minus className="w-3 h-3 text-white/30 shrink-0 mt-0.5" />
                 ) : (
@@ -72,7 +72,7 @@ export default function FaqSection({
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-3 text-[11px] text-white/42 leading-relaxed">{a}</p>
+                    <p className="pb-3 text-[11px] text-white/65 leading-relaxed">{a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

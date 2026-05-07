@@ -179,7 +179,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-white/50 leading-relaxed text-[15px] mb-12 max-w-2xl"
+                className="text-white/70 leading-relaxed text-[15px] mb-12 max-w-2xl"
               >
                 {description}
               </motion.p>
@@ -200,7 +200,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                       {detailContent.forWho.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-[7px]" />
-                          <span className="text-[14px] text-white/55 leading-relaxed">{item}</span>
+                          <span className="text-[14px] text-white/75 leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -216,7 +216,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                     <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
                       {WHY_NEEDED_LABEL[locale] ?? WHY_NEEDED_LABEL.en}
                     </p>
-                    <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
+                    <p className="text-[14px] text-white/70 leading-relaxed max-w-2xl">
                       {detailContent.whyNeeded}
                     </p>
                   </motion.div>
@@ -234,8 +234,8 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                     <ul className="space-y-3">
                       {detailContent.atRisk.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <AlertTriangle className="w-3.5 h-3.5 text-amber-500/55 shrink-0 mt-0.5" strokeWidth={1.5} />
-                          <span className="text-[14px] text-white/50 leading-relaxed">{item}</span>
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-500/70 shrink-0 mt-0.5" strokeWidth={1.5} />
+                          <span className="text-[14px] text-white/70 leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -264,7 +264,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                       <span className="w-5 h-5 rounded-full border border-primary/30 bg-primary/[0.08] flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-2.5 h-2.5 text-primary" strokeWidth={2.5} />
                       </span>
-                      <span className="text-[14px] text-white/55 leading-relaxed">{item}</span>
+                      <span className="text-[14px] text-white/75 leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
