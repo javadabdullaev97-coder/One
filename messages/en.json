@@ -928,8 +928,8 @@
     "heading": "You delegate — we execute",
     "description": "Fully managed services where we handle execution on your behalf — one contract, one point of contact, full compliance.",
     "servicesCount": "{count} services",
-    "capabilities": "Capabilities",
-    "relatedReading": "Related reading"
+    "operationsLabel": "Operations",
+    "whoThisIsFor": "Who this is for"
   },
   "InsightsSection": {
     "eyebrow": "Insights",
