@@ -447,7 +447,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                   {relatedProducts.map((prod) => (
                     <Link
                       key={prod.id}
-                      href={`/store/product/${prod.id}`}
+                      href={`/store/${prod.id}`}
                       className="group flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all duration-200"
                     >
                       <div className="flex-1 min-w-0">
