@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, Calculator, Scale, LineChart, Users, Landmark, Handshake, ScanSearch, LayoutDashboard, Briefcase, UserCheck, Wallet, Globe, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowLeft, Calculator, Scale, LineChart, Users, Landmark, Handshake, ScanSearch, LayoutDashboard, Briefcase, UserCheck, Wallet, Globe, MapPin, ShieldCheck, ChevronDown } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { getServiceBySlug } from "@/lib/services";
+import { getServiceBySlug, servicesData } from "@/lib/services";
+import { allEngagements } from "@/lib/industries";
+import { PRODUCTS } from "@/lib/products";
+import { SERVICE_FAQ_DATA } from "@/lib/serviceFaqData";
 import MagneticButton from "@/components/MagneticButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
@@ -63,17 +67,85 @@ const SERVICE_FOR: Record<string, string> = {
   compliance:        "Entities that need continuous assurance their Uzbekistan operations are meeting every regulatory, tax, and filing obligation.",
 };
 
+const DISCIPLINE_MAP: Record<string, string[]> = {
+  tax:               ["Tax"],
+  legal:             ["Legal"],
+  finance:           ["Finance"],
+  hr:                ["HR"],
+  funding:           ["Tax", "Legal"],
+  "ma-advisory":     ["Tax", "Legal"],
+  "due-diligence":   ["Tax", "Legal"],
+  "entity-management": ["Legal"],
+  corporate:         ["Legal"],
+  eor:               ["HR"],
+  payroll:           ["HR"],
+  immigration:       ["HR"],
+  "virtual-office":  ["Legal"],
+  compliance:        ["Tax"],
+};
+
+const RELATED_SERVICES_MAP: Record<string, string[]> = {
+  tax:               ["legal", "finance", "due-diligence"],
+  legal:             ["tax", "corporate", "ma-advisory"],
+  finance:           ["tax", "entity-management", "due-diligence"],
+  hr:                ["eor", "payroll", "immigration"],
+  funding:           ["tax", "legal", "finance"],
+  "ma-advisory":     ["due-diligence", "legal", "tax"],
+  "due-diligence":   ["ma-advisory", "tax", "legal"],
+  "entity-management": ["corporate", "compliance", "payroll"],
+  corporate:         ["entity-management", "legal", "virtual-office"],
+  eor:               ["payroll", "immigration", "hr"],
+  payroll:           ["eor", "hr", "compliance"],
+  immigration:       ["eor", "hr", "corporate"],
+  "virtual-office":  ["corporate", "entity-management", "compliance"],
+  compliance:        ["entity-management", "tax", "legal"],
+};
+
+const RELATED_PRODUCTS_MAP: Record<string, string[]> = {
+  tax:               ["tax-compliance-starter", "transfer-pricing"],
+  legal:             ["shareholder-agreement", "nda-bilateral", "commercial-lease"],
+  finance:           ["tax-compliance-starter", "transfer-pricing"],
+  hr:                ["employment-contract", "hr-policy-manual"],
+  funding:           ["sez-entry-pack", "due-diligence-pack"],
+  "ma-advisory":     ["due-diligence-pack", "shareholder-agreement"],
+  "due-diligence":   ["due-diligence-pack", "shareholder-agreement"],
+  "entity-management": ["llc-formation", "jsc-formation"],
+  corporate:         ["llc-formation", "jsc-formation", "shareholder-agreement"],
+  eor:               ["employment-contract", "hr-policy-manual"],
+  payroll:           ["employment-contract", "hr-policy-manual"],
+  immigration:       ["work-permit-pack"],
+  "virtual-office":  ["llc-formation", "commercial-lease"],
+  compliance:        ["tax-compliance-starter", "work-permit-pack"],
+};
+
 const CHROME: Record<string, Record<string, string>> = {
-  en: { about: "About this service", whoFor: "Who this is for", capabilities: "Capabilities", deliver: "What we deliver", discuss: "Discuss this service", ctaPrefix: "Ready to discuss", ctaBody: "Our team is available to scope your engagement and answer initial questions.", start: "Start a conversation" },
-  ru: { about: "Об этой услуге", whoFor: "Кому подходит", capabilities: "Возможности", deliver: "Что мы делаем", discuss: "Обсудить эту услугу", ctaPrefix: "Готовы обсудить", ctaBody: "Наша команда готова обсудить объём работ и ответить на ваши вопросы.", start: "Начать диалог" },
-  uz: { about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz", discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash" },
+  en: {
+    about: "About this service", whoFor: "Who this is for", capabilities: "Capabilities", deliver: "What we deliver",
+    discuss: "Discuss this service", ctaPrefix: "Ready to discuss", ctaBody: "Our team is available to scope your engagement and answer initial questions.", start: "Start a conversation",
+    selectedWork: "Selected work", viewAll: "View all projects", relatedServices: "Related services", fromStore: "From our store",
+    faqTitle: "Frequently asked", faqSubtitle: "Quick answers on the practical details that matter most.", storeFrom: "from",
+  },
+  ru: {
+    about: "Об этой услуге", whoFor: "Кому подходит", capabilities: "Возможности", deliver: "Что мы делаем",
+    discuss: "Обсудить эту услугу", ctaPrefix: "Готовы обсудить", ctaBody: "Наша команда готова обсудить объём работ и ответить на ваши вопросы.", start: "Начать диалог",
+    selectedWork: "Избранные проекты", viewAll: "Все проекты", relatedServices: "Связанные услуги", fromStore: "Из нашего магазина",
+    faqTitle: "Частые вопросы", faqSubtitle: "Краткие ответы на самые практичные вопросы.", storeFrom: "от",
+  },
+  uz: {
+    about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz",
+    discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
+    selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bog'liq xizmatlar", fromStore: "Do'konimizdan",
+    faqTitle: "Ko'p so'raladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
+  },
 };
 
 export default function ServiceDetailClient({ slug }: { slug: string }) {
   const locale = useLocale();
   const tNav = useTranslations("Nav");
   const tServices = useTranslations("Services");
+  const tEng = useTranslations("Engagements");
   const service = getServiceBySlug(slug);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!service) return null;
 
@@ -86,6 +158,29 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
       : [tServices(`${slug}.description1`), tServices(`${slug}.description2`)];
   const capabilities = tServices.raw(`${slug}.capabilities`) as string[];
   const serviceTitle = tServices(`${slug}.title`);
+
+  // Projects filtered by discipline
+  const disciplines = DISCIPLINE_MAP[slug] ?? [];
+  const filteredEngagements = allEngagements
+    .map((eng, idx) => ({ ...eng, idx }))
+    .filter(({ disciplines: d }) => d.some((disc) => disciplines.includes(disc)))
+    .slice(0, 3);
+
+  // Related services
+  const relatedServiceSlugs = RELATED_SERVICES_MAP[slug] ?? [];
+  const relatedServices = relatedServiceSlugs
+    .map((s) => servicesData.find((svc) => svc.slug === s))
+    .filter(Boolean) as (typeof servicesData)[number][];
+
+  // Related products
+  const relatedProductIds = RELATED_PRODUCTS_MAP[slug] ?? [];
+  const relatedProducts = relatedProductIds
+    .map((id) => PRODUCTS.find((p) => p.id === id))
+    .filter(Boolean) as (typeof PRODUCTS)[number][];
+
+  // FAQ
+  const faqLocale: "en" | "ru" | "uz" = locale === "ru" ? "ru" : locale === "uz" ? "uz" : "en";
+  const faqItems = SERVICE_FAQ_DATA[slug]?.[faqLocale] ?? [];
 
   return (
     <>
@@ -136,7 +231,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             </span>
           </motion.div>
 
-          {/* Headline — translated service title */}
+          {/* Headline */}
           <h1 className="heading-luxury text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.05] mb-10">
             <motion.span
               initial={{ opacity: 0, y: 28 }}
@@ -231,6 +326,204 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      {/* ── Selected work ────────────────────────────────── */}
+      {filteredEngagements.length > 0 && (
+        <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-10 md:mb-12 gap-6">
+              <AnimatedSection>
+                <p className="tracking-luxury text-white/40 mb-3">{c.selectedWork}</p>
+                <h2 className="heading-luxury text-2xl md:text-3xl text-foreground">{serviceTitle}</h2>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1} className="shrink-0">
+                <Link
+                  href="/expertise"
+                  className="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-white/35 hover:text-white/65 transition-colors duration-200 pb-1 border-b border-white/[0.12] hover:border-white/[0.3]"
+                >
+                  {c.viewAll}
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </AnimatedSection>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredEngagements.map((eng, i) => (
+                <motion.div
+                  key={eng.idx}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -4 }}
+                  className="group relative rounded-xl overflow-hidden"
+                >
+                  <div className="absolute inset-0 rounded-xl bg-white/[0.07]" />
+                  <div
+                    className="absolute inset-[1px] rounded-[11px]"
+                    style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%)" }}
+                  />
+                  <div className="relative h-full bg-gradient-to-br from-[#101010] to-[#070707] rounded-[11px] overflow-hidden">
+                    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.10] to-transparent" />
+                    <div className="p-6 md:p-7 flex flex-col h-full">
+                      <div className="mb-5">
+                        <span className="font-serif text-3xl md:text-4xl text-foreground/85 tracking-tight leading-none">
+                          {eng.metric}
+                        </span>
+                        <p className="text-[10px] tracking-[0.16em] uppercase text-white/25 mt-2">
+                          {tEng(`metricLabels.${eng.metricLabel}`)}
+                        </p>
+                      </div>
+                      <span
+                        className="inline-block text-xs tracking-[0.16em] uppercase mb-3"
+                        style={{ color: `rgba(${accent},0.7)` }}
+                      >
+                        {tEng(`sectors.${eng.sector}`)}
+                      </span>
+                      <p className="text-[14px] text-foreground/60 leading-snug font-light flex-1 mb-5">
+                        {tEng(`headlines.${eng.idx}`)}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.05]">
+                        {eng.disciplines.map((d) => (
+                          <span
+                            key={d}
+                            className="text-[10px] tracking-[0.12em] uppercase text-white/30 border border-white/[0.06] rounded-full px-2.5 py-0.5"
+                          >
+                            {d}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Related services + From our store ────────────── */}
+      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+
+            {/* Related services */}
+            <AnimatedSection>
+              <p className="tracking-luxury text-white/40 mb-7">{c.relatedServices}</p>
+              <div className="flex flex-col gap-3">
+                {relatedServices.map((svc) => {
+                  const SvcIcon = SERVICE_ICONS[svc.slug] ?? ArrowRight;
+                  const svcAccent = SERVICE_ACCENTS[svc.slug] ?? "255,255,255";
+                  return (
+                    <Link
+                      key={svc.slug}
+                      href={`/expertise/${svc.slug}`}
+                      className="group flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all duration-200"
+                    >
+                      <span
+                        className="w-9 h-9 rounded-lg flex items-center justify-center border shrink-0"
+                        style={{ borderColor: `rgba(${svcAccent},0.22)`, background: `rgba(${svcAccent},0.08)` }}
+                      >
+                        <SvcIcon className="w-4 h-4" style={{ color: `rgba(${svcAccent},0.75)` }} strokeWidth={1.5} />
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[13px] text-white/70 group-hover:text-white/90 transition-colors leading-tight">
+                          {tServices(`${svc.slug}.title`)}
+                        </p>
+                        <p className="text-[10px] tracking-[0.14em] uppercase text-white/28 mt-0.5">{svc.category}</p>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-white/50 group-hover:translate-x-0.5 transition-all duration-200 shrink-0" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </AnimatedSection>
+
+            {/* Related products */}
+            {relatedProducts.length > 0 && (
+              <AnimatedSection delay={0.1}>
+                <p className="tracking-luxury text-white/40 mb-7">{c.fromStore}</p>
+                <div className="flex flex-col gap-3">
+                  {relatedProducts.map((prod) => (
+                    <Link
+                      key={prod.id}
+                      href={`/store/product/${prod.id}`}
+                      className="group flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all duration-200"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[13px] text-white/70 group-hover:text-white/90 transition-colors leading-tight">
+                          {prod.nameEn}
+                        </p>
+                        <p className="text-[10px] tracking-[0.14em] uppercase text-white/28 mt-0.5">{prod.category}</p>
+                      </div>
+                      <div className="flex items-center gap-3 shrink-0">
+                        <span
+                          className="text-[12px] font-medium tabular-nums"
+                          style={{ color: `rgba(${accent},0.75)` }}
+                        >
+                          ${prod.price}
+                        </span>
+                        <ArrowRight className="w-3.5 h-3.5 text-white/20 group-hover:text-white/50 group-hover:translate-x-0.5 transition-all duration-200" />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </AnimatedSection>
+            )}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      {faqItems.length > 0 && (
+        <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
+              <AnimatedSection>
+                <p className="tracking-luxury text-white/40 mb-4">{c.faqTitle}</p>
+                <h2 className="heading-luxury text-2xl md:text-3xl text-foreground leading-snug mb-4">
+                  {serviceTitle}
+                </h2>
+                <p className="text-[13px] text-white/35 leading-relaxed">{c.faqSubtitle}</p>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.1}>
+                <div className="divide-y divide-white/[0.06]">
+                  {faqItems.map((item, i) => (
+                    <div key={i} className="py-5">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full flex items-start justify-between gap-4 text-left group"
+                      >
+                        <span className="text-[14px] text-white/65 group-hover:text-white/85 transition-colors leading-snug">
+                          {item.q}
+                        </span>
+                        <ChevronDown
+                          className={cn(
+                            "w-4 h-4 text-white/30 shrink-0 mt-0.5 transition-transform duration-200",
+                            openFaq === i && "rotate-180"
+                          )}
+                        />
+                      </button>
+                      {openFaq === i && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="mt-3 text-[13px] text-white/42 leading-relaxed"
+                        >
+                          {item.a}
+                        </motion.p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
