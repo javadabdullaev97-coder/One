@@ -46,7 +46,7 @@ export default function FaqSection({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-4">FAQ</p>
+        <p className="text-[10px] tracking-[0.18em] uppercase text-white/50 mb-4">FAQ</p>
         <div className="space-y-px">
           {items.map(({ q, a }, i) => (
             <div key={i} className="border-b border-white/[0.07] last:border-b-0">

@@ -193,7 +193,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                     transition={{ duration: 0.4, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-10"
                   >
-                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/50 mb-5">
                       {FOR_WHO_LABEL[locale] ?? FOR_WHO_LABEL.en}
                     </p>
                     <ul className="space-y-3">
@@ -213,7 +213,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                     transition={{ duration: 0.4, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-10"
                   >
-                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/50 mb-5">
                       {WHY_NEEDED_LABEL[locale] ?? WHY_NEEDED_LABEL.en}
                     </p>
                     <p className="text-[14px] text-white/70 leading-relaxed max-w-2xl">
@@ -228,7 +228,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                     transition={{ duration: 0.4, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-12"
                   >
-                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                    <p className="text-[10px] tracking-[0.18em] uppercase text-white/50 mb-5">
                       {AT_RISK_LABEL[locale] ?? AT_RISK_LABEL.en}
                     </p>
                     <ul className="space-y-3">
@@ -249,7 +249,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-[10px] tracking-[0.18em] uppercase text-white/25 mb-5">
+                <p className="text-[10px] tracking-[0.18em] uppercase text-white/50 mb-5">
                   {INCLUDES_LABEL[locale] ?? INCLUDES_LABEL.en}
                 </p>
                 <ul className="space-y-3.5">
