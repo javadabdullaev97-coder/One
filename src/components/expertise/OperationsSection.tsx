@@ -3,7 +3,7 @@
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ArrowUpRight, FileText, ArrowRight } from "lucide-react";
+import { Plus, ArrowUpRight, FileText } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
@@ -79,63 +79,49 @@ export default function OperationsSection() {
                   className="absolute left-0 top-0 bottom-0 w-[2px] bg-primary origin-top"
                 />
 
-                {/* Row header */}
-                <div className="w-full flex items-center py-6 md:py-7 pl-6 pr-4">
-                  {/* Link area: number + title + chips → navigates to service page */}
-                  <Link
-                    href={`/expertise/${service.slug}`}
-                    className="flex items-center gap-5 md:gap-8 flex-1 text-left min-w-0"
-                  >
-                    <span className="font-serif text-xs tabular-nums text-white/18 w-5 shrink-0">
-                      {String(i + 1).padStart(2, "00")}
-                    </span>
+                {/* Row header — full row is the toggle */}
+                <button
+                  type="button"
+                  onClick={() => setActiveIndex(isOpen ? null : i)}
+                  className="w-full flex items-center py-6 md:py-7 pl-6 pr-4 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <span className="font-serif text-xs tabular-nums text-white/18 w-5 shrink-0">
+                    {String(i + 1).padStart(2, "00")}
+                  </span>
 
-                    <span className={cn(
-                      "heading-luxury text-lg md:text-xl flex-1 transition-colors duration-200",
-                      isOpen ? "text-foreground" : "text-white/55 group-hover/row:text-white/85"
-                    )}>
-                      {tServices(`${service.slug}.title`)}
-                    </span>
+                  <span className={cn(
+                    "heading-luxury text-lg md:text-xl flex-1 mx-5 md:mx-8 transition-colors duration-200",
+                    isOpen ? "text-foreground" : "text-white/55 group-hover/row:text-white/85"
+                  )}>
+                    {tServices(`${service.slug}.title`)}
+                  </span>
 
-                    {/* Key capability preview — visible when closed */}
-                    {!isOpen && (
-                      <span className="hidden md:flex items-center gap-3 shrink-0">
-                        {(tServices.raw(`${service.slug}.capabilities`) as string[]).slice(0, 2).map(cap => (
-                          <span key={cap} className="text-[10px] tracking-[0.1em] uppercase text-white/20 border border-white/[0.05] px-2.5 py-1">
-                            {cap}
-                          </span>
-                        ))}
-                      </span>
+                  {/* Key capability preview — visible when closed */}
+                  {!isOpen && (
+                    <span className="hidden md:flex items-center gap-3 shrink-0 mr-3">
+                      {(tServices.raw(`${service.slug}.capabilities`) as string[]).slice(0, 2).map(cap => (
+                        <span key={cap} className="text-[10px] tracking-[0.1em] uppercase text-white/20 border border-white/[0.05] px-2.5 py-1">
+                          {cap}
+                        </span>
+                      ))}
+                    </span>
+                  )}
+
+                  <motion.span
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    className={cn(
+                      "w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-250",
+                      isOpen ? "border-primary/30 bg-primary/[0.07]" : "border-white/[0.10] group-hover/row:border-white/[0.22]"
                     )}
-
-                    <ArrowRight className={cn(
-                      "w-3.5 h-3.5 shrink-0 transition-all duration-200 ml-2",
-                      isOpen ? "text-primary opacity-100" : "opacity-0 group-hover/row:opacity-30 text-white"
-                    )} />
-                  </Link>
-
-                  {/* Toggle button: expand/collapse details */}
-                  <button
-                    type="button"
-                    onClick={() => setActiveIndex(isOpen ? null : i)}
-                    className="ml-3 shrink-0"
-                    aria-label={isOpen ? "Collapse" : "Expand"}
                   >
-                    <motion.span
-                      animate={{ rotate: isOpen ? 45 : 0 }}
-                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                      className={cn(
-                        "w-7 h-7 rounded-full border flex items-center justify-center transition-colors duration-250",
-                        isOpen ? "border-primary/30 bg-primary/[0.07]" : "border-white/[0.10] group-hover/row:border-white/[0.22]"
-                      )}
-                    >
-                      <Plus className={cn(
-                        "w-3 h-3 transition-colors duration-250",
-                        isOpen ? "text-primary" : "text-white/35 group-hover/row:text-white/60"
-                      )} />
-                    </motion.span>
-                  </button>
-                </div>
+                    <Plus className={cn(
+                      "w-3 h-3 transition-colors duration-250",
+                      isOpen ? "text-primary" : "text-white/35 group-hover/row:text-white/60"
+                    )} />
+                  </motion.span>
+                </button>
 
                 {/* Expanded content */}
                 <AnimatePresence initial={false}>
