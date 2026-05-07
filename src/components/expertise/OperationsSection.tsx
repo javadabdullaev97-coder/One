@@ -3,7 +3,7 @@
 import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
@@ -90,30 +90,6 @@ export default function OperationsSection() {
                     {tServices(`${service.slug}.title`)}
                   </span>
 
-                  {/* Key capability preview — visible when closed */}
-                  {!isOpen && (
-                    <span className="hidden md:flex items-center gap-3 shrink-0 mr-3">
-                      {(tServices.raw(`${service.slug}.capabilities`) as string[]).slice(0, 2).map(cap => (
-                        <span key={cap} className="text-[10px] tracking-[0.1em] uppercase text-white/20 border border-white/[0.05] px-2.5 py-1">
-                          {cap}
-                        </span>
-                      ))}
-                    </span>
-                  )}
-
-                  <motion.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    className={cn(
-                      "w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-250",
-                      isOpen ? "border-primary/30 bg-primary/[0.07]" : "border-white/[0.10] group-hover/row:border-white/[0.22]"
-                    )}
-                  >
-                    <Plus className={cn(
-                      "w-3 h-3 transition-colors duration-250",
-                      isOpen ? "text-primary" : "text-white/35 group-hover/row:text-white/60"
-                    )} />
-                  </motion.span>
                 </button>
 
                 {/* Expanded content */}
