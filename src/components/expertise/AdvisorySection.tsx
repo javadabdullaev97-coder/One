@@ -127,6 +127,7 @@ export default function AdvisorySection() {
             {advisoryServices.map((service, i) => {
               const isActive = i === activeIndex;
               const ItemIcon = serviceIcons[service.slug] ?? ArrowUpRight;
+              const svcAccent = serviceAccents[service.slug] ?? "255,255,255";
               return (
                 <MotionLink
                   key={service.slug}
@@ -136,26 +137,33 @@ export default function AdvisorySection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
-                  className={cn(
-                    "group relative w-full flex flex-1 items-center gap-4 px-6 py-5 text-left transition-colors duration-200",
-                    isActive ? "bg-white/[0.04]" : "hover:bg-white/[0.018]"
-                  )}
+                  className="group relative w-full flex flex-1 items-center gap-4 px-6 py-5 text-left transition-all duration-200"
+                  style={{
+                    background: isActive
+                      ? `linear-gradient(90deg, rgba(${svcAccent},0.08) 0%, rgba(${svcAccent},0.02) 55%, transparent 100%)`
+                      : undefined,
+                  }}
                 >
-                  <span className={cn(
-                    "absolute left-0 top-0 bottom-0 w-[2px] transition-colors duration-300",
-                    isActive ? "bg-primary" : "bg-transparent"
-                  )} />
-                  <span className={cn(
-                    "w-8 h-8 rounded flex items-center justify-center shrink-0 border transition-all duration-250",
-                    isActive
-                      ? "border-primary/28 bg-primary/[0.09]"
-                      : "border-white/[0.06] bg-transparent group-hover:border-white/[0.13] group-hover:bg-white/[0.03]"
-                  )}>
+                  <span
+                    className="absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-300"
+                    style={{
+                      background: isActive ? `rgba(${svcAccent},1)` : "transparent",
+                      boxShadow: isActive ? `0 0 10px rgba(${svcAccent},0.55)` : "none",
+                    }}
+                  />
+                  <span
+                    className="w-8 h-8 rounded flex items-center justify-center shrink-0 border transition-all duration-250"
+                    style={isActive ? {
+                      borderColor: `rgba(${svcAccent},0.3)`,
+                      background: `rgba(${svcAccent},0.1)`,
+                    } : {
+                      borderColor: "rgba(255,255,255,0.06)",
+                      background: "transparent",
+                    }}
+                  >
                     <ItemIcon
-                      className={cn(
-                        "w-3.5 h-3.5 transition-colors duration-250",
-                        isActive ? "text-primary" : "text-white/28 group-hover:text-white/58"
-                      )}
+                      className="w-3.5 h-3.5 transition-colors duration-250"
+                      style={{ color: isActive ? `rgba(${svcAccent},0.85)` : "rgba(255,255,255,0.28)" }}
                       strokeWidth={1.5}
                     />
                   </span>
@@ -165,10 +173,13 @@ export default function AdvisorySection() {
                   )}>
                     {tServices(`${service.slug}.title`)}
                   </span>
-                  <ArrowRight className={cn(
-                    "w-3.5 h-3.5 shrink-0 transition-all duration-200",
-                    isActive ? "text-primary opacity-100" : "opacity-0 group-hover:opacity-25 group-hover:text-white"
-                  )} />
+                  <ArrowRight
+                    className={cn(
+                      "w-3.5 h-3.5 shrink-0 transition-all duration-200",
+                      isActive ? "opacity-100" : "opacity-0 group-hover:opacity-25 group-hover:text-white"
+                    )}
+                    style={isActive ? { color: `rgba(${svcAccent},0.7)` } : undefined}
+                  />
                 </MotionLink>
               );
             })}
