@@ -1,13 +1,43 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
-import { useState } from "react";
+import { useState, type ComponentType, type SVGProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Briefcase, LayoutDashboard, MapPin, UserCheck } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
+
+type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>;
+
+const MotionLink = motion(Link);
+
+const SHOWN_SLUGS = ["entity-management", "eor", "corporate", "virtual-office"];
+const shownServices = SHOWN_SLUGS
+  .map(slug => operationsServices.find(s => s.slug === slug))
+  .filter(Boolean) as typeof operationsServices;
+
+const serviceIcons: Record<string, LucideIcon> = {
+  "entity-management": LayoutDashboard,
+  corporate:           Briefcase,
+  eor:                 UserCheck,
+  "virtual-office":    MapPin,
+};
+
+const serviceAccents: Record<string, string> = {
+  "entity-management": "16,185,129",
+  corporate:           "99,102,241",
+  eor:                 "236,72,153",
+  "virtual-office":    "168,85,247",
+};
+
+const serviceFor: Record<string, string> = {
+  "entity-management": "Foreign companies that need a complete operational presence in Uzbekistan without building an in-house management team.",
+  corporate:           "International businesses establishing or maintaining a legal presence in Uzbekistan — from incorporation to ongoing secretarial administration.",
+  eor:                 "International companies that want to hire staff in Uzbekistan immediately, without first incorporating a local entity.",
+  "virtual-office":    "Overseas companies exploring the Uzbekistan market, or businesses that need a registered address without committing to physical office space.",
+};
 
 const VIEW_LABEL: Record<string, string> = {
   en: "View full service page",
@@ -15,17 +45,23 @@ const VIEW_LABEL: Record<string, string> = {
   uz: "Xizmat sahifasini ko'rish",
 };
 
-const SHOWN_SLUGS = ["entity-management", "eor", "corporate", "virtual-office"];
-const shownServices = SHOWN_SLUGS
-  .map(slug => operationsServices.find(s => s.slug === slug))
-  .filter(Boolean) as typeof operationsServices;
-
-
 export default function OperationsSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const locale = useLocale();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
   const t = useTranslations("OperationsSection");
   const tServices = useTranslations("Services");
+  const locale = useLocale();
+
+  const active = shownServices[activeIndex];
+  const ActiveIcon = serviceIcons[active.slug] ?? ArrowUpRight;
+  const accent = serviceAccents[active.slug] ?? "255,255,255";
+  const direction = activeIndex >= prevIndex ? 1 : -1;
+
+  const handleSelect = (i: number) => {
+    if (i === activeIndex) return;
+    setPrevIndex(activeIndex);
+    setActiveIndex(i);
+  };
 
   return (
     <section id="operations" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/[0.06]">
@@ -49,103 +85,184 @@ export default function OperationsSection() {
           </div>
         </AnimatedSection>
 
-        <div className="border-t border-white/[0.07]">
-          {shownServices.map((service, i) => {
-            const isOpen = activeIndex === i;
+        <div className="grid md:grid-cols-[5fr_7fr] border border-white/[0.07] overflow-hidden">
 
-            return (
-              <motion.div
-                key={service.slug}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className={cn(
-                  "relative border-b border-white/[0.06] group/row transition-colors duration-200",
-                  isOpen ? "bg-white/[0.018]" : "hover:bg-white/[0.01]"
-                )}
-              >
-                {/* Left active bar */}
-                <motion.span
-                  animate={{ opacity: isOpen ? 1 : 0, scaleY: isOpen ? 1 : 0.4 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-0 bottom-0 w-[2px] bg-primary origin-top"
-                />
-
-                {/* Row header — full row is the toggle */}
-                <button
-                  type="button"
-                  onClick={() => setActiveIndex(isOpen ? null : i)}
-                  className="w-full flex items-center py-6 md:py-7 pl-6 pr-4 text-left"
-                  aria-expanded={isOpen}
+          {/* Left: service list */}
+          <div className="border-r border-white/[0.07] flex flex-col divide-y divide-white/[0.04]">
+            {shownServices.map((service, i) => {
+              const isActive = i === activeIndex;
+              const ItemIcon = serviceIcons[service.slug] ?? ArrowUpRight;
+              const svcAccent = serviceAccents[service.slug] ?? "255,255,255";
+              return (
+                <MotionLink
+                  key={service.slug}
+                  href={`/expertise/${service.slug}`}
+                  onMouseEnter={() => handleSelect(i)}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
+                  className="group relative w-full flex flex-1 items-center gap-4 px-6 py-5 text-left transition-all duration-200"
+                  style={{
+                    background: isActive
+                      ? `linear-gradient(90deg, rgba(${svcAccent},0.08) 0%, rgba(${svcAccent},0.02) 55%, transparent 100%)`
+                      : undefined,
+                  }}
                 >
-                  <span className="font-serif text-xs tabular-nums text-white/18 w-5 shrink-0">
-                    {String(i + 1).padStart(2, "00")}
+                  <span
+                    className="absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-300"
+                    style={{
+                      background: isActive ? `rgba(${svcAccent},1)` : "transparent",
+                      boxShadow: isActive ? `0 0 10px rgba(${svcAccent},0.55)` : "none",
+                    }}
+                  />
+                  <span
+                    className="w-8 h-8 rounded flex items-center justify-center shrink-0 border transition-all duration-250"
+                    style={isActive ? {
+                      borderColor: `rgba(${svcAccent},0.3)`,
+                      background: `rgba(${svcAccent},0.1)`,
+                    } : {
+                      borderColor: "rgba(255,255,255,0.06)",
+                      background: "transparent",
+                    }}
+                  >
+                    <ItemIcon
+                      className="w-3.5 h-3.5 transition-colors duration-250"
+                      style={{ color: isActive ? `rgba(${svcAccent},0.85)` : "rgba(255,255,255,0.28)" }}
+                      strokeWidth={1.5}
+                    />
                   </span>
-
                   <span className={cn(
-                    "heading-luxury text-lg md:text-xl flex-1 mx-5 md:mx-8 transition-colors duration-200",
-                    isOpen ? "text-foreground" : "text-white/55 group-hover/row:text-white/85"
+                    "flex-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200",
+                    isActive ? "text-foreground" : "text-white/40 group-hover:text-white/72"
                   )}>
                     {tServices(`${service.slug}.title`)}
                   </span>
+                  <ArrowRight
+                    className={cn(
+                      "w-3.5 h-3.5 shrink-0 transition-all duration-200",
+                      isActive ? "opacity-100" : "opacity-0 group-hover:opacity-25 group-hover:text-white"
+                    )}
+                    style={isActive ? { color: `rgba(${svcAccent},0.7)` } : undefined}
+                  />
+                </MotionLink>
+              );
+            })}
+          </div>
 
-                </button>
-
-                {/* Expanded content */}
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-8 pl-6 pr-4 md:pr-8 border-t border-white/[0.04] pt-7">
-                        <div className="flex flex-col gap-5 max-w-2xl">
-                          <motion.p
-                            initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.25, delay: 0.06 }}
-                            className="text-[14px] text-white/52 leading-relaxed"
-                          >
-                            {tServices(`${service.slug}.description1`)}
-                          </motion.p>
-
-                          <motion.p
-                            initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.25, delay: 0.1 }}
-                            className="text-[14px] text-white/38 leading-relaxed"
-                          >
-                            {tServices(`${service.slug}.description2`)}
-                          </motion.p>
-                        </div>
-
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.2, delay: 0.18 }}
-                          className="pt-6 mt-4"
-                        >
-                          <Link
-                            href={`/expertise/${service.slug}`}
-                            className="group/svc inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-primary/48 hover:text-primary/80 hover:gap-3 transition-all duration-200"
-                          >
-                            {VIEW_LABEL[locale] ?? VIEW_LABEL.en}
-                            <ArrowUpRight className="w-3 h-3 group-hover/svc:translate-x-0.5 group-hover/svc:-translate-y-0.5 transition-transform duration-200" />
-                          </Link>
-                        </motion.div>
+          {/* Right: active service detail */}
+          <div className="relative bg-[#070707] min-h-[480px] md:h-[520px]">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={active.slug}
+                initial={{ opacity: 0, y: direction * 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: direction * -10 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 flex flex-col overflow-y-auto"
+              >
+                {/* Gradient header */}
+                <div
+                  className="relative px-8 md:px-10 pt-8 pb-7 shrink-0"
+                  style={{
+                    background: `linear-gradient(135deg, rgba(${accent},0.12) 0%, rgba(${accent},0.04) 50%, transparent 100%)`,
+                    borderBottom: `1px solid rgba(${accent},0.1)`,
+                  }}
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[2px]"
+                    style={{ background: `linear-gradient(90deg, rgba(${accent},0.7) 0%, rgba(${accent},0.2) 55%, transparent 100%)` }}
+                  />
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <span
+                        className="w-12 h-12 rounded-lg flex items-center justify-center border shrink-0"
+                        style={{ borderColor: `rgba(${accent},0.25)`, background: `rgba(${accent},0.1)` }}
+                      >
+                        <ActiveIcon
+                          className="w-5 h-5"
+                          style={{ color: `rgba(${accent},0.9)` }}
+                          strokeWidth={1.5}
+                        />
+                      </span>
+                      <div>
+                        <h3 className="heading-luxury text-xl md:text-[1.35rem] text-foreground leading-tight">
+                          {tServices(`${active.slug}.title`)}
+                        </h3>
+                        <p className="text-[9px] tracking-[0.18em] uppercase text-white/28 mt-1">{t("operationsLabel")}</p>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
+                    </div>
+                    <span className="font-serif text-sm text-white/[0.14] tabular-nums shrink-0 mt-1">
+                      {String(activeIndex + 1).padStart(2, "0")}&thinsp;/&thinsp;{String(shownServices.length).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
 
+                {/* Body */}
+                <div className="flex flex-col flex-1 px-8 md:px-10 py-7 gap-6">
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-[14px] text-white/55 leading-relaxed"
+                  >
+                    {tServices(`${active.slug}.description1`)}
+                  </motion.p>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.09, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-[14px] text-white/38 leading-relaxed"
+                  >
+                    {tServices(`${active.slug}.description2`)}
+                  </motion.p>
+
+                  {/* Who this is for */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.13, ease: [0.16, 1, 0.3, 1] }}
+                    className="border-l-2 pl-4 py-0.5"
+                    style={{ borderColor: `rgba(${accent},0.35)` }}
+                  >
+                    <p
+                      className="text-[10px] tracking-[0.18em] uppercase mb-1.5"
+                      style={{ color: `rgba(${accent},0.65)` }}
+                    >
+                      {t("whoThisIsFor")}
+                    </p>
+                    <p className="text-[13px] text-white/50 leading-relaxed">
+                      {serviceFor[active.slug]}
+                    </p>
+                  </motion.div>
+
+                  {/* Service page link */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2, delay: 0.2 }}
+                    className="mt-auto pt-2"
+                  >
+                    <Link
+                      href={`/expertise/${active.slug}`}
+                      className="group/svc inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase transition-all duration-200 hover:gap-3"
+                      style={{ color: `rgba(${accent},0.52)` }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = `rgba(${accent},0.82)`; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = `rgba(${accent},0.52)`; }}
+                    >
+                      {VIEW_LABEL[locale] ?? VIEW_LABEL.en}
+                      <ArrowRight className="w-3 h-3 group-hover/svc:translate-x-0.5 transition-transform duration-200" />
+                    </Link>
+                  </motion.div>
+                </div>
+
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+        </div>
       </div>
     </section>
   );
