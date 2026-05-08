@@ -133,9 +133,9 @@ const CHROME: Record<string, Record<string, string>> = {
   },
   uz: {
     about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz",
-    discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doʼirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
-    selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bog\u02bliq xizmatlar", fromStore: "Doʼonimizdan",
-    faqTitle: "Ko\u02bp so\u02braladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
+    discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
+    selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bog'liq xizmatlar", fromStore: "Do'konimizdan",
+    faqTitle: "Ko'p so'raladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
   },
 };
 
@@ -184,7 +184,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative overflow-hidden flex flex-col" style={{ minHeight: "65vh" }}>
         <div
           className="absolute w-[800px] h-[800px] rounded-full -top-64 -left-64 opacity-[0.12] blur-[140px] pointer-events-none"
@@ -256,7 +256,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Description ─────────────────────────────────────── */}
+      {/* ── Description ──────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
@@ -298,7 +298,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Capabilities ───────────────────────────────────── */}
+      {/* ── Capabilities ─────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="mb-10">
@@ -327,7 +327,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Selected work ─────────────────────────────────── */}
+      {/* ── Selected work ────────────────────────────────── */}
       {filteredEngagements.length > 0 && (
         <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -475,7 +475,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────────── */}
+      {/* ── FAQ ──────────────────────────────────────────── */}
       {faqItems.length > 0 && (
         <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -525,7 +525,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── CTA ───────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
         <div
           className="absolute w-[600px] h-[600px] rounded-full -bottom-48 left-1/2 -translate-x-1/2 opacity-[0.08] blur-[110px] pointer-events-none"
