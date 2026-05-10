@@ -301,27 +301,35 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
       {/* ── Capabilities ─────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="mb-10">
+          <AnimatedSection className="mb-14">
             <p className="tracking-luxury text-white/40 mb-3">{c.capabilities}</p>
             <h2 className="heading-luxury text-2xl md:text-3xl text-foreground">{c.deliver}</h2>
           </AnimatedSection>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(255,255,255,0.06)" }}>
             {capabilities.map((cap, i) => (
-              <motion.span
+              <motion.div
                 key={cap}
-                initial={{ opacity: 0, scale: 0.94 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.25, delay: i * 0.028, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-2 px-4 py-2.5 border border-white/[0.07] bg-white/[0.02] text-[12px] text-white/50 hover:border-primary/28 hover:bg-primary/[0.03] hover:text-white/78 transition-all duration-200"
+                transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative bg-black px-7 py-8 hover:bg-white/[0.025] transition-colors duration-300 overflow-hidden"
               >
-                <span
-                  className="w-[5px] h-[5px] rounded-full shrink-0"
-                  style={{ background: `rgba(${accent},0.55)` }}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `radial-gradient(ellipse at 0% 0%, rgba(${accent},0.06) 0%, transparent 65%)` }}
                 />
-                {cap}
-              </motion.span>
+                <span
+                  className="block font-serif text-[2.5rem] leading-none mb-5 tabular-nums select-none"
+                  style={{ color: `rgba(${accent},0.22)` }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-[14px] text-white/52 group-hover:text-white/72 leading-snug transition-colors duration-200">
+                  {cap}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
