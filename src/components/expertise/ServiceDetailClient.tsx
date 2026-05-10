@@ -314,22 +314,29 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-black px-7 py-8 hover:bg-white/[0.025] transition-colors duration-300 overflow-hidden"
+                className="group relative bg-black hover:bg-white/[0.03] px-7 py-8 overflow-hidden hover:-translate-y-1 hover:z-10 transition-[transform,background-color] duration-300 ease-out"
               >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: `radial-gradient(ellipse at 0% 0%, rgba(${accent},0.06) 0%, transparent 65%)` }}
+                  style={{ background: `radial-gradient(ellipse at 0% 0%, rgba(${accent},0.1) 0%, transparent 65%)` }}
+                />
+                <div
+                  className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `linear-gradient(90deg, rgba(${accent},0.6) 0%, transparent 55%)` }}
                 />
                 <span
                   className="block font-serif text-[2.5rem] leading-none mb-5 tabular-nums select-none"
-                  style={{ color: `rgba(${accent},0.22)` }}
+                  style={{ color: `rgba(${accent},0.45)` }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-[14px] text-white/52 group-hover:text-white/72 leading-snug transition-colors duration-200">
+                <p className="text-[14px] text-white/55 group-hover:text-white/80 leading-snug transition-colors duration-300">
                   {cap}
                 </p>
               </motion.div>
+            ))}
+            {Array.from({ length: (3 - (capabilities.length % 3)) % 3 }).map((_, i) => (
+              <div key={`filler-${i}`} className="bg-black" />
             ))}
           </div>
         </div>
