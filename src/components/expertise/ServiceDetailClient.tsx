@@ -314,11 +314,11 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-black hover:bg-white/[0.03] px-7 py-8 overflow-hidden hover:-translate-y-1 hover:z-10 transition-[transform,background-color] duration-300 ease-out"
+                className="group relative bg-black px-7 py-8 overflow-hidden transition-colors duration-300"
               >
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: `radial-gradient(ellipse at 0% 0%, rgba(${accent},0.1) 0%, transparent 65%)` }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                  style={{ background: `radial-gradient(ellipse at 0% 0%, rgba(${accent},0.14) 0%, transparent 70%)` }}
                 />
                 <div
                   className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
