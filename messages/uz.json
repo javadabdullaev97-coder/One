@@ -180,62 +180,119 @@
       "llc-formation": {
         "title": "MChJ ro'yxatga olish to'plami",
         "description": "O'zbekistonda MChJ ro'yxatga olish uchun to'liq hujjatlar to'plami — nizom, ta'sischi qarorlari va barcha ro'yxatga olish formalari.",
-        "includes": ["Kompaniya nizomi (ikki tilli)", "Ta'sischi qarori", "Arizalar", "Muvofiqlik chek-list"]
+        "includes": [
+          "Kompaniya nizomi (ikki tilli)",
+          "Ta'sischi qarori",
+          "Arizalar",
+          "Muvofiqlik chek-list"
+        ]
       },
       "jsc-formation": {
         "title": "AJ ro'yxatga olish to'plami",
         "description": "Aktsiyadorlik jamiyatini tashkil etish uchun to'liq paket, jumladan prospekt shablonlari va aktsiyadorlar hujjatlari.",
-        "includes": ["AJ nizomi", "Prospekt shabloni", "Aktsiyadorlar reestri", "Kengash qarorlari"]
+        "includes": [
+          "AJ nizomi",
+          "Prospekt shabloni",
+          "Aktsiyadorlar reestri",
+          "Kengash qarorlari"
+        ]
       },
       "shareholder-agreement": {
         "title": "Aktsiyadorlar shartnomasi",
         "description": "O'zbek qonuni bo'yicha boshqaruv, drag-along/tag-along huquqlari, dividendlar va chiqish qoidalarini qamrab oluvchi to'liq SHA.",
-        "includes": ["To'liq SHA shabloni", "Ilovalar", "Kengash nizomi", "Izohlar qo'llanmasi"]
+        "includes": [
+          "To'liq SHA shabloni",
+          "Ilovalar",
+          "Kengash nizomi",
+          "Izohlar qo'llanmasi"
+        ]
       },
       "nda-bilateral": {
         "title": "NDA — ikki tomonlama",
         "description": "O'zbek qonuniga moslashtirilgan o'zaro maxfiylik shartnomasi. Tijorat siri, IP va sezgir biznes ma'lumotlarni qamrab oladi.",
-        "includes": ["Ikki tomonlama NDA", "Bir tomonlama variant", "Foydalanish qo'llanmasi"]
+        "includes": [
+          "Ikki tomonlama NDA",
+          "Bir tomonlama variant",
+          "Foydalanish qo'llanmasi"
+        ]
       },
       "commercial-lease": {
         "title": "Tijorat ijarasi shartnomasi",
         "description": "O'zbek fuqarolik qonuni bo'yicha ikki tilli tijorat ijarasi — ofis, chakana savdo va ombor. Yangilash va tugatish bandlarini o'z ichiga oladi.",
-        "includes": ["Standart ijara", "Qisqa muddatli variant", "Qo'shimcha shartnoma shablonlari"]
+        "includes": [
+          "Standart ijara",
+          "Qisqa muddatli variant",
+          "Qo'shimcha shartnoma shablonlari"
+        ]
       },
       "employment-contract": {
         "title": "Mehnat shartnomasi",
         "description": "O'zbekiston Mehnat kodeksiga mos keladigan ikki tilli mehnat shartnomasi. Belgilangan muddatli va muddatsiz lavozimlarni qamrab oladi.",
-        "includes": ["Standart shartnoma", "Belgilangan muddatli variant", "Sinov muddati ilovasi"]
+        "includes": [
+          "Standart shartnoma",
+          "Belgilangan muddatli variant",
+          "Sinov muddati ilovasi"
+        ]
       },
       "hr-policy-manual": {
         "title": "HR siyosati qo'llanmasi",
         "description": "O'zbek mehnat qonuniga moslashtirilgan to'liq HR siyosati — yollash, samaradorlik, ishdan bo'shatish va imtiyozlar.",
-        "includes": ["12 siyosat moduli", "Xulq-atvor kodeksi", "Intizomiy tartib", "Ta'til siyosati"]
+        "includes": [
+          "12 siyosat moduli",
+          "Xulq-atvor kodeksi",
+          "Intizomiy tartib",
+          "Ta'til siyosati"
+        ]
       },
       "tax-compliance-starter": {
         "title": "Soliq muvofiqligi boshlang'ich to'plami",
         "description": "O'zbekistonda faoliyat yurituvchi kompaniyalar uchun asosiy soliq ro'yxatga olish formalari, QQS shablonlari va muvofiqlik kalendari.",
-        "includes": ["Soliq ro'yxatga olish formalari", "QQS deklaratsiyasi shabloni", "Muvofiqlik kalendari", "CIT hisob varaqi"]
+        "includes": [
+          "Soliq ro'yxatga olish formalari",
+          "QQS deklaratsiyasi shabloni",
+          "Muvofiqlik kalendari",
+          "CIT hisob varaqi"
+        ]
       },
       "transfer-pricing": {
         "title": "Transfer narxlash hujjatlari",
         "description": "O'zbek soliq qonuni va OECD ko'rsatmalariga muvofiq transfer narxlash uchun Master file va Local file shablonlari.",
-        "includes": ["Master file shabloni", "Local file shabloni", "Benchmarking qo'llanmasi", "Siyosat bayonoti"]
+        "includes": [
+          "Master file shabloni",
+          "Local file shabloni",
+          "Benchmarking qo'llanmasi",
+          "Siyosat bayonoti"
+        ]
       },
       "work-permit-pack": {
         "title": "Mehnat ruxsatnomasi to'plami",
         "description": "O'zbekistonda ishlayotgan xorijiy fuqarolar uchun mehnat ruxsatnomalarini olish uchun to'liq hujjatlar to'plami, jumladan yangilash.",
-        "includes": ["Arizalar", "Hujjatlar chek-list", "Ish beruvchi xat shablonlari", "Yangilash qo'llanmasi"]
+        "includes": [
+          "Arizalar",
+          "Hujjatlar chek-list",
+          "Ish beruvchi xat shablonlari",
+          "Yangilash qo'llanmasi"
+        ]
       },
       "sez-entry-pack": {
         "title": "EIZ ga kirish to'plami",
         "description": "Erkin iqtisodiy zonaga kirish uchun to'liq ariza paketi — investitsiya rejasi shablonlari va me'yoriy ko'rinish.",
-        "includes": ["EIZ ariza shakli", "Investitsiya rejasi shabloni", "Moliyaviy prognoz modeli", "Me'yoriy ko'rinish"]
+        "includes": [
+          "EIZ ariza shakli",
+          "Investitsiya rejasi shabloni",
+          "Moliyaviy prognoz modeli",
+          "Me'yoriy ko'rinish"
+        ]
       },
       "due-diligence-pack": {
         "title": "Investor Due Diligence to'plami",
         "description": "O'zbekistondagi M&A va investitsiya bitimlari uchun to'liq DD hujjatlar so'rovi ro'yxati va data room tuzilishi.",
-        "includes": ["DD so'rov ro'yxati", "Data room indeksi", "Red flag chek-list", "Yuridik xulosa shabloni"]
+        "includes": [
+          "DD so'rov ro'yxati",
+          "Data room indeksi",
+          "Red flag chek-list",
+          "Yuridik xulosa shabloni"
+        ]
       }
     }
   },
@@ -270,8 +327,8 @@
   },
   "Checkout": {
     "stepLanguage": "Til",
-    "stepPayment": "To'lov",
-    "stepConfirm": "Tayyor",
+    "stepNotice": "Tolov",
+    "stepForm": "Malumot",
     "language": {
       "heading": "Hujjat tilini tanlang",
       "subheading": "Ikkala til ham bitta Word hujjatiga kiritilgan — to'liq ikki tilli hujjat.",
@@ -279,47 +336,43 @@
       "uz_ru": "O'zbek + Rus",
       "en_ru": "Ingliz + Rus"
     },
-    "payment": {
-      "heading": "To'lov usulini tanlang",
-      "subheading": "Barcha to'lovlar O'zbek so'mida amalga oshiriladi.",
-      "documentLabel": "Hujjat",
-      "languageLabel": "Til",
-      "totalLabel": "Jami",
-      "emailLabel": "Chek uchun email",
-      "emailPlaceholder": "siz@example.com",
-      "emailHint": "Buyurtma tasdiqi va yuklab olish havolasini ushbu manzilga yuboramiz.",
-      "payme": { "name": "Payme" },
-      "octopay": { "name": "OctoPay" }
+    "notice": {
+      "badge": "Tez orada",
+      "heading": "Onlayn to'lov tez orada",
+      "bodyLine1": "Biz Uzcard, Humo, Visa va Mastercardni ulayapmiz — karta orqali xavfsiz to'lov tez orada mavjud bo'ladi.",
+      "bodyLine2": "Hozircha barcha buyurtmalar elektron pochta orqali qabul qilinadi. Jarayon tez, to'liq yordam bilan va xavfsiz.",
+      "emailNote": "Buyurtmalar hozirda elektron pochta orqali qabul qilinadi"
     },
-    "redirect": {
-      "heading": "{provider} sahifasiga o'tkazilmoqda…",
-      "subheading": "To'lov tugagach, siz advizenco.com saytiga avtomatik qaytasiz."
+    "form": {
+      "heading": "Buyurtma ma'lumotlari",
+      "typeIndividual": "Jismoniy shaxs",
+      "typeLegal": "Yuridik shaxs",
+      "firstName": "Ism",
+      "lastName": "Familiya",
+      "email": "Email",
+      "phone": "Telefon raqami",
+      "pinfl": "JSHSHIR",
+      "pinflHint": "14 raqamli individual identifikatsiya raqami",
+      "companyName": "Kompaniya nomi",
+      "inn": "STIR",
+      "innHint": "9 raqamli soliq to'lovchi identifikatsiya raqami",
+      "documentsLabel": "Hujjatlar",
+      "documentsHint": "Bir nechta hujjatni tanlashingiz mumkin — ularning barchasi so'rovingizga kiritiladi.",
+      "termsLabel": "<terms>Sotish shartlari</terms>, <privacy>Maxfiylik siyosati</privacy> va <cookies>Cookie siyosati</cookies> bilan roziman."
     },
     "success": {
-      "statusLabel": "Buyurtma tasdiqlandi",
-      "heading": "To'lov muvaffaqiyatli amalga oshirildi",
-      "subheading": "Rahmat. Hujjatingiz yuklab olishga tayyor.",
-      "amountLabel": "To'langan summa",
-      "download": "Yuklab olish",
-      "emailSent": "Chek va yuklab olish havolasi {email} manziliga yuborildi."
-    },
-    "error": {
-      "statusLabel": "To'lov amalga oshmadi",
-      "heading": "To'lov bajarilmadi",
-      "subheading": "To'lovingiz yakunlanmadi va hech qanday summa yechib olinmadi. Iltimos, boshqa to'lov usulini sinab ko'ring.",
-      "tryAgain": "Qaytadan urinish",
-      "support": "Qo'llab-quvvatlash bilan bog'lanish"
-    },
-    "preview": {
-      "previewSuccess": "Muvaffaqiyatli to'lov ko'rinishi",
-      "previewError": "Xato ko'rinishini ko'rib chiqish"
+      "statusLabel": "So'rov yuborildi",
+      "heading": "So'rov yuborildi",
+      "subheading": "Rahmat! Buyurtmangizni tasdiqlash va to'lovni amalga oshirish uchun bir ish kuni ichida siz bilan bog'lanamiz.",
+      "languageLabel": "Til versiyasi",
+      "documentsLabel": "So'ralgan hujjatlar",
+      "emailNoteLabel": "Tasdiqlash quyidagi manzilga yuboriladi"
     },
     "actions": {
       "continue": "Davom etish",
       "back": "Orqaga",
-      "payNow": "{amount} to'lash",
       "close": "Yopish",
-      "disclaimer": "To'lash tugmasini bosish orqali siz <terms>Sotish shartlari</terms> va <privacy>Maxfiylik siyosati</privacy>ga rozilik bildirasiz."
+      "submit": "So'rov yuborish"
     }
   },
   "Legal": {
@@ -333,20 +386,62 @@
       "intro": "Ushbu sayt (advizenco.com, bundan keyin — «Sayt») Toshkent, O'zbekiston Respublikasida joylashgan «Advizen Consulting» MChJ tomonidan boshqariladi (bundan keyin — «Advizen Consulting»). Saytga kirish va undan foydalanish quyida keltirilgan Foydalanish shartlari bilan tartibga solinadi.",
       "footer": "Ushbu Foydalanish shartlari O'zbekiston Respublikasi qonunchiligi bilan tartibga solinadi. Oxirgi yangilanish: 2026 yil aprel.",
       "sections": [
-        { "title": "Shartlarni qabul qilish", "body": "Ushbu saytga (advizenco.com, bundan keyin — «Sayt») kirish yoki undan foydalanish orqali siz ushbu Foydalanish shartlariga va Saytda ko'rsatilgan har qanday qo'shimcha shartlarga yuridik jihatdan bog'lanishga rozisiz. Agar siz ushbu Foydalanish shartlarining barchasiga rozi bo'lmasangiz, Saytga kirmang yoki undan foydalanmang." },
-        { "title": "O'zgartirishlar", "body": "Advizen Consulting ushbu Foydalanish shartlarini bir tomonlama tartibda istalgan vaqtda o'zgartirish huquqini o'zida saqlab qoladi. O'zgartirilgan Foydalanish shartlari Saytda joylashtirilgan paytdan boshlab kuchga kiradi. Bunday joylashtirishdan keyin Saytga kirishni yoki undan foydalanishni davom ettirib, siz o'zgartirilgan shartlarga rozisiz. Ushbu Shartlarni muntazam ko'rib chiqishni tavsiya etamiz." },
-        { "title": "Kontent va uchinchi tomon havolalari", "body": "Saytdagi uchinchi tomon saytiga olib boradigan har qanday havola o'sha saytni qo'llab-quvvatlash degani emas. Biz Saytdan havola qilingan har qanday saytning kontentining aniqligi, dolzarbligi yoki muvofiqligi to'g'risida hech qanday bayonot yoki kafolat bermaymiz.\n\nAdvizen Consulting hech qanday holatda Saytdan giperhavola orqali kirish mumkin bo'lgan har qanday uchinchi tomon saytining kontenti uchun javobgar emas, bunday giperhavola Saytning o'zi yoki uchinchi tomon tomonidan joylashtirilganligidan qat'i nazar." },
-        { "title": "Nashrlar va sharhlar", "body": "Saytda joylashtirilgan nashrlar, maqolalar va sharhlar har qanday aniq faktlar yoki holatlarga nisbatan yuridik maslahat hisoblanmaydi. Barcha nashr etilgan materiallar faqat umumiy axborot maqsadlari uchun mo'ljallangan.\n\nAdvizen Consulting ning oldindan yozma roziligisiz ushbu materiallarga iqtibos keltirish yoki ularga boshqa nashrlarda yoki sud jarayonlarida murojaat qilishga yo'l qo'yilmaydi. Biz bunday rozilikni o'z xohishimizga ko'ra berishimiz yoki rad etishimiz mumkin.\n\nUshbu Saytdan tarqatiladigan nashrlarni olish mijozlik munosabatlarini yaratmaydi. Bunday nashrlarda bildirilgan fikrlar muallifning shaxsiy fikrini ifodalaydi va Advizen Consulting pozitsiyasini aks ettirishi shart emas." },
-        { "title": "Intellektual mulk", "body": "Advizen Consulting tomonidan ushbu Saytda taqdim etilgan kontentdagi barcha mualliflik va boshqa mulkiy huquqlar, jumladan matn, grafika, logotiplar va Saytning kompilyatsiyasi, joylashtirilishi va tashkil etilishi, Advizen Consulting ga va/yoki uning xodimlari yoki litsenziarlariga tegishlidir.\n\nUshbu Foydalanish shartlari bilan aniq berilmagan barcha kontent huquqlari saqlanib qoladi. Bizning oldindan yozma roziligimizsiz ushbu Saytdan biron-bir kontentni qayta ishlab chiqarish, tarqatish, o'zgartirish, hosila ishlarni yaratish, ommaviy namoyish qilish yoki boshqa yo'l bilan foydalanish mumkin emas." },
-        { "title": "Maxfiylik yo'q", "body": "Ushbu Sayt jamoatchilik uchun ochiq. Ushbu Sayt orqali siz taqdim etgan har qanday ma'lumot (Maxfiylik siyosatimizga muvofiq qayta ishlanadigan shaxsiy ma'lumotdan tashqari) maxfiy hisoblanmaydi. Ushbu Sayt orqali ma'lumot taqdim etib, siz Advizen Consulting ga bunday ma'lumotni Maxfiylik siyosatimizga muvofiq har qanday qonuniy maqsadda foydalanish huquqini berasiz." },
-        { "title": "Kafolatlardan voz kechish", "body": "Sayt va barcha kontent aniq yoki nazarda tutilgan hech qanday kafolatsiz «xuddi shu holatda» va «mavjudligiga qarab» asosida taqdim etiladi. Advizen Consulting Saytning to'xtovsiz, xatosiz yoki viruslar yoki boshqa zararli komponentlardan xoli bo'lishini kafolatlamaydi.\n\nUshbu Saytdagi hech narsa professional yuridik, soliq, moliyaviy yoki biznes maslahat hisoblanmaydi. Ushbu Saytdan olingan ma'lumotlarga asoslanib biron-bir harakat qilishdan oldin malakali mutaxassis bilan maslahatlashishingiz kerak." },
-        { "title": "Mas'uliyatni cheklash", "body": "Amaldagi qonun bilan ruxsat etilgan eng yuqori darajaga qadar Advizen Consulting Saytga yoki uning kontentiga kirish, foydalanish yoki kira olmaslik bilan bog'liq holda yuzaga keladigan har qanday to'g'ridan-to'g'ri, bilvosita, tasodifiy, oqibatli yoki maxsus zararlar uchun javobgar bo'lmaydi, hatto Advizen Consulting bunday zararlar ehtimoli haqida xabardor qilingan bo'lsa ham." },
-        { "title": "Tovon to'lash", "body": "Siz Advizen Consulting, uning xodimlari, qonuniy vakillari, vorislari va vakolatlilarni ushbu Foydalanish shartlarini buzishingiz yoki Saytdan foydalanishingiz natijasida yuzaga keladigan har qanday majburiyatlar, xarajatlar va sarflardan (jumladan oqilona yuridik to'lovlar va sud xarajatlari) himoya qilishga rozisiz." },
-        { "title": "Kirish cheklovlari", "body": "Advizen Consulting istalgan vaqtda, o'z xohishiga ko'ra, sababsiz va oldindan ogohlantirmasdan istalgan shaxsning Saytga yoki uning biron-bir qismiga kirishini cheklash, rad etish yoki darhol to'xtatish huquqini o'zida saqlab qoladi." },
-        { "title": "Saytning mavjudligi", "body": "Advizen Consulting istalgan vaqtda, har qanday sababga ko'ra, biron-bir tomonning xabarisiz yoki roziligisiz Saytni yoki uning har qanday qismini o'zgartirish, qo'shish yoki yopish yagona huquqiga ega. Saytga taqdim etilgan kontentni saqlamaganlik yoki o'chirganlik uchun biz javobgar bo'lmaymiz." },
-        { "title": "Qo'llaniladigan qonun va nizolarni hal qilish", "body": "Ushbu Foydalanish shartlari O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi va talqin qilinadi. Ushbu Foydalanish shartlari yoki Saytdan foydalanishingiz bilan bog'liq holda yuzaga keladigan har qanday nizolar, da'volar yoki harakatlarga, jumladan ushbu Foydalanish shartlarining mavjudligi yoki haqiqiyligi to'g'risidagi har qanday nizolarga nisbatan O'zbekiston Respublikasi Toshkent shahar sudlarining istisnosiz yurisdiktsiyasiga rozilik bildirasiz." },
-        { "title": "Bo'linish", "body": "Agar ushbu Foydalanish shartlarining biron-bir qoidasi noqonuniy yoki amalga oshirib bo'lmaydigan deb topilsa, bunday haqiqiy bo'lmagan yoki amalga oshirib bo'lmaydigan qoida asl qoidaning niyatini eng yaqin aks ettiruvchi haqiqiy va amalga oshiriladigan qoida bilan almashtiriladi va qolgan qoidalar to'liq kuch va ta'sirda qoladi." },
-        { "title": "Sarlavhalar", "body": "Ushbu Foydalanish shartlaridagi bo'lim sarlavhalari faqat havolaning qulayligi uchun kiritilgan, ushbu Shartlarning qismini tashkil qilmaydi va ularning ma'nosi yoki talqiniga ta'sir qilmaydi." }
+        {
+          "title": "Shartlarni qabul qilish",
+          "body": "Ushbu saytga (advizenco.com, bundan keyin — «Sayt») kirish yoki undan foydalanish orqali siz ushbu Foydalanish shartlariga va Saytda ko'rsatilgan har qanday qo'shimcha shartlarga yuridik jihatdan bog'lanishga rozisiz. Agar siz ushbu Foydalanish shartlarining barchasiga rozi bo'lmasangiz, Saytga kirmang yoki undan foydalanmang."
+        },
+        {
+          "title": "O'zgartirishlar",
+          "body": "Advizen Consulting ushbu Foydalanish shartlarini bir tomonlama tartibda istalgan vaqtda o'zgartirish huquqini o'zida saqlab qoladi. O'zgartirilgan Foydalanish shartlari Saytda joylashtirilgan paytdan boshlab kuchga kiradi. Bunday joylashtirishdan keyin Saytga kirishni yoki undan foydalanishni davom ettirib, siz o'zgartirilgan shartlarga rozisiz. Ushbu Shartlarni muntazam ko'rib chiqishni tavsiya etamiz."
+        },
+        {
+          "title": "Kontent va uchinchi tomon havolalari",
+          "body": "Saytdagi uchinchi tomon saytiga olib boradigan har qanday havola o'sha saytni qo'llab-quvvatlash degani emas. Biz Saytdan havola qilingan har qanday saytning kontentining aniqligi, dolzarbligi yoki muvofiqligi to'g'risida hech qanday bayonot yoki kafolat bermaymiz.\n\nAdvizen Consulting hech qanday holatda Saytdan giperhavola orqali kirish mumkin bo'lgan har qanday uchinchi tomon saytining kontenti uchun javobgar emas, bunday giperhavola Saytning o'zi yoki uchinchi tomon tomonidan joylashtirilganligidan qat'i nazar."
+        },
+        {
+          "title": "Nashrlar va sharhlar",
+          "body": "Saytda joylashtirilgan nashrlar, maqolalar va sharhlar har qanday aniq faktlar yoki holatlarga nisbatan yuridik maslahat hisoblanmaydi. Barcha nashr etilgan materiallar faqat umumiy axborot maqsadlari uchun mo'ljallangan.\n\nAdvizen Consulting ning oldindan yozma roziligisiz ushbu materiallarga iqtibos keltirish yoki ularga boshqa nashrlarda yoki sud jarayonlarida murojaat qilishga yo'l qo'yilmaydi. Biz bunday rozilikni o'z xohishimizga ko'ra berishimiz yoki rad etishimiz mumkin.\n\nUshbu Saytdan tarqatiladigan nashrlarni olish mijozlik munosabatlarini yaratmaydi. Bunday nashrlarda bildirilgan fikrlar muallifning shaxsiy fikrini ifodalaydi va Advizen Consulting pozitsiyasini aks ettirishi shart emas."
+        },
+        {
+          "title": "Intellektual mulk",
+          "body": "Advizen Consulting tomonidan ushbu Saytda taqdim etilgan kontentdagi barcha mualliflik va boshqa mulkiy huquqlar, jumladan matn, grafika, logotiplar va Saytning kompilyatsiyasi, joylashtirilishi va tashkil etilishi, Advizen Consulting ga va/yoki uning xodimlari yoki litsenziarlariga tegishlidir.\n\nUshbu Foydalanish shartlari bilan aniq berilmagan barcha kontent huquqlari saqlanib qoladi. Bizning oldindan yozma roziligimizsiz ushbu Saytdan biron-bir kontentni qayta ishlab chiqarish, tarqatish, o'zgartirish, hosila ishlarni yaratish, ommaviy namoyish qilish yoki boshqa yo'l bilan foydalanish mumkin emas."
+        },
+        {
+          "title": "Maxfiylik yo'q",
+          "body": "Ushbu Sayt jamoatchilik uchun ochiq. Ushbu Sayt orqali siz taqdim etgan har qanday ma'lumot (Maxfiylik siyosatimizga muvofiq qayta ishlanadigan shaxsiy ma'lumotdan tashqari) maxfiy hisoblanmaydi. Ushbu Sayt orqali ma'lumot taqdim etib, siz Advizen Consulting ga bunday ma'lumotni Maxfiylik siyosatimizga muvofiq har qanday qonuniy maqsadda foydalanish huquqini berasiz."
+        },
+        {
+          "title": "Kafolatlardan voz kechish",
+          "body": "Sayt va barcha kontent aniq yoki nazarda tutilgan hech qanday kafolatsiz «xuddi shu holatda» va «mavjudligiga qarab» asosida taqdim etiladi. Advizen Consulting Saytning to'xtovsiz, xatosiz yoki viruslar yoki boshqa zararli komponentlardan xoli bo'lishini kafolatlamaydi.\n\nUshbu Saytdagi hech narsa professional yuridik, soliq, moliyaviy yoki biznes maslahat hisoblanmaydi. Ushbu Saytdan olingan ma'lumotlarga asoslanib biron-bir harakat qilishdan oldin malakali mutaxassis bilan maslahatlashishingiz kerak."
+        },
+        {
+          "title": "Mas'uliyatni cheklash",
+          "body": "Amaldagi qonun bilan ruxsat etilgan eng yuqori darajaga qadar Advizen Consulting Saytga yoki uning kontentiga kirish, foydalanish yoki kira olmaslik bilan bog'liq holda yuzaga keladigan har qanday to'g'ridan-to'g'ri, bilvosita, tasodifiy, oqibatli yoki maxsus zararlar uchun javobgar bo'lmaydi, hatto Advizen Consulting bunday zararlar ehtimoli haqida xabardor qilingan bo'lsa ham."
+        },
+        {
+          "title": "Tovon to'lash",
+          "body": "Siz Advizen Consulting, uning xodimlari, qonuniy vakillari, vorislari va vakolatlilarni ushbu Foydalanish shartlarini buzishingiz yoki Saytdan foydalanishingiz natijasida yuzaga keladigan har qanday majburiyatlar, xarajatlar va sarflardan (jumladan oqilona yuridik to'lovlar va sud xarajatlari) himoya qilishga rozisiz."
+        },
+        {
+          "title": "Kirish cheklovlari",
+          "body": "Advizen Consulting istalgan vaqtda, o'z xohishiga ko'ra, sababsiz va oldindan ogohlantirmasdan istalgan shaxsning Saytga yoki uning biron-bir qismiga kirishini cheklash, rad etish yoki darhol to'xtatish huquqini o'zida saqlab qoladi."
+        },
+        {
+          "title": "Saytning mavjudligi",
+          "body": "Advizen Consulting istalgan vaqtda, har qanday sababga ko'ra, biron-bir tomonning xabarisiz yoki roziligisiz Saytni yoki uning har qanday qismini o'zgartirish, qo'shish yoki yopish yagona huquqiga ega. Saytga taqdim etilgan kontentni saqlamaganlik yoki o'chirganlik uchun biz javobgar bo'lmaymiz."
+        },
+        {
+          "title": "Qo'llaniladigan qonun va nizolarni hal qilish",
+          "body": "Ushbu Foydalanish shartlari O'zbekiston Respublikasi qonunchiligiga muvofiq tartibga solinadi va talqin qilinadi. Ushbu Foydalanish shartlari yoki Saytdan foydalanishingiz bilan bog'liq holda yuzaga keladigan har qanday nizolar, da'volar yoki harakatlarga, jumladan ushbu Foydalanish shartlarining mavjudligi yoki haqiqiyligi to'g'risidagi har qanday nizolarga nisbatan O'zbekiston Respublikasi Toshkent shahar sudlarining istisnosiz yurisdiktsiyasiga rozilik bildirasiz."
+        },
+        {
+          "title": "Bo'linish",
+          "body": "Agar ushbu Foydalanish shartlarining biron-bir qoidasi noqonuniy yoki amalga oshirib bo'lmaydigan deb topilsa, bunday haqiqiy bo'lmagan yoki amalga oshirib bo'lmaydigan qoida asl qoidaning niyatini eng yaqin aks ettiruvchi haqiqiy va amalga oshiriladigan qoida bilan almashtiriladi va qolgan qoidalar to'liq kuch va ta'sirda qoladi."
+        },
+        {
+          "title": "Sarlavhalar",
+          "body": "Ushbu Foydalanish shartlaridagi bo'lim sarlavhalari faqat havolaning qulayligi uchun kiritilgan, ushbu Shartlarning qismini tashkil qilmaydi va ularning ma'nosi yoki talqiniga ta'sir qilmaydi."
+        }
       ]
     },
     "termsOfSale": {
@@ -355,17 +450,50 @@
       "eyebrow": "Advizen Consulting · Do'kon",
       "footer": "Ushbu hujjat O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonuni va boshqa O'zbekiston Respublikasi qonunchilik aktlariga muvofiq tayyorlangan. Oxirgi yangilanish: 2026 yil aprel.",
       "sections": [
-        { "title": "Umumiy qoidalar", "body": "Ushbu Ommaviy oferta (bundan keyin — «Oferta») «Advizen Consulting» MChJ ning (bundan keyin — «Sotuvchi») cheksiz doiradagi shaxslarga advizenco.com da Do'konda joylashtirilgan tayyor axborot paketlari va hujjatlarni (bundan keyin — «Mahsulot») sotib olish va sotish shartnomasini tuzish uchun rasmiy taklifidir.\n\nUshbu Oferta O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonuniga va boshqa O'zbekiston Respublikasi qonunchilik aktlariga muvofiq tayyorlangan.\n\nUshbu Oferta aksepti Mahsulotni Xaridor tomonidan to'lash bilan amalga oshiriladi. To'lov olingan paytdan boshlab shartnoma ushbu Oferta shartlari bo'yicha tuzilgan hisoblanadi." },
-        { "title": "Shartnoma predmeti", "body": "Sotuvchi Xaridor mulkiga tayyor hujjat paketlari, shablonlar, tahliliy materiallar va boshqa axborot mahsulotlarini (bundan keyin — «Mahsulot») o'tkazish majburiyatini oladi, Xaridor esa ularni qabul qilish va ushbu Oferta shartlariga muvofiq to'lash majburiyatini oladi.\n\nMahsulotning ro'yxati, tarkibi va narxi saytdagi Do'kondagi joriy mahsulot kartochkalari bilan belgilanadi. Mahsulot ta'rifi O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 8-moddasiga muvofiq uning ommaviy ofertasini tashkil etadi." },
-        { "title": "Buyurtma berish", "body": "3.1. Xaridor Do'kondan Mahsulotni tanlaydi, uning ta'rifi va narxi bilan tanishadi.\n\n3.2. Xaridor Mahsulotni o'tkazish uchun zarur bo'lgan kontakt ma'lumotlarini taqdim etib buyurtma beradi.\n\n3.3. Mahsulotni har qanday mavjud usulda to'lash ushbu Oferta aksepti hisoblanadi va Xaridorning uning barcha shartlariga shartsiz roziligini bildiradi.\n\n3.4. To'lov tasdiqlangandan so'ng Xaridorga O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 10-moddasiga muvofiq kassa cheki yoki savdo cheki yuboriladi." },
-        { "title": "Narx va to'lov", "body": "4.1. Mahsulot narxi buyurtma berish paytida Do'konda ko'rsatiladi. Sotuvchi to'lovgacha narxni o'zgartirish huquqini o'zida saqlab qoladi.\n\n4.2. To'lov saytda mavjud to'lov tizimlari orqali naqdsiz shaklda amalga oshiriladi. Sotuvchi to'lov usuliga qarab turli xil narxlarni belgilamaydi (O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 10-moddasi).\n\n4.3. Naqdsiz usullarda to'lov qilganda Xaridorga joriy aksiyalarga muvofiq rag'batlantirishlar va chegirmalar taklif etilishi mumkin." },
-        { "title": "Mahsulot yetkazib berish", "body": "5.1. Mahsulot Xaridorga elektron shaklda — yuklab olish havolasi yoki fayllarga kirish taqdim etish orqali — to'lov tasdiqlangandan keyin 24 soatdan kech bo'lmagan muddatda yetkazib beriladi.\n\n5.2. Yetkazib berishda kechikish bo'lgan taqdirda Sotuvchi Xaridorga har bir kechiktirilgan kun uchun Mahsulot narxining 0,5% miqdorida penya to'laydi, ammo Mahsulotning umumiy narxidan oshmaydi (O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 12¹-moddasi).\n\n5.3. Mahsulotning tasodifiy yo'qolishi yoki tasodifiy shikastlanish xavfi uni o'tkazish paytidan boshlab Xaridorga o'tadi." },
-        { "title": "Huquqlar va majburiyatlar", "body": "Sotuvchi quyidagilarga majburdir:\n— Mahsulot haqida aniq va to'liq ma'lumot taqdim etish (Qonunning 6-moddasi);\n— Mahsulotni belgilangan muddat ichida va tegishli sifatda topshirish;\n— kassa cheki yoki savdo chekini berish;\n— foydalanishning butun davri davomida Mahsulotning xavfsizligini ta'minlash.\n\nXaridor quyidagilarga haqlidir:\n— Mahsulot va Sotuvchi haqida aniq ma'lumot olish (Qonunning 4-moddasi);\n— nuqsonlarni aniqlaganda almashtirishni yoki pul qaytarishni talab qilish (Qonunning 13-moddasi);\n— huquqlarining buzilishi holatida sudga yoki vakolatli organlarga murojaat qilish (Qonunning 29-moddasi).\n\nXaridor quyidagilarga majburdir:\n— buyurtma berishdan oldin Mahsulot ta'rifi bilan tanishish;\n— Mahsulotni to'liq to'lash;\n— Mahsulotdan faqat shaxsiy, notijorat maqsadlarda foydalanish, uni uchinchi tomonlarga o'tkazmaslik va ommaga taqdim etmaslik." },
-        { "title": "Qaytarish va tovon", "body": "7.1. Mahsulotning raqamli tabiati (elektron shakldagi axborot mahsuloti) tufayli, fayllar Xaridorga yetkazilgandan keyin pul qaytarish, sezilarli nuqsonlar aniqlangan holatlardan tashqari, taqdim etilmaydi.\n\n7.2. Sezilarli nuqson Mahsulotning Do'konda nashr etilgan ta'rifiga mos kelmasligi va uni mo'ljallangan maqsadda foydalanishni imkonsiz qiladigan holat sifatida belgilanadi.\n\n7.3. Sezilarli nuqson aniqlanganda Xaridor Mahsulotni olgandan 10 kun ichida uni tegishli sifatdagi Mahsulotga almashtirishni yoki to'langan summani qaytarishni talab qilishga haqlidir (Qonunning 13, 18-moddalari).\n\n7.4. Da'volar info@advizenco.com elektron pochtasiga buyurtma raqami va nuqson tavsifi ko'rsatilgan holda yuboriladi." },
-        { "title": "Mas'uliyat", "body": "8.1. Sotuvchi Mahsulot haqidagi ma'lumotning aniqligi va uning sifati uchun O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonuniga muvofiq mas'uliyatga ega.\n\n8.2. Sotuvchi Mahsulotni Sotuvchining nazoratidan tashqari sabablarga ko'ra ishlata olmaslik uchun (Xaridor tomonidagi texnik muammolar, kerakli dasturiy ta'minotning yo'qligi va boshqalar) javobgar emas.\n\n8.3. Xaridorga uning huquqlarining buzilishi natijasida yetkazilgan ma'naviy zarar Sotuvchining aybi bo'lgan taqdirda tovonga ega bo'ladi (Qonunning 22-moddasi).\n\n8.4. Sotuvchining yig'indi mas'uliyati to'langan Mahsulot narxi bilan cheklangan." },
-        { "title": "Shaxsiy ma'lumotlar", "body": "9.1. Buyurtma berib, Xaridor o'z shaxsiy ma'lumotlarini ushbu shartnomani bajarish maqsadida qayta ishlashga rozilik bildiradi.\n\n9.2. Sotuvchi Xaridorning shaxsiy ma'lumotlarini uning roziligisiz uchinchi tomonlarga o'tkazmaslik majburiyatini oladi, O'zbekiston Respublikasi qonunchiligi bilan nazarda tutilgan holatlardan tashqari.\n\n9.3. Shaxsiy ma'lumotlarni qayta ishlashning batafsil shartlari saytda nashr etilgan Maxfiylik siyosatida bayon etilgan." },
-        { "title": "Nizolarni hal qilish", "body": "10.1. Barcha nizolar muzokaralar yo'li bilan hal qilinadi. Da'voga javob berish muddati uni olgan kundan boshlab 10 ish kuni.\n\n10.2. Kelishuvga erishilmasa, nizolar Sotuvchi yoki Xaridor joylashgan joydagi sudga O'zbekiston Respublikasi qonunchiligiga muvofiq topshiriladi (Qonunning 29-moddasi).\n\n10.3. Iste'molchilar o'z huquqlarining buzilishi bilan bog'liq da'volar bo'yicha davlat boji to'lashdan ozod qilinadi (Qonunning 29-moddasi)." },
-        { "title": "Sotuvchining rekvizitlari", "body": "Advizen Consulting\nYuridik manzil: Toshkent, O'zbekiston Respublikasi\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888\nSayt: advizenco.com\n\nUshbu Oferta saytda nashr etilgan paytdan boshlab kuchga kiradi va Sotuvchi tomonidan qaytarilguncha amal qiladi." }
+        {
+          "title": "Umumiy qoidalar",
+          "body": "Ushbu Ommaviy oferta (bundan keyin — «Oferta») «Advizen Consulting» MChJ ning (bundan keyin — «Sotuvchi») cheksiz doiradagi shaxslarga advizenco.com da Do'konda joylashtirilgan tayyor axborot paketlari va hujjatlarni (bundan keyin — «Mahsulot») sotib olish va sotish shartnomasini tuzish uchun rasmiy taklifidir.\n\nUshbu Oferta O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonuniga va boshqa O'zbekiston Respublikasi qonunchilik aktlariga muvofiq tayyorlangan.\n\nUshbu Oferta aksepti Mahsulotni Xaridor tomonidan to'lash bilan amalga oshiriladi. To'lov olingan paytdan boshlab shartnoma ushbu Oferta shartlari bo'yicha tuzilgan hisoblanadi."
+        },
+        {
+          "title": "Shartnoma predmeti",
+          "body": "Sotuvchi Xaridor mulkiga tayyor hujjat paketlari, shablonlar, tahliliy materiallar va boshqa axborot mahsulotlarini (bundan keyin — «Mahsulot») o'tkazish majburiyatini oladi, Xaridor esa ularni qabul qilish va ushbu Oferta shartlariga muvofiq to'lash majburiyatini oladi.\n\nMahsulotning ro'yxati, tarkibi va narxi saytdagi Do'kondagi joriy mahsulot kartochkalari bilan belgilanadi. Mahsulot ta'rifi O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 8-moddasiga muvofiq uning ommaviy ofertasini tashkil etadi."
+        },
+        {
+          "title": "Buyurtma berish",
+          "body": "3.1. Xaridor Do'kondan Mahsulotni tanlaydi, uning ta'rifi va narxi bilan tanishadi.\n\n3.2. Xaridor Mahsulotni o'tkazish uchun zarur bo'lgan kontakt ma'lumotlarini taqdim etib buyurtma beradi.\n\n3.3. Mahsulotni har qanday mavjud usulda to'lash ushbu Oferta aksepti hisoblanadi va Xaridorning uning barcha shartlariga shartsiz roziligini bildiradi.\n\n3.4. To'lov tasdiqlangandan so'ng Xaridorga O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 10-moddasiga muvofiq kassa cheki yoki savdo cheki yuboriladi."
+        },
+        {
+          "title": "Narx va to'lov",
+          "body": "4.1. Mahsulot narxi buyurtma berish paytida Do'konda ko'rsatiladi. Sotuvchi to'lovgacha narxni o'zgartirish huquqini o'zida saqlab qoladi.\n\n4.2. To'lov saytda mavjud to'lov tizimlari orqali naqdsiz shaklda amalga oshiriladi. Sotuvchi to'lov usuliga qarab turli xil narxlarni belgilamaydi (O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 10-moddasi).\n\n4.3. Naqdsiz usullarda to'lov qilganda Xaridorga joriy aksiyalarga muvofiq rag'batlantirishlar va chegirmalar taklif etilishi mumkin."
+        },
+        {
+          "title": "Mahsulot yetkazib berish",
+          "body": "5.1. Mahsulot Xaridorga elektron shaklda — yuklab olish havolasi yoki fayllarga kirish taqdim etish orqali — to'lov tasdiqlangandan keyin 24 soatdan kech bo'lmagan muddatda yetkazib beriladi.\n\n5.2. Yetkazib berishda kechikish bo'lgan taqdirda Sotuvchi Xaridorga har bir kechiktirilgan kun uchun Mahsulot narxining 0,5% miqdorida penya to'laydi, ammo Mahsulotning umumiy narxidan oshmaydi (O'zbekiston Respublikasi «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonunining 12¹-moddasi).\n\n5.3. Mahsulotning tasodifiy yo'qolishi yoki tasodifiy shikastlanish xavfi uni o'tkazish paytidan boshlab Xaridorga o'tadi."
+        },
+        {
+          "title": "Huquqlar va majburiyatlar",
+          "body": "Sotuvchi quyidagilarga majburdir:\n— Mahsulot haqida aniq va to'liq ma'lumot taqdim etish (Qonunning 6-moddasi);\n— Mahsulotni belgilangan muddat ichida va tegishli sifatda topshirish;\n— kassa cheki yoki savdo chekini berish;\n— foydalanishning butun davri davomida Mahsulotning xavfsizligini ta'minlash.\n\nXaridor quyidagilarga haqlidir:\n— Mahsulot va Sotuvchi haqida aniq ma'lumot olish (Qonunning 4-moddasi);\n— nuqsonlarni aniqlaganda almashtirishni yoki pul qaytarishni talab qilish (Qonunning 13-moddasi);\n— huquqlarining buzilishi holatida sudga yoki vakolatli organlarga murojaat qilish (Qonunning 29-moddasi).\n\nXaridor quyidagilarga majburdir:\n— buyurtma berishdan oldin Mahsulot ta'rifi bilan tanishish;\n— Mahsulotni to'liq to'lash;\n— Mahsulotdan faqat shaxsiy, notijorat maqsadlarda foydalanish, uni uchinchi tomonlarga o'tkazmaslik va ommaga taqdim etmaslik."
+        },
+        {
+          "title": "Qaytarish va tovon",
+          "body": "7.1. Mahsulotning raqamli tabiati (elektron shakldagi axborot mahsuloti) tufayli, fayllar Xaridorga yetkazilgandan keyin pul qaytarish, sezilarli nuqsonlar aniqlangan holatlardan tashqari, taqdim etilmaydi.\n\n7.2. Sezilarli nuqson Mahsulotning Do'konda nashr etilgan ta'rifiga mos kelmasligi va uni mo'ljallangan maqsadda foydalanishni imkonsiz qiladigan holat sifatida belgilanadi.\n\n7.3. Sezilarli nuqson aniqlanganda Xaridor Mahsulotni olgandan 10 kun ichida uni tegishli sifatdagi Mahsulotga almashtirishni yoki to'langan summani qaytarishni talab qilishga haqlidir (Qonunning 13, 18-moddalari).\n\n7.4. Da'volar info@advizenco.com elektron pochtasiga buyurtma raqami va nuqson tavsifi ko'rsatilgan holda yuboriladi."
+        },
+        {
+          "title": "Mas'uliyat",
+          "body": "8.1. Sotuvchi Mahsulot haqidagi ma'lumotning aniqligi va uning sifati uchun O'zbekiston Respublikasining «Iste'molchilar huquqlarini himoya qilish to'g'risida»gi Qonuniga muvofiq mas'uliyatga ega.\n\n8.2. Sotuvchi Mahsulotni Sotuvchining nazoratidan tashqari sabablarga ko'ra ishlata olmaslik uchun (Xaridor tomonidagi texnik muammolar, kerakli dasturiy ta'minotning yo'qligi va boshqalar) javobgar emas.\n\n8.3. Xaridorga uning huquqlarining buzilishi natijasida yetkazilgan ma'naviy zarar Sotuvchining aybi bo'lgan taqdirda tovonga ega bo'ladi (Qonunning 22-moddasi).\n\n8.4. Sotuvchining yig'indi mas'uliyati to'langan Mahsulot narxi bilan cheklangan."
+        },
+        {
+          "title": "Shaxsiy ma'lumotlar",
+          "body": "9.1. Buyurtma berib, Xaridor o'z shaxsiy ma'lumotlarini ushbu shartnomani bajarish maqsadida qayta ishlashga rozilik bildiradi.\n\n9.2. Sotuvchi Xaridorning shaxsiy ma'lumotlarini uning roziligisiz uchinchi tomonlarga o'tkazmaslik majburiyatini oladi, O'zbekiston Respublikasi qonunchiligi bilan nazarda tutilgan holatlardan tashqari.\n\n9.3. Shaxsiy ma'lumotlarni qayta ishlashning batafsil shartlari saytda nashr etilgan Maxfiylik siyosatida bayon etilgan."
+        },
+        {
+          "title": "Nizolarni hal qilish",
+          "body": "10.1. Barcha nizolar muzokaralar yo'li bilan hal qilinadi. Da'voga javob berish muddati uni olgan kundan boshlab 10 ish kuni.\n\n10.2. Kelishuvga erishilmasa, nizolar Sotuvchi yoki Xaridor joylashgan joydagi sudga O'zbekiston Respublikasi qonunchiligiga muvofiq topshiriladi (Qonunning 29-moddasi).\n\n10.3. Iste'molchilar o'z huquqlarining buzilishi bilan bog'liq da'volar bo'yicha davlat boji to'lashdan ozod qilinadi (Qonunning 29-moddasi)."
+        },
+        {
+          "title": "Sotuvchining rekvizitlari",
+          "body": "Advizen Consulting\nYuridik manzil: Toshkent, O'zbekiston Respublikasi\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888\nSayt: advizenco.com\n\nUshbu Oferta saytda nashr etilgan paytdan boshlab kuchga kiradi va Sotuvchi tomonidan qaytarilguncha amal qiladi."
+        }
       ]
     },
     "privacy": {
@@ -373,19 +501,58 @@
       "subtitle": "Sizning shaxsiy ma'lumotlaringizni qanday yig'amiz, foydalanamiz va himoya qilamiz",
       "footer": "Ushbu Maxfiylik siyosati 2019 yil 2 iyuldagi O'zbekiston Respublikasining «Shaxsiy ma'lumotlar to'g'risida»gi № O'RQ-547 sonli Qonuni va boshqa amaldagi qonunchilik aktlariga muvofiq tayyorlangan. Oxirgi yangilanish: 2026 yil aprel.",
       "sections": [
-        { "title": "Biz kim", "body": "«Advizen Consulting» MChJ (bundan keyin — «biz», «bizni» yoki «Kompaniya») advizenco.com saytini boshqaradi. Biz ushbu sayt va biznes faoliyatimiz bilan bog'liq holda ishlatiladigan shaxsiy ma'lumotlar bazasining egasi va operatorimiz.\n\nBiz shaxsiy ma'lumotlarni 2019 yil 2 iyuldagi O'zbekiston Respublikasining «Shaxsiy ma'lumotlar to'g'risida»gi № O'RQ-547 sonli Qonuni (2019 yil 1 oktyabrdan kuchga kirgan) va O'zbekiston Respublikasining boshqa amaldagi qonunchilik aktlariga muvofiq qayta ishlaymiz.\n\nKontakt ma'lumotlari:\nAdvizen Consulting\nYuridik manzil: Toshkent, O'zbekiston Respublikasi\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888" },
-        { "title": "Biz to'playdigan shaxsiy ma'lumotlar", "body": "Biz quyidagi shaxsiy ma'lumotlar toifalarini yig'ishimiz va qayta ishlashimiz mumkin:\n\n— Identifikatsiya ma'lumotlari: to'liq ism, tug'ilgan sana;\n— Kontakt ma'lumotlari: email manzil, telefon raqami, pochta manzili;\n— Biznes ma'lumotlari: kompaniya nomi, lavozim, soha;\n— Aloqa ma'lumotlari: bizga yuborgan xabarlaringiz, so'rovlaringiz va yozishmalaringiz mazmuni;\n— Saytdan foydalanish ma'lumotlari: IP manzil, brauzer turi, tashrif buyurilgan sahifalar, tashrif vaqti va sanasi, havola URLlari (cookie va analitika vositalari orqali yig'iladi — bizning Cookie siyosatimizga qarang);\n— Tranzaksiya ma'lumotlari: Do'konimiz orqali qilingan xaridlar bilan bog'liq ma'lumot, jumladan buyurtma tafsilotlari va to'lovni tasdiqlash yozuvlari (biz to'lov karta ma'lumotlarini saqlamaymiz).\n\nBiz faqat ushbu Siyosatda tasvirlangan maqsadlar uchun zarur va yetarli bo'lgan shaxsiy ma'lumotlarni yig'amiz (Qonunning 10-moddasi)." },
-        { "title": "Qayta ishlash uchun huquqiy asos", "body": "Biz sizning shaxsiy ma'lumotlaringizni Qonunning 18-moddasiga muvofiq quyidagi huquqiy asoslarda qayta ishlaymiz:\n\n— Sizning roziligingiz: so'rov yuborganingizda, ro'yxatdan o'tganingizda yoki xarid qilganingizda, siz belgilangan maqsad uchun shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz;\n— Shartnomani bajarish: qayta ishlash siz tomon bo'lgan shartnomani bajarish uchun yoki shartnoma tuzishdan oldin sizning so'rovingiz bo'yicha harakatlar qilish uchun zarur (masalan, Do'kon buyurtmasini qayta ishlash);\n— Yuridik majburiyat: qayta ishlash O'zbekiston Respublikasi qonunchiligi bo'yicha bizning majburiyatlarimizga rioya qilish uchun zarur;\n— Qonuniy manfaatlar: qayta ishlash bizning qonuniy biznes manfaatlarimiz uchun zarur, agar ular sizning huquq va manfaatlaringizdan ustun bo'lmasa (masalan, sayt analitikasi, xizmatlarni yaxshilash)." },
-        { "title": "Qayta ishlash maqsadlari", "body": "Biz sizning shaxsiy ma'lumotlaringizni quyidagi maqsadlarda foydalanamiz (Qonunning 12, 19-moddalari):\n\n— So'rovlaringizga javob berish va siz so'ragan ma'lumot yoki xizmatlarni taqdim etish;\n— Do'konimiz orqali qilingan buyurtmalarni qayta ishlash va bajarish;\n— Cheklarni berish va iste'molchilar huquqlarini himoya qilish to'g'risidagi qonunchilik bo'yicha yuridik majburiyatlarimizni bajarish;\n— Buyurtmalaringiz, so'rovlaringiz yoki xizmatlarimiz bo'yicha siz bilan aloqa qilish;\n— Saytimizning ishlashi va kontentini yaxshilash;\n— Amaldagi yuridik talablar va me'yoriy majburiyatlarga rioya qilish.\n\nBiz sizning shaxsiy ma'lumotlaringizdan yig'ish paytida bayon etilgan maqsadlardan boshqa maqsadlarda foydalanmaymiz. Agar qayta ishlash maqsadini o'zgartirmoqchi bo'lsak, sizning alohida roziligingizni olamiz (Qonunning 19-moddasi)." },
-        { "title": "Saqlash va muddatlar", "body": "Sizning shaxsiy ma'lumotlaringiz faqat ular yig'ilgan maqsadlar uchun zarur bo'lgan miqdorda identifikatsiyaga imkon beradigan shaklda saqlanadi (Qonunning 10-moddasi).\n\nBiz shaxsiy ma'lumotlarni ushbu Siyosatda tasvirlangan maqsadlarni bajarish uchun zarur bo'lgan vaqt davomida yoki amaldagi qonun talab qilgan vaqt davomida saqlaymiz. Xususan:\n\n— So'rov va yozishma ma'lumotlari: oxirgi aloqa sanasidan boshlab 3 yilgacha saqlanadi;\n— Buyurtma va tranzaksiya ma'lumotlari: buxgalteriya va soliq qonunchiligiga muvofiq 5 yil saqlanadi;\n— Sayt analitikasi ma'lumotlari: yig'ma anonimlashtirilgan shaklda saqlanadi.\n\nSaqlash muddati tugagandan yoki qayta ishlash maqsadiga erishilgandan so'ng, shaxsiy ma'lumotlar tiklanishini imkonsiz qiladigan tarzda yo'q qilinadi (Qonunning 17-moddasi)." },
-        { "title": "Uchinchi tomonlarga oshkor qilish", "body": "Biz sizning shaxsiy ma'lumotlaringizni uchinchi tomonlarga sotmaymiz, ijaraga bermaymiz va savdo qilmaymiz.\n\nBiz sizning shaxsiy ma'lumotlaringizni uchinchi tomonlarga faqat quyidagi holatlarda baham ko'rishimiz mumkin (Qonunning 13, 23, 31-moddalari):\n\n— Bizning nomimizdan ma'lumotlarni qayta ishlovchi sifatida harakat qiluvchi xizmat ko'rsatuvchilar (masalan, to'lovlarni qayta ishlash, email yetkazib berish, sayt xostingi, analitika) — tegishli ma'lumotlarni qayta ishlash shartnomalari sharti bilan;\n— Davlat organlariga O'zbekiston Respublikasi qonunchiligi tomonidan talab qilinganda;\n— Sizning oldindan yozma roziligingiz bilan.\n\nShaxsiy ma'lumotlar qayta ishlash uchun uchinchi tomonga o'tkazilganda, biz sizni bunday o'tkazishdan keyin uch kun ichida yozma ravishda xabardor qilamiz (Qonunning 23-moddasi), Qonunda boshqacha ko'rsatilmagan bo'lsa.\n\nShaxsiy ma'lumotlarga kirish huquqiga ega bo'lgan barcha xodimlar va uchinchi tomonlar maxfiylik majburiyatlari bilan bog'langan va bunday ma'lumotlarni faqat o'zlarining professional vazifalari doirasida ishlatishlari mumkin (Qonunning 12-moddasi)." },
-        { "title": "Chegaralararo ma'lumotlar uzatish", "body": "Bizning ba'zi xizmat ko'rsatuvchilarimiz (masalan, bulutli xosting, analitika platformalari) O'zbekiston Respublikasidan tashqarida bo'lishi mumkin. Bunday holatlarda shaxsiy ma'lumotlar chegaralararo o'tkazilishi mumkin.\n\nChegaralararo o'tkazishlar faqat shaxsiy ma'lumotlar huquqlarining tegishli himoyasini ta'minlaydigan mamlakatlarga yoki Qonunning 15-moddasida belgilangan shartlardan birining sharti bilan amalga oshiriladi:\n\n— Chegaralararo o'tkazishga sizning aniq roziligingiz;\n— O'tkazish siz bilan shartnomani bajarish uchun zarur;\n— O'tkazish O'zbekiston Respublikasining xalqaro shartnomasi bilan nazarda tutilgan.\n\nO'zbekiston Respublikasi hududida majburiy saqlashga tegishli bo'lgan shaxsiy ma'lumotlar (biometrik va genetik ma'lumotlar va telekommunikatsiya foydalanuvchilarining ma'lumotlari) Qonunning 27¹-moddasiga muvofiq faqat O'zbekiston ichida saqlanadi. Biz bunday ma'lumot toifalarini qayta ishlamaymiz." },
-        { "title": "Ma'lumotlar xavfsizligi", "body": "Biz sizning shaxsiy ma'lumotlaringizni ruxsatsiz kirish, oshkor qilish, o'zgartirish yoki yo'q qilishdan himoya qilish uchun tegishli huquqiy, tashkiliy va texnik choralarni qo'llaymiz (Qonunning 27-moddasi). Ushbu choralar quyidagilarni o'z ichiga oladi:\n\n— Ma'lumotlarga kirishni faqat vakolatli xodimlar bilan cheklovchi nazoratlar;\n— Shaxsiy ma'lumotlarga kirish huquqiga ega barcha xodimlarni bog'lovchi maxfiylik majburiyatlari;\n— Sanoat standart shifrlash (HTTPS) yordamida xavfsiz ma'lumot uzatish;\n— Bizning ma'lumotlarni qayta ishlash va xavfsizlik amaliyotlarimizni muntazam ko'rib chiqish.\n\nShaxsiy ma'lumotlaringizni ta'sir qiladigan buzilish bo'lgan taqdirda, biz buzilishni cheklash uchun darhol choralar ko'ramiz va qonun talab qilganidek tegishli tomonlarni xabardor qilamiz." },
-        { "title": "Maxfiylik", "body": "Bizning egamizdagi barcha shaxsiy ma'lumotlar maxfiy sifatida ko'riladi. Biz va biz orqali shaxsiy ma'lumotlarga kirish huquqini olgan har qanday shaxs sizning roziligingiz yoki boshqa qonuniy asossiz shaxsiy ma'lumotlarni oshkor qilish yoki tarqatishdan man etilgan (Qonunning 28-moddasi).\n\nShaxsiy ma'lumotlarni qayta ishlashda ishtirok etadigan xodimlar o'zlariga ishonib topshirilgan yoki professional vazifalari davomida ularga ma'lum bo'lgan har qanday shaxsiy ma'lumotlarga nisbatan, ham ish davomida, ham ish tugagandan so'ng maxfiylikni saqlashga majburdir." },
-        { "title": "Sizning huquqlaringiz", "body": "Qonunning 30-moddasiga muvofiq siz quyidagi huquqlarga egasiz:\n\n— Biz siz haqingizda shaxsiy ma'lumotlarga egamizmi va bu ma'lumotlar nimadan iborat ekanligini bilish;\n— Sizning shaxsiy ma'lumotlaringiz qanday qayta ishlanayotgani haqida ma'lumot so'rash;\n— Shaxsiy ma'lumotlaringizga kirish ta'minlanadigan shartlar haqida ma'lumot olish;\n— Sizning shaxsiy ma'lumotlaringizni qayta ishlashga rozilik berish va bu rozilikni istalgan vaqtda qaytarib olish;\n— Sizning shaxsiy ma'lumotlaringizni jamoatchilik uchun ochiq manbalarda nashr etishga rozilik berish;\n— Agar ma'lumotlaringiz to'liq bo'lmasa, eskirgan, noto'g'ri, noqonuniy olingan yoki bayon etilgan maqsadlar uchun endi kerak bo'lmasa, qayta ishlashni vaqtinchalik to'xtatishni talab qilish;\n— Huquqlaringiz va qonuniy manfaatlaringizni himoya qilish uchun vakolatli davlat organi yoki sudga murojaat qilish.\n\nUshbu huquqlardan birini amalga oshirish uchun info@advizenco.com orqali biz bilan bog'laning. Biz so'rovingizni olgan kundan boshlab 10 kalendar kun ichida yozma ravishda javob beramiz (Qonunning 22-moddasi)." },
-        { "title": "Rozilik va qaytarib olish", "body": "Qayta ishlash sizning roziligingizga asoslangan bo'lsa, siz uni istalgan vaqtda qaytarib olib, qaytarib olishdan oldin amalga oshirilgan qayta ishlashning qonuniyligiga ta'sir qilmasdan rozilikni qaytarib olishingiz mumkin (Qonunning 21-moddasi).\n\nRozilik berilgan shaklda yoki yozma ravishda (jumladan info@advizenco.com email orqali) qaytarib olinishi mumkin. Qaytarib olishni olganimizda, biz sizning shaxsiy ma'lumotlaringizni tegishli maqsad uchun qayta ishlashni to'xtatamiz va, agar amal qilinadigan bo'lsa, qonun talab qilmasa, ma'lumotlarni yo'q qilamiz.\n\nIltimos, rozilikni qaytarib olish bizning sizga ma'lum xizmatlarni taqdim eta olishimizga ta'sir qilishi mumkinligini yodda tuting." },
-        { "title": "Ushbu siyosatdagi o'zgarishlar", "body": "Biz amaliyotlarimizdagi, amaldagi qonundagi yoki taqdim etayotgan xizmatlarimizdagi o'zgarishlarni aks ettirish uchun ushbu Maxfiylik siyosatini vaqti-vaqti bilan yangilab turishimiz mumkin. Muhim o'zgarishlar yangilangan sana bilan ushbu sahifaga joylashtiriladi.\n\nUshbu Siyosatni vaqti-vaqti bilan ko'rib chiqishni tavsiya qilamiz. O'zgarishlar joylashtirilgandan keyin saytimizdan foydalanishni davom ettirish yangilangan Siyosatni tan olganingizni anglatadi." },
-        { "title": "Shikoyatlar va aloqa", "body": "Agar sizning shaxsiy ma'lumotlar huquqlaringiz buzilganligiga ishonsangiz, shaxsiy ma'lumotlar bo'yicha vakolatli davlat organiga shikoyat berishingiz mumkin:\n\nO'zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi Davlat personalizatsiya markazi\nSayt: www.uzinfocom.uz\n\nShuningdek, O'zbekiston Respublikasi sudiga murojaat qilish huquqiga egasiz (Qonunning 32-moddasi).\n\nUshbu Siyosat yoki bizning ma'lumotlar amaliyotlarimiz haqida har qanday savollaringiz bo'lsa, iltimos, biz bilan to'g'ridan-to'g'ri bog'laning:\n\nAdvizen Consulting\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888" }
+        {
+          "title": "Biz kim",
+          "body": "«Advizen Consulting» MChJ (bundan keyin — «biz», «bizni» yoki «Kompaniya») advizenco.com saytini boshqaradi. Biz ushbu sayt va biznes faoliyatimiz bilan bog'liq holda ishlatiladigan shaxsiy ma'lumotlar bazasining egasi va operatorimiz.\n\nBiz shaxsiy ma'lumotlarni 2019 yil 2 iyuldagi O'zbekiston Respublikasining «Shaxsiy ma'lumotlar to'g'risida»gi № O'RQ-547 sonli Qonuni (2019 yil 1 oktyabrdan kuchga kirgan) va O'zbekiston Respublikasining boshqa amaldagi qonunchilik aktlariga muvofiq qayta ishlaymiz.\n\nKontakt ma'lumotlari:\nAdvizen Consulting\nYuridik manzil: Toshkent, O'zbekiston Respublikasi\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888"
+        },
+        {
+          "title": "Biz to'playdigan shaxsiy ma'lumotlar",
+          "body": "Biz quyidagi shaxsiy ma'lumotlar toifalarini yig'ishimiz va qayta ishlashimiz mumkin:\n\n— Identifikatsiya ma'lumotlari: to'liq ism, tug'ilgan sana;\n— Kontakt ma'lumotlari: email manzil, telefon raqami, pochta manzili;\n— Biznes ma'lumotlari: kompaniya nomi, lavozim, soha;\n— Aloqa ma'lumotlari: bizga yuborgan xabarlaringiz, so'rovlaringiz va yozishmalaringiz mazmuni;\n— Saytdan foydalanish ma'lumotlari: IP manzil, brauzer turi, tashrif buyurilgan sahifalar, tashrif vaqti va sanasi, havola URLlari (cookie va analitika vositalari orqali yig'iladi — bizning Cookie siyosatimizga qarang);\n— Tranzaksiya ma'lumotlari: Do'konimiz orqali qilingan xaridlar bilan bog'liq ma'lumot, jumladan buyurtma tafsilotlari va to'lovni tasdiqlash yozuvlari (biz to'lov karta ma'lumotlarini saqlamaymiz).\n\nBiz faqat ushbu Siyosatda tasvirlangan maqsadlar uchun zarur va yetarli bo'lgan shaxsiy ma'lumotlarni yig'amiz (Qonunning 10-moddasi)."
+        },
+        {
+          "title": "Qayta ishlash uchun huquqiy asos",
+          "body": "Biz sizning shaxsiy ma'lumotlaringizni Qonunning 18-moddasiga muvofiq quyidagi huquqiy asoslarda qayta ishlaymiz:\n\n— Sizning roziligingiz: so'rov yuborganingizda, ro'yxatdan o'tganingizda yoki xarid qilganingizda, siz belgilangan maqsad uchun shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz;\n— Shartnomani bajarish: qayta ishlash siz tomon bo'lgan shartnomani bajarish uchun yoki shartnoma tuzishdan oldin sizning so'rovingiz bo'yicha harakatlar qilish uchun zarur (masalan, Do'kon buyurtmasini qayta ishlash);\n— Yuridik majburiyat: qayta ishlash O'zbekiston Respublikasi qonunchiligi bo'yicha bizning majburiyatlarimizga rioya qilish uchun zarur;\n— Qonuniy manfaatlar: qayta ishlash bizning qonuniy biznes manfaatlarimiz uchun zarur, agar ular sizning huquq va manfaatlaringizdan ustun bo'lmasa (masalan, sayt analitikasi, xizmatlarni yaxshilash)."
+        },
+        {
+          "title": "Qayta ishlash maqsadlari",
+          "body": "Biz sizning shaxsiy ma'lumotlaringizni quyidagi maqsadlarda foydalanamiz (Qonunning 12, 19-moddalari):\n\n— So'rovlaringizga javob berish va siz so'ragan ma'lumot yoki xizmatlarni taqdim etish;\n— Do'konimiz orqali qilingan buyurtmalarni qayta ishlash va bajarish;\n— Cheklarni berish va iste'molchilar huquqlarini himoya qilish to'g'risidagi qonunchilik bo'yicha yuridik majburiyatlarimizni bajarish;\n— Buyurtmalaringiz, so'rovlaringiz yoki xizmatlarimiz bo'yicha siz bilan aloqa qilish;\n— Saytimizning ishlashi va kontentini yaxshilash;\n— Amaldagi yuridik talablar va me'yoriy majburiyatlarga rioya qilish.\n\nBiz sizning shaxsiy ma'lumotlaringizdan yig'ish paytida bayon etilgan maqsadlardan boshqa maqsadlarda foydalanmaymiz. Agar qayta ishlash maqsadini o'zgartirmoqchi bo'lsak, sizning alohida roziligingizni olamiz (Qonunning 19-moddasi)."
+        },
+        {
+          "title": "Saqlash va muddatlar",
+          "body": "Sizning shaxsiy ma'lumotlaringiz faqat ular yig'ilgan maqsadlar uchun zarur bo'lgan miqdorda identifikatsiyaga imkon beradigan shaklda saqlanadi (Qonunning 10-moddasi).\n\nBiz shaxsiy ma'lumotlarni ushbu Siyosatda tasvirlangan maqsadlarni bajarish uchun zarur bo'lgan vaqt davomida yoki amaldagi qonun talab qilgan vaqt davomida saqlaymiz. Xususan:\n\n— So'rov va yozishma ma'lumotlari: oxirgi aloqa sanasidan boshlab 3 yilgacha saqlanadi;\n— Buyurtma va tranzaksiya ma'lumotlari: buxgalteriya va soliq qonunchiligiga muvofiq 5 yil saqlanadi;\n— Sayt analitikasi ma'lumotlari: yig'ma anonimlashtirilgan shaklda saqlanadi.\n\nSaqlash muddati tugagandan yoki qayta ishlash maqsadiga erishilgandan so'ng, shaxsiy ma'lumotlar tiklanishini imkonsiz qiladigan tarzda yo'q qilinadi (Qonunning 17-moddasi)."
+        },
+        {
+          "title": "Uchinchi tomonlarga oshkor qilish",
+          "body": "Biz sizning shaxsiy ma'lumotlaringizni uchinchi tomonlarga sotmaymiz, ijaraga bermaymiz va savdo qilmaymiz.\n\nBiz sizning shaxsiy ma'lumotlaringizni uchinchi tomonlarga faqat quyidagi holatlarda baham ko'rishimiz mumkin (Qonunning 13, 23, 31-moddalari):\n\n— Bizning nomimizdan ma'lumotlarni qayta ishlovchi sifatida harakat qiluvchi xizmat ko'rsatuvchilar (masalan, to'lovlarni qayta ishlash, email yetkazib berish, sayt xostingi, analitika) — tegishli ma'lumotlarni qayta ishlash shartnomalari sharti bilan;\n— Davlat organlariga O'zbekiston Respublikasi qonunchiligi tomonidan talab qilinganda;\n— Sizning oldindan yozma roziligingiz bilan.\n\nShaxsiy ma'lumotlar qayta ishlash uchun uchinchi tomonga o'tkazilganda, biz sizni bunday o'tkazishdan keyin uch kun ichida yozma ravishda xabardor qilamiz (Qonunning 23-moddasi), Qonunda boshqacha ko'rsatilmagan bo'lsa.\n\nShaxsiy ma'lumotlarga kirish huquqiga ega bo'lgan barcha xodimlar va uchinchi tomonlar maxfiylik majburiyatlari bilan bog'langan va bunday ma'lumotlarni faqat o'zlarining professional vazifalari doirasida ishlatishlari mumkin (Qonunning 12-moddasi)."
+        },
+        {
+          "title": "Chegaralararo ma'lumotlar uzatish",
+          "body": "Bizning ba'zi xizmat ko'rsatuvchilarimiz (masalan, bulutli xosting, analitika platformalari) O'zbekiston Respublikasidan tashqarida bo'lishi mumkin. Bunday holatlarda shaxsiy ma'lumotlar chegaralararo o'tkazilishi mumkin.\n\nChegaralararo o'tkazishlar faqat shaxsiy ma'lumotlar huquqlarining tegishli himoyasini ta'minlaydigan mamlakatlarga yoki Qonunning 15-moddasida belgilangan shartlardan birining sharti bilan amalga oshiriladi:\n\n— Chegaralararo o'tkazishga sizning aniq roziligingiz;\n— O'tkazish siz bilan shartnomani bajarish uchun zarur;\n— O'tkazish O'zbekiston Respublikasining xalqaro shartnomasi bilan nazarda tutilgan.\n\nO'zbekiston Respublikasi hududida majburiy saqlashga tegishli bo'lgan shaxsiy ma'lumotlar (biometrik va genetik ma'lumotlar va telekommunikatsiya foydalanuvchilarining ma'lumotlari) Qonunning 27¹-moddasiga muvofiq faqat O'zbekiston ichida saqlanadi. Biz bunday ma'lumot toifalarini qayta ishlamaymiz."
+        },
+        {
+          "title": "Ma'lumotlar xavfsizligi",
+          "body": "Biz sizning shaxsiy ma'lumotlaringizni ruxsatsiz kirish, oshkor qilish, o'zgartirish yoki yo'q qilishdan himoya qilish uchun tegishli huquqiy, tashkiliy va texnik choralarni qo'llaymiz (Qonunning 27-moddasi). Ushbu choralar quyidagilarni o'z ichiga oladi:\n\n— Ma'lumotlarga kirishni faqat vakolatli xodimlar bilan cheklovchi nazoratlar;\n— Shaxsiy ma'lumotlarga kirish huquqiga ega barcha xodimlarni bog'lovchi maxfiylik majburiyatlari;\n— Sanoat standart shifrlash (HTTPS) yordamida xavfsiz ma'lumot uzatish;\n— Bizning ma'lumotlarni qayta ishlash va xavfsizlik amaliyotlarimizni muntazam ko'rib chiqish.\n\nShaxsiy ma'lumotlaringizni ta'sir qiladigan buzilish bo'lgan taqdirda, biz buzilishni cheklash uchun darhol choralar ko'ramiz va qonun talab qilganidek tegishli tomonlarni xabardor qilamiz."
+        },
+        {
+          "title": "Maxfiylik",
+          "body": "Bizning egamizdagi barcha shaxsiy ma'lumotlar maxfiy sifatida ko'riladi. Biz va biz orqali shaxsiy ma'lumotlarga kirish huquqini olgan har qanday shaxs sizning roziligingiz yoki boshqa qonuniy asossiz shaxsiy ma'lumotlarni oshkor qilish yoki tarqatishdan man etilgan (Qonunning 28-moddasi).\n\nShaxsiy ma'lumotlarni qayta ishlashda ishtirok etadigan xodimlar o'zlariga ishonib topshirilgan yoki professional vazifalari davomida ularga ma'lum bo'lgan har qanday shaxsiy ma'lumotlarga nisbatan, ham ish davomida, ham ish tugagandan so'ng maxfiylikni saqlashga majburdir."
+        },
+        {
+          "title": "Sizning huquqlaringiz",
+          "body": "Qonunning 30-moddasiga muvofiq siz quyidagi huquqlarga egasiz:\n\n— Biz siz haqingizda shaxsiy ma'lumotlarga egamizmi va bu ma'lumotlar nimadan iborat ekanligini bilish;\n— Sizning shaxsiy ma'lumotlaringiz qanday qayta ishlanayotgani haqida ma'lumot so'rash;\n— Shaxsiy ma'lumotlaringizga kirish ta'minlanadigan shartlar haqida ma'lumot olish;\n— Sizning shaxsiy ma'lumotlaringizni qayta ishlashga rozilik berish va bu rozilikni istalgan vaqtda qaytarib olish;\n— Sizning shaxsiy ma'lumotlaringizni jamoatchilik uchun ochiq manbalarda nashr etishga rozilik berish;\n— Agar ma'lumotlaringiz to'liq bo'lmasa, eskirgan, noto'g'ri, noqonuniy olingan yoki bayon etilgan maqsadlar uchun endi kerak bo'lmasa, qayta ishlashni vaqtinchalik to'xtatishni talab qilish;\n— Huquqlaringiz va qonuniy manfaatlaringizni himoya qilish uchun vakolatli davlat organi yoki sudga murojaat qilish.\n\nUshbu huquqlardan birini amalga oshirish uchun info@advizenco.com orqali biz bilan bog'laning. Biz so'rovingizni olgan kundan boshlab 10 kalendar kun ichida yozma ravishda javob beramiz (Qonunning 22-moddasi)."
+        },
+        {
+          "title": "Rozilik va qaytarib olish",
+          "body": "Qayta ishlash sizning roziligingizga asoslangan bo'lsa, siz uni istalgan vaqtda qaytarib olib, qaytarib olishdan oldin amalga oshirilgan qayta ishlashning qonuniyligiga ta'sir qilmasdan rozilikni qaytarib olishingiz mumkin (Qonunning 21-moddasi).\n\nRozilik berilgan shaklda yoki yozma ravishda (jumladan info@advizenco.com email orqali) qaytarib olinishi mumkin. Qaytarib olishni olganimizda, biz sizning shaxsiy ma'lumotlaringizni tegishli maqsad uchun qayta ishlashni to'xtatamiz va, agar amal qilinadigan bo'lsa, qonun talab qilmasa, ma'lumotlarni yo'q qilamiz.\n\nIltimos, rozilikni qaytarib olish bizning sizga ma'lum xizmatlarni taqdim eta olishimizga ta'sir qilishi mumkinligini yodda tuting."
+        },
+        {
+          "title": "Ushbu siyosatdagi o'zgarishlar",
+          "body": "Biz amaliyotlarimizdagi, amaldagi qonundagi yoki taqdim etayotgan xizmatlarimizdagi o'zgarishlarni aks ettirish uchun ushbu Maxfiylik siyosatini vaqti-vaqti bilan yangilab turishimiz mumkin. Muhim o'zgarishlar yangilangan sana bilan ushbu sahifaga joylashtiriladi.\n\nUshbu Siyosatni vaqti-vaqti bilan ko'rib chiqishni tavsiya qilamiz. O'zgarishlar joylashtirilgandan keyin saytimizdan foydalanishni davom ettirish yangilangan Siyosatni tan olganingizni anglatadi."
+        },
+        {
+          "title": "Shikoyatlar va aloqa",
+          "body": "Agar sizning shaxsiy ma'lumotlar huquqlaringiz buzilganligiga ishonsangiz, shaxsiy ma'lumotlar bo'yicha vakolatli davlat organiga shikoyat berishingiz mumkin:\n\nO'zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi Davlat personalizatsiya markazi\nSayt: www.uzinfocom.uz\n\nShuningdek, O'zbekiston Respublikasi sudiga murojaat qilish huquqiga egasiz (Qonunning 32-moddasi).\n\nUshbu Siyosat yoki bizning ma'lumotlar amaliyotlarimiz haqida har qanday savollaringiz bo'lsa, iltimos, biz bilan to'g'ridan-to'g'ri bog'laning:\n\nAdvizen Consulting\nE-mail: info@advizenco.com\nTelefon: +998 33 488 4888"
+        }
       ]
     },
     "cookies": {
@@ -860,12 +1027,36 @@
     }
   },
   "IndustryFeatured": {
-    "Financial Services": { "metric": "$200M", "label": "Bitim", "text": "Xalqaro raqamli bankning O'zbekistondagi sho'ba kompaniyalarini qayta tashkil etish" },
-    "Energy & Industrials": { "metric": "$10B+", "label": "Loyiha byudjeti", "text": "Atom elektr stantsiyasi qurilishining soliq, buxgalteriya va bojxona tuzilishi" },
-    "Technology & Digital": { "metric": "$5M", "label": "Investitsiya", "text": "Yirik rossiyalik IT kompaniyaning O'zbekiston bozoriga chiqishi paytida soliq tuzilishi" },
-    "Real Estate & Infrastructure": { "metric": "$20M", "label": "Bitim", "text": "Yirik o'zbek tsement ishlab chiqaruvchisining M&A va qayta tashkil etilishi" },
-    "Consumer & Lifestyle": { "metric": "$250M", "label": "Bitim", "text": "Yirik o'zbek shisha to'ldiruvchi kompaniyaning M&A bitimi" },
-    "Healthcare & Social": { "metric": "5+", "label": "Kompaniya", "text": "Xalqaro farma kompaniyalari uchun ro'yxatga olish, payroll va muvofiqlik konsaltingi" }
+    "Financial Services": {
+      "metric": "$200M",
+      "label": "Bitim",
+      "text": "Xalqaro raqamli bankning O'zbekistondagi sho'ba kompaniyalarini qayta tashkil etish"
+    },
+    "Energy & Industrials": {
+      "metric": "$10B+",
+      "label": "Loyiha byudjeti",
+      "text": "Atom elektr stantsiyasi qurilishining soliq, buxgalteriya va bojxona tuzilishi"
+    },
+    "Technology & Digital": {
+      "metric": "$5M",
+      "label": "Investitsiya",
+      "text": "Yirik rossiyalik IT kompaniyaning O'zbekiston bozoriga chiqishi paytida soliq tuzilishi"
+    },
+    "Real Estate & Infrastructure": {
+      "metric": "$20M",
+      "label": "Bitim",
+      "text": "Yirik o'zbek tsement ishlab chiqaruvchisining M&A va qayta tashkil etilishi"
+    },
+    "Consumer & Lifestyle": {
+      "metric": "$250M",
+      "label": "Bitim",
+      "text": "Yirik o'zbek shisha to'ldiruvchi kompaniyaning M&A bitimi"
+    },
+    "Healthcare & Social": {
+      "metric": "5+",
+      "label": "Kompaniya",
+      "text": "Xalqaro farma kompaniyalari uchun ro'yxatga olish, payroll va muvofiqlik konsaltingi"
+    }
   },
   "Engagements": {
     "metricLabels": {
