@@ -2,6 +2,33 @@ import { NextRequest, NextResponse } from "next/server";
 
 type Locale = "en" | "ru" | "uz";
 
+const serviceLabels: Record<Locale, Record<string, string>> = {
+  en: {
+    tax: "Tax Consulting",
+    legal: "Legal Advisory",
+    finance: "Accounting",
+    hr: "Human Resources",
+    funding: "Funding & Grants",
+    other: "Other",
+  },
+  ru: {
+    tax: "Налоговый консалтинг",
+    legal: "Юридический консалтинг",
+    finance: "Бухгалтерский учёт",
+    hr: "HR-услуги",
+    funding: "Финансирование и гранты",
+    other: "Другое",
+  },
+  uz: {
+    tax: "Soliq konsaltingi",
+    legal: "Yuridik konsalting",
+    finance: "Buxgalteriya hisobi",
+    hr: "HR xizmatlari",
+    funding: "Moliyalashtirish va grantlar",
+    other: "Boshqa",
+  },
+};
+
 const autoreply: Record<Locale, {
   subject: string; heading: string; body: string;
   summaryLabel: string; nameLabel: string; emailLabel: string;
@@ -106,11 +133,12 @@ function brandedEmail(p: BrandedEmailParams): string {
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:${SURFACE};border:1px solid ${BORDER};border-radius:6px">
         <tr>
           <td align="center" style="padding:40px 32px 0">
-            <div style="font-family:${FONT};font-size:15px;letter-spacing:0.42em;color:${TEXT};font-weight:600;padding-left:0.42em">ADVIZEN</div>
+            <img src="https://advizenco.com/logo.png" width="56" height="49" alt="Advizen" style="display:block;margin:0 auto;border:0;outline:none;text-decoration:none">
+            <div style="font-family:${FONT};font-size:12px;letter-spacing:0.48em;color:${TEXT};font-weight:600;margin-top:10px;padding-left:0.48em">ADVIZEN</div>
           </td>
         </tr>
         <tr>
-          <td align="center" style="padding:22px 32px 0">
+          <td align="center" style="padding:18px 32px 0">
             <div style="width:28px;height:1px;background:${ACCENT};line-height:1px;font-size:0">&nbsp;</div>
           </td>
         </tr>
@@ -190,7 +218,7 @@ export async function POST(request: NextRequest) {
       `👤 <b>Name:</b> ${escapeHtml(name)}`,
       `📧 <b>Email:</b> ${escapeHtml(email)}`,
       company ? `🏢 <b>Company:</b> ${escapeHtml(company)}` : null,
-      service ? `📋 <b>Service:</b> ${escapeHtml(service)}` : null,
+      service ? `📋 <b>Service:</b> ${escapeHtml(serviceLabels.en[service] ?? service)}` : null,
       message ? `\n💬 <b>Message:</b>\n${escapeHtml(message)}` : null,
       ``,
       `🕐 <i>${timestamp} (Tashkent)</i>`,
@@ -214,19 +242,29 @@ export async function POST(request: NextRequest) {
   const fromEmail  = process.env.RESEND_FROM_EMAIL  ?? "Advizen Contact <noreply@advizenco.com>";
 
   if (resendKey) {
-    const summary: SummaryRow[] = [
+    const serviceEn = service ? (serviceLabels.en[service] ?? service) : null;
+    const serviceLoc = service ? (serviceLabels[lang][service] ?? service) : null;
+
+    const adminSummary: SummaryRow[] = [
+      { label: "Name", value: name },
+      { label: "Email", value: email },
+    ];
+    if (company) adminSummary.push({ label: "Company", value: company });
+    if (serviceEn) adminSummary.push({ label: "Service", value: serviceEn });
+
+    const autoSummary: SummaryRow[] = [
       { label: t.nameLabel, value: name },
       { label: t.emailLabel, value: email },
     ];
-    if (company) summary.push({ label: t.companyLabel, value: company });
-    if (service) summary.push({ label: t.serviceLabel, value: service });
+    if (company) autoSummary.push({ label: t.companyLabel, value: company });
+    if (serviceLoc) autoSummary.push({ label: t.serviceLabel, value: serviceLoc });
 
     const adminHtml = brandedEmail({
-      preheader: `New contact request from ${name}${service ? ` — ${service}` : ""}`,
+      preheader: `New contact request from ${name}${serviceEn ? ` — ${serviceEn}` : ""}`,
       heading: "New contact request",
       intro: `A new submission has come in from the website contact form.`,
-      summary,
-      messageLabel: t.messageLabel,
+      summary: adminSummary,
+      messageLabel: "Message",
       messageText: message || undefined,
       timestamp,
     });
@@ -241,7 +279,7 @@ export async function POST(request: NextRequest) {
         from: fromEmail,
         to: [toEmail],
         reply_to: email,
-        subject: `Contact: ${name}${service ? ` — ${service}` : ""}`,
+        subject: `Contact: ${name}${serviceEn ? ` — ${serviceEn}` : ""}`,
         html: adminHtml,
       }),
     }).catch(() => null);
@@ -253,7 +291,7 @@ export async function POST(request: NextRequest) {
       preheader: t.body,
       heading: `${t.heading}, ${firstName}`,
       intro: t.body,
-      summary,
+      summary: autoSummary,
       messageLabel: t.messageLabel,
       messageText: message || undefined,
       outro: t.urgent,
