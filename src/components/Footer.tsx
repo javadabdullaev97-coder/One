@@ -19,19 +19,19 @@ export default function Footer() {
 
   const footerLinks = {
     [t("expertise")]: [
-      { label: t("taxConsulting"),  href: "/expertise#advisory" },
-      { label: t("legalAdvisory"),  href: "/expertise#advisory" },
-      { label: t("accounting"),     href: "/expertise#advisory" },
-      { label: t("hrServices"),     href: "/expertise#advisory" },
-      { label: t("funding"),        href: "/expertise#advisory" },
-      { label: t("maAdvisory"),     href: "/expertise#advisory" },
-      { label: t("dueDiligence"),   href: "/expertise#advisory" },
+      { label: t("taxConsulting"),  href: "/expertise/tax" },
+      { label: t("legalAdvisory"),  href: "/expertise/legal" },
+      { label: t("accounting"),     href: "/expertise/finance" },
+      { label: t("hrServices"),     href: "/expertise/hr" },
+      { label: t("funding"),        href: "/expertise/funding" },
+      { label: t("maAdvisory"),     href: "/expertise/ma-advisory" },
+      { label: t("dueDiligence"),   href: "/expertise/due-diligence" },
     ],
     [t("operations")]: [
-      { label: t("entityManagement"),    href: "/expertise#operations" },
-      { label: t("employerOfRecord"),    href: "/expertise#operations" },
-      { label: t("corporateServices"),   href: "/expertise#operations" },
-      { label: t("virtualOffice"),       href: "/expertise#operations" },
+      { label: t("entityManagement"),    href: "/expertise/entity-management" },
+      { label: t("employerOfRecord"),    href: "/expertise/eor" },
+      { label: t("corporateServices"),   href: "/expertise/corporate" },
+      { label: t("virtualOffice"),       href: "/expertise/virtual-office" },
     ],
     [t("firm")]: [
       { label: "Store",       href: "/store" },
