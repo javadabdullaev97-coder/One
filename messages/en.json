@@ -368,11 +368,17 @@
       "emailNoteLabel": "Confirmation sent to",
       "totalLabel": "Total"
     },
+    "confirm": {
+      "statusLabel": "Review order",
+      "heading": "Confirm your order",
+      "subheading": "Please review the details below before submitting your request."
+    },
     "actions": {
       "continue": "Continue",
       "back": "Back",
       "close": "Close",
-      "submit": "Submit Request"
+      "submit": "Submit Request",
+      "confirm": "Confirm Order"
     }
   },
   "Legal": {

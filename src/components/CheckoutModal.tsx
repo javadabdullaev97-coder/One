@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { FlagBadge, type FlagCode } from "@/components/Flags";
 
 export type LanguagePair = "uz_en" | "uz_ru" | "en_ru";
-type Step = 1 | 2 | 3 | 4;
+type Step = 1 | 2 | 3 | 4 | 5;
 type OrderType = "individual" | "legal";
 
 const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [string, string] }[] = [
@@ -123,7 +123,12 @@ export default function CheckoutModal({
       prev.includes(id) ? prev.filter(d => d !== id) : [...prev, id]
     );
 
+  const totalPrice = selectedDocs.reduce(
+    (sum, id) => sum + (STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0), 0
+  );
+
   const handleSubmit = () => setStep(4);
+  const handleConfirm = () => setStep(5);
   const handleBack = () => setStep(prev => (prev - 1) as Step);
   const handleNext = () => setStep(prev => (prev + 1) as Step);
 
@@ -155,6 +160,13 @@ export default function CheckoutModal({
                   step={step as 1 | 2 | 3}
                   labels={[t("stepLanguage"), t("stepNotice"), t("stepForm")]}
                 />
+              ) : step === 4 ? (
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <span className="text-[11px] tracking-[0.16em] uppercase text-white/55">
+                    {t("confirm.statusLabel")}
+                  </span>
+                </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -497,10 +509,75 @@ export default function CheckoutModal({
                   </motion.div>
                 )}
 
-                {/* Step 4 — Success */}
+                {/* Step 4 — Confirm review */}
                 {step === 4 && (
                   <motion.div
                     key="step-4"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <h2 className="heading-luxury text-xl text-foreground mb-2">
+                      {t("confirm.heading")}
+                    </h2>
+                    <p className="text-sm text-white/45 mb-6">
+                      {t("confirm.subheading")}
+                    </p>
+
+                    <div className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-4 text-left space-y-3.5">
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.languageLabel")}
+                        </span>
+                        <span className="text-sm text-foreground/80">
+                          {language && t(`language.${language}`)}
+                        </span>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      <div>
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30 block mb-2.5">
+                          {t("success.documentsLabel")}
+                        </span>
+                        <div className="space-y-2">
+                          {selectedDocs.map(id => (
+                            <div key={id} className="flex items-center justify-between gap-2">
+                              <span className="text-sm text-foreground/75 leading-snug">
+                                {tProd(`${id}.title`)}
+                              </span>
+                              <span className="text-sm font-mono text-white/60 shrink-0">
+                                ${STORE_PRODUCTS.find(p => p.id === id)?.price}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.totalLabel")}
+                        </span>
+                        <span className="text-base font-semibold text-foreground/90 font-mono">
+                          ${totalPrice}
+                        </span>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.emailNoteLabel")}
+                        </span>
+                        <span className="text-sm text-foreground/70 truncate max-w-[200px]">
+                          {contactEmail}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Step 5 — Success */}
+                {step === 5 && (
+                  <motion.div
+                    key="step-5"
                     initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -557,7 +634,7 @@ export default function CheckoutModal({
                           {t("success.totalLabel")}
                         </span>
                         <span className="text-base font-semibold text-foreground/90 font-mono">
-                          ${selectedDocs.reduce((sum, id) => sum + (STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0), 0)}
+                          ${totalPrice}
                         </span>
                       </div>
                       <div className="h-px bg-white/[0.05]" />
@@ -628,6 +705,29 @@ export default function CheckoutModal({
             )}
 
             {step === 4 && (
+              <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
+                <div className="flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={handleBack}
+                    className="flex items-center gap-1.5 text-[12px] tracking-wide text-white/55 hover:text-foreground transition-colors duration-200 cursor-pointer"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                    {t("actions.back")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleConfirm}
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200 bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                  >
+                    {t("actions.confirm")}
+                    <Check className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {step === 5 && (
               <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
                 <button
                   type="button"

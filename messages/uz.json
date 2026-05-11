@@ -368,11 +368,17 @@
       "emailNoteLabel": "Tasdiqlash quyidagi manzilga yuboriladi",
       "totalLabel": "Jami"
     },
+    "confirm": {
+      "statusLabel": "Buyurtmani ko'rib chiqish",
+      "heading": "Buyurtmangizni tasdiqlang",
+      "subheading": "So'rovingizni yuborishdan oldin ma'lumotlarni tekshiring."
+    },
     "actions": {
       "continue": "Davom etish",
       "back": "Orqaga",
       "close": "Yopish",
-      "submit": "So'rov yuborish"
+      "submit": "So'rov yuborish",
+      "confirm": "Buyurtmani tasdiqlash"
     }
   },
   "Legal": {
