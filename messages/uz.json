@@ -960,6 +960,22 @@
         "sezs": "Erkin iqtisodiy zonalar",
         "keySectors": "Asosiy tarmoqlar",
         "hint": "Hududni tanlang"
+      },
+      "regions": {
+        "UZ-QR": "Qoraqalpog'iston Respublikasi",
+        "UZ-AN": "Andijon viloyati",
+        "UZ-BU": "Buxoro viloyati",
+        "UZ-JI": "Jizzax viloyati",
+        "UZ-QA": "Qashqadaryo viloyati",
+        "UZ-NW": "Navoiy viloyati",
+        "UZ-NG": "Namangan viloyati",
+        "UZ-SA": "Samarqand viloyati",
+        "UZ-SU": "Surxondaryo viloyati",
+        "UZ-SI": "Sirdaryo viloyati",
+        "UZ-TO": "Toshkent viloyati",
+        "UZ-FA": "Farg'ona viloyati",
+        "UZ-XO": "Xorazm viloyati",
+        "UZ-TK": "Toshkent shahri"
       }
     },
     "values": {

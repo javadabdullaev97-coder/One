@@ -960,6 +960,22 @@
         "sezs": "Special Economic Zones",
         "keySectors": "Key Sectors",
         "hint": "Hover a region to explore"
+      },
+      "regions": {
+        "UZ-QR": "Republic of Karakalpakstan",
+        "UZ-AN": "Andijan Region",
+        "UZ-BU": "Bukhara Region",
+        "UZ-JI": "Jizzakh Region",
+        "UZ-QA": "Kashkadarya Region",
+        "UZ-NW": "Navoi Region",
+        "UZ-NG": "Namangan Region",
+        "UZ-SA": "Samarkand Region",
+        "UZ-SU": "Surkhandarya Region",
+        "UZ-SI": "Sirdaryo Region",
+        "UZ-TO": "Tashkent Region",
+        "UZ-FA": "Fergana Region",
+        "UZ-XO": "Khorezm Region",
+        "UZ-TK": "Tashkent City"
       }
     },
     "values": {

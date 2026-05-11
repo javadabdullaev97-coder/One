@@ -172,6 +172,8 @@ function RegionImagePreloader() {
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const region = activeId ? REGION_DATA[activeId] : null;
   const t = useTranslations("Home.geography.panel");
+  const tRegions = useTranslations("Home.geography.regions");
+  const regionName = activeId ? tRegions(activeId) : "";
 
   return (
     <div className="h-[480px] overflow-hidden relative">
@@ -191,7 +193,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
                 style={{ background: "linear-gradient(135deg, rgba(122,26,26,0.22) 0%, #080808 65%)" }}>
                 <Image
                   src={REGION_IMAGE[activeId ?? ""] ?? "/Regions/Andijan.webp"}
-                  alt={region.name}
+                  alt={regionName}
                   fill
                   unoptimized
                   className="object-cover"
@@ -203,7 +205,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
 
               {/* Region name */}
               <h3 className="heading-luxury text-xl md:text-2xl text-foreground mb-4">
-                {region.name}
+                {regionName}
               </h3>
 
               {/* Stats row */}
