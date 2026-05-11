@@ -365,7 +365,8 @@
       "subheading": "Rahmat! Buyurtmangizni tasdiqlash va to'lovni amalga oshirish uchun bir ish kuni ichida siz bilan bog'lanamiz.",
       "languageLabel": "Til versiyasi",
       "documentsLabel": "So'ralgan hujjatlar",
-      "emailNoteLabel": "Tasdiqlash quyidagi manzilga yuboriladi"
+      "emailNoteLabel": "Tasdiqlash quyidagi manzilga yuboriladi",
+      "totalLabel": "Jami"
     },
     "actions": {
       "continue": "Davom etish",

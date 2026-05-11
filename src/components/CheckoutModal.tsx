@@ -543,12 +543,22 @@ export default function CheckoutModal({
                               <span className="text-sm text-foreground/75 leading-snug">
                                 {tProd(`${id}.title`)}
                               </span>
-                              <span className="text-xs font-mono text-white/30 shrink-0">
+                              <span className="text-sm font-mono text-white/60 shrink-0">
                                 ${STORE_PRODUCTS.find(p => p.id === id)?.price}
                               </span>
                             </div>
                           ))}
                         </div>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      {/* Total */}
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.totalLabel")}
+                        </span>
+                        <span className="text-base font-semibold text-foreground/90 font-mono">
+                          ${selectedDocs.reduce((sum, id) => sum + (STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0), 0)}
+                        </span>
                       </div>
                       <div className="h-px bg-white/[0.05]" />
                       <div className="flex items-baseline justify-between gap-3">
@@ -622,7 +632,7 @@ export default function CheckoutModal({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full bg-white/[0.04] hover:bg-white/[0.07] text-white/60 hover:text-foreground px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200 cursor-pointer border border-white/[0.06]"
+                  className="w-full bg-primary hover:bg-primary-light text-foreground/95 hover:text-white px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200 cursor-pointer"
                 >
                   {t("actions.close")}
                 </button>

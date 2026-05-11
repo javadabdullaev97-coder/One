@@ -365,7 +365,8 @@
       "subheading": "Thank you! We will contact you within one business day to confirm your order and arrange payment.",
       "languageLabel": "Language version",
       "documentsLabel": "Documents requested",
-      "emailNoteLabel": "Confirmation sent to"
+      "emailNoteLabel": "Confirmation sent to",
+      "totalLabel": "Total"
     },
     "actions": {
       "continue": "Continue",
