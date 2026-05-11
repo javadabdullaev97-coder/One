@@ -8,7 +8,6 @@ import {
   ArrowRight, ArrowUpRight,
   Shield, Users, Lightbulb, Target, Handshake,
 } from "lucide-react";
-import Parallax from "@/components/Parallax";
 import AnimatedSection from "@/components/AnimatedSection";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
@@ -311,8 +310,7 @@ export default function Home() {
         <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="ambient-glow ambient-glow-oxblood w-[500px] h-[500px] -top-32 -right-32 opacity-40" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-          <Parallax offset={20}>
-            <AnimatedSection className="mb-8 md:mb-10 text-center">
+          <AnimatedSection className="mb-8 md:mb-10 text-center">
               <p className="tracking-luxury text-muted-dark mb-4">{t("coverage.eyebrow")}</p>
               <TextReveal
                 text={t("coverage.heading")}
@@ -323,7 +321,6 @@ export default function Home() {
                 {t("coverage.description")}
               </p>
             </AnimatedSection>
-          </Parallax>
 
           <AnimatedSection delay={0.1}>
             <DisciplinesIntegration />
@@ -413,8 +410,7 @@ export default function Home() {
         <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="ambient-glow ambient-glow-oxblood w-[500px] h-[500px] -bottom-32 -left-32 opacity-40" />
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <Parallax offset={25}>
-            <AnimatedSection>
+          <AnimatedSection>
               <p className="tracking-luxury text-muted-dark mb-6">{t("cta.eyebrow")}</p>
               <TextReveal
                 text={t("cta.heading")}
@@ -435,7 +431,6 @@ export default function Home() {
                 </MagneticButton>
               </div>
             </AnimatedSection>
-          </Parallax>
         </div>
       </section>
 

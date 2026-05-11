@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Parallax from "@/components/Parallax";
 import AnimatedSection from "@/components/AnimatedSection";
 import TextReveal from "@/components/TextReveal";
 import { publications, sortedPublications } from "@/lib/publications";
@@ -24,8 +23,7 @@ export default function InsightsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
         {/* Header */}
-        <Parallax offset={20}>
-          <AnimatedSection>
+        <AnimatedSection>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
               <div>
                 <p className="tracking-luxury text-muted-dark mb-5">{t("eyebrow")}</p>
@@ -44,7 +42,6 @@ export default function InsightsSection() {
               </Link>
             </div>
           </AnimatedSection>
-        </Parallax>
 
         {/* Grid */}
         <div className="grid lg:grid-cols-[6fr_7fr] gap-6 lg:gap-8 items-stretch">
