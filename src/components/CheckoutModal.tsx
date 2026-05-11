@@ -446,7 +446,7 @@ export default function CheckoutModal({
                               >
                                 {tProd(`${p.id}.title`)}
                               </span>
-                              <span className="text-[11px] font-mono text-white/25 shrink-0">
+                              <span className="text-[12px] font-mono text-white/55 shrink-0">
                                 ${p.price}
                               </span>
                             </button>
