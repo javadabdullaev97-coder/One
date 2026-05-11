@@ -133,7 +133,7 @@ function brandedEmail(p: BrandedEmailParams): string {
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:${SURFACE};border:1px solid ${BORDER};border-radius:6px">
         <tr>
           <td align="center" style="padding:40px 32px 0">
-            <img src="https://advizenco.com/Advizen%20Logo/android-chrome-192x192.png" width="56" height="56" alt="Advizen" style="display:block;margin:0 auto;border:0;outline:none;text-decoration:none;border-radius:12px">
+            <img src="https://advizenco.com/Logo.webp" width="70" height="60" alt="Advizen" style="display:block;margin:0 auto;border:0;outline:none;text-decoration:none">
             <div style="font-family:${FONT};font-size:12px;letter-spacing:0.48em;color:${TEXT};font-weight:600;margin-top:10px;padding-left:0.48em">ADVIZEN</div>
           </td>
         </tr>
