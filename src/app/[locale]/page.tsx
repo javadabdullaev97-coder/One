@@ -313,7 +313,7 @@ export default function Home() {
         <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="ambient-glow ambient-glow-oxblood w-[500px] h-[500px] -top-32 -right-32 opacity-40" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-          <Parallax offset={20} fade>
+          <Parallax offset={20}>
             <AnimatedSection className="mb-8 md:mb-10 text-center">
               <p className="tracking-luxury text-muted-dark mb-4">{t("coverage.eyebrow")}</p>
               <TextReveal
@@ -415,7 +415,7 @@ export default function Home() {
         <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="ambient-glow ambient-glow-oxblood w-[500px] h-[500px] -bottom-32 -left-32 opacity-40" />
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <Parallax offset={25} fade>
+          <Parallax offset={25}>
             <AnimatedSection>
               <p className="tracking-luxury text-muted-dark mb-6">{t("cta.eyebrow")}</p>
               <TextReveal

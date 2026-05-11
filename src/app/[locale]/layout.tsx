@@ -12,6 +12,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
 import { organizationJsonLd, websiteJsonLd, OG_IMAGE } from "@/lib/seo";
 import CookieBanner from "@/components/CookieBanner";
+import LenisProvider from "@/components/LenisProvider";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -172,15 +173,17 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col relative">
         <GtmNoScript />
         <NextIntlClientProvider>
-          <LoadingScreen />
-          <ScrollProgress />
-          <Navbar />
-          <main className="flex-1 relative z-10">{children}</main>
-          <div className="relative z-10">
-            <Footer />
-          </div>
-          <ScrollToTop />
-          <CookieBanner />
+          <LenisProvider>
+            <LoadingScreen />
+            <ScrollProgress />
+            <Navbar />
+            <main className="flex-1 relative z-10">{children}</main>
+            <div className="relative z-10">
+              <Footer />
+            </div>
+            <ScrollToTop />
+            <CookieBanner />
+          </LenisProvider>
         </NextIntlClientProvider>
       </body>
     </html>
