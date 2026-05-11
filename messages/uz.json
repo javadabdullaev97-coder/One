@@ -749,7 +749,12 @@
       "consentAnd": "va",
       "consentTerms": "Foydalanish shartlari",
       "consentAfter": ". Ushbu shaklni yuborish orqali siz taqdim etilgan ma'lumotlarni saqlash va qayta ishlashga roziligingizni tasdiqlaysiz.",
-      "send": "Yuborish"
+      "send": "Yuborish",
+      "sending": "Yuborilmoqda…",
+      "successHeading": "Xabar yuborildi!",
+      "successBody": "Rahmat — bir ish kuni ichida siz bilan bog'lanamiz.",
+      "sendAnother": "Yana xabar yuborish",
+      "errorMessage": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring yoki info@advizenco.com manziliga yozing."
     },
     "quick": {
       "eyebrow": "Tezkor chat",

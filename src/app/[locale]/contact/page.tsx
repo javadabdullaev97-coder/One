@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, ArrowRight, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, ArrowRight, ChevronDown, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import AnimatedSection, {
@@ -32,6 +32,14 @@ const labelClass =
 
 export default function ContactPage() {
   const [consent, setConsent] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName]   = useState("");
+  const [email, setEmail]         = useState("");
+  const [company, setCompany]     = useState("");
+  const [service, setService]     = useState("");
+  const [message, setMessage]     = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const tHero = useTranslations("ContactPage.hero");
   const tInfo = useTranslations("ContactPage.info");
   const tForm = useTranslations("ContactPage.form");
@@ -63,6 +71,22 @@ export default function ContactPage() {
       href: undefined,
     },
   ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, company, service, message }),
+      });
+      if (!res.ok) throw new Error("server error");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <div className="font-onest">
@@ -162,110 +186,179 @@ export default function ContactPage() {
                 {tForm("description")}
               </p>
 
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className={labelClass}>
-                      {tForm("firstName")} <span className="text-primary-light/80">*</span>
-                    </label>
-                    <input id="firstName" type="text" required className={inputClass} placeholder={tForm("firstNamePlaceholder")} />
+              {/* ── Success state ── */}
+              {status === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-col items-start gap-5 p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04]"
+                >
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/10 ring-1 ring-emerald-500/25 flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 text-emerald-400" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className={labelClass}>
-                      {tForm("lastName")} <span className="text-primary-light/80">*</span>
-                    </label>
-                    <input id="lastName" type="text" required className={inputClass} placeholder={tForm("lastNamePlaceholder")} />
+                    <p className="text-lg font-medium text-foreground mb-1">{tForm("successHeading")}</p>
+                    <p className="text-sm text-white/50 leading-relaxed">{tForm("successBody")}</p>
                   </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className={labelClass}>
-                      {tForm("email")} <span className="text-primary-light/80">*</span>
-                    </label>
-                    <input id="email" type="email" required className={inputClass} placeholder={tForm("emailPlaceholder")} />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className={labelClass}>{tForm("company")}</label>
-                    <input id="company" type="text" className={inputClass} placeholder={tForm("companyPlaceholder")} />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="service" className={labelClass}>{tForm("service")}</label>
-                  <div className="relative">
-                    <select
-                      id="service"
-                      className={`${inputClass} appearance-none pr-10 cursor-pointer`}
-                      style={{ WebkitAppearance: "none", paddingLeft: "16px" }}
-                    >
-                      <option value="" className="bg-surface">{tForm("selectService")}</option>
-                      <option value="tax" className="bg-surface">{tForm("serviceTax")}</option>
-                      <option value="legal" className="bg-surface">{tForm("serviceLegal")}</option>
-                      <option value="finance" className="bg-surface">{tForm("serviceFinance")}</option>
-                      <option value="hr" className="bg-surface">{tForm("serviceHr")}</option>
-                      <option value="funding" className="bg-surface">{tForm("serviceFunding")}</option>
-                      <option value="other" className="bg-surface">{tForm("serviceOther")}</option>
-                    </select>
-                    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className={labelClass}>{tForm("message")}</label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    className={`${inputClass} resize-none`}
-                    placeholder={tForm("messagePlaceholder")}
-                  />
-                </div>
-
-                <div className="flex items-start gap-3 pt-2">
-                  <div className="relative mt-0.5 shrink-0 w-4 h-4">
-                    <input
-                      type="checkbox"
-                      id="consent"
-                      checked={consent}
-                      onChange={(e) => setConsent(e.target.checked)}
-                      className="absolute inset-0 opacity-0 cursor-pointer z-10 w-full h-full"
-                    />
-                    <div
-                      className={`w-4 h-4 border rounded transition-all duration-200 flex items-center justify-center ${
-                        consent ? "bg-primary border-primary" : "border-white/25 bg-transparent"
-                      }`}
-                    >
-                      <svg
-                        className={`w-2.5 h-2.5 text-white transition-opacity duration-200 ${
-                          consent ? "opacity-100" : "opacity-0"
-                        }`}
-                        fill="none"
-                        viewBox="0 0 10 8"
-                        stroke="currentColor"
-                        strokeWidth={2.5}
-                      >
-                        <path d="M1 4l2.5 2.5L9 1" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStatus("idle");
+                      setFirstName(""); setLastName(""); setEmail("");
+                      setCompany(""); setService(""); setMessage("");
+                      setConsent(false);
+                    }}
+                    className="text-xs uppercase tracking-widest text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+                  >
+                    {tForm("sendAnother")} →
+                  </button>
+                </motion.div>
+              ) : (
+                /* ── Form ── */
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className={labelClass}>
+                        {tForm("firstName")} <span className="text-primary-light/80">*</span>
+                      </label>
+                      <input
+                        id="firstName" type="text" required
+                        value={firstName} onChange={e => setFirstName(e.target.value)}
+                        className={inputClass} placeholder={tForm("firstNamePlaceholder")}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className={labelClass}>
+                        {tForm("lastName")} <span className="text-primary-light/80">*</span>
+                      </label>
+                      <input
+                        id="lastName" type="text" required
+                        value={lastName} onChange={e => setLastName(e.target.value)}
+                        className={inputClass} placeholder={tForm("lastNamePlaceholder")}
+                      />
                     </div>
                   </div>
-                  <label htmlFor="consent" className="text-[13px] text-white/45 leading-relaxed cursor-pointer select-none">
-                    {tForm("consentBefore")}{" "}
-                    <Link href="/privacy" className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors">{tForm("consentPrivacy")}</Link>{" "}
-                    {tForm("consentAnd")}{" "}
-                    <Link href="/terms" className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors">{tForm("consentTerms")}</Link>
-                    {tForm("consentAfter")}
-                  </label>
-                </div>
 
-                <div className={`mt-4 transition-opacity duration-300 ${
-                  consent ? "opacity-100" : "opacity-35 pointer-events-none"
-                }`}>
-                  <MagneticButton variant="primary" type="submit">
-                    <Send className="w-4 h-4" />
-                    {tForm("send")}
-                  </MagneticButton>
-                </div>
-              </form>
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className={labelClass}>
+                        {tForm("email")} <span className="text-primary-light/80">*</span>
+                      </label>
+                      <input
+                        id="email" type="email" required
+                        value={email} onChange={e => setEmail(e.target.value)}
+                        className={inputClass} placeholder={tForm("emailPlaceholder")}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className={labelClass}>{tForm("company")}</label>
+                      <input
+                        id="company" type="text"
+                        value={company} onChange={e => setCompany(e.target.value)}
+                        className={inputClass} placeholder={tForm("companyPlaceholder")}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className={labelClass}>{tForm("service")}</label>
+                    <div className="relative">
+                      <select
+                        id="service"
+                        value={service} onChange={e => setService(e.target.value)}
+                        className={`${inputClass} appearance-none pr-10 cursor-pointer`}
+                        style={{ WebkitAppearance: "none", paddingLeft: "16px" }}
+                      >
+                        <option value="" className="bg-surface">{tForm("selectService")}</option>
+                        <option value="tax" className="bg-surface">{tForm("serviceTax")}</option>
+                        <option value="legal" className="bg-surface">{tForm("serviceLegal")}</option>
+                        <option value="finance" className="bg-surface">{tForm("serviceFinance")}</option>
+                        <option value="hr" className="bg-surface">{tForm("serviceHr")}</option>
+                        <option value="funding" className="bg-surface">{tForm("serviceFunding")}</option>
+                        <option value="other" className="bg-surface">{tForm("serviceOther")}</option>
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className={labelClass}>{tForm("message")}</label>
+                    <textarea
+                      id="message"
+                      rows={5}
+                      value={message} onChange={e => setMessage(e.target.value)}
+                      className={`${inputClass} resize-none`}
+                      placeholder={tForm("messagePlaceholder")}
+                    />
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2">
+                    <div className="relative mt-0.5 shrink-0 w-4 h-4">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="absolute inset-0 opacity-0 cursor-pointer z-10 w-full h-full"
+                      />
+                      <div
+                        className={`w-4 h-4 border rounded transition-all duration-200 flex items-center justify-center ${
+                          consent ? "bg-primary border-primary" : "border-white/25 bg-transparent"
+                        }`}
+                      >
+                        <svg
+                          className={`w-2.5 h-2.5 text-white transition-opacity duration-200 ${
+                            consent ? "opacity-100" : "opacity-0"
+                          }`}
+                          fill="none"
+                          viewBox="0 0 10 8"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
+                          <path d="M1 4l2.5 2.5L9 1" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
+                    <label htmlFor="consent" className="text-[13px] text-white/45 leading-relaxed cursor-pointer select-none">
+                      {tForm("consentBefore")}{" "}
+                      <Link href="/privacy" className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors">{tForm("consentPrivacy")}</Link>{" "}
+                      {tForm("consentAnd")}{" "}
+                      <Link href="/terms" className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors">{tForm("consentTerms")}</Link>
+                      {tForm("consentAfter")}
+                    </label>
+                  </div>
+
+                  {status === "error" && (
+                    <div className="flex items-center gap-3 p-4 rounded-lg border border-red-500/20 bg-red-500/[0.04]">
+                      <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                      <p className="text-sm text-red-400/90">{tForm("errorMessage")}</p>
+                    </div>
+                  )}
+
+                  <div className={`mt-4 transition-opacity duration-300 ${
+                    consent ? "opacity-100" : "opacity-35 pointer-events-none"
+                  }`}>
+                    <MagneticButton
+                      variant="primary"
+                      type="submit"
+                      disabled={status === "loading"}
+                    >
+                      {status === "loading" ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          {tForm("sending")}
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          {tForm("send")}
+                        </>
+                      )}
+                    </MagneticButton>
+                  </div>
+                </form>
+              )}
             </AnimatedSection>
 
             <AnimatedSection delay={0.2} className="lg:col-span-5">
