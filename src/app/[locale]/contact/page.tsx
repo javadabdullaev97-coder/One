@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, ArrowRight, ChevronDown, CheckCircle, AlertCircle } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import AnimatedSection, {
   StaggerContainer,
@@ -40,6 +40,7 @@ export default function ContactPage() {
   const [message, setMessage]     = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
+  const locale = useLocale();
   const tHero = useTranslations("ContactPage.hero");
   const tInfo = useTranslations("ContactPage.info");
   const tForm = useTranslations("ContactPage.form");
@@ -79,7 +80,7 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, company, service, message }),
+        body: JSON.stringify({ firstName, lastName, email, company, service, message, locale }),
       });
       if (!res.ok) throw new Error("server error");
       setStatus("success");
