@@ -788,7 +788,7 @@ export default function CheckoutModal({
   );
 }
 
-/* ── Field ───────────────────────────────────────── */
+/* ── Field ─────────────────────────────────────────── */
 
 function Field({
   label,
@@ -821,7 +821,7 @@ function Field({
   );
 }
 
-/* ── Stepper ─────────────────────────────────────── */
+/* ── Stepper ───────────────────────────────────────── */
 
 function Stepper({ step, labels }: { step: 1 | 2 | 3 | 4; labels: string[] }) {
   return (
