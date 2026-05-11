@@ -147,26 +147,6 @@ const REGION_IMAGE: Record<string, string> = {
   "UZ-TO": "/Regions/Tashkent region.webp",
 };
 
-/* ── Region image preloader ────────────────────── */
-
-function RegionImagePreloader() {
-  return (
-    <div aria-hidden="true" style={{ position: "fixed", left: -9999, top: -9999, pointerEvents: "none" }}>
-      {Object.values(REGION_IMAGE).map((src) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          key={src}
-          src={src}
-          alt=""
-          width={1}
-          height={1}
-          fetchPriority="low"
-        />
-      ))}
-    </div>
-  );
-}
-
 /* ── Region info panel ──────────────────────── */
 
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
@@ -188,7 +168,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
         >
           {region ? (
             <>
-              {/* Placeholder image */}
+              {/* Region image */}
               <div className="relative h-44 rounded-xl overflow-hidden mb-5 border border-white/[0.06]"
                 style={{ background: "linear-gradient(135deg, rgba(122,26,26,0.22) 0%, #080808 65%)" }}>
                 <Image
@@ -196,8 +176,9 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
                   alt={regionName}
                   fill
                   unoptimized
+                  loading="lazy"
                   className="object-cover"
-                  sizes="(max-width: 1024px) calc(100vw - 3rem), 480px"
+                  sizes="480px"
                 />
                 {/* bottom gradient overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#080808]/70 to-transparent pointer-events-none" />
@@ -304,7 +285,6 @@ export default function Home() {
 
   return (
     <>
-      <RegionImagePreloader />
       {/* ── Hero ── */}
       <HeroSection />
 
