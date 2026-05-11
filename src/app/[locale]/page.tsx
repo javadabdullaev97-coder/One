@@ -176,7 +176,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const regionName = activeId ? tRegions(activeId) : "";
 
   return (
-    <div className="h-[480px] overflow-hidden relative">
+    <div className="h-[560px] overflow-hidden relative">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeId ?? "default"}
@@ -184,7 +184,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 flex flex-col overflow-y-auto"
+          className="absolute inset-0 flex flex-col"
         >
           {region ? (
             <>
