@@ -68,6 +68,7 @@ export default function CheckoutModal({
 
   const [selectedDocs, setSelectedDocs] = useState<string[]>([]);
   const [termsChecked, setTermsChecked] = useState(false);
+  const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     if (open) {
@@ -78,6 +79,7 @@ export default function CheckoutModal({
       setCompanyName(""); setInn(""); setLegalEmail(""); setLegalPhone("");
       setSelectedDocs(productId ? [productId] : []);
       setTermsChecked(false);
+      setConfirming(false);
     }
   }, [open, productId]);
 
@@ -128,7 +130,28 @@ export default function CheckoutModal({
   );
 
   const handleSubmit = () => setStep(5);
-  const handleConfirm = () => setStep(6);
+  const handleConfirm = async () => {
+    setConfirming(true);
+    try {
+      await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orderType,
+          firstName, lastName, email, phone, pinfl,
+          companyName, inn, legalEmail, legalPhone,
+          selectedDocs,
+          totalPrice,
+          language,
+          locale,
+        }),
+      });
+    } catch {
+      // proceed to success screen regardless
+    }
+    setConfirming(false);
+    setStep(6);
+  };
   const handleBack = () => setStep(prev => (prev - 1) as Step);
   const handleNext = () => setStep(prev => (prev + 1) as Step);
 
@@ -732,9 +755,15 @@ export default function CheckoutModal({
                   <button
                     type="button"
                     onClick={handleConfirm}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200 bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                    disabled={confirming}
+                    className={cn(
+                      "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
+                      confirming
+                        ? "bg-white/[0.08] text-white/40 cursor-not-allowed"
+                        : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                    )}
                   >
-                    {t("actions.confirm")}
+                    {confirming ? t("actions.sending") : t("actions.confirm")}
                     <Check className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -759,7 +788,7 @@ export default function CheckoutModal({
   );
 }
 
-/* ── Field ─────────────────────────────────────────── */
+/* ── Field ───────────────────────────────────────── */
 
 function Field({
   label,
@@ -792,7 +821,7 @@ function Field({
   );
 }
 
-/* ── Stepper ───────────────────────────────────────── */
+/* ── Stepper ─────────────────────────────────────── */
 
 function Stepper({ step, labels }: { step: 1 | 2 | 3 | 4; labels: string[] }) {
   return (
