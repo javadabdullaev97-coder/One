@@ -346,6 +346,7 @@ export default function ExpertiseListingClient() {
             alt=""
             fill
             priority
+            unoptimized
             className="object-cover"
             sizes="100vw"
           />

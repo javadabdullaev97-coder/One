@@ -49,6 +49,8 @@ export default function Navbar() {
             alt="Advizen"
             width={35}
             height={35}
+            unoptimized
+            priority
             style={{ width: "auto", height: "35px" }}
           />
           <span

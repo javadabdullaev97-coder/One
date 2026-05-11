@@ -48,6 +48,7 @@ export default function DisciplinesIntegration() {
               alt="Advizen"
               width={160}
               height={134}
+              unoptimized
               className="w-16 h-auto md:w-[72px] opacity-95"
             />
           </div>

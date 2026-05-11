@@ -12,6 +12,7 @@ export default function NotFound() {
           alt="404 — Page Not Found"
           fill
           priority
+          unoptimized
           className="object-cover"
           sizes="100vw"
         />

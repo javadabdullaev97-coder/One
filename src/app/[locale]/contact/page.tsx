@@ -77,6 +77,7 @@ export default function ContactPage() {
             alt=""
             fill
             priority
+            unoptimized
             className="object-cover"
             sizes="100vw"
           />

@@ -6,20 +6,18 @@ import { motion } from "framer-motion";
 export default function NotFound() {
   return (
     <main className="relative min-h-screen bg-black overflow-hidden">
-      {/* Full-screen glass image */}
       <div className="absolute inset-0">
         <Image
           src="/404.webp"
           alt="404 — Page Not Found"
           fill
           priority
+          unoptimized
           className="object-cover"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/30" />
       </div>
-
-      {/* Text — bottom left */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="flex-1" />
         <motion.div

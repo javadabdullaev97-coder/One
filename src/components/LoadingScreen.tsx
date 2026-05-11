@@ -66,6 +66,7 @@ export default function LoadingScreen() {
               alt=""
               width={340}
               height={340}
+              unoptimized
               style={{ width: "340px", height: "auto", opacity: 0.1 }}
               priority
             />
@@ -82,6 +83,7 @@ export default function LoadingScreen() {
                 alt=""
                 width={340}
                 height={340}
+                unoptimized
                 style={{ width: "340px", height: "auto" }}
                 priority
               />
