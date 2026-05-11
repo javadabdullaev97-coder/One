@@ -8,6 +8,11 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "vars": {
+    "TELEGRAM_CHAT_ID": "8389235372",
+    "RESEND_TO_EMAIL": "info@advizenco.com",
+    "RESEND_FROM_EMAIL": "Advizen Contact <noreply@advizenco.com>"
+  },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
