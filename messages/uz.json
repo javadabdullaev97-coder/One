@@ -339,8 +339,7 @@
     "notice": {
       "badge": "Tez orada",
       "heading": "Onlayn to'lov tez orada",
-      "bodyLine1": "Biz Uzcard, Humo, Visa va Mastercardni ulayapmiz — karta orqali xavfsiz to'lov tez orada mavjud bo'ladi.",
-      "bodyLine2": "Hozircha barcha buyurtmalar elektron pochta orqali qabul qilinadi. Jarayon tez, to'liq yordam bilan va xavfsiz.",
+      "bodyLine1": "Uzcard, Humo, Visa va Mastercard — tez orada. Hozircha buyurtmalar email orqali.",
       "emailNote": "Buyurtmalar hozirda elektron pochta orqali qabul qilinadi"
     },
     "form": {

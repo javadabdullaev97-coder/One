@@ -339,8 +339,7 @@
     "notice": {
       "badge": "Coming soon",
       "heading": "Online Payments Coming Soon",
-      "bodyLine1": "We are integrating Uzcard, Humo, Visa and Mastercard — secure card payments will be available very soon.",
-      "bodyLine2": "In the meantime, we accept all orders via email request. The process is fast, fully assisted, and just as secure.",
+      "bodyLine1": "Uzcard, Humo, Visa & Mastercard coming soon. For now, place your order via email.",
       "emailNote": "Orders are currently accepted via email request"
     },
     "form": {

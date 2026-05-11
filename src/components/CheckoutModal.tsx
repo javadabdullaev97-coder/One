@@ -260,22 +260,19 @@ export default function CheckoutModal({
                     </h2>
 
                     {/* Payment logos */}
-                    <div className="rounded-xl border border-white/[0.07] bg-white/[0.015] flex items-center justify-center px-6 py-6 mb-6">
+                    <div className="rounded-xl border border-white/[0.07] bg-white/[0.015] px-5 py-8 mb-6">
                       <Image
                         src="/payments no background.webp"
                         alt="Uzcard · Humo · Visa · Mastercard"
-                        width={380}
-                        height={90}
+                        width={520}
+                        height={110}
                         unoptimized
-                        className="w-full max-w-[300px] h-auto object-contain"
+                        className="w-full h-auto object-contain brightness-[1.35]"
                       />
                     </div>
 
-                    <p className="text-sm text-white/55 leading-relaxed mb-3">
-                      {t("notice.bodyLine1")}
-                    </p>
                     <p className="text-sm text-white/55 leading-relaxed mb-6">
-                      {t("notice.bodyLine2")}
+                      {t("notice.bodyLine1")}
                     </p>
 
                     {/* Email callout */}
