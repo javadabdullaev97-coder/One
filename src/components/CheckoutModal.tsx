@@ -1,17 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
-import { X, ArrowLeft, ArrowRight, Check, Loader2, Download } from "lucide-react";
+import { X, ArrowLeft, ArrowRight, Check, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FlagBadge, type FlagCode } from "@/components/Flags";
 
-const UZS_RATE = 12750;
-
 export type LanguagePair = "uz_en" | "uz_ru" | "en_ru";
-export type PaymentMethod = "payme" | "octopay";
-type Step = 1 | 2 | 3 | 4 | 5;
+type Step = 1 | 2 | 3 | 4;
+type OrderType = "individual" | "legal";
 
 const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [string, string] }[] = [
   { id: "uz_en", flags: ["uz", "en"], codes: ["UZ", "EN"] },
@@ -19,12 +18,19 @@ const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [s
   { id: "en_ru", flags: ["en", "ru"], codes: ["EN", "RU"] },
 ];
 
-const PAYMENT_METHODS: {
-  id: PaymentMethod;
-  brands: string[];
-}[] = [
-  { id: "payme",   brands: ["Humo", "UzCard"] },
-  { id: "octopay", brands: ["Humo", "UzCard", "Visa", "Mastercard"] },
+const STORE_PRODUCTS: { id: string; price: number }[] = [
+  { id: "llc-formation",          price: 299 },
+  { id: "jsc-formation",          price: 449 },
+  { id: "shareholder-agreement",  price: 279 },
+  { id: "nda-bilateral",          price: 39  },
+  { id: "commercial-lease",       price: 89  },
+  { id: "employment-contract",    price: 59  },
+  { id: "hr-policy-manual",       price: 199 },
+  { id: "tax-compliance-starter", price: 249 },
+  { id: "transfer-pricing",       price: 399 },
+  { id: "work-permit-pack",       price: 119 },
+  { id: "sez-entry-pack",         price: 449 },
+  { id: "due-diligence-pack",     price: 499 },
 ];
 
 interface CheckoutModalProps {
@@ -35,76 +41,91 @@ interface CheckoutModalProps {
   priceUSD: number;
 }
 
-export default function CheckoutModal({ open, onClose, productId, productTitle, priceUSD }: CheckoutModalProps) {
-  const tCheckout = useTranslations("Checkout");
+export default function CheckoutModal({
+  open,
+  onClose,
+  productId,
+}: CheckoutModalProps) {
+  const t = useTranslations("Checkout");
+  const tProd = useTranslations("StoreProducts.items");
   const locale = useLocale();
   const localePath = locale === "en" ? "" : `/${locale}`;
+
   const [step, setStep] = useState<Step>(1);
   const [language, setLanguage] = useState<LanguagePair | null>(null);
-  const [method, setMethod] = useState<PaymentMethod | null>(null);
+  const [orderType, setOrderType] = useState<OrderType>("individual");
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [pinfl, setPinfl] = useState("");
 
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const [companyName, setCompanyName] = useState("");
+  const [inn, setInn] = useState("");
+  const [legalEmail, setLegalEmail] = useState("");
+  const [legalPhone, setLegalPhone] = useState("");
 
-  // Reset state every time modal opens
+  const [selectedDocs, setSelectedDocs] = useState<string[]>([]);
+  const [termsChecked, setTermsChecked] = useState(false);
+
   useEffect(() => {
     if (open) {
       setStep(1);
       setLanguage(null);
-      setMethod(null);
-      setEmail("");
+      setOrderType("individual");
+      setFirstName(""); setLastName(""); setEmail(""); setPhone(""); setPinfl("");
+      setCompanyName(""); setInn(""); setLegalEmail(""); setLegalPhone("");
+      setSelectedDocs(productId ? [productId] : []);
+      setTermsChecked(false);
     }
-  }, [open]);
+  }, [open, productId]);
 
-  // Lock body scroll while modal is open
   useEffect(() => {
     if (!open) return;
-    const original = document.body.style.overflow;
+    const orig = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = original;
-    };
+    return () => { document.body.style.overflow = orig; };
   }, [open]);
 
-  // Esc key closes modal
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const priceUZS = Math.round((priceUSD * UZS_RATE) / 50000) * 50000;
-  const priceUZSFormatted = priceUZS.toLocaleString("en-US");
+  const validEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-  // Auto-advance from redirect (step 3) to success (step 4) for preview.
-  // Once real payment is wired, step 3 will redirect to PayMe/OctoPay and
-  // success/error will be shown when the user returns to /store/success or
-  // /store/cancelled.
-  useEffect(() => {
-    if (!open || step !== 3) return;
-    const timer = setTimeout(() => {
-      console.log("[checkout] would redirect", { productId, language, method, amount: priceUZS });
-      setStep(4);
-    }, 1800);
-    return () => clearTimeout(timer);
-  }, [open, step, productId, language, method, priceUZS]);
-
-  const handleContinue = () => {
-    if (step === 1 && language) setStep(2);
-    else if (step === 2 && method && isValidEmail) setStep(3);
+  const formValid = (): boolean => {
+    if (!selectedDocs.length || !termsChecked) return false;
+    if (orderType === "individual") {
+      return !!(
+        firstName.trim() &&
+        lastName.trim() &&
+        validEmail(email) &&
+        phone.trim().length >= 7 &&
+        pinfl.length === 14
+      );
+    }
+    return !!(
+      companyName.trim() &&
+      inn.length === 9 &&
+      validEmail(legalEmail) &&
+      legalPhone.trim().length >= 7
+    );
   };
 
-  const handleBack = () => {
-    if (step === 2) setStep(1);
-  };
+  const contactEmail = orderType === "individual" ? email : legalEmail;
 
-  const handleDownload = () => {
-    console.log("[checkout] download", { productId, language });
-    // Wire to /api/checkout/download/${token} later
-  };
+  const toggleDoc = (id: string) =>
+    setSelectedDocs(prev =>
+      prev.includes(id) ? prev.filter(d => d !== id) : [...prev, id]
+    );
+
+  const handleSubmit = () => setStep(4);
+  const handleBack = () => setStep(prev => (prev - 1) as Step);
+  const handleNext = () => setStep(prev => (prev + 1) as Step);
 
   return (
     <AnimatePresence>
@@ -117,35 +138,28 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
           className="fixed inset-0 z-[100] flex items-center justify-center px-4 sm:px-6"
           onClick={onClose}
         >
-          {/* Backdrop */}
           <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
 
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full max-w-xl h-[700px] max-h-[calc(100vh-2rem)] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
-            {/* Header */}
+            {/* ── Header ── */}
             <div className="flex-none flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/[0.06]">
               {step <= 3 ? (
                 <Stepper
                   step={step as 1 | 2 | 3}
-                  labels={[tCheckout("stepLanguage"), tCheckout("stepPayment"), tCheckout("stepConfirm")]}
+                  labels={[t("stepLanguage"), t("stepNotice"), t("stepForm")]}
                 />
               ) : (
                 <div className="flex items-center gap-2">
-                  <span
-                    className={cn(
-                      "w-1.5 h-1.5 rounded-full",
-                      step === 4 ? "bg-emerald-400" : "bg-rose-400"
-                    )}
-                  />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <span className="text-[11px] tracking-[0.16em] uppercase text-white/55">
-                    {step === 4 ? tCheckout("success.statusLabel") : tCheckout("error.statusLabel")}
+                    {t("success.statusLabel")}
                   </span>
                 </div>
               )}
@@ -153,15 +167,17 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                 type="button"
                 onClick={onClose}
                 className="text-white/40 hover:text-white transition-colors cursor-pointer"
-                aria-label={tCheckout("actions.close")}
+                aria-label={t("actions.close")}
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Content */}
+            {/* ── Scrollable content ── */}
             <div className="flex-1 overflow-y-auto px-6 py-6">
               <AnimatePresence mode="wait">
+
+                {/* Step 1 — Language */}
                 {step === 1 && (
                   <motion.div
                     key="step-1"
@@ -170,11 +186,12 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                     exit={{ opacity: 0, x: -12 }}
                     transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <h2 className="heading-luxury text-xl text-foreground mb-1.5">{tCheckout("language.heading")}</h2>
-                    <p className="text-sm text-white/45 mb-6">{tCheckout("language.subheading")}</p>
-
+                    <h2 className="heading-luxury text-xl text-foreground mb-1.5">
+                      {t("language.heading")}
+                    </h2>
+                    <p className="text-sm text-white/45 mb-6">{t("language.subheading")}</p>
                     <div className="grid grid-cols-1 gap-2">
-                      {LANGUAGE_PAIRS.map((pair) => {
+                      {LANGUAGE_PAIRS.map(pair => {
                         const active = language === pair.id;
                         return (
                           <button
@@ -195,10 +212,12 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                               </div>
                               <div className="flex flex-col">
                                 <span className="text-sm font-medium tracking-wide text-foreground">
-                                  {pair.codes[0]} <span className="text-white/30">·</span> {pair.codes[1]}
+                                  {pair.codes[0]}{" "}
+                                  <span className="text-white/30">·</span>{" "}
+                                  {pair.codes[1]}
                                 </span>
                                 <span className="text-[11px] tracking-[0.12em] uppercase text-white/35 mt-0.5">
-                                  {tCheckout(`language.${pair.id}`)}
+                                  {t(`language.${pair.id}`)}
                                 </span>
                               </div>
                             </div>
@@ -210,7 +229,9 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                                   : "border-white/15 group-hover:border-white/30"
                               )}
                             >
-                              {active && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                              {active && (
+                                <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                              )}
                             </div>
                           </button>
                         );
@@ -219,6 +240,7 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                   </motion.div>
                 )}
 
+                {/* Step 2 — Payment notice */}
                 {step === 2 && (
                   <motion.div
                     key="step-2"
@@ -227,116 +249,258 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                     exit={{ opacity: 0, x: -12 }}
                     transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <h2 className="heading-luxury text-xl text-foreground mb-1.5">{tCheckout("payment.heading")}</h2>
-                    <p className="text-sm text-white/45 mb-5">{tCheckout("payment.subheading")}</p>
-
-                    {/* Order summary */}
-                    <div className="mb-5 rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3.5">
-                      <div className="flex items-baseline justify-between gap-3 mb-2">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("payment.documentLabel")}
-                        </span>
-                        <span className="text-sm text-foreground/85 text-right truncate">{productTitle}</span>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3 mb-3">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("payment.languageLabel")}
-                        </span>
-                        <span className="text-sm text-foreground/85">
-                          {language && tCheckout(`language.${language}`)}
-                        </span>
-                      </div>
-                      <div className="h-px bg-white/[0.06] mb-3" />
-                      <div className="flex items-baseline justify-between gap-3">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("payment.totalLabel")}
-                        </span>
-                        <span className="text-base font-semibold text-foreground">
-                          {priceUZSFormatted} <span className="text-white/45 text-sm font-normal">so&apos;m</span>
-                        </span>
-                      </div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="inline-flex items-center text-[10px] tracking-[0.2em] uppercase text-primary border border-primary/40 bg-primary/[0.06] rounded-full px-2.5 py-1">
+                        {t("notice.badge")}
+                      </span>
                     </div>
 
-                    {/* Email */}
-                    <div className="mb-5">
-                      <label htmlFor="checkout-email" className="text-[10px] tracking-[0.16em] uppercase text-white/35 block mb-2">
-                        {tCheckout("payment.emailLabel")}
-                      </label>
-                      <input
-                        id="checkout-email"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder={tCheckout("payment.emailPlaceholder")}
-                        autoComplete="email"
-                        className="w-full bg-white/[0.02] border border-white/[0.08] rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-white/25 focus:outline-none focus:border-white/[0.22] transition-colors"
+                    <h2 className="heading-luxury text-xl text-foreground mb-5">
+                      {t("notice.heading")}
+                    </h2>
+
+                    {/* Payment logos */}
+                    <div className="rounded-xl border border-white/[0.07] bg-white/[0.015] flex items-center justify-center px-6 py-6 mb-6">
+                      <Image
+                        src="/payments no background.webp"
+                        alt="Uzcard · Humo · Visa · Mastercard"
+                        width={380}
+                        height={90}
+                        unoptimized
+                        className="w-full max-w-[300px] h-auto object-contain"
                       />
-                      <p className="mt-2 text-[11px] text-white/35">
-                        {tCheckout("payment.emailHint")}
-                      </p>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-2">
-                      {PAYMENT_METHODS.map((pm) => {
-                        const active = method === pm.id;
-                        return (
-                          <button
-                            key={pm.id}
-                            type="button"
-                            onClick={() => setMethod(pm.id)}
-                            className={cn(
-                              "group relative flex items-center justify-between gap-4 rounded-lg border px-4 py-3.5 text-left transition-all duration-200 cursor-pointer",
-                              active
-                                ? "border-primary/60 bg-primary/[0.06]"
-                                : "border-white/[0.08] bg-white/[0.02] hover:border-white/[0.18] hover:bg-white/[0.035]"
-                            )}
-                          >
-                            <div className="flex flex-col gap-1">
-                              <span className="heading-luxury text-base text-foreground tracking-wide">
-                                {tCheckout(`payment.${pm.id}.name`)}
-                              </span>
-                              <span className="text-[11px] tracking-[0.1em] text-white/45">
-                                {pm.brands.join(" · ")}
-                              </span>
-                            </div>
-                            <div
-                              className={cn(
-                                "w-5 h-5 rounded-full border flex items-center justify-center transition-all duration-200",
-                                active
-                                  ? "border-primary bg-primary"
-                                  : "border-white/15 group-hover:border-white/30"
-                              )}
-                            >
-                              {active && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
-                            </div>
-                          </button>
-                        );
-                      })}
+                    <p className="text-sm text-white/55 leading-relaxed mb-3">
+                      {t("notice.bodyLine1")}
+                    </p>
+                    <p className="text-sm text-white/55 leading-relaxed mb-6">
+                      {t("notice.bodyLine2")}
+                    </p>
+
+                    {/* Email callout */}
+                    <div className="flex items-center gap-3 rounded-lg border border-white/[0.08] bg-white/[0.025] px-4 py-3.5">
+                      <Mail className="w-4 h-4 text-primary/80 shrink-0" />
+                      <span className="text-sm text-white/65 leading-snug">
+                        {t("notice.emailNote")}
+                      </span>
                     </div>
                   </motion.div>
                 )}
 
+                {/* Step 3 — Order form */}
                 {step === 3 && (
                   <motion.div
                     key="step-3"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col items-center justify-center text-center py-10"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="relative mb-6">
-                      <Loader2 className="w-12 h-12 text-primary animate-spin" strokeWidth={1.5} />
-                    </div>
-                    <h2 className="heading-luxury text-xl text-foreground mb-2">
-                      {tCheckout("redirect.heading", {
-                        provider: method ? tCheckout(`payment.${method}.name`) : "",
-                      })}
+                    <h2 className="heading-luxury text-xl text-foreground mb-4">
+                      {t("form.heading")}
                     </h2>
-                    <p className="text-sm text-white/45 max-w-sm">{tCheckout("redirect.subheading")}</p>
+
+                    {/* Individual / Legal toggle */}
+                    <div className="flex gap-1 bg-white/[0.03] border border-white/[0.06] rounded-lg p-1 mb-5">
+                      {(["individual", "legal"] as OrderType[]).map(type => (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setOrderType(type)}
+                          className={cn(
+                            "flex-1 py-2 text-[12px] tracking-[0.1em] uppercase font-medium rounded-md transition-all duration-200 cursor-pointer",
+                            orderType === type
+                              ? "bg-primary text-foreground/95 shadow-sm"
+                              : "text-white/45 hover:text-white/70"
+                          )}
+                        >
+                          {type === "individual"
+                            ? t("form.typeIndividual")
+                            : t("form.typeLegal")}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Individual fields */}
+                    {orderType === "individual" && (
+                      <div className="space-y-3 mb-5">
+                        <div className="grid grid-cols-2 gap-3">
+                          <Field
+                            label={t("form.firstName")}
+                            value={firstName}
+                            onChange={setFirstName}
+                          />
+                          <Field
+                            label={t("form.lastName")}
+                            value={lastName}
+                            onChange={setLastName}
+                          />
+                        </div>
+                        <Field
+                          label={t("form.email")}
+                          value={email}
+                          onChange={setEmail}
+                          type="email"
+                        />
+                        <Field
+                          label={t("form.phone")}
+                          value={phone}
+                          onChange={setPhone}
+                          type="tel"
+                        />
+                        <Field
+                          label={t("form.pinfl")}
+                          value={pinfl}
+                          onChange={v => {
+                            if (/^\d*$/.test(v) && v.length <= 14) setPinfl(v);
+                          }}
+                          hint={t("form.pinflHint")}
+                        />
+                      </div>
+                    )}
+
+                    {/* Legal entity fields */}
+                    {orderType === "legal" && (
+                      <div className="space-y-3 mb-5">
+                        <Field
+                          label={t("form.companyName")}
+                          value={companyName}
+                          onChange={setCompanyName}
+                        />
+                        <Field
+                          label={t("form.inn")}
+                          value={inn}
+                          onChange={v => {
+                            if (/^\d*$/.test(v) && v.length <= 9) setInn(v);
+                          }}
+                          hint={t("form.innHint")}
+                        />
+                        <Field
+                          label={t("form.phone")}
+                          value={legalPhone}
+                          onChange={setLegalPhone}
+                          type="tel"
+                        />
+                        <Field
+                          label={t("form.email")}
+                          value={legalEmail}
+                          onChange={setLegalEmail}
+                          type="email"
+                        />
+                      </div>
+                    )}
+
+                    {/* Document selection */}
+                    <div className="mb-5">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
+                          {t("form.documentsLabel")}
+                        </span>
+                        {selectedDocs.length > 0 && (
+                          <span className="text-[11px] text-primary tabular-nums">
+                            {selectedDocs.length} ×
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-[11px] text-white/25 mb-2">
+                        {t("form.documentsHint")}
+                      </p>
+                      <div className="max-h-[190px] overflow-y-auto rounded-lg border border-white/[0.06] divide-y divide-white/[0.04]">
+                        {STORE_PRODUCTS.map(p => {
+                          const selected = selectedDocs.includes(p.id);
+                          return (
+                            <button
+                              key={p.id}
+                              type="button"
+                              onClick={() => toggleDoc(p.id)}
+                              className={cn(
+                                "w-full flex items-center gap-3 px-3.5 py-2.5 text-left transition-all duration-150 cursor-pointer",
+                                selected ? "bg-primary/[0.05]" : "hover:bg-white/[0.02]"
+                              )}
+                            >
+                              <div
+                                className={cn(
+                                  "w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all duration-150",
+                                  selected ? "border-primary bg-primary" : "border-white/20"
+                                )}
+                              >
+                                {selected && (
+                                  <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                                )}
+                              </div>
+                              <span
+                                className={cn(
+                                  "flex-1 text-[12px] leading-snug transition-colors duration-150",
+                                  selected ? "text-foreground/90" : "text-white/50"
+                                )}
+                              >
+                                {tProd(`${p.id}.title`)}
+                              </span>
+                              <span className="text-[11px] font-mono text-white/25 shrink-0">
+                                ${p.price}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Terms checkbox */}
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <button
+                        type="button"
+                        onClick={() => setTermsChecked(v => !v)}
+                        className={cn(
+                          "mt-0.5 w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all duration-150 cursor-pointer",
+                          termsChecked
+                            ? "border-primary bg-primary"
+                            : "border-white/20 hover:border-white/40"
+                        )}
+                      >
+                        {termsChecked && (
+                          <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                        )}
+                      </button>
+                      <span className="text-[11px] text-white/40 leading-relaxed select-none">
+                        {t.rich("form.termsLabel", {
+                          terms: chunks => (
+                            <a
+                              href={`${localePath}/terms-of-sale`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors"
+                            >
+                              {chunks}
+                            </a>
+                          ),
+                          privacy: chunks => (
+                            <a
+                              href={`${localePath}/privacy`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors"
+                            >
+                              {chunks}
+                            </a>
+                          ),
+                          cookies: chunks => (
+                            <a
+                              href={`${localePath}/cookies`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white/65 underline underline-offset-2 hover:text-white/90 transition-colors"
+                            >
+                              {chunks}
+                            </a>
+                          ),
+                        })}
+                      </span>
+                    </label>
                   </motion.div>
                 )}
 
+                {/* Step 4 — Success */}
                 {step === 4 && (
                   <motion.div
                     key="step-4"
@@ -354,108 +518,58 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                     >
                       <Check className="w-7 h-7 text-emerald-400" strokeWidth={2.5} />
                     </motion.div>
-                    <h2 className="heading-luxury text-xl text-foreground mb-2">{tCheckout("success.heading")}</h2>
-                    <p className="text-sm text-white/45 max-w-sm mb-5">{tCheckout("success.subheading")}</p>
+                    <h2 className="heading-luxury text-xl text-foreground mb-2">
+                      {t("success.heading")}
+                    </h2>
+                    <p className="text-sm text-white/45 max-w-sm mb-6">
+                      {t("success.subheading")}
+                    </p>
 
-                    <div className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3.5 mb-5 text-left">
-                      <div className="flex items-baseline justify-between gap-3 mb-2">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("payment.documentLabel")}
-                        </span>
-                        <span className="text-sm text-foreground/85 text-right truncate">{productTitle}</span>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3 mb-3">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("payment.languageLabel")}
-                        </span>
-                        <span className="text-sm text-foreground/85">
-                          {language && tCheckout(`language.${language}`)}
-                        </span>
-                      </div>
-                      <div className="h-px bg-white/[0.06] mb-3" />
+                    {/* Summary card */}
+                    <div className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-4 text-left space-y-3.5">
                       <div className="flex items-baseline justify-between gap-3">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {tCheckout("success.amountLabel")}
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.languageLabel")}
                         </span>
-                        <span className="text-base font-semibold text-foreground">
-                          {priceUZSFormatted} <span className="text-white/45 text-sm font-normal">so&apos;m</span>
+                        <span className="text-sm text-foreground/80">
+                          {language && t(`language.${language}`)}
+                        </span>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      <div>
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30 block mb-2.5">
+                          {t("success.documentsLabel")}
+                        </span>
+                        <div className="space-y-2">
+                          {selectedDocs.map(id => (
+                            <div key={id} className="flex items-center justify-between gap-2">
+                              <span className="text-sm text-foreground/75 leading-snug">
+                                {tProd(`${id}.title`)}
+                              </span>
+                              <span className="text-xs font-mono text-white/30 shrink-0">
+                                ${STORE_PRODUCTS.find(p => p.id === id)?.price}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="h-px bg-white/[0.05]" />
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
+                          {t("success.emailNoteLabel")}
+                        </span>
+                        <span className="text-sm text-foreground/70 truncate max-w-[200px]">
+                          {contactEmail}
                         </span>
                       </div>
                     </div>
-
-                    <button
-                      type="button"
-                      onClick={handleDownload}
-                      className="w-full bg-primary hover:bg-primary-light text-foreground/95 hover:text-white px-5 py-3 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      {tCheckout("success.download")}
-                    </button>
-
-                    <p className="mt-4 text-[11px] text-white/35 max-w-xs">
-                      {tCheckout("success.emailSent", { email })}
-                    </p>
-
-                    <button
-                      type="button"
-                      onClick={() => setStep(5)}
-                      className="mt-6 text-[10px] tracking-[0.14em] uppercase text-white/20 hover:text-white/45 transition-colors cursor-pointer"
-                    >
-                      {tCheckout("preview.previewError")}
-                    </button>
-                  </motion.div>
-                )}
-
-                {step === 5 && (
-                  <motion.div
-                    key="step-5"
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col items-center text-center pt-2"
-                  >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.05, duration: 0.42, ease: [0.34, 1.56, 0.64, 1] }}
-                      className="w-16 h-16 rounded-full bg-rose-500/[0.08] ring-1 ring-rose-500/30 flex items-center justify-center mb-5"
-                    >
-                      <X className="w-7 h-7 text-rose-400" strokeWidth={2.5} />
-                    </motion.div>
-                    <h2 className="heading-luxury text-xl text-foreground mb-2">{tCheckout("error.heading")}</h2>
-                    <p className="text-sm text-white/45 max-w-sm mb-6">{tCheckout("error.subheading")}</p>
-
-                    <button
-                      type="button"
-                      onClick={() => setStep(2)}
-                      className="w-full bg-primary hover:bg-primary-light text-foreground/95 hover:text-white px-5 py-3 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
-                    >
-                      {tCheckout("error.tryAgain")}
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={onClose}
-                      className="mt-3 text-[11px] tracking-wide text-white/40 hover:text-white/70 transition-colors cursor-pointer"
-                    >
-                      {tCheckout("error.support")}
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setStep(4)}
-                      className="mt-6 text-[10px] tracking-[0.14em] uppercase text-white/20 hover:text-white/45 transition-colors cursor-pointer"
-                    >
-                      {tCheckout("preview.previewSuccess")}
-                    </button>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            {/* Footer */}
-            {(step === 1 || step === 2) && (
+            {/* ── Footer ── */}
+            {step <= 3 && (
               <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
                 <div className="flex items-center justify-between gap-3">
                   {step > 1 ? (
@@ -465,56 +579,56 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
                       className="flex items-center gap-1.5 text-[12px] tracking-wide text-white/55 hover:text-foreground transition-colors duration-200 cursor-pointer"
                     >
                       <ArrowLeft className="w-3.5 h-3.5" />
-                      {tCheckout("actions.back")}
+                      {t("actions.back")}
                     </button>
                   ) : (
                     <span />
                   )}
 
-                  <button
-                    type="button"
-                    onClick={handleContinue}
-                    disabled={(step === 1 && !language) || (step === 2 && (!method || !isValidEmail))}
-                    className={cn(
-                      "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
-                      (step === 1 && !language) || (step === 2 && (!method || !isValidEmail))
-                        ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
-                        : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
-                    )}
-                  >
-                    {step === 1
-                      ? tCheckout("actions.continue")
-                      : tCheckout("actions.payNow", { amount: `${priceUZSFormatted} so'm` })}
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  {step < 3 ? (
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      disabled={step === 1 && !language}
+                      className={cn(
+                        "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
+                        step === 1 && !language
+                          ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
+                          : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                      )}
+                    >
+                      {t("actions.continue")}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={!formValid()}
+                      className={cn(
+                        "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
+                        formValid()
+                          ? "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
+                          : "bg-white/[0.05] text-white/25 cursor-not-allowed"
+                      )}
+                    >
+                      {t("actions.submit")}
+                      <Check className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
+              </div>
+            )}
 
-                {step === 2 && (
-                  <p className="mt-2.5 text-[10px] text-white/30 text-center leading-relaxed">
-                    {tCheckout.rich("actions.disclaimer", {
-                      terms: (chunks) => (
-                        <a
-                          href={`${localePath}/terms-of-sale`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline underline-offset-2 hover:text-white/55 transition-colors"
-                        >
-                          {chunks}
-                        </a>
-                      ),
-                      privacy: (chunks) => (
-                        <a
-                          href={`${localePath}/privacy`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline underline-offset-2 hover:text-white/55 transition-colors"
-                        >
-                          {chunks}
-                        </a>
-                      ),
-                    })}
-                  </p>
-                )}
+            {step === 4 && (
+              <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="w-full bg-white/[0.04] hover:bg-white/[0.07] text-white/60 hover:text-foreground px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200 cursor-pointer border border-white/[0.06]"
+                >
+                  {t("actions.close")}
+                </button>
               </div>
             )}
           </motion.div>
@@ -524,7 +638,40 @@ export default function CheckoutModal({ open, onClose, productId, productTitle, 
   );
 }
 
-/* ── Stepper ────────────────────────────────────────── */
+/* ── Field ─────────────────────────────────────────── */
+
+function Field({
+  label,
+  value,
+  onChange,
+  type = "text",
+  hint,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  hint?: string;
+}) {
+  return (
+    <div>
+      <label className="text-[10px] tracking-[0.16em] uppercase text-white/35 block mb-1.5">
+        {label}
+      </label>
+      <input
+        type={type}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className="w-full bg-white/[0.02] border border-white/[0.08] rounded-lg px-3.5 py-2.5 text-sm text-foreground placeholder:text-white/20 focus:outline-none focus:border-white/[0.22] transition-colors"
+      />
+      {hint && (
+        <p className="mt-1 text-[10px] text-white/25">{hint}</p>
+      )}
+    </div>
+  );
+}
+
+/* ── Stepper ───────────────────────────────────────── */
 
 function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
   return (
@@ -543,7 +690,11 @@ function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
                 !active && !done && "bg-white/[0.06] text-white/35"
               )}
             >
-              {done ? <Check className="w-2.5 h-2.5" strokeWidth={3} /> : n}
+              {done ? (
+                <Check className="w-2.5 h-2.5" strokeWidth={3} />
+              ) : (
+                n
+              )}
             </div>
             <span
               className={cn(
@@ -553,7 +704,9 @@ function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
             >
               {label}
             </span>
-            {i < labels.length - 1 && <div className="w-3 h-px bg-white/[0.08] mx-1" />}
+            {i < labels.length - 1 && (
+              <div className="w-3 h-px bg-white/[0.08] mx-1" />
+            )}
           </div>
         );
       })}
