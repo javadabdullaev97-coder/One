@@ -328,7 +328,12 @@
   "Checkout": {
     "stepLanguage": "Language",
     "stepNotice": "Payment",
+    "stepDocuments": "Docs",
     "stepForm": "Details",
+    "docs": {
+      "heading": "Select documents",
+      "subheading": "Choose one or more documents to include in your order."
+    },
     "language": {
       "heading": "Choose document language",
       "subheading": "Both languages are included in the same Word document — fully bilingual.",

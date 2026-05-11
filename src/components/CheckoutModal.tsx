@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { FlagBadge, type FlagCode } from "@/components/Flags";
 
 export type LanguagePair = "uz_en" | "uz_ru" | "en_ru";
-type Step = 1 | 2 | 3 | 4 | 5;
+type Step = 1 | 2 | 3 | 4 | 5 | 6;
 type OrderType = "individual" | "legal";
 
 const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [string, string] }[] = [
@@ -98,7 +98,7 @@ export default function CheckoutModal({
   const validEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
   const formValid = (): boolean => {
-    if (!selectedDocs.length || !termsChecked) return false;
+    if (!termsChecked) return false;
     if (orderType === "individual") {
       return !!(
         firstName.trim() &&
@@ -127,10 +127,14 @@ export default function CheckoutModal({
     (sum, id) => sum + (STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0), 0
   );
 
-  const handleSubmit = () => setStep(4);
-  const handleConfirm = () => setStep(5);
+  const handleSubmit = () => setStep(5);
+  const handleConfirm = () => setStep(6);
   const handleBack = () => setStep(prev => (prev - 1) as Step);
   const handleNext = () => setStep(prev => (prev + 1) as Step);
+
+  const continueDisabled =
+    (step === 1 && !language) ||
+    (step === 3 && selectedDocs.length === 0);
 
   return (
     <AnimatePresence>
@@ -155,12 +159,12 @@ export default function CheckoutModal({
           >
             {/* ── Header ── */}
             <div className="flex-none flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/[0.06]">
-              {step <= 3 ? (
+              {step <= 4 ? (
                 <Stepper
-                  step={step as 1 | 2 | 3}
-                  labels={[t("stepLanguage"), t("stepNotice"), t("stepForm")]}
+                  step={step as 1 | 2 | 3 | 4}
+                  labels={[t("stepLanguage"), t("stepNotice"), t("stepDocuments"), t("stepForm")]}
                 />
-              ) : step === 4 ? (
+              ) : step === 5 ? (
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <span className="text-[11px] tracking-[0.16em] uppercase text-white/55">
@@ -297,10 +301,76 @@ export default function CheckoutModal({
                   </motion.div>
                 )}
 
-                {/* Step 3 — Order form */}
+                {/* Step 3 — Document selection */}
                 {step === 3 && (
                   <motion.div
                     key="step-3"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <h2 className="heading-luxury text-xl text-foreground mb-1.5">
+                      {t("docs.heading")}
+                    </h2>
+                    <p className="text-sm text-white/45 mb-5">{t("docs.subheading")}</p>
+
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
+                        {t("form.documentsLabel")}
+                      </span>
+                      {selectedDocs.length > 0 && (
+                        <span className="text-[11px] text-primary tabular-nums">
+                          {selectedDocs.length} × · ${totalPrice}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="rounded-lg border border-white/[0.06] divide-y divide-white/[0.04]">
+                      {STORE_PRODUCTS.map(p => {
+                        const selected = selectedDocs.includes(p.id);
+                        return (
+                          <button
+                            key={p.id}
+                            type="button"
+                            onClick={() => toggleDoc(p.id)}
+                            className={cn(
+                              "w-full flex items-center gap-3 px-3.5 py-3 text-left transition-all duration-150 cursor-pointer",
+                              selected ? "bg-primary/[0.05]" : "hover:bg-white/[0.02]"
+                            )}
+                          >
+                            <div
+                              className={cn(
+                                "w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all duration-150",
+                                selected ? "border-primary bg-primary" : "border-white/20"
+                              )}
+                            >
+                              {selected && (
+                                <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+                              )}
+                            </div>
+                            <span
+                              className={cn(
+                                "flex-1 text-[12px] leading-snug transition-colors duration-150",
+                                selected ? "text-foreground/90" : "text-white/50"
+                              )}
+                            >
+                              {tProd(`${p.id}.title`)}
+                            </span>
+                            <span className="text-[12px] font-mono text-white/55 shrink-0">
+                              ${p.price}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Step 4 — Order form */}
+                {step === 4 && (
+                  <motion.div
+                    key="step-4"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -12 }}
@@ -400,61 +470,6 @@ export default function CheckoutModal({
                       </div>
                     )}
 
-                    {/* Document selection */}
-                    <div className="mb-5">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-[10px] tracking-[0.16em] uppercase text-white/35">
-                          {t("form.documentsLabel")}
-                        </span>
-                        {selectedDocs.length > 0 && (
-                          <span className="text-[11px] text-primary tabular-nums">
-                            {selectedDocs.length} ×
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-[11px] text-white/25 mb-2">
-                        {t("form.documentsHint")}
-                      </p>
-                      <div className="max-h-[190px] overflow-y-auto rounded-lg border border-white/[0.06] divide-y divide-white/[0.04]">
-                        {STORE_PRODUCTS.map(p => {
-                          const selected = selectedDocs.includes(p.id);
-                          return (
-                            <button
-                              key={p.id}
-                              type="button"
-                              onClick={() => toggleDoc(p.id)}
-                              className={cn(
-                                "w-full flex items-center gap-3 px-3.5 py-2.5 text-left transition-all duration-150 cursor-pointer",
-                                selected ? "bg-primary/[0.05]" : "hover:bg-white/[0.02]"
-                              )}
-                            >
-                              <div
-                                className={cn(
-                                  "w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all duration-150",
-                                  selected ? "border-primary bg-primary" : "border-white/20"
-                                )}
-                              >
-                                {selected && (
-                                  <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
-                                )}
-                              </div>
-                              <span
-                                className={cn(
-                                  "flex-1 text-[12px] leading-snug transition-colors duration-150",
-                                  selected ? "text-foreground/90" : "text-white/50"
-                                )}
-                              >
-                                {tProd(`${p.id}.title`)}
-                              </span>
-                              <span className="text-[12px] font-mono text-white/55 shrink-0">
-                                ${p.price}
-                              </span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
                     {/* Terms checkbox */}
                     <label className="flex items-start gap-3 cursor-pointer">
                       <button
@@ -509,10 +524,10 @@ export default function CheckoutModal({
                   </motion.div>
                 )}
 
-                {/* Step 4 — Confirm review */}
-                {step === 4 && (
+                {/* Step 5 — Confirm review */}
+                {step === 5 && (
                   <motion.div
-                    key="step-4"
+                    key="step-5"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -12 }}
@@ -574,10 +589,10 @@ export default function CheckoutModal({
                   </motion.div>
                 )}
 
-                {/* Step 5 — Success */}
-                {step === 5 && (
+                {/* Step 6 — Success */}
+                {step === 6 && (
                   <motion.div
-                    key="step-5"
+                    key="step-6"
                     initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -628,7 +643,6 @@ export default function CheckoutModal({
                         </div>
                       </div>
                       <div className="h-px bg-white/[0.05]" />
-                      {/* Total */}
                       <div className="flex items-baseline justify-between gap-3">
                         <span className="text-[10px] tracking-[0.16em] uppercase text-white/30">
                           {t("success.totalLabel")}
@@ -653,7 +667,7 @@ export default function CheckoutModal({
             </div>
 
             {/* ── Footer ── */}
-            {step <= 3 && (
+            {step <= 4 && (
               <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
                 <div className="flex items-center justify-between gap-3">
                   {step > 1 ? (
@@ -669,14 +683,14 @@ export default function CheckoutModal({
                     <span />
                   )}
 
-                  {step < 3 ? (
+                  {step < 4 ? (
                     <button
                       type="button"
                       onClick={handleNext}
-                      disabled={step === 1 && !language}
+                      disabled={continueDisabled}
                       className={cn(
                         "flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] tracking-[0.14em] uppercase font-medium transition-all duration-200",
-                        step === 1 && !language
+                        continueDisabled
                           ? "bg-white/[0.05] text-white/25 cursor-not-allowed"
                           : "bg-primary hover:bg-primary-light text-foreground/95 hover:text-white cursor-pointer"
                       )}
@@ -704,7 +718,7 @@ export default function CheckoutModal({
               </div>
             )}
 
-            {step === 4 && (
+            {step === 5 && (
               <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
                 <div className="flex items-center justify-between gap-3">
                   <button
@@ -727,7 +741,7 @@ export default function CheckoutModal({
               </div>
             )}
 
-            {step === 5 && (
+            {step === 6 && (
               <div className="flex-none px-6 pt-4 pb-4 border-t border-white/[0.06] bg-black/40">
                 <button
                   type="button"
@@ -780,15 +794,15 @@ function Field({
 
 /* ── Stepper ───────────────────────────────────────── */
 
-function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
+function Stepper({ step, labels }: { step: 1 | 2 | 3 | 4; labels: string[] }) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1.5">
       {labels.map((label, i) => {
-        const n = (i + 1) as 1 | 2 | 3;
+        const n = (i + 1) as 1 | 2 | 3 | 4;
         const active = n === step;
         const done = n < step;
         return (
-          <div key={label} className="flex items-center gap-2">
+          <div key={label} className="flex items-center gap-1.5">
             <div
               className={cn(
                 "w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-medium transition-all duration-300",
@@ -805,14 +819,14 @@ function Stepper({ step, labels }: { step: 1 | 2 | 3; labels: string[] }) {
             </div>
             <span
               className={cn(
-                "text-[11px] tracking-[0.12em] uppercase transition-colors duration-300",
+                "text-[10px] tracking-[0.1em] uppercase transition-colors duration-300 hidden sm:block",
                 active ? "text-foreground" : done ? "text-white/55" : "text-white/30"
               )}
             >
               {label}
             </span>
             {i < labels.length - 1 && (
-              <div className="w-3 h-px bg-white/[0.08] mx-1" />
+              <div className="w-3 h-px bg-white/[0.08] mx-0.5" />
             )}
           </div>
         );

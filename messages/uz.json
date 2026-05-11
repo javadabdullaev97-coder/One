@@ -328,7 +328,12 @@
   "Checkout": {
     "stepLanguage": "Til",
     "stepNotice": "Tolov",
-    "stepForm": "Malumot",
+    "stepDocuments": "Hujjat",
+    "stepForm": "Ma'lumot",
+    "docs": {
+      "heading": "Hujjatlarni tanlang",
+      "subheading": "Buyurtmangizga kiritish uchun bir yoki bir nechta hujjat tanlang."
+    },
     "language": {
       "heading": "Hujjat tilini tanlang",
       "subheading": "Ikkala til ham bitta Word hujjatiga kiritilgan — to'liq ikki tilli hujjat.",
