@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
@@ -19,7 +19,7 @@ import DisciplinesIntegration from "@/components/DisciplinesIntegration";
 import InsightsSection from "@/components/InsightsSection";
 import FaqSection from "@/components/FaqSection";
 
-/* ── Region data ───────────────────────── */
+/* ── Region data ───────────────────── */
 
 interface RegionData {
   name: string;
@@ -147,7 +147,7 @@ const REGION_IMAGE: Record<string, string> = {
   "UZ-TO": "/Regions/Tashkent region.webp",
 };
 
-/* ── Region info panel ──────────────────────── */
+/* ── Region info panel ──────────────── */
 
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const region = activeId ? REGION_DATA[activeId] : null;
@@ -176,7 +176,6 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
                   alt={regionName}
                   fill
                   unoptimized
-                  loading="lazy"
                   className="object-cover"
                   sizes="480px"
                 />
@@ -244,12 +243,31 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   );
 }
 
-/* ── Page ───────────────────────────────── */
+/* ── Page ─────────────────────── */
 
 export default function Home() {
   const [activeRegionId, setActiveRegionId] = useState<string | null>("UZ-TK");
   const handleActiveChange = useCallback((id: string) => {
     setActiveRegionId(id);
+  }, []);
+
+  const geoSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = geoSectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        Object.values(REGION_IMAGE).forEach((src) => {
+          const img = new window.Image();
+          img.src = src;
+        });
+        observer.disconnect();
+      },
+      { rootMargin: "400px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const t = useTranslations("Home");
@@ -323,7 +341,7 @@ export default function Home() {
       <div className="w-full max-w-7xl mx-auto h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
       {/* ── Geography ── */}
-      <section className="py-14 md:py-20 bg-black relative overflow-hidden">
+      <section ref={geoSectionRef} className="py-14 md:py-20 bg-black relative overflow-hidden">
         <div className="ambient-glow ambient-glow-oxblood w-[700px] h-[700px] top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 opacity-30" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <AnimatedSection className="mb-10 md:mb-12">
@@ -401,9 +419,9 @@ export default function Home() {
               <TextReveal
                 text={t("cta.heading")}
                 as="h2"
-                className="heading-luxury text-2xl md:text-3xl lg:text-4xl text-foreground mb-6"
+                className="heading-luxury text-2xl md:text-3xl lg:text-5xl text-foreground mb-6 leading-tight"
               />
-              <p className="text-lg text-white/60 max-w-xl mx-auto mb-12 leading-relaxed">
+              <p className="text-white/55 max-w-xl mx-auto mb-12 leading-relaxed">
                 {t("cta.description")}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -420,6 +438,8 @@ export default function Home() {
           </Parallax>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
       <FaqSection page="home" />
     </>
   );
