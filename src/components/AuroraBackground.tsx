@@ -23,7 +23,7 @@ export default function AuroraBackground({
       {/* Aurora Gradient Background */}
       <div className="absolute inset-0 overflow-hidden opacity-50" aria-hidden="true">
         <motion.div
-          className="absolute inset-[-100%]"
+          className="absolute inset-y-[-100%] w-[300%] left-0"
           style={{
             background: `
               repeating-linear-gradient(100deg,
@@ -33,20 +33,14 @@ export default function AuroraBackground({
                 #B22222 25%,
                 #A0153E 30%)
             `,
-            backgroundSize: "300% 100%",
             filter: "blur(80px)",
+            willChange: "transform",
           }}
-          animate={{
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          animate={{ x: ["0%", "-66.67%", "0%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute inset-[-10px]"
+          className="absolute inset-y-[-10px] w-[200%] left-0"
           style={{
             background: `
               repeating-linear-gradient(100deg,
@@ -54,30 +48,18 @@ export default function AuroraBackground({
                 rgba(178, 34, 34, 0.1) 7%,
                 transparent 10%,
                 transparent 12%,
-                rgba(178, 34, 34, 0.1) 16%),
-              repeating-linear-gradient(100deg,
-                #A01C1C 10%,
-                #7A0A0A 15%,
-                #C41A2A 20%,
-                #A01C1C 25%,
-                #8A1230 30%)
+                rgba(178, 34, 34, 0.1) 16%,
+                #A01C1C 20%,
+                #7A0A0A 25%,
+                #C41A2A 30%,
+                #A01C1C 35%,
+                #8A1230 40%)
             `,
-            backgroundSize: "200%, 100%",
-            backgroundPosition: "50% 50%, 50% 50%",
             mixBlendMode: "difference",
+            willChange: "transform",
           }}
-          animate={{
-            backgroundPosition: [
-              "50% 50%, 50% 50%",
-              "100% 50%, 150% 50%",
-              "50% 50%, 50% 50%",
-            ],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          animate={{ x: ["0%", "-50%", "0%"] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
         />
       </div>
 

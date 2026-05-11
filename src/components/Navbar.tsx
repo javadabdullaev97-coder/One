@@ -25,9 +25,16 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
+    let rafId: number;
+    const handler = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setScrolled(window.scrollY > 40));
+    };
     window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    return () => {
+      window.removeEventListener("scroll", handler);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -37,7 +44,7 @@ export default function Navbar() {
       transition={{ duration: 1, delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#0D0D0D]/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          ? "bg-[#0A0A0A]/95 border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -119,7 +126,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#0D0D0D]/90 backdrop-blur-xl border-b border-white/[0.06] px-6 pb-8 pt-4"
+            className="md:hidden bg-[#0A0A0A]/97 border-b border-white/[0.06] px-6 pb-8 pt-4"
           >
             {navLinks.map((link, i) => (
               <motion.div
