@@ -91,7 +91,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
               <path
                 key={r.id}
                 d={r.d}
-                onPointerEnter={() => setHovered(r.id)}
+                onPointerEnter={() => { setHovered(r.id); onActiveChange?.(r.id); }}
                 style={{
                   fill: active ? "var(--map-region-active-fill)" : "rgba(255,255,255,0.06)",
                   stroke: active ? "var(--map-region-active-stroke)" : "rgba(255,255,255,0.08)",
