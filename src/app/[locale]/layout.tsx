@@ -12,7 +12,6 @@ import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
 import { organizationJsonLd, websiteJsonLd, OG_IMAGE } from "@/lib/seo";
 import CookieBanner from "@/components/CookieBanner";
-import LenisProvider from "@/components/LenisProvider";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -27,7 +26,7 @@ const localeMetadata: Record<Locale, { title: string; description: string; ogLoc
   ru: {
     title: "Advizen Consulting | Ведущий бизнес-консультант в Узбекистане",
     description:
-      "Advizen Consulting — надёжный партнёр в области налогового, юридического, финансового консалтинга, бухгалтерии и HR в Узбекистане. 8+ лет интегрированной экспертизы в 15+ отраслях Центральной Азии.",
+      "Advizen Consulting — надёжный партнёр в области налогового, юридического, финансового консалтинга, бухгалтерии и HR в Узбекистане. 8+ лет интегрированной экспертизы в 15+ отраслях Центраньной Азии.",
     ogLocale: "ru_RU",
   },
   uz: {
@@ -173,17 +172,15 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col relative">
         <GtmNoScript />
         <NextIntlClientProvider>
-          <LenisProvider>
-            <LoadingScreen />
-            <ScrollProgress />
-            <Navbar />
-            <main className="flex-1 relative z-10">{children}</main>
-            <div className="relative z-10">
-              <Footer />
-            </div>
-            <ScrollToTop />
-            <CookieBanner />
-          </LenisProvider>
+          <LoadingScreen />
+          <ScrollProgress />
+          <Navbar />
+          <main className="flex-1 relative z-10">{children}</main>
+          <div className="relative z-10">
+            <Footer />
+          </div>
+          <ScrollToTop />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>
