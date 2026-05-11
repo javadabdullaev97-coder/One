@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
@@ -102,6 +102,17 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   const [currency, setCurrency] = useState<Currency>("USD");
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const locale = useLocale() as Locale;
+
+  // On mount: read currency cookie set by middleware (CF-IPCountry detection)
+  useEffect(() => {
+    const match = document.cookie.match(/(?:^|;\s*)currency=(USD|UZS)/);
+    if (match) setCurrency(match[1] as Currency);
+  }, []);
+
+  const handleCurrencyChange = (curr: Currency) => {
+    setCurrency(curr);
+    document.cookie = `currency=${curr}; path=/; max-age=31536000; SameSite=Lax`;
+  };
   const tProducts = useTranslations("StoreProducts");
   const t = useTranslations("StorePage.card");
 
@@ -311,7 +322,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                           <button
                             key={curr}
                             type="button"
-                            onClick={() => setCurrency(curr)}
+                            onClick={() => handleCurrencyChange(curr)}
                             className="relative px-4 py-1.5 rounded-full text-[10px] uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer"
                           >
                             {effectiveCurrency === curr && (

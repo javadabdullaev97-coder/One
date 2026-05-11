@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FileText, Users, Calculator, Scale, BarChart2, ShieldCheck, ArrowRight } from "lucide-react";
@@ -238,6 +238,17 @@ export default function StoreListingClient() {
   const [currency, setCurrency] = useState<Currency>("USD");
   const [checkout, setCheckout] = useState<{ product: Product; title: string } | null>(null);
   const locale = useLocale();
+
+  // On mount: read currency cookie set by middleware (CF-IPCountry detection)
+  useEffect(() => {
+    const match = document.cookie.match(/(?:^|;\s*)currency=(USD|UZS)/);
+    if (match) setCurrency(match[1] as Currency);
+  }, []);
+
+  const handleCurrencyChange = (curr: Currency) => {
+    setCurrency(curr);
+    document.cookie = `currency=${curr}; path=/; max-age=31536000; SameSite=Lax`;
+  };
   const tHero = useTranslations("StorePage.hero");
   const tFilters = useTranslations("StorePage.filters");
   const tCta = useTranslations("StorePage.cta");
@@ -315,7 +326,7 @@ export default function StoreListingClient() {
       {/* ── Filters ── */}
       <StoreFilters
         activeCategory={activeCategory} onCategoryChange={setActiveCategory}
-        currency={effectiveCurrency} onCurrencyChange={setCurrency}
+        currency={effectiveCurrency} onCurrencyChange={handleCurrencyChange}
       />
 
       {/* ── Grid ── */}
