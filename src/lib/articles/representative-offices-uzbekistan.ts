@@ -112,6 +112,24 @@ export default {
         text: "Opening a representative office in Uzbekistan involves navigating document legalisation requirements, drafting a compliant Regulation on the Representative Office, managing the accreditation timeline, and meeting post-accreditation obligations. Advizen's team assists foreign companies at every stage — from document preparation and translation coordination to tax registration and ongoing MIVT compliance.",
       },
     ],
+      faq: [
+      {
+        question: "What is the legal status of a representative office in Uzbekistan?",
+        answer: "A representative office is not a legal entity and cannot conduct commercial activity — the sole exception is representative offices of airlines. It is not a taxpayer in its own right; tax obligations are governed by the Tax Code and applicable international treaties. The office exists to represent and protect the interests of its founding organisation on the territory of Uzbekistan, and comes into existence on the date MIVT issues its accreditation certificate under Cabinet of Ministers Resolution No. 410.",
+      },
+      {
+        question: "How much does it cost to accredit a representative office in Uzbekistan?",
+        answer: "The state duty is 48 times the base calculation value (approximately USD 1,500 at current rates), paid to MIVT's account before the certificate is issued. MIVT reviews the application and issues a decision within 10 working days; the accreditation certificate is issued within 5 days of payment. Accreditation may be granted for a period of 1 to 3 years; the initial certificate is issued for one year.",
+      },
+      {
+        question: "What documents are required to accredit a representative office in Uzbekistan?",
+        answer: "Required documents include: a written application on company letterhead; constitutional documents (charter and founders' agreement) legalised or apostilled with notarised translation; proof of registration in the country of origin; power of attorney for the Head of Representative Office; Regulation on the Representative Office (approved and sealed by the founding organisation); and a guarantee letter from the office premises owner. Documents from CIS member states require only notarised copies — no legalisation needed. All documents must have been issued within 6 months prior to submission.",
+      },
+      {
+        question: "What are the ongoing obligations of a representative office in Uzbekistan?",
+        answer: "Within 10 days of receiving the accreditation certificate, the office must: notify MIVT in writing of its postal address; register with the tax authorities at the office's location; and submit to MIVT a certificate confirming tax registration. The Head must submit an annual activity report to MIVT in the prescribed form. The office must also notify MIVT promptly of any changes to staff composition, and renew accreditation every 3 years for long-term operations.",
+      },
+    ],
   },
   ru: {
     subtitle: "Пошаговое руководство по аккредитации представительства иностранной коммерческой организации в Узбекистане — документы, сроки, расходы и текущие обязательства.",
@@ -226,6 +244,24 @@ export default {
         text: "Открытие представительства в Узбекистане сопряжено с прохождением требований по легализации документов, разработкой соответствующего Положения о представительстве, соблюдением сроков аккредитации и выполнением обязательств после аккредитации. Команда Advizen помогает иностранным компаниям на каждом этапе — от подготовки документов и координации переводов до постановки на налоговый учёт и текущего соблюдения требований МИВТ.",
       },
     ],
+      faq: [
+      {
+        question: "Каков правовой статус представительства в Узбекистане?",
+        answer: "Представительство не является юридическим лицом и не вправе вести коммерческую деятельность — единственное исключение составляют представительства авиакомпаний. Оно не является самостоятельным налогоплательщиком; налоговые обязательства регулируются Налоговым кодексом и применимыми международными договорами. Представительство существует для представления и защиты интересов учреждающей организации на территории Узбекистана и возникает с даты выдачи МИВТ свидетельства об аккредитации согласно Постановлению КМ № 410.",
+      },
+      {
+        question: "Сколько стоит аккредитация представительства в Узбекистане?",
+        answer: "Государственная пошлина составляет 48 базовых расчётных величин (приблизительно 1 500 долл. США по текущему курсу), оплачивается на счёт МИВТ до выдачи свидетельства. МИВТ рассматривает заявку и выносит решение в течение 10 рабочих дней; свидетельство выдаётся в течение 5 дней с момента оплаты. Аккредитация предоставляется на срок от 1 до 3 лет; первоначальное свидетельство выдаётся на один год.",
+      },
+      {
+        question: "Какие документы необходимы для аккредитации представительства в Узбекистане?",
+        answer: "Требуются: письменное заявление на фирменном бланке; учредительные документы (устав и учредительный договор), легализованные или апостилированные с нотариально заверенным переводом; подтверждение регистрации в стране учреждения; доверенность на имя Главы представительства; Положение о представительстве (утверждённое и заверенное печатью); гарантийное письмо собственника офисных помещений. Документы из стран СНГ требуют только нотариально заверенных копий — легализация не нужна. Все документы должны быть выданы в течение 6 месяцев до их подачи.",
+      },
+      {
+        question: "Каковы текущие обязательства представительства в Узбекистане?",
+        answer: "В течение 10 дней с момента получения свидетельства об аккредитации: уведомить МИВТ о почтовом адресе; встать на налоговый учёт по месту нахождения офиса; представить в МИВТ справку о постановке на налоговый учёт. Глава представительства обязан ежегодно представлять в МИВТ отчёт о деятельности по установленной форме. Необходимо также своевременно уведомлять МИВТ об изменениях в составе персонала и обновлять аккредитацию каждые 3 года при долгосрочной работе.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekistonda xorijiy tijorat tashkilotining vakolatxonasini akkreditatsiya qilish bo'yicha bosqichma-bosqich qo'llanma — hujjatlar, muddatlar, xarajatlar va doimiy majburiyatlar.",
@@ -338,6 +374,24 @@ export default {
       {
         type: "p" as const,
         text: "O'zbekistonda vakolatxona ochish hujjatlarni qonuniylashtirish talablarini hal etish, mos Vakolatxona Nizomini ishlab chiqish, akkreditatsiya muddatlarini boshqarish va akkreditatsiyadan keyingi majburiyatlarni bajarishni o'z ichiga oladi. Advizen jamoasi xorijiy kompaniyalarga har bir bosqichda yordam beradi — hujjatlarni tayyorlash va tarjima koordinatsiyasidan tortib, soliq ro'yxatidan o'tish va doimiy ITSV muvofiqligigacha.",
+      },
+    ],
+      faq: [
+      {
+        question: "O'zbekistondagi vakolatxonaning huquqiy maqomi qanday?",
+        answer: "Vakolatxona yuridik shaxs emas va tijorat faoliyati yuritishi mumkin emas — yagona istisno aviakompaniyalar vakolatxonalaridir. U mustaqil soliq to'lovchi emas; soliq majburiyatlari Soliq kodeksi va amaldagi xalqaro shartnomalar bilan tartibga solinadi. Vakolatxona tashkil etuvchi tashkilotning O'zbekiston hududidagi manfaatlarini ifodalash va himoya qilish uchun mavjud bo'lib, VM 410-sonli Qarori asosida ITSV akkreditatsiya guvohnomasini berganidan boshlab mavjud bo'ladi.",
+      },
+      {
+        question: "O'zbekistonda vakolatxonani akkreditatsiya qilish qancha turadi?",
+        answer: "Davlat boji asosiy hisob-kitob qiymatining 48 baravarini tashkil etadi (joriy kursda taxminan 1 500 AQSh dollari), guvohnoma berilishidan oldin ITSV hisobiga to'lanadi. ITSV arizani ko'rib chiqib 10 ish kuni ichida qaror chiqaradi; guvohnoma to'lovdan 5 kun ichida beriladi. Akkreditatsiya 1 yildan 3 yilgacha muddatga berilishi mumkin; birlamchi guvohnoma bir yilga beriladi.",
+      },
+      {
+        question: "O'zbekistonda vakolatxonani akkreditatsiya qilish uchun qanday hujjatlar talab etiladi?",
+        answer: "Talab qilinadigan hujjatlar: firma blankasidagi yozma ariza; ta'sis hujjatlari (ustav va ta'sis shartnomasi) notarial tasdiqlangan tarjima bilan apostillangan yoki qonuniylashtirilgan; tashkil etilgan mamlakatdagi ro'yxatdan o'tganlik dalili; Vakolatxona Boshlig'i nomiga ishonchnoma; Vakolatxona to'g'risidagi Nizom (tasdiqlangan va muhrlangan); ofis binosi egasidan kafolat xati. MDH mamlakatlari hujjatlari uchun faqat notarial tasdiqlangan nusxalar talab etiladi — qonuniylashtirish shart emas. Barcha hujjatlar topshirishdan oldingi 6 oy ichida berilgan bo'lishi shart.",
+      },
+      {
+        question: "O'zbekistondagi vakolatxonaning doimiy majburiyatlari qanday?",
+        answer: "Akkreditatsiya guvohnomasini olganidan 10 kun ichida: ITSVni pochta manzili haqida yozma xabardor qilish; ofis joylashgan joydagi soliq organlarida ro'yxatdan o'tish; soliq ro'yxatidan o'tganligini tasdiqlovchi ma'lumotnomani ITSVga taqdim etish. Vakolatxona Boshlig'i har yili ITSVga belgilangan shaklda faoliyat hisobotini taqdim etishi shart. Xodimlar tarkibidagi o'zgarishlar haqida ITSVni o'z vaqtida xabardor qilish va uzoq muddatli faoliyat uchun har 3 yilda akkreditatsiyani yangilash ham zarur.",
       },
     ],
   },
