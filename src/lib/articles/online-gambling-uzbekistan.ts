@@ -56,6 +56,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Adherence to these strict licensing requirements and ongoing compliance with NAPP's oversight will be critical for success. Companies must factor in local entity establishment, server infrastructure within Uzbekistan, and adequate capitalisation when planning market entry in this sector.",
       },
     ],
+    faq: [
+      {
+        question: "Is online gambling legal in Uzbekistan?",
+        answer: "Yes. Online gambling, lotteries, and bookmaking activities were legalised in Uzbekistan effective January 1, 2025, under Resolution of the Cabinet of Ministers No. 814. The sector is regulated and licensed by the National Agency for Perspective Projects (NAPP). Prior to this date, these activities were prohibited.",
+      },
+      {
+        question: "Who is the licensing authority for online gambling in Uzbekistan?",
+        answer: "The National Agency for Perspective Projects (NAPP) is the primary regulatory and licensing authority for online gambling, lotteries, and bookmaking in Uzbekistan. Licences are issued for a term of five years to legal entities resident in Uzbekistan.",
+      },
+      {
+        question: "When does Uzbek gambling regulation apply to my platform?",
+        answer: "Uzbekistan is considered the place of gambling — triggering its regulatory framework — when any of the following criteria are met: the gambler is an Uzbek citizen or is physically located in Uzbekistan, the gambler's IP address is Uzbek, Uzbek bank cards are used for transactions, or the game or betting service is directed at an Uzbek audience. Platforms meeting any of these criteria must comply with the Uzbek framework.",
+      },
+      {
+        question: "What are the key requirements to obtain a gambling licence in Uzbekistan?",
+        answer: "To obtain a gambling licence from NAPP, the applicant must be a legal entity registered and resident in Uzbekistan (foreign companies cannot apply directly). The electronic platform must be hosted on servers physically located within Uzbekistan. Operators must also maintain specified minimum amounts in both their authorised fund and a reserve fund, demonstrating adequate financial stability.",
+      },
+    ],
   },
   ru: {
     subtitle: "Изучите ключевую нормативную базу и лицензионные требования для работы онлайн-гемблинга, лотерей и букмекерских платформ в Узбекистане с 1 января 2025 года.",
@@ -112,6 +130,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Соблюдение строгих лицензионных требований и постоянный комплаенс под контролем НАПП — ключ к успеху. При планировании выхода на рынок компаниям необходимо учитывать создание местного юридического лица, серверную инфраструктуру в Узбекистане и достаточную капитализацию.",
       },
     ],
+    faq: [
+      {
+        question: "Законен ли онлайн-гемблинг в Узбекистане?",
+        answer: "Да. Онлайн-гемблинг, лотереи и букмекерская деятельность были легализованы в Узбекистане с 1 января 2025 года на основании Постановления Кабинета Министров № 814. Сектор регулируется и лицензируется Национальным агентством перспективных проектов (НАПП). До этой даты указанные виды деятельности были запрещены.",
+      },
+      {
+        question: "Кто является лицензирующим органом для онлайн-гемблинга в Узбекистане?",
+        answer: "Национальное агентство перспективных проектов (НАПП) является основным регулирующим и лицензирующим органом в сфере онлайн-гемблинга, лотерей и букмекерства в Узбекистане. Лицензии выдаются сроком на пять лет юридическим лицам — резидентам Узбекистана.",
+      },
+      {
+        question: "Когда узбекское регулирование гемблинга распространяется на мою платформу?",
+        answer: "Узбекистан считается местом гемблинга — что влечёт применение его регуляторной базы — при выполнении любого из следующих критериев: игрок является гражданином Узбекистана или физически находится на его территории, IP-адрес игрока узбекский, для транзакций используются узбекские банковские карты, либо игра или букмекерский сервис ориентированы на узбекскую аудиторию. Платформы, отвечающие любому из этих критериев, обязаны соблюдать требования узбекского законодательства.",
+      },
+      {
+        question: "Каковы ключевые требования для получения лицензии на гемблинг в Узбекистане?",
+        answer: "Для получения лицензии на гемблинг от НАПП заявитель должен быть юридическим лицом, зарегистрированным и имеющим резидентский статус в Узбекистане (иностранные компании не могут подавать заявки напрямую). Электронная платформа должна размещаться на серверах, физически находящихся в Узбекистане. Операторы также обязаны поддерживать установленные минимальные суммы в уставном фонде и резервном фонде, подтверждая достаточную финансовую устойчивость.",
+      },
+    ],
   },
   uz: {
     subtitle: "2025 yil 1 yanvardan amalda boʻlgan Oʻzbekistondagi onlayn qimor oʻyinlari, lotereya va bukmekerlik platformalarini boshqarish uchun zarur tartibga solish bazasi va litsenziya talablarini oʻrganing.",
@@ -166,6 +202,24 @@ const article: Record<string, LocalizedArticle> = {
       {
         type: "p",
         text: "Bu qatʼiy litsenziya talablariga rioya qilish va ILMA nazorati ostida doimiy komplaens muvaffaqiyat uchun hal qiluvchi ahamiyatga ega. Bu sektorga kirishni rejalashtirayotgan kompaniyalar mahalliy yuridik shaxs tashkil etish, Oʻzbekistondagi server infratuzilmasi va yetarli kapitalni hisobga olishi kerak.",
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda onlayn qimor o'yinlari qonuniymi?",
+        answer: "Ha. Onlayn qimor o'yinlari, lotereya va bukmekerlik faoliyati O'zbekistonda 2025 yil 1 yanvardan Vazirlar Mahkamasining 814-son qarori asosida qonuniylashtirildi. Sektor Istiqbolli loyihalar milliy agentligi (ILMA) tomonidan tartibga solinadi va litsenziyalanadi. Ushbu sanagacha ko'rsatilgan faoliyat turlari taqiqlangan edi.",
+      },
+      {
+        question: "O'zbekistonda onlayn qimor uchun litsenziyalovchi organ kim?",
+        answer: "Istiqbolli loyihalar milliy agentligi (ILMA) O'zbekistonda onlayn qimor o'yinlari, lotereya va bukmekerlik sohasidagi asosiy tartibga soluvchi va litsenziyalovchi organdir. Litsenziyalar O'zbekistonda rezident yuridik shaxslarga besh yil muddatga beriladi.",
+      },
+      {
+        question: "O'zbek qimor tartibga solishi platformamga qachon qo'llaniladi?",
+        answer: "Quyidagi mezonlardan biri bajarilganda O'zbekiston qimor joyi hisoblanadi va uning tartibga solish bazasi qo'llaniladi: o'yinchi O'zbekiston fuqarosi bo'lsa yoki jismonan O'zbekiston hududida bo'lsa, o'yinchining IP-manzili o'zbek bo'lsa, tranzaksiyalar uchun o'zbek bank kartalaridan foydalanilsa yoki o'yin yoki tikish xizmati o'zbek auditoriyasiga mo'ljallangan bo'lsa. Ushbu mezonlardan biriga javob beradigan platformalar o'zbek qonunchiligiga rioya qilishi shart.",
+      },
+      {
+        question: "O'zbekistonda qimor litsenziyasi olish uchun asosiy talablar qanday?",
+        answer: "ILMAdan qimor litsenziyasi olish uchun ariza beruvchi O'zbekistonda ro'yxatdan o'tgan va rezident yuridik shaxs bo'lishi kerak (xorijiy kompaniyalar bevosita ariza bera olmaydi). Elektron platforma jismonan O'zbekistonda joylashgan serverlarda bo'lishi shart. Operatorlar yetarli moliyaviy barqarorlikni tasdiqlash uchun ustav fondida va zaxira fondida belgilangan minimal miqdorlarni saqlashi ham talab etiladi.",
       },
     ],
   },
