@@ -460,6 +460,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
         productId={slug}
         productTitle={title}
         priceUSD={product.price}
+        currency={effectiveCurrency}
       />
     </>
   );

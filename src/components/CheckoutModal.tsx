@@ -11,6 +11,16 @@ import { FlagBadge, type FlagCode } from "@/components/Flags";
 export type LanguagePair = "uz_en" | "uz_ru" | "en_ru";
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 type OrderType = "individual" | "legal";
+type Currency = "USD" | "UZS";
+
+const UZS_RATE = 12750;
+
+function fmtPrice(price: number, currency: Currency, locale: string): string {
+  if (currency === "USD") return `$${price}`;
+  const rounded = Math.round((price * UZS_RATE) / 50000) * 50000;
+  const suffix = locale === "ru" ? " сум" : " so'm";
+  return rounded.toLocaleString("en-US") + suffix;
+}
 
 const LANGUAGE_PAIRS: { id: LanguagePair; flags: [FlagCode, FlagCode]; codes: [string, string] }[] = [
   { id: "uz_en", flags: ["uz", "en"], codes: ["UZ", "EN"] },
@@ -39,12 +49,14 @@ interface CheckoutModalProps {
   productId: string | null;
   productTitle: string;
   priceUSD: number;
+  currency?: Currency;
 }
 
 export default function CheckoutModal({
   open,
   onClose,
   productId,
+  currency = "USD",
 }: CheckoutModalProps) {
   const t = useTranslations("Checkout");
   const tProd = useTranslations("StoreProducts.items");
@@ -344,7 +356,7 @@ export default function CheckoutModal({
                       </span>
                       {selectedDocs.length > 0 && (
                         <span className="text-[11px] text-primary tabular-nums">
-                          {selectedDocs.length} × · ${totalPrice}
+                          {selectedDocs.length} × · {fmtPrice(totalPrice, currency, locale)}
                         </span>
                       )}
                     </div>
@@ -381,7 +393,7 @@ export default function CheckoutModal({
                               {tProd(`${p.id}.title`)}
                             </span>
                             <span className="text-[12px] font-mono text-white/55 shrink-0">
-                              ${p.price}
+                              {fmtPrice(p.price, currency, locale)}
                             </span>
                           </button>
                         );
@@ -584,7 +596,7 @@ export default function CheckoutModal({
                                 {tProd(`${id}.title`)}
                               </span>
                               <span className="text-sm font-mono text-white/60 shrink-0">
-                                ${STORE_PRODUCTS.find(p => p.id === id)?.price}
+                                {fmtPrice(STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0, currency, locale)}
                               </span>
                             </div>
                           ))}
@@ -596,7 +608,7 @@ export default function CheckoutModal({
                           {t("success.totalLabel")}
                         </span>
                         <span className="text-base font-semibold text-foreground/90 font-mono">
-                          ${totalPrice}
+                          {fmtPrice(totalPrice, currency, locale)}
                         </span>
                       </div>
                       <div className="h-px bg-white/[0.05]" />
@@ -659,7 +671,7 @@ export default function CheckoutModal({
                                 {tProd(`${id}.title`)}
                               </span>
                               <span className="text-sm font-mono text-white/60 shrink-0">
-                                ${STORE_PRODUCTS.find(p => p.id === id)?.price}
+                                {fmtPrice(STORE_PRODUCTS.find(p => p.id === id)?.price ?? 0, currency, locale)}
                               </span>
                             </div>
                           ))}
@@ -671,7 +683,7 @@ export default function CheckoutModal({
                           {t("success.totalLabel")}
                         </span>
                         <span className="text-base font-semibold text-foreground/90 font-mono">
-                          ${totalPrice}
+                          {fmtPrice(totalPrice, currency, locale)}
                         </span>
                       </div>
                       <div className="h-px bg-white/[0.05]" />

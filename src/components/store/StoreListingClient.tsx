@@ -401,6 +401,7 @@ export default function StoreListingClient() {
         productId={checkout?.product.id ?? null}
         productTitle={checkout?.title ?? ""}
         priceUSD={checkout?.product.price ?? 0}
+        currency={effectiveCurrency}
       />
     </>
   );
