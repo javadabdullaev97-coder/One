@@ -71,6 +71,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "What tax incentives does Uzbekistan's Creative Industry Park offer?",
+        answer: "Residents of the Creative Industry Park benefit from a 50% reduction in Personal Income Tax (PIT) rates for employees, a 50% reduction in Social Tax, access to a flexible turnover tax regime regardless of total income, and eligibility for interest-free loans and grants. These incentives are effective from May 1, 2025 to January 1, 2031, subject to corresponding amendments being incorporated into the Tax Code of Uzbekistan.",
+      },
+      {
+        question: "Who qualifies as a resident of Uzbekistan's Creative Industry Park?",
+        answer: "Residency is available to commercial organisations and individuals engaged in creative industries as defined by Law No. ZRU-970 of October 3, 2024. Eligible activities include literary creativity (authorship, content writing), applied arts and craftsmanship, architecture and design, urban planning, fine arts (painting, sculpture, graphic arts), and other activities involving the creation, production, distribution, and promotion of creative products.",
+      },
+      {
+        question: "When was Uzbekistan's Creative Industry Park established and when do the incentives apply?",
+        answer: "The Creative Industry Park was established under Presidential Decree No. UP-61 dated March 26, 2025. The tax and financial incentives for residents became active from May 1, 2025 and are legislated to remain in effect until January 1, 2031. However, practical application of the tax benefits requires corresponding amendments to the Tax Code of the Republic of Uzbekistan, which were still pending as of the decree date.",
+      },
+      {
+        question: "Are the tax benefits of Uzbekistan's Creative Industry Park currently in effect?",
+        answer: "The incentives are legislated and have been enacted by Presidential Decree. However, as noted in the decree itself, the corresponding amendments to the Tax Code of the Republic of Uzbekistan are still required for their full practical application. Businesses considering residency should monitor updates to the Tax Code to confirm when the benefits become operationally applicable.",
+      },
+    ],
   },
   ru: {
     subtitle: "Узнайте о специализированной правовой базе, существенных налоговых льготах и уникальных механизмах поддержки, доступных для бизнеса и профессионалов в стремительно развивающемся Парке творческих индустрий Узбекистана.",
@@ -144,6 +162,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "Какие налоговые льготы предоставляет Парк творческих индустрий Узбекистана?",
+        answer: "Резиденты Парка творческих индустрий пользуются снижением ставки НДФЛ на 50% для сотрудников, снижением ставки социального налога на 50%, доступом к гибкому режиму налога с оборота независимо от общего дохода, а также возможностью получения беспроцентных займов и грантов. Данные льготы действуют с 1 мая 2025 года по 1 января 2031 года при условии внесения соответствующих поправок в Налоговый кодекс Узбекистана.",
+      },
+      {
+        question: "Кто может стать резидентом Парка творческих индустрий Узбекистана?",
+        answer: "Резидентство доступно коммерческим организациям и физическим лицам, занятым в творческих индустриях в соответствии с определением Закона № ЗРУ-970 от 3 октября 2024 года. Подходящие виды деятельности включают литературное творчество (авторство, создание контента), декоративно-прикладное искусство и ремёсла, архитектуру и дизайн, градостроительство, изобразительное искусство (живопись, скульптура, графика), а также иные виды деятельности, связанные с созданием, производством, распространением и продвижением творческих продуктов.",
+      },
+      {
+        question: "Когда был создан Парк творческих индустрий Узбекистана и с какого момента применяются льготы?",
+        answer: "Парк творческих индустрий был создан Указом Президента № УП-61 от 26 марта 2025 года. Налоговые и финансовые льготы для резидентов вступили в силу с 1 мая 2025 года и законодательно закреплены до 1 января 2031 года. Однако практическое применение налоговых льгот требует внесения соответствующих поправок в Налоговый кодекс Республики Узбекистан, которые на дату издания указа ещё не были приняты.",
+      },
+      {
+        question: "Действуют ли в настоящее время налоговые льготы Парка творческих индустрий Узбекистана?",
+        answer: "Льготы закреплены законодательно и приняты Указом Президента. Однако, как указано в самом указе, для их полного практического применения ещё необходимо внесение соответствующих поправок в Налоговый кодекс Республики Узбекистан. Предприятиям, рассматривающим возможность резидентства, следует отслеживать изменения в Налоговом кодексе для подтверждения момента операционного вступления льгот в силу.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekistonning tez rivojlanayotgan Kreativ industriyalar parki doirasida biznes va mutaxassislar uchun mavjud ixtisoslashtirilgan huquqiy tizim, muhim soliq imtiyozlari va noyob qo'llab-quvvatlash mexanizmlarini o'rganing.",
@@ -215,6 +251,24 @@ export default {
           "Tarmoq aloqalari: kreativ hamjamiyat doirasida hamkorlik, bilim almashish va sheriklik o'rnatish uchun maxsus muhit",
           "Iste'dodlarni rivojlantirish: ilg'or ijodiy kasblar bo'yicha xodimlarni o'qitish va malakasini oshirishga qaratilgan tashabbuslarden foydalanish",
         ],
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonning Kreativ industriyalar parki qanday soliq imtiyozlari taklif etadi?",
+        answer: "Kreativ industriyalar parki rezidentlari xodimlar uchun jismoniy shaxslardan daromad solig'i (JSDS) stavkalarini 50% ga kamaytirish, ijtimoiy soliqni 50% ga kamaytirish, jami daromadidan qat'i nazar moslashuvchan aylanma soliq rejimidan foydalanish, shuningdek foizsiz kreditlar va grantlar olish imkoniyatidan bahramand bo'ladilar. Ushbu imtiyozlar 2025 yil 1 maydan 2031 yil 1 yanvargacha O'zbekiston Soliq kodeksiga tegishli o'zgartishlar kiritilishi sharti bilan amal qiladi.",
+      },
+      {
+        question: "O'zbekistonning Kreativ industriyalar parki rezidenti bo'lish uchun kim munosib?",
+        answer: "Rezidentlik 2024 yil 3 oktyabrdagi ZRU-970-sonli Qonun ta'rifiga muvofiq kreativ industriyalarda faoliyat yurituvchi tijorat tashkilotlari va jismoniy shaxslar uchun mavjud. Mos faoliyat turlariga quyidagilar kiradi: adabiy ijod (mualliflik, kontent yaratish), amaliy san'at va hunarmandchilik, arxitektura va dizayn, shaharni rejalashtirish, tasviriy san'at (rassomlik, haykaltaroshlik, grafika san'ati), shuningdek kreativ mahsulotlarni yaratish, ishlab chiqarish, tarqatish va targ'ib qilish bilan bog'liq boshqa faoliyat turlari.",
+      },
+      {
+        question: "O'zbekistonning Kreativ industriyalar parki qachon tashkil etilgan va imtiyozlar qachondan amal qiladi?",
+        answer: "Kreativ industriyalar parki 2025 yil 26 martdagi UP-61-sonli Prezident Farmoni bilan tashkil etilgan. Rezidentlar uchun soliq va moliyaviy imtiyozlar 2025 yil 1 maydan kuchga kirgan va 2031 yil 1 yanvargacha amal qilishi qonuniy jihatdan belgilangan. Biroq soliq imtiyozlarining amaliy tatbiq etilishi uchun O'zbekiston Respublikasi Soliq kodeksiga tegishli o'zgartishlar kiritilishi talab etiladi, ular farmon sanasida hali kutilmoqda edi.",
+      },
+      {
+        question: "O'zbekistonning Kreativ industriyalar parki soliq imtiyozlari hozirda kuchda bo'lgan?",
+        answer: "Imtiyozlar qonuniy jihatdan mustahkamlangan va Prezident Farmoni bilan qabul qilingan. Biroq, farmonnig o'zida ta'kidlanganidek, ularni to'liq amalda qo'llash uchun O'zbekiston Respublikasi Soliq kodeksiga tegishli o'zgartishlar kiritilishi hali talab etiladi. Rezidentlikni ko'rib chiqayotgan biznes imtiyozlarning amaliy jihatdan qachon kuchga kirishini tasdiqlash uchun Soliq kodeksidagi o'zgarishlarni kuzatib borishi kerak.",
       },
     ],
   },
