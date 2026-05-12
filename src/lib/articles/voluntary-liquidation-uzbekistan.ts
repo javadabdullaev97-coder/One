@@ -151,6 +151,64 @@ export default {
         answer: "The 13-step procedure includes: (1) adopt liquidation resolution; (2) appoint liquidator from founders or participants; (3) notify the State Services Centre within 1 working day — it automatically notifies tax authorities, statistics, banks, and others; (4) notify banks; (5) tax authority and Enforcement Bureau audit covering up to 3 years; (6) settle creditor claims after the 2-month notice period; (7) approve the interim liquidation balance sheet; (8) approve the final liquidation balance sheet; (9) obtain tax clearance certificate; (10) close the main bank account; (11) transfer documents to the state archive; (12) make final submission to the State Services Centre with bank certificates and archive confirmation.",
       },
     ],
+    howTo: {
+      name: "How to Voluntarily Liquidate a Company in Uzbekistan",
+      description: "The 13-step procedure for voluntary liquidation of a business entity in Uzbekistan under Presidential Decree No. UP-5739 of 7 June 2019.",
+      steps: [
+        {
+          name: "Adopt a resolution to liquidate",
+          text: "The founder(s), participants, or authorised management body adopts a resolution stating the entity's name, TIN, address, liquidator's contact details, deadline for creditor claims, and reason for liquidation.",
+        },
+        {
+          name: "Appoint a liquidator",
+          text: "All management powers transfer to the liquidator — a founder/participant or a liquidation commission. The liquidator signs all documents without a power of attorney and issues binding orders for employees.",
+        },
+        {
+          name: "Transfer assets and documentation to the liquidator",
+          text: "Within three days of appointment, management transfers all commercial documentation, seals, stamps, and company property to the liquidator under an itemised inventory.",
+        },
+        {
+          name: "Notify the State Services Centre",
+          text: "Within one working day of the resolution, submit a copy to the State Services Centre. It enters the liquidation status in the state register and automatically notifies tax authorities, banks, and other bodies. Creditors have a minimum of two months to file claims.",
+        },
+        {
+          name: "Notify banks",
+          text: "Within one working day, send the liquidation decision and specimen signature/seal cards to the main account bank and any bank holding foreign currency. Instruct all other banks to close secondary accounts and transfer balances to the main account.",
+        },
+        {
+          name: "Conduct inventory and calculate tax obligations",
+          text: "Conduct a full inventory of assets and liabilities, compile a register of outstanding enforcement documents, and prepare tax calculations from the start of the year to the notification date.",
+        },
+        {
+          name: "Tax authority and Enforcement Bureau checks",
+          text: "Within 19 working days, the Enforcement Bureau and tax authority send outstanding enforcement documents and conduct a financial audit covering up to three years, to be completed within 30 calendar days.",
+        },
+        {
+          name: "Approve the interim liquidation balance sheet",
+          text: "After the creditor claims deadline expires, prepare and obtain founder/participant approval of the draft interim liquidation balance sheet.",
+        },
+        {
+          name: "Settle creditor claims",
+          text: "Within five working days of approving the interim balance sheet, notify all creditors and settle claims in priority order: (1) employees and personal injury claims; (2) state budget and funds; (3) all remaining creditors.",
+        },
+        {
+          name: "Approve the final liquidation balance sheet",
+          text: "After settling all creditors and distributing remaining assets, prepare the final liquidation balance sheet for founder approval and tax authority submission. Obtain a no-debt certificate and a no-outstanding-documents notification from the Enforcement Bureau.",
+        },
+        {
+          name: "Close the main bank account",
+          text: "Once the tax clearance and Enforcement Bureau certificates are in hand, apply to close the main bank account. Accounts under judicial attachment cannot be closed.",
+        },
+        {
+          name: "Transfer documents to the state archive",
+          text: "Within three working days of closing the main account, transfer all accounting and company records to the state archive.",
+        },
+        {
+          name: "Final submission to the State Services Centre",
+          text: "Submit bank account closure certificates, company seals and stamps, a securities cancellation certificate (if applicable), and the archive delivery certificate. The Centre verifies requirements within two working days and enters the liquidation record in the state register.",
+        },
+      ],
+    },
   },
   ru: {
     subtitle: "Практическое руководство по упрощённой процедуре добровольной ликвидации коммерческих организаций в Узбекистане после президентской реформы 2019 года.",
@@ -304,6 +362,64 @@ export default {
         answer: "13-шаговая процедура включает: (1) принятие решения о ликвидации; (2) назначение ликвидатора из числа учредителей или участников; (3) уведомление Центра государственных услуг в течение 1 рабочего дня — он автоматически уведомляет налоговые органы, статистику, банки и других; (4) уведомление банков; (5) проверка налоговыми органами и Бюро принудительного исполнения за период до 3 лет; (6) удовлетворение требований кредиторов по истечении 2-месячного срока; (7) утверждение промежуточного ликвидационного баланса; (8) утверждение окончательного ликвидационного баланса; (9) получение справки об отсутствии налоговой задолженности; (10) закрытие основного банковского счёта; (11) передача документов в государственный архив; (12) окончательное обращение в Центр государственных услуг с банковскими справками и подтверждением архива.",
       },
     ],
+    howTo: {
+      name: "Как провести добровольную ликвидацию компании в Узбекистане",
+      description: "13-шаговая процедура добровольной ликвидации субъекта предпринимательства в Узбекистане в соответствии с Указом Президента № УП-5739 от 7 июня 2019 года.",
+      steps: [
+        {
+          name: "Принять решение о ликвидации",
+          text: "Учредитель(и), участники или уполномоченный орган управления принимают решение с указанием наименования организации, ИНН, адреса, данных ликвидатора, срока для предъявления требований кредиторов и причины ликвидации.",
+        },
+        {
+          name: "Назначить ликвидатора",
+          text: "Все управленческие полномочия переходят к ликвидатору — учредителю/участнику или ликвидационной комиссии. Ликвидатор подписывает все документы без доверенности и издаёт обязательные приказы для работников.",
+        },
+        {
+          name: "Передать активы и документацию ликвидатору",
+          text: "В течение трёх дней с момента назначения органы управления передают ликвидатору по описи всю коммерческую документацию, печати, штампы и иное имущество компании.",
+        },
+        {
+          name: "Уведомить Центр государственных услуг",
+          text: "В течение одного рабочего дня с момента принятия решения представить его копию в Центр государственных услуг. Центр вносит статус ликвидации в реестр и автоматически уведомляет налоговые органы, банки и другие ведомства. Минимальный срок для предъявления требований кредиторами — два месяца.",
+        },
+        {
+          name: "Уведомить банки",
+          text: "В течение одного рабочего дня направить решение и карточки с образцами подписей/печатей в основной банк и банки с валютными средствами. Поручить остальным банкам закрыть вспомогательные счета и перевести остатки на основной счёт.",
+        },
+        {
+          name: "Провести инвентаризацию и рассчитать налоговые обязательства",
+          text: "Провести полную инвентаризацию активов и обязательств, составить реестр непогашенных исполнительных документов и подготовить налоговые расчёты с начала года до даты уведомления Центра.",
+        },
+        {
+          name: "Проверки налогового органа и Бюро принудительного исполнения",
+          text: "В течение 19 рабочих дней Бюро принудительного исполнения и налоговый орган направляют непогашенные исполнительные документы и проводят проверку финансово-хозяйственной деятельности за период до трёх лет (не более 30 календарных дней).",
+        },
+        {
+          name: "Утвердить промежуточный ликвидационный баланс",
+          text: "По истечении срока для предъявления требований кредиторов подготовить проект промежуточного ликвидационного баланса и получить его утверждение учредителями/участниками.",
+        },
+        {
+          name: "Удовлетворить требования кредиторов",
+          text: "В течение пяти рабочих дней с момента утверждения промежуточного баланса уведомить всех кредиторов и погасить требования в порядке очерёдности: (1) работники и личный вред; (2) государственный бюджет и фонды; (3) все остальные кредиторы.",
+        },
+        {
+          name: "Утвердить окончательный ликвидационный баланс",
+          text: "После расчётов со всеми кредиторами и распределения активов подготовить окончательный ликвидационный баланс для утверждения учредителями и представления в налоговый орган. Получить справку об отсутствии налоговой задолженности и подтверждение от Бюро принудительного исполнения.",
+        },
+        {
+          name: "Закрыть основной банковский счёт",
+          text: "Имея налоговую справку и подтверждение Бюро принудительного исполнения, подать заявление о закрытии основного счёта. Счёт под судебным арестом закрыть нельзя.",
+        },
+        {
+          name: "Передать документы в государственный архив",
+          text: "В течение трёх рабочих дней с момента закрытия основного счёта передать всю бухгалтерскую и иную документацию компании в государственный архив.",
+        },
+        {
+          name: "Окончательное обращение в Центр государственных услуг",
+          text: "Представить справки о закрытии всех счетов, печати и штампы, справку об аннулировании ценных бумаг (при наличии) и подтверждение передачи документов в архив. В течение двух рабочих дней Центр вносит запись о ликвидации в государственный реестр.",
+        },
+      ],
+    },
   },
   uz: {
     subtitle: "2019 yilgi prezident islohotidan keyin O'zbekistondagi tijorat tashkilotlari uchun ixtiyoriy tugatishning soddalashtirilgan tartibi bo'yicha amaliy qo'llanma.",
@@ -457,5 +573,63 @@ export default {
         answer: "13 bosqichli tartib quyidagilarni o'z ichiga oladi: (1) tugatish to'g'risida qaror qabul qilish; (2) ta'sischilar yoki ishtirokchilardan tugatuvchi tayinlash; (3) Davlat xizmatlari markazini 1 ish kuni ichida xabardor qilish — u soliq organlari, statistika, banklar va boshqalarni avtomatik xabardor qiladi; (4) banklarni xabardor qilish; (5) soliq organi va Ijro byurosining 3 yilgacha bo'lgan davrni qamrovchi tekshiruvi; (6) 2 oylik e'lon muddati tugagandan so'ng kreditorlar talablarini qondirish; (7) oraliq tugatish balansini tasdiqlash; (8) yakuniy tugatish balansini tasdiqlash; (9) soliq qarzdorligi yo'qligi to'g'risida ma'lumotnoma olish; (10) asosiy bank hisobvarag'ini yopish; (11) hujjatlarni davlat arxiviga topshirish; (12) bank ma'lumotnomalari va arxiv tasdig'i bilan Davlat xizmatlari markaziga yakuniy murojaat.",
       },
     ],
+    howTo: {
+      name: "O'zbekistonda kompaniyani ixtiyoriy tugatish tartibi",
+      description: "2019 yil 7 iyundagi UP-5739-sonli Prezident Farmoniga muvofiq O'zbekistonda tadbirkorlik subyektini ixtiyoriy tugatishning 13 bosqichli tartibi.",
+      steps: [
+        {
+          name: "Tugatish to'g'risida qaror qabul qilish",
+          text: "Ta'sischi(lar), ishtirokchilar yoki vakolatli boshqaruv organi tashkilot nomi, INN, manzili, tugatuvchi ma'lumotlari, kreditorlar talablarini qabul qilish muddati va tugatish sababini ko'rsatuvchi qaror qabul qiladi.",
+        },
+        {
+          name: "Tugatuvchini tayinlash",
+          text: "Barcha boshqaruv vakolatlari tugatuvchiga o'tadi — ta'sischi/ishtirokchi yoki tugatish komissiyasi. Tugatuvchi barcha hujjatlarni ishonchnomasiz imzolaydi va xodimlar uchun majburiy buyruqlar chiqaradi.",
+        },
+        {
+          name: "Aktivlar va hujjatlarni tugatuvchiga topshirish",
+          text: "Tayinlangan paytdan boshlab uch kun ichida boshqaruv organlari ro'yxat asosida barcha tijorat hujjatlari, muhrlar, shtamplar va kompaniya mulkini tugatuvchiga topshiradi.",
+        },
+        {
+          name: "Davlat xizmatlari markazini xabardor qilish",
+          text: "Qaror qabul qilinganidan boshlab bir ish kuni ichida nusxasini Davlat xizmatlari markaziga topshirish. Markaz tugatish maqomini reyestrga kiritadi va soliq organlari, banklar, boshqa idoralarni avtomatik xabardor qiladi. Kreditorlar kamida ikki oy davomida talablarini taqdim etishi mumkin.",
+        },
+        {
+          name: "Banklarni xabardor qilish",
+          text: "Bir ish kuni ichida tugatish qarorini va imzo/muhr namunalari kartochkalarini asosiy hisobvaraq bankiga va valyuta mablag'lari saqlanadigan banklarga yuborish. Qolgan banklarga qo'shimcha hisobvaraqlarni yopish va qoldiqlarni asosiy hisobvaraqqa o'tkazishni topshirish.",
+        },
+        {
+          name: "Inventarizatsiya o'tkazish va soliq majburiyatlarini hisoblash",
+          text: "Aktivlar va majburiyatlarning to'liq inventarizatsiyasini o'tkazish, bajarilmagan ijro hujjatlari reyestrini tuzish va yil boshidan Markaz xabardor qilingan sanagacha bo'lgan davr uchun soliq hisob-kitoblarini tayyorlash.",
+        },
+        {
+          name: "Soliq organi va Ijro byurosi tekshiruvlari",
+          text: "19 ish kuni ichida Ijro byurosi va soliq organi bajarilmagan ijro hujjatlarini yuboradi va uch yilgacha bo'lgan davrning moliya-xo'jalik faoliyatini tekshiradi (30 kalendar kun ichida yakunlanadi).",
+        },
+        {
+          name: "Oraliq tugatish balansini tasdiqlash",
+          text: "Kreditorlar talablarini taqdim etish muddati tugagandan so'ng oraliq tugatish balansi loyihasini tayyorlab, ta'sischilar/ishtirokchilar tomonidan tasdiqlatish.",
+        },
+        {
+          name: "Kreditorlar talablarini qondirish",
+          text: "Oraliq balans tasdiqlanganidan boshlab besh ish kuni ichida barcha kreditorlarni xabardor qilish va talablarni navbatda qondirish: (1) xodimlar va shaxsiy zarar; (2) davlat byudjeti va jamg'armalari; (3) barcha qolgan kreditorlar.",
+        },
+        {
+          name: "Yakuniy tugatish balansini tasdiqlash",
+          text: "Barcha kreditorlar bilan hisob-kitob qilib, aktivlarni taqsimlashdan so'ng yakuniy tugatish balansini ta'sischilar tomonidan tasdiqlatish va soliq organiga topshirish. Soliq qarzdorligi yo'qligi to'g'risida ma'lumotnoma va Ijro byurosidan tasdiq olish.",
+        },
+        {
+          name: "Asosiy bank hisobvarag'ini yopish",
+          text: "Soliq ma'lumotnomasi va Ijro byurosi tasdig'i qo'lga kelgach, asosiy bank hisobvarag'ini yopish uchun ariza berish. Sud hibsidagi hisobvaraqni yopib bo'lmaydi.",
+        },
+        {
+          name: "Hujjatlarni davlat arxiviga topshirish",
+          text: "Asosiy hisobvaraq yopilgan kundan boshlab uch ish kuni ichida barcha buxgalteriya va kompaniya hujjatlarini davlat arxiviga topshirish.",
+        },
+        {
+          name: "Davlat xizmatlari markaziga yakuniy murojaat",
+          text: "Barcha hisobvaraqlar yopilganligini tasdiqlovchi bank ma'lumotnomalari, kompaniya muhrlari va shtamplari, qimmatli qog'ozlarni bekor qilish to'g'risidagi ma'lumotnoma (mavjud bo'lsa) va arxiv tasdig'ini topshirish. Markaz ikki ish kuni ichida barcha talablarni tekshirib, davlat reyestriga tugatish yozuvini kiritadi.",
+        },
+      ],
+    },
   },
 };
