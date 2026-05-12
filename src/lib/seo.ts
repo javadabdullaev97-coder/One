@@ -44,7 +44,7 @@ export const websiteJsonLd = {
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@type": ["LegalService", "ProfessionalService", "LocalBusiness"],
   "@id": `${SITE_URL}#organization`,
   name: ORG_NAME,
   alternateName: "Advizen",
