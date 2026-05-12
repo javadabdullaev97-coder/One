@@ -19,7 +19,8 @@
       "badge": "Tez orada",
       "heading": "Onlayn to'lov tez orada",
       "bodyLine1": "Uzcard, Humo, Visa va Mastercard — tez orada. Hozircha buyurtmalar email orqali.",
-      "emailNote": "Buyurtmalar hozirda elektron pochta orqali qabul qilinadi"
+      "emailNote": "Buyurtmalar hozirda elektron pochta orqali qabul qilinadi",
+      "uzsBillingNote": "Barcha to'lovlar o'zbek so'mida (UZS) amalga oshiriladi. Xorijiy valyutadagi karta bilan to'lov qilsangiz (Visa/Mastercard), emitent bankingiz so'mdagi summani o'z kursi bo'yicha kartangiz valyutasiga konvertatsiya qiladi, unda konvertatsiya komissiyalari ham bo'lishi mumkin. Sotuvchi saytdagi taxminiy USD narxi va bank tomonidan haqiqatda yechib olingan summa o'rtasidagi farq uchun javobgar emas."
     },
     "form": {
       "heading": "Buyurtma ma'lumotlari",
