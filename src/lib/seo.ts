@@ -40,6 +40,14 @@ export const websiteJsonLd = {
     "Premier business consulting firm in Uzbekistan offering integrated tax, legal, finance, accounting, and HR services across Central Asia.",
   inLanguage: ["en", "ru", "uz"],
   publisher: { "@id": `${SITE_URL}#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/insights?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export const organizationJsonLd = {
@@ -326,8 +334,8 @@ const BREADCRUMB_LABELS: Record<Locale, { home: string } & Partial<Record<PageKe
   uz: {
     home: "Bosh sahifa",
     expertise: "Xizmatlar",
-    store: "Do’kon",
-    contact: "Bog‘lanish",
+    store: "Do'kon",
+    contact: "Bog'lanish",
   },
 };
 
@@ -477,9 +485,9 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
         "Интегрированное консультирование по налогам, праву, финансам, бухгалтерии, HR и корпоративным услугам в Узбекистане. Доверяют 80+ клиентов в 15+ отраслях.",
     },
     uz: {
-      title: "O‘zbekistonda soliq, huquq, HR va buxgalteriya | Advizen Consulting",
+      title: "O'zbekistonda soliq, huquq, HR va buxgalteriya | Advizen Consulting",
       description:
-        "O‘zbekistonda soliq, huquq, moliya, buxgalteriya, HR va korporativ xizmatlar bo‘yicha integratsiyalashgan konsalting. 15+ sohada 80+ mijoz ishonchini qozongan.",
+        "O'zbekistonda soliq, huquq, moliya, buxgalteriya, HR va korporativ xizmatlar bo'yicha integratsiyalashgan konsalting. 15+ sohada 80+ mijoz ishonchini qozongan.",
     },
   },
   store: {
@@ -494,9 +502,9 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
         "Шаблоны документов для бизнеса в Узбекистане — договоры, HR, компленс, налоговые формы, корпоративные документы. Мгновенная загрузка в формате Word.",
     },
     uz: {
-      title: "O‘zbekistonda biznes va huquqiy hujjat shablonlari | Advizen Consulting",
+      title: "O'zbekistonda biznes va huquqiy hujjat shablonlari | Advizen Consulting",
       description:
-        "O‘zbekistonda biznes uchun huquqshunoslar tayyorlagan hujjat shablonlari — shartnomalar, HR, kompliayens, soliq formalari. Tez yuklab olish, Word formatida.",
+        "O'zbekistonda biznes uchun huquqshunoslar tayyorlagan hujjat shablonlari — shartnomalar, HR, kompliayens, soliq formalari. Tez yuklab olish, Word formatida.",
     },
   },
   contact: {
@@ -511,9 +519,9 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
         "Свяжитесь с Advizen Consulting в Ташкенте. Обсудите налоговое, правовое, финансовое, HR и корпоративное консультирование в Узбекистане и Центральной Азии.",
     },
     uz: {
-      title: "Advizen Consulting bilan bog‘lanish | Toshkentda biznes konsalting",
+      title: "Advizen Consulting bilan bog'lanish | Toshkentda biznes konsalting",
       description:
-        "Toshkentda Advizen Consulting bilan bog‘laning. O‘zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va korporativ konsalting masalalarini muhokama qiling.",
+        "Toshkentda Advizen Consulting bilan bog'laning. O'zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va korporativ konsalting masalalarini muhokama qiling.",
     },
   },
   insights: {
@@ -528,9 +536,9 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
         "Экспертная аналитика по налогам, праву, финансам, HR и регуляторным изменениям в Узбекистане и Центральной Азии от команды Advizen Consulting.",
     },
     uz: {
-      title: "O‘zbekiston biznesi, soliqlari va huquqi bo‘yicha tahlillar | Advizen Consulting",
+      title: "O'zbekiston biznesi, soliqlari va huquqi bo'yicha tahlillar | Advizen Consulting",
       description:
-        "O‘zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va tartibga solish o‘zgarishlari bo‘yicha Advizen Consulting jamoasidan ekspert tahlillari.",
+        "O'zbekiston va Markaziy Osiyoda soliq, huquq, moliya, HR va tartibga solish o'zgarishlari bo'yicha Advizen Consulting jamoasidan ekspert tahlillari.",
     },
   },
   privacy: {
@@ -547,7 +555,7 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
     uz: {
       title: "Maxfiylik siyosati | Advizen Consulting",
       description:
-        "Advizen Consulting O‘zbekiston qonunlariga muvofiq shaxsiy ma‘lumotlarni qanday yig‘ishi, ishlatishi va himoya qilishini bilib oling.",
+        "Advizen Consulting O'zbekiston qonunlariga muvofiq shaxsiy ma'lumotlarni qanday yig'ishi, ishlatishi va himoya qilishini bilib oling.",
     },
   },
   terms: {
@@ -598,7 +606,7 @@ const PAGE_CONTENT: Record<PageKey, Record<Locale, { title: string; description:
     uz: {
       title: "Cookie siyosati | Advizen Consulting",
       description:
-        "Advizen Consulting advizenco.com saytida cookie va shunga o‘xshash texnologiyalardan qanday foydalanadi.",
+        "Advizen Consulting advizenco.com saytida cookie va shunga o'xshash texnologiyalardan qanday foydalanadi.",
     },
   },
   disclaimer: {
