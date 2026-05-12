@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { publications } from "@/lib/publications";
+import { getAllServiceSlugs } from "@/lib/services";
 
 export const dynamic = "force-static";
 
@@ -31,28 +32,38 @@ function alternates(path: string): Record<string, string> {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = STATIC_PATHS.flatMap((path) =>
     routing.locales.map((locale) => ({
       url: localizedUrl(path, locale),
-      lastModified,
+      lastModified: now,
       changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1.0 : 0.7,
       alternates: { languages: alternates(path) },
     })),
   );
 
-  const articleSlugs = publications.filter((p) => p.hasRead).map((p) => p.slug);
-  const articleEntries: MetadataRoute.Sitemap = articleSlugs.flatMap((slug) =>
+  const serviceEntries: MetadataRoute.Sitemap = getAllServiceSlugs().flatMap((slug) =>
     routing.locales.map((locale) => ({
-      url: localizedUrl(`/insights/${slug}`, locale),
-      lastModified,
+      url: localizedUrl(`/expertise/${slug}`, locale),
+      lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.6,
-      alternates: { languages: alternates(`/insights/${slug}`) },
+      priority: 0.8,
+      alternates: { languages: alternates(`/expertise/${slug}`) },
     })),
   );
 
-  return [...staticEntries, ...articleEntries];
+  const readableArticles = publications.filter((p) => p.hasRead);
+  const articleEntries: MetadataRoute.Sitemap = readableArticles.flatMap((article) =>
+    routing.locales.map((locale) => ({
+      url: localizedUrl(`/insights/${article.slug}`, locale),
+      lastModified: article.date ? new Date(article.date) : now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages: alternates(`/insights/${article.slug}`) },
+    })),
+  );
+
+  return [...staticEntries, ...serviceEntries, ...articleEntries];
 }
