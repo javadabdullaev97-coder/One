@@ -231,6 +231,8 @@ export async function POST(request: NextRequest) {
       `💰 <b>Total: $${totalPrice}</b>`,
       ``,
       `🕐 <i>${timestamp} (Tashkent)</i>`,
+      ``,
+      `<code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code>`,
     ].filter(Boolean).join("\n");
 
     const tgRes = await fetch(
