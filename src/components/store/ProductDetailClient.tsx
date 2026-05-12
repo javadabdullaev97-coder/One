@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils";
 
 type Currency = "USD" | "UZS";
 type Locale = "en" | "ru" | "uz";
-const UZS_RATE = 12750;
+const UZS_RATE = 12000;
 
 const CATEGORY_ICONS: Record<string, React.ElementType> = {
   "Company Formation": FileText,
