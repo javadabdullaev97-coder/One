@@ -1,0 +1,63 @@
+{
+  "ContactPage": {
+    "hero": {
+      "eyebrow": "Контакты",
+      "heading": "Начните диалог",
+      "description": "Каждый проект начинается с понимания. Свяжитесь с нами — наша команда ответит в течение 24 часов."
+    },
+    "info": {
+      "office": "Наш офис",
+      "officeValue": "Ташкент, Узбекистан",
+      "phone": "Телефон",
+      "email": "Email",
+      "workingHours": "Часы работы",
+      "workingHoursValue": "Пн – Пт, 9:00 – 18:00"
+    },
+    "form": {
+      "eyebrow": "Запрос",
+      "heading": "Напишите нам",
+      "description": "Для развёрнутых запросов — опишите контекст проекта, сроки и интересующую область. Мы вернёмся с персональным ответом.",
+      "firstName": "Имя",
+      "firstNamePlaceholder": "Иван",
+      "lastName": "Фамилия",
+      "lastNamePlaceholder": "Иванов",
+      "email": "Email",
+      "emailPlaceholder": "ivan@company.com",
+      "company": "Компания",
+      "companyPlaceholder": "Название компании",
+      "service": "Интересующая услуга",
+      "selectService": "Выберите услугу",
+      "serviceTax": "Налоговый консалтинг",
+      "serviceLegal": "Юридический консалтинг",
+      "serviceFinance": "Бухгалтерский учёт",
+      "serviceHr": "HR-услуги",
+      "serviceFunding": "Финансирование и гранты",
+      "serviceOther": "Другое",
+      "message": "Сообщение",
+      "messagePlaceholder": "Расскажите о вашем проекте или задайте вопрос...",
+      "consentBefore": "Я даю согласие на обработку моих персональных данных в соответствии с",
+      "consentPrivacy": "Политикой конфиденциальности",
+      "consentAnd": "и",
+      "consentTerms": "Условиями использования",
+      "consentAfter": ". Отправляя форму вы подтверждаете согласие на хранение и обработку предоставленных данных.",
+      "send": "Отправить",
+      "sending": "Отправляем…",
+      "successHeading": "Сообщение отправлено!",
+      "successBody": "Спасибо — мы свяжемся с вами в течение одного рабочего дня.",
+      "sendAnother": "Отправить ещё одно сообщение",
+      "errorMessage": "Что-то пошло не так. Попробуйте ещё раз или напишите нам напрямую на info@advizenco.com."
+    },
+    "quick": {
+      "eyebrow": "Быстрый чат",
+      "heading": "Нужен ответ быстрее?",
+      "description": "Пропустите форму — напишите нам напрямую в Telegram или WhatsApp. Среднее время ответа — менее 30 минут в рабочие часы.",
+      "telegram": "Telegram",
+      "telegramHint": "@advizen  ·  Самый быстрый ответ",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "Написать сообщение",
+      "businessHours": "Рабочие часы",
+      "hoursValue": "Пн – Пт, 9:00 – 18:00",
+      "timezone": "UTC+5 · Ташкент, Узбекистан"
+    }
+  }
+}
