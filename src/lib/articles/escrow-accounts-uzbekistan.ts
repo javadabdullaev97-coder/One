@@ -73,6 +73,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "When did escrow accounts become mandatory for real estate transactions in Uzbekistan?",
+        answer: "Escrow accounts became mandatory in two stages. For shared construction (off-plan housing) agreements, the requirement came into force on January 1, 2026. For all other real estate transactions and qualifying vehicle sales (vehicles no older than 10 years, categories M, N, O, and G), escrow became mandatory from April 1, 2026.",
+      },
+      {
+        question: "How much does an escrow account cost for a property transaction in Uzbekistan?",
+        answer: "The escrow fee is fixed regardless of the transaction value. Real estate transactions attract a flat fee of 206,000 UZS per transaction. Vehicle transactions attract a flat fee of 103,000 UZS. This represents a dramatic reduction from the previous percentage-based commission model.",
+      },
+      {
+        question: "What happens if a developer delays handover of an off-plan property in Uzbekistan?",
+        answer: "If a developer delays the handover of a shared construction property by more than 6 months beyond the contractual date, the buyer acquires the right to terminate the agreement and recover all deposited funds in full. This exit right applies to funds held in escrow under the mandatory shared construction escrow framework effective January 1, 2026.",
+      },
+      {
+        question: "Are escrow funds protected if a developer faces insolvency in Uzbekistan?",
+        answer: "Yes. Escrow funds are ring-fenced under Uzbek law. They cannot be arrested, suspended, or seized in connection with any claims against the developer. This means that even if the developer encounters financial difficulties or insolvency proceedings, the buyer's deposited funds remain protected and available for return.",
+      },
+    ],
   },
   ru: {
     subtitle: "Что реформы законодательства 2025–2026 годов означают для покупателей, продавцов и застройщиков",
@@ -148,6 +166,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "С какого момента счета эскроу стали обязательными для сделок с недвижимостью в Узбекистане?",
+        answer: "Счета эскроу стали обязательными поэтапно. Для договоров долевого участия в строительстве (строящееся жильё) требование вступило в силу 1 января 2026 года. Для всех прочих сделок с недвижимостью и отдельных продаж транспортных средств (не старше 10 лет, категорий M, N, O и G) эскроу стал обязательным с 1 апреля 2026 года.",
+      },
+      {
+        question: "Сколько стоит открытие счёта эскроу для сделки с недвижимостью в Узбекистане?",
+        answer: "Комиссия за эскроу является фиксированной и не зависит от стоимости сделки. Для сделок с недвижимостью установлена фиксированная комиссия 206 000 сум за сделку. Для сделок с транспортными средствами — 103 000 сум. Это существенное снижение по сравнению с прежней моделью, основанной на процентной комиссии.",
+      },
+      {
+        question: "Что происходит, если застройщик задерживает передачу строящейся недвижимости в Узбекистане?",
+        answer: "Если застройщик задерживает передачу объекта долевого строительства более чем на 6 месяцев сверх договорного срока, покупатель вправе расторгнуть договор и вернуть все внесённые средства в полном объёме. Это право на выход распространяется на средства, находящиеся на эскроу-счёте в рамках обязательной системы эскроу при долевом строительстве, действующей с 1 января 2026 года.",
+      },
+      {
+        question: "Защищены ли средства на эскроу-счёте в случае несостоятельности застройщика в Узбекистане?",
+        answer: "Да. Средства на счёте эскроу обособлены по узбекскому законодательству. Они не могут быть арестованы, приостановлены или изъяты по каким-либо требованиям к застройщику. Это означает, что даже при возникновении у застройщика финансовых затруднений или начале процедуры несостоятельности внесённые покупателем средства остаются защищёнными и подлежат возврату.",
+      },
+    ],
   },
   uz: {
     subtitle: "2025–2026 yilgi qonunchilik islohotlari xaridor, sotuvchi va qurilish kompaniyalari uchun nima anglatadi",
@@ -221,6 +257,24 @@ export default {
           "Escrow to'lovi (ko'chmas mulk): 206 000 so'm qat'iy",
           "Escrow to'lovi (transport vositalari): 103 000 so'm qat'iy",
         ],
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda ko'chmas mulk bilan bog'liq bitimlarda escrow hisobvaraqlari qachondan majburiy bo'ldi?",
+        answer: "Escrow hisobvaraqlari ikki bosqichda majburiy bo'ldi. Ulushli qurilish (sotilmagan uy-joy) shartnomalariga talablar 2026 yil 1 yanvarda kuchga kirdi. Boshqa barcha ko'chmas mulk bilan bitimlar va malakali transport vositalarini sotish (10 yildan eski bo'lmagan, M, N, O va G toifalari) uchun escrow 2026 yil 1 apreldan majburiy bo'ldi.",
+      },
+      {
+        question: "O'zbekistonda ko'chmas mulk bitimi uchun escrow hisobvarag'i qancha turadi?",
+        answer: "Escrow to'lovi bitim qiymatidan qat'i nazar qat'iy belgilangan. Ko'chmas mulk bilan bitimlar uchun bitta bitimga 206 000 so'm qat'iy to'lov belgilangan. Transport vositalari bilan bitimlar uchun — 103 000 so'm. Bu avvalgi foizga asoslangan komissiya modeliga nisbatan sezilarli kamayishni bildiradi.",
+      },
+      {
+        question: "O'zbekistonda qurilish kompaniyasi sotilmagan ko'chmas mulkni topshirishni kechiktirsa nima bo'ladi?",
+        answer: "Agar qurilish kompaniyasi ulushli qurilish ob'ektini shartnomada belgilangan muddatdan 6 oydan ortiq kechiktirib topshirsa, xaridor shartnomani bekor qilish va barcha kiritilgan mablag'larni to'liq qaytarib olish huquqiga ega bo'ladi. Bu chiqib ketish huquqi 2026 yil 1 yanvardan kuchga kirgan majburiy ulushli qurilish escrow tizimi doirasida escrow hisobida saqlanadigan mablag'larga nisbatan qo'llaniladi.",
+      },
+      {
+        question: "O'zbekistonda qurilish kompaniyasi to'lovga qodir bo'lmay qolsa escrow mablag'lari himoyalanadimiі?",
+        answer: "Ha. Escrow mablag'lari O'zbekiston qonunchiligiga ko'ra ajratilgan hisoblanadi. Ular qurilish kompaniyasiga nisbatan biron-bir da'vo bilan bog'liq hollarda qamoqqa olinishi, to'xtatilishi yoki musodara qilinishi mumkin emas. Bu shuni anglatadiki, qurilish kompaniyasi moliyaviy qiyinchiliklarga duch kelgan yoki to'lovga qodir emaslik tartiblari boshlangan taqdirda ham xaridorning kiritilgan mablag'lari himoyalanib qoladi va qaytarilishi uchun mavjud bo'ladi.",
       },
     ],
   },
