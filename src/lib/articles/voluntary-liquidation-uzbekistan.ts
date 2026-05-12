@@ -133,6 +133,24 @@ export default {
         text: "Voluntary liquidation involves coordinating with multiple state authorities — the State Services Centre, tax service, Enforcement Bureau, banks, and the state archive — within tight statutory deadlines. Advizen assists companies in preparing the liquidation resolution, appointing the liquidator, managing creditor notifications, clearing tax obligations, and guiding the process through to final deregistration.",
       },
     ],
+      faq: [
+      {
+        question: "How long does voluntary liquidation take in Uzbekistan?",
+        answer: "The maximum period is 6 months from the date the State Services Centre receives the liquidation notification. This streamlined timeline was introduced by Presidential Decree No. UP-5739 of 7 June 2019, which replaced the previous more cumbersome process. The simplified procedure also eliminates the newspaper publication requirement — liquidation notices are now posted exclusively on the State Services Centre's official website.",
+      },
+      {
+        question: "Is newspaper publication required for voluntary liquidation in Uzbekistan?",
+        answer: "No. The 2019 reform abolished the newspaper publication requirement. Liquidation notices are now posted exclusively on the State Services Centre's official website. The minimum period for creditors to file claims is 2 months from the website posting. If a company has never conducted any business activity since registration and has no tax debts, no financial audit is required either.",
+      },
+      {
+        question: "What is the priority order for settling creditor claims during liquidation in Uzbekistan?",
+        answer: "Claims are settled in the following order: first, employee claims under employment contracts and claims of individuals for personal injury or death caused by the company; second, payments to the state budget and state-targeted funds; third, all remaining claims. Claims secured by a pledge are satisfied first from proceeds of selling the pledged asset; any shortfall is then covered in the priority order above.",
+      },
+      {
+        question: "What are the key steps to complete voluntary liquidation in Uzbekistan?",
+        answer: "The 13-step procedure includes: (1) adopt liquidation resolution; (2) appoint liquidator from founders or participants; (3) notify the State Services Centre within 1 working day — it automatically notifies tax authorities, statistics, banks, and others; (4) notify banks; (5) tax authority and Enforcement Bureau audit covering up to 3 years; (6) settle creditor claims after the 2-month notice period; (7) approve the interim liquidation balance sheet; (8) approve the final liquidation balance sheet; (9) obtain tax clearance certificate; (10) close the main bank account; (11) transfer documents to the state archive; (12) make final submission to the State Services Centre with bank certificates and archive confirmation.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практическое руководство по упрощённой процедуре добровольной ликвидации коммерческих организаций в Узбекистане после президентской реформы 2019 года.",
@@ -268,6 +286,24 @@ export default {
         text: "Добровольная ликвидация требует координации с несколькими государственными органами — Центром государственных услуг, налоговой службой, Бюро принудительного исполнения, банками и государственным архивом — в сжатые установленные законом сроки. Advizen помогает компаниям в подготовке решения о ликвидации, назначении ликвидатора, управлении уведомлениями кредиторов, погашении налоговых обязательств и проведении процесса до окончательного снятия с регистрации.",
       },
     ],
+      faq: [
+      {
+        question: "Сколько длится добровольная ликвидация в Узбекистане?",
+        answer: "Максимальный срок составляет 6 месяцев с даты получения Центром государственных услуг уведомления о ликвидации. Эти упрощённые сроки введены Указом Президента № УП-5739 от 7 июня 2019 года, который заменил прежнюю более громоздкую процедуру. Упрощённая процедура также отменяет требование о публикации в газете — уведомления о ликвидации теперь размещаются исключительно на официальном сайте Центра государственных услуг.",
+      },
+      {
+        question: "Требуется ли публикация в газете при добровольной ликвидации в Узбекистане?",
+        answer: "Нет. Реформа 2019 года отменила требование о публикации в газете. Уведомления о ликвидации теперь размещаются исключительно на официальном сайте Центра государственных услуг. Минимальный срок для предъявления требований кредиторов — 2 месяца с момента размещения на сайте. Если компания с момента регистрации не вела хозяйственную деятельность и не имеет налоговой задолженности, финансовый аудит также не требуется.",
+      },
+      {
+        question: "Какова очерёдность удовлетворения требований кредиторов при ликвидации в Узбекистане?",
+        answer: "Требования удовлетворяются в следующем порядке: первая очередь — требования работников по трудовым договорам и требования физических лиц о возмещении вреда жизни или здоровью, причинённого компанией; вторая очередь — платежи в государственный бюджет и государственные целевые фонды; третья очередь — все остальные требования. Залоговые требования удовлетворяются в первую очередь за счёт реализации заложенного актива; недостающая сумма покрывается в указанной очерёдности.",
+      },
+      {
+        question: "Каковы ключевые шаги для завершения добровольной ликвидации в Узбекистане?",
+        answer: "13-шаговая процедура включает: (1) принятие решения о ликвидации; (2) назначение ликвидатора из числа учредителей или участников; (3) уведомление Центра государственных услуг в течение 1 рабочего дня — он автоматически уведомляет налоговые органы, статистику, банки и других; (4) уведомление банков; (5) проверка налоговыми органами и Бюро принудительного исполнения за период до 3 лет; (6) удовлетворение требований кредиторов по истечении 2-месячного срока; (7) утверждение промежуточного ликвидационного баланса; (8) утверждение окончательного ликвидационного баланса; (9) получение справки об отсутствии налоговой задолженности; (10) закрытие основного банковского счёта; (11) передача документов в государственный архив; (12) окончательное обращение в Центр государственных услуг с банковскими справками и подтверждением архива.",
+      },
+    ],
   },
   uz: {
     subtitle: "2019 yilgi prezident islohotidan keyin O'zbekistondagi tijorat tashkilotlari uchun ixtiyoriy tugatishning soddalashtirilgan tartibi bo'yicha amaliy qo'llanma.",
@@ -401,6 +437,24 @@ export default {
       {
         type: "p" as const,
         text: "Ixtiyoriy tugatish bir nechta davlat organlari — Davlat xizmatlari markazi, soliq xizmati, Ijro byurosi, banklar va davlat arxivi — bilan qonunda belgilangan qisqa muddatlar ichida muvofiqlashtirishni talab qiladi. Advizen kompaniyalarga tugatish to'g'risidagi qarorni tayyorlash, tugatuvchini tayinlash, kreditorlarni xabardor qilishni boshqarish, soliq majburiyatlarini hal etish va jarayonni yakuniy ro'yxatdan chiqarishgacha olib borishda yordam beradi.",
+      },
+    ],
+      faq: [
+      {
+        question: "O'zbekistonda ixtiyoriy tugatish qancha vaqt oladi?",
+        answer: "Maksimal muddat — Davlat xizmatlari markazi tugatish to'g'risidagi xabarnomani olgan kundan boshlab 6 oy. Bu soddalashtirilgan muddat 2019 yil 7 iyundagi UP-5739-sonli Prezident Farmoni bilan kiritilgan va oldingi murakkabroq tartibni almashtirdi. Soddalashtirilgan tartib gazetada e'lon chop etish talabini ham bekor qildi — tugatish to'g'risidagi e'lonlar endi faqat Davlat xizmatlari markazining rasmiy veb-saytida joylashtiriladi.",
+      },
+      {
+        question: "O'zbekistonda ixtiyoriy tugatish uchun gazetada e'lon chop etish talab etiladimi?",
+        answer: "Yo'q. 2019 yilgi islohot gazetada e'lon chop etish talabini bekor qildi. Tugatish to'g'risidagi e'lonlar endi faqat Davlat xizmatlari markazining rasmiy veb-saytida joylashtiriladi. Kreditorlar talablarini taqdim etishning minimal muddati veb-saytda joylashtirilgan kundan boshlab 2 oyni tashkil etadi. Kompaniya ro'yxatdan o'tgandan beri hech qanday xo'jalik faoliyati yuritmagan bo'lsa va soliq qarzlari bo'lmasa, moliyaviy audit ham talab qilinmaydi.",
+      },
+      {
+        question: "O'zbekistonda tugatish jarayonida kreditorlar talablarini qondirish navbati qanday?",
+        answer: "Talablar quyidagi navbatda qondiriladi: birinchi navbat — mehnat shartnomalari bo'yicha xodimlar talablari va kompaniya tomonidan jismoniy shaxslarning hayotiga yoki sog'lig'iga yetkazilgan zararni qoplash bo'yicha talablar; ikkinchi navbat — davlat byudjetiga va davlat maqsadli jamg'armalariga to'lovlar; uchinchi navbat — barcha qolgan talablar. Garov bilan ta'minlangan talablar birinchi navbatda garovga qo'yilgan aktivni sotishdan tushgan mablag' hisobidan qondiriladi; yetishmayotgan summa yuqoridagi navbatda qoplanadi.",
+      },
+      {
+        question: "O'zbekistonda ixtiyoriy tugatishni yakunlash uchun asosiy bosqichlar qanday?",
+        answer: "13 bosqichli tartib quyidagilarni o'z ichiga oladi: (1) tugatish to'g'risida qaror qabul qilish; (2) ta'sischilar yoki ishtirokchilardan tugatuvchi tayinlash; (3) Davlat xizmatlari markazini 1 ish kuni ichida xabardor qilish — u soliq organlari, statistika, banklar va boshqalarni avtomatik xabardor qiladi; (4) banklarni xabardor qilish; (5) soliq organi va Ijro byurosining 3 yilgacha bo'lgan davrni qamrovchi tekshiruvi; (6) 2 oylik e'lon muddati tugagandan so'ng kreditorlar talablarini qondirish; (7) oraliq tugatish balansini tasdiqlash; (8) yakuniy tugatish balansini tasdiqlash; (9) soliq qarzdorligi yo'qligi to'g'risida ma'lumotnoma olish; (10) asosiy bank hisobvarag'ini yopish; (11) hujjatlarni davlat arxiviga topshirish; (12) bank ma'lumotnomalari va arxiv tasdig'i bilan Davlat xizmatlari markaziga yakuniy murojaat.",
       },
     ],
   },
