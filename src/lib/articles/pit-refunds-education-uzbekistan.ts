@@ -52,6 +52,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Navigating tax benefits can be complex, but understanding these exemptions can lead to significant savings. If you need assistance with preparing your declaration, understanding your eligibility, or ensuring compliance, Advizen's experts are here to help.",
       },
     ],
+      faq: [
+      {
+        question: "What education expenses qualify for a PIT exemption in Uzbekistan?",
+        answer: "Tuition fees paid for yourself, your spouse, or your children (up to 26 years old) at higher education institutions in Uzbekistan are exempt from PIT — including educational loans and their interest. Parents or adoptive parents may also exempt up to 3,000,000 UZS per month per child for educational services at non-state preschools and private schools. These benefits apply under Uzbekistan's Personal Income Tax system at the standard 12% rate.",
+      },
+      {
+        question: "What is the deadline to claim a PIT refund in Uzbekistan?",
+        answer: "The annual income declaration must be submitted by April 1 of the year following the reporting year (e.g., for 2024 income, by April 1, 2025). It is submitted electronically via my3.soliq.uz using an Electronic Digital Signature (EDS). In the \"Tax benefits\" section, attach supporting documents (contracts and payment receipts) — the system auto-calculates the refundable amount. Refunds are typically transferred to the specified bank card within 15 days of submitting the refund application.",
+      },
+      {
+        question: "Can mortgage interest payments qualify for a PIT benefit in Uzbekistan?",
+        answer: "Yes. Amounts paid towards mortgage loans and their accrued interest are exempt from PIT, up to 80 times the Minimum Rate of Old-Age Pension (MROT) annually, provided the property was acquired with a budget subsidy. The benefit is claimed through the annual income declaration at my3.soliq.uz using an Electronic Digital Signature.",
+      },
+      {
+        question: "What other income categories are exempt from PIT in Uzbekistan?",
+        answer: "Additional PIT exemptions include: salary voluntarily directed to Individual Accumulative Pension Accounts (INPS) at the People's Bank; salary directed to individual investment accounts for purchasing shares (up to 100× MROT annually, with funds locked for 12 months); and certain employer-provided benefits within prescribed limits — including material assistance, medical compensation, children's camp vouchers, and non-cash gifts.",
+      },
+    ],
   },
   ru: {
     subtitle: "Ваш гид по льготам и возвратам НДФЛ за образование, ипотеку и другие категории в Узбекистане.",
@@ -104,6 +122,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Налоговые льготы могут быть сложными в применении, но понимание этих освобождений приводит к существенной экономии. Если вам нужна помощь с подготовкой декларации, оценкой права на льготу или обеспечением соответствия, эксперты Advizen всегда готовы помочь.",
       },
     ],
+      faq: [
+      {
+        question: "Какие расходы на образование дают право на льготу по НДФЛ в Узбекистане?",
+        answer: "Оплата обучения за себя, супруга или детей (до 26 лет) в высших учебных заведениях Узбекистана освобождается от НДФЛ — в том числе образовательные кредиты и проценты по ним. Родители или усыновители также могут получить освобождение до 3 000 000 сум в месяц на ребёнка за услуги в негосударственных дошкольных учреждениях и частных школах. Льготы применяются в рамках стандартной ставки НДФЛ 12%.",
+      },
+      {
+        question: "Каков срок подачи заявления на возврат НДФЛ в Узбекистане?",
+        answer: "Годовая декларация о доходах должна быть подана до 1 апреля года, следующего за отчётным (например, по доходам 2024 года — до 1 апреля 2025 года). Декларация подаётся в электронном виде через my3.soliq.uz с использованием ЭЦП. В разделе «Налоговые льготы» прикладываются подтверждающие документы (договоры и платёжные документы) — система автоматически рассчитывает возвращаемую сумму. Возврат, как правило, поступает на карту в течение 15 дней с момента подачи заявления.",
+      },
+      {
+        question: "Дают ли ипотечные платежи право на льготу по НДФЛ в Узбекистане?",
+        answer: "Да. Суммы, уплаченные по ипотечным кредитам и начисленные проценты, освобождаются от НДФЛ — до 80 минимальных размеров пенсии по возрасту (МРОТ) в год, при условии что жильё приобретено с бюджетной субсидией. Льгота заявляется через годовую декларацию о доходах на my3.soliq.uz с использованием электронной цифровой подписи.",
+      },
+      {
+        question: "Какие ещё категории доходов освобождены от НДФЛ в Узбекистане?",
+        answer: "Дополнительные освобождения от НДФЛ: суммы зарплаты, добровольно направленные на индивидуальные накопительные пенсионные счета (ИНПС) в Народном банке; зарплата, направленная на индивидуальные инвестиционные счета для покупки акций (до 100 МРОТ в год, средства заблокированы на 12 месяцев); определённые льготы от работодателя в установленных лимитах — в том числе материальная помощь, медицинские компенсации, путёвки в детские лагеря и неденежные подарки.",
+      },
+    ],
   },
   uz: {
     subtitle: "Oʻzbekistonda taʼlim, ipoteka va boshqa toifalar boʻyicha JShDS imtiyozlari va qaytarimlari boʻyicha qoʻllanmangiz.",
@@ -154,6 +190,24 @@ const article: Record<string, LocalizedArticle> = {
       {
         type: "blockquote",
         text: "Soliq imtiyozlarini ishlatish murakkab boʻlishi mumkin, ammo bu ozod qilishlarni tushunish sezilarli tejashga olib keladi. Deklaratsiyani tayyorlashda, imtiyozga huquq baholashda yoki muvofiqlikni taʼminlashda yordam kerak boʻlsa, Advizen ekspertlari yordam berishga tayyor.",
+      },
+    ],
+      faq: [
+      {
+        question: "O'zbekistonda JShDSdan ozodlik uchun qanday ta'lim xarajatlari hisobga olinadi?",
+        answer: "O'zbekiston oliy ta'lim muassasalarida o'zingiz, turmush o'rtog'ingiz yoki bolalaringiz (26 yoshgacha) uchun to'langan o'quv haqi JShDSdan ozod etiladi — jumladan ta'lim kreditlari va ularning foizlari. Ota-onalar yoki farzandlikka olganlar nodavlat maktabgacha ta'lim muassasalari va xususiy maktablar xizmatlari uchun bola boshiga oyiga 3 000 000 so'mgacha ozodlik olishlari ham mumkin. Imtiyozlar standart 12% JShDS stavkasi doirasida qo'llaniladi.",
+      },
+      {
+        question: "O'zbekistonda JShDS qaytarimini talab qilish muddati qanday?",
+        answer: "Yillik daromad deklaratsiyasi hisobot yilidan keyingi yilning 1 aprelgacha topshirilishi shart (masalan, 2024 yil daromadi uchun 2025 yil 1 aprelgacha). Deklaratsiya my3.soliq.uz orqali Elektron raqamli imzo (ERI) yordamida elektron tarzda topshiriladi. «Soliq imtiyozlari» bo'limida tasdiqlovchi hujjatlar (shartnomalar va to'lov hujjatlari) biriktiriladi — tizim qaytariladigan summani avtomatik hisoblaydi. Qaytarish odatda ariza topshirilganidan 15 kun ichida bank kartasiga o'tkaziladi.",
+      },
+      {
+        question: "O'zbekistonda ipoteka to'lovlari JShDS imtiyoziga ega bo'la oladimi?",
+        answer: "Ha. Uy-joy byudjet subsidiyasi bilan olingan taqdirda, ipoteka kreditlari va hisoblangan foizlarga to'langan summalar yiliga Pensiyaning eng kam miqdori (MROT)ning 80 baravarigacha JShDSdan ozod etiladi. Imtiyoz ERI yordamida my3.soliq.uz saytida yillik daromad deklaratsiyasi orqali talab qilinadi.",
+      },
+      {
+        question: "O'zbekistonda boshqa qanday daromad toifalari JShDSdan ozod etilgan?",
+        answer: "Qo'shimcha JShDS imtiyozlari: Xalq bankidagi Individual jamg'arib boriladigan pensiya hisobvaraqlariga (INPS) ixtiyoriy ravishda yo'naltirilgan maosh summalari; aksiyalar sotib olish uchun individual investitsiya hisobvaraqlariga yo'naltirilgan maosh (yiliga MROTning 100 baravarigacha, mablag'lar 12 oyga blokirovka qilinadi); belgilangan limitlar doirasidagi ish beruvchi tomonidan beriladigan imtiyozlar — jumladan moddiy yordam, tibbiy kompensatsiya, bolalar lagerlari yo'llanmalari va naqd bo'lmagan sovg'alar.",
       },
     ],
   },
