@@ -73,6 +73,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "What is the personal income tax (PIT) rate on employment income in Uzbekistan?",
+        answer: "Since January 2023, Uzbekistan applies a flat 12% PIT rate on all employment income. The tax is withheld at source by the employer and remitted monthly to the State Tax Committee. The same rate applies equally to non-resident employees — there is no additional surcharge.",
+      },
+      {
+        question: "What is the Unified Social Payment (USP) rate in Uzbekistan?",
+        answer: "The USP is charged at 12% of gross payroll and is an employer cost — it is not deducted from the employee's salary. It is paid monthly alongside the PIT remittance. Late payment attracts penalties at the Central Bank refinancing rate.",
+      },
+      {
+        question: "What is the total employer payroll burden in Uzbekistan?",
+        answer: "The combined employer cost is approximately 24% of gross salary: 12% PIT (withheld from employee) plus 12% USP (employer's own contribution on top of gross payroll). Employees additionally contribute 0.1% to an individual accumulative pension account, which is included within the PIT calculation.",
+      },
+      {
+        question: "What are the payroll reporting deadlines for employers in Uzbekistan?",
+        answer: "Employers must file a monthly PIT withholding report by the 10th of the following month, submit the USP declaration at the same time, and complete an annual payroll reconciliation by 1 February. Employee income certificates must be issued upon request or at termination.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практическое руководство для работодателей, осуществляющих деятельность в Узбекистане",
@@ -148,6 +166,24 @@ export default {
         ],
       },
     ],
+    faq: [
+      {
+        question: "Какова ставка НДФЛ на трудовые доходы в Узбекистане?",
+        answer: "С января 2023 года в Узбекистане действует единая ставка НДФЛ 12% на все трудовые доходы. Налог удерживается у источника работодателем и ежемесячно перечисляется в Государственный налоговый комитет. Та же ставка применяется к сотрудникам-нерезидентам — дополнительная надбавка не предусмотрена.",
+      },
+      {
+        question: "Какова ставка единого социального платежа (ЕСП) в Узбекистане?",
+        answer: "ЕСП взимается по ставке 12% от фонда оплаты труда и является расходом работодателя — он не вычитается из заработной платы сотрудника. Платёж осуществляется ежемесячно одновременно с перечислением НДФЛ. Просрочка влечёт начисление пеней по ставке рефинансирования Центрального банка.",
+      },
+      {
+        question: "Какова общая нагрузка работодателя по заработной плате в Узбекистане?",
+        answer: "Совокупные расходы работодателя составляют около 24% от валовой заработной платы: 12% НДФЛ (удерживается из зарплаты сотрудника) плюс 12% ЕСП (собственный взнос работодателя сверх валовой зарплаты). Сотрудники дополнительно вносят 0,1% на индивидуальный накопительный пенсионный счёт в составе расчёта НДФЛ.",
+      },
+      {
+        question: "Каковы сроки отчётности по заработной плате для работодателей в Узбекистане?",
+        answer: "Работодатели обязаны ежемесячно представлять отчёт об удержании НДФЛ до 10-го числа следующего месяца, одновременно подавать декларацию по ЕСП и проводить годовую сверку по заработной плате до 1 февраля. Справки о доходах сотрудникам выдаются по запросу или при увольнении.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekistonda faoliyat yurituvchi ish beruvchilar uchun amaliy qo'llanma",
@@ -221,6 +257,24 @@ export default {
           "Jamg'arma pensiya badali: 0,1% (JSDS ga kiritilgan)",
           "Ish beruvchining umumiy yuki: yalpi ish haqining ~24%",
         ],
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda mehnat daromadlariga jismoniy shaxslardan daromad solig'i (JSDS) stavkasi qancha?",
+        answer: "2023 yil yanvardan O'zbekiston barcha mehnat daromadlariga 12% miqdorida yagona JSDS stavkasini qo'llaydi. Soliq ish beruvchi tomonidan manba bo'yicha ushlab qolinadi va har oy Davlat soliq qo'mitasiga o'tkaziladi. Norezident xodimlarga ham xuddi shu stavka qo'llaniladi — qo'shimcha ustama yo'q.",
+      },
+      {
+        question: "O'zbekistonda yagona ijtimoiy to'lov (YIT) stavkasi qancha?",
+        answer: "YIT yalpi ish haqi fondining 12% miqdorida undiriladi va ish beruvchi xarajati hisoblanadi — u xodimning ish haqidan ushlab qolinmaydi. To'lov har oy JSDS o'tkazmasi bilan bir vaqtda amalga oshiriladi. Kech to'lash Markaziy bank qayta moliyalash stavkasida penya hisoblashga olib keladi.",
+      },
+      {
+        question: "O'zbekistonda ish beruvchining umumiy ish haqi yuki qancha?",
+        answer: "Ish beruvchining umumiy xarajati yalpi ish haqining taxminan 24% ini tashkil etadi: 12% JSDS (xodim ish haqidan ushlab qolinadi) va 12% YIT (yalpi ish haqiga qo'shimcha ish beruvchining o'z badali). Xodimlar qo'shimcha ravishda JSDS hisobi doirasida individual jamg'arma pensiya hisobiga 0,1% o'tkazadilar.",
+      },
+      {
+        question: "O'zbekistonda ish beruvchilar uchun ish haqi hisobot muddatlari qanday?",
+        answer: "Ish beruvchilar keyingi oyning 10-sanasiga qadar oylik JSDS ushlab qolish hisobotini topshirishlari, bir vaqtda YIT deklaratsiyasini berishlari va 1 fevralga qadar yillik ish haqi saldosini o'tkazishlari shart. Xodimlar daromad ma'lumotnomasi so'rov yoki ishdan bo'shatish bo'yicha beriladi.",
       },
     ],
   },
