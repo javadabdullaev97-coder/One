@@ -25,7 +25,7 @@ interface Product {
 /* ── Constants ─────────────────────────────────── */
 
 const CATEGORIES = ["All", "Company Formation", "Legal", "HR", "Tax", "Compliance", "Finance"] as const;
-const UZS_RATE = 12750;
+const UZS_RATE = 12000;
 
 const CATEGORY_META: Record<string, { icon: React.ReactNode }> = {
   "Company Formation": { icon: <FileText className="w-3 h-3" /> },
