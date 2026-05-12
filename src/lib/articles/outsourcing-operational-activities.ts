@@ -45,6 +45,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "By partnering with Advizen, you can leverage our comprehensive expertise to save resources and empower your company to develop faster and more dynamically in the promising Uzbek market.",
       },
     ],
+    faq: [
+      {
+        question: "What business functions can be outsourced in Uzbekistan?",
+        answer: "Companies in Uzbekistan commonly outsource accounting, tax compliance, legal advisory, HR administration, payroll processing, and customs clearance. Any non-core function that requires specialist expertise and ongoing regulatory compliance is a strong candidate for outsourcing.",
+      },
+      {
+        question: "Does outsourcing compliance functions transfer legal liability to the provider in Uzbekistan?",
+        answer: "Yes. When outsourcing compliance-related functions such as accounting or HR administration, the service provider bears responsibility for ensuring regulatory adherence. This significantly reduces the company's exposure to penalties from Uzbekistan's constantly evolving tax and labour legislation.",
+      },
+      {
+        question: "How does outsourcing compare to hiring in-house staff in Uzbekistan?",
+        answer: "Outsourcing eliminates costs associated with employment contracts, social contributions, office space, software, and training. Unlike in-house staff, outsourced teams do not take sick leave or vacation that disrupts operations. It also offers scalability — services can be adjusted to match business needs without the complexities of hiring or redundancy.",
+      },
+      {
+        question: "What types of companies benefit most from outsourcing in Uzbekistan?",
+        answer: "Foreign-invested companies entering Uzbekistan, SMEs without the volume to justify full in-house departments, and rapidly growing businesses that need to scale operations quickly benefit most. Outsourcing allows these organisations to access specialist expertise immediately without the overhead of building internal teams.",
+      },
+    ],
   },
   ru: {
     subtitle: "Оптимизируйте операционную деятельность и ускоряйте рост с помощью стратегического аутсорсинга в Узбекистане.",
@@ -90,6 +108,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Сотрудничая с Advizen, вы получаете доступ к комплексной экспертизе, экономите ресурсы и обеспечиваете компании более быстрое и динамичное развитие на перспективном узбекском рынке.",
       },
     ],
+    faq: [
+      {
+        question: "Какие бизнес-функции можно передать на аутсорсинг в Узбекистане?",
+        answer: "Компании в Узбекистане чаще всего передают на аутсорсинг бухгалтерский учёт, налоговый комплаенс, юридическое сопровождение, кадровое администрирование, расчёт заработной платы и таможенное оформление. Любая непрофильная функция, требующая узкоспециализированной экспертизы и постоянного соответствия нормативным требованиям, хорошо подходит для аутсорсинга.",
+      },
+      {
+        question: "Переходит ли юридическая ответственность на аутсорсингового провайдера в Узбекистане?",
+        answer: "Да. При передаче на аутсорсинг комплаенс-функций — таких как бухгалтерский учёт или кадровое администрирование — поставщик услуг берёт на себя ответственность за соблюдение нормативных требований. Это существенно снижает риск штрафных санкций для компании в условиях постоянно меняющегося налогового и трудового законодательства Узбекистана.",
+      },
+      {
+        question: "В чём разница между аутсорсингом и наймом штатных сотрудников в Узбекистане?",
+        answer: "Аутсорсинг исключает расходы на трудовые договоры, социальные взносы, аренду офиса, программное обеспечение и обучение. В отличие от штатных сотрудников, аутсорсинговые специалисты не уходят на больничный или в отпуск, что могло бы прервать деятельность компании. Кроме того, аутсорсинг масштабируем — объём услуг легко регулируется без сложностей с наймом или сокращением.",
+      },
+      {
+        question: "Какие компании в Узбекистане выигрывают больше всего от аутсорсинга?",
+        answer: "Наибольшую выгоду получают иностранные компании, выходящие на рынок Узбекистана, МСП без объёма для оправдания полноценных внутренних отделов, а также быстрорастущий бизнес, которому нужно оперативно масштабировать операции. Аутсорсинг даёт этим организациям немедленный доступ к экспертизе без накладных расходов на создание внутренних команд.",
+      },
+    ],
   },
   uz: {
     subtitle: "Oʻzbekistonda strategik autsorsing yordamida operatsion faoliyatni soddalashtiring va oʻsishni tezlashtiring.",
@@ -103,7 +139,7 @@ const article: Record<string, LocalizedArticle> = {
       { type: "h2", text: "Autsorsing nima va bugun nega muhim?" },
       {
         type: "p",
-        text: "Autsorsing — muayyan biznes funksiyalari yoki jarayonlarini tashqi xizmat koʻrsatuvchilarga topshirish. Bu model rivojlangan iqtisodiyotlarda operatsiyalarni soddalashtirish usuli sifatida vujudga kelgan boʻlib, uning ommabopligi oʻzaro foydadan kelib chiqadi. Kompaniyalar muayyan vazifalarni ichki xodimlardan ekspert tashqi jamoalarga oʻtkazib, kadr xarajatlarini sezilarli darajada kamaytiradilar. Rahbariyat uchun autsorsing — vazifalarni emas, balki bogʻliq mas'uliyatlarni ham oʻtkazish demakdir, bu esa strategik rivojlanishga koʻproq energiya va resurs ajratishga imkon beradi.",
+        text: "Autsorsing — muayyan biznes funksiyalari yoki jarayonlarini tashqi xizmat koʻrsatuvchilarga topshirish. Bu model rivojlangan iqtisodiyotlarda operatsiyalarni soddalashtirish usuli sifatida vujudga kelgan boʻlib, uning ommabopligi oʻzaro foydadan kelib chiqadi. Kompaniyalar muayyan vazifalarni ichki xodimlardan ekspert tashqi jamoalarga oʻtkazib, kadr xarajatlarini sezilarli darajada kamaytiradilar. Rahbariyat uchun autsorsing — vazifalarni emas, balki bogʻliq masʼuliyatlarni ham oʻtkazish demakdir, bu esa strategik rivojlanishga koʻproq energiya va resurs ajratishga imkon beradi.",
       },
       {
         type: "p",
@@ -133,6 +169,24 @@ const article: Record<string, LocalizedArticle> = {
       {
         type: "blockquote",
         text: "Advizen bilan hamkorlik qilib, siz keng qamrovli ekspertiza yordamida resurslarni tejaysiz va kompaniyangizni istiqbolli oʻzbek bozorida yanada tez va dinamik rivojlanishga undaysiz.",
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda qaysi biznes funksiyalarini autsorsinga topshirish mumkin?",
+        answer: "O'zbekistondagi kompaniyalar odatda buxgalteriya, soliq muvofiqlik, yuridik maslahat, HR boshqaruv, ish haqi hisoblash va bojxona rasmiylashtirishni autsorsinga topshiradilar. Mutaxassislik va doimiy tartibga solish muvofiqligini talab qiladigan har qanday asosiy bo'lmagan funksiya autsorsing uchun yaxshi nomzoddir.",
+      },
+      {
+        question: "O'zbekistonda autsorsing muvofiqlik funksiyalari uchun yuridik mas'uliyatni provayderga o'tkazadimi?",
+        answer: "Ha. Buxgalteriya yoki HR boshqaruv kabi muvofiqlik funksiyalari autsorsinga topshirilganda, xizmat ko'rsatuvchi tartibga solish talablariga rioya qilish uchun mas'uliyatni o'z zimmasiga oladi. Bu O'zbekistonning doimo o'zgarib turadigan soliq va mehnat qonunchiligi sharoitida kompaniyaning jarimalarga duchor bo'lish xavfini sezilarli darajada kamaytiradi.",
+      },
+      {
+        question: "O'zbekistonda autsorsing va to'liq shtatlı xodim yollash o'rtasidagi farq nima?",
+        answer: "Autsorsing mehnat shartnomalari, ijtimoiy to'lovlar, ofis joyi, dasturiy ta'minot va o'qitish xarajatlarini bartaraf etadi. Shtatlı xodimlardan farqli o'laroq, autsorsing mutaxassislari operatsiyalarni buzadigan kasallik yoki ta'tilga chiqishmaydi. Bundan tashqari, autsorsing masshtablanadigan — xizmatlar ishga olish yoki qisqartirish murakkabliklarisiz biznes ehtiyojlariga muvofiq sozlanishi mumkin.",
+      },
+      {
+        question: "O'zbekistonda qaysi kompaniyalar autsorsingdan ko'proq foyda oladi?",
+        answer: "O'zbekiston bozoriga kirayotgan xorijiy investitsiyali kompaniyalar, to'liq ichki bo'limlarni oqlash uchun hajmi etarli bo'lmagan kichik va o'rta korxonalar, hamda tezda operatsiyalarni kengaytirishga muhtoj tez o'sib borayotgan biznes eng ko'p foyda oladi. Autsorsing bu tashkilotlarga ichki jamoalar tuzishning qo'shimcha xarajatlarisiz darhol mutaxassis ekspertizasiga ega bo'lish imkonini beradi.",
       },
     ],
   },
