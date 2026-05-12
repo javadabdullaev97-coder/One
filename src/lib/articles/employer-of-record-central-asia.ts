@@ -103,6 +103,24 @@ export default {
         text: "The best time to hire the right person is when you find them — not six months after your entity is registered.",
       },
     ],
+    faq: [
+      {
+        question: "What is an Employer of Record and how does it work?",
+        answer: "An Employer of Record (EoR) is a local legal entity that employs workers on behalf of a foreign company. The EoR signs the employment contract, handles payroll, withholds income tax and social contributions, and manages HR compliance. The foreign company retains full day-to-day control over the employee's work while the EoR handles all legal and administrative obligations.",
+      },
+      {
+        question: "How quickly can a foreign company hire employees in Uzbekistan without a local entity?",
+        answer: "Through Advizen's Employer of Record service, a foreign company can onboard employees in Uzbekistan within days — compared to the several weeks or months required to incorporate a local legal entity.",
+      },
+      {
+        question: "Which countries does Advizen's EoR service cover?",
+        answer: "Advizen's Employer of Record service covers Uzbekistan, Kazakhstan, and Kyrgyzstan, providing a single point of contact for workforce compliance across all three Central Asian jurisdictions.",
+      },
+      {
+        question: "When should a company use an EoR rather than setting up a local entity in Uzbekistan?",
+        answer: "An EoR is ideal for companies hiring a small team (typically under 20 employees), entering the market quickly while entity registration is underway, or maintaining a lean distributed team where the overhead of a local entity is not justified. For larger teams, significant local contracts, or asset-holding operations, a wholly owned subsidiary is typically more appropriate.",
+      },
+    ],
   },
   ru: {
     subtitle: "Как иностранные компании могут нанимать и оплачивать труд специалистов в Узбекистане без регистрации местного юридического лица.",
@@ -208,6 +226,24 @@ export default {
         text: "Лучшее время нанять нужного человека — когда вы его нашли, а не через шесть месяцев после регистрации юридического лица.",
       },
     ],
+    faq: [
+      {
+        question: "Что такое Employer of Record и как это работает?",
+        answer: "Employer of Record (EoR) — это местное юридическое лицо, которое трудоустраивает работников от имени иностранной компании. EoR подписывает трудовой договор, рассчитывает заработную плату, удерживает подоходный налог и социальные взносы, обеспечивает соблюдение трудового законодательства. При этом иностранная компания полностью сохраняет оперативный контроль над работой сотрудника, а EoR берёт на себя все правовые и административные обязательства.",
+      },
+      {
+        question: "Как быстро иностранная компания может нанять сотрудников в Узбекистане без местного юрлица?",
+        answer: "Через услугу Employer of Record компании Advizen иностранная компания может трудоустроить сотрудников в Узбекистане за несколько дней — в отличие от нескольких недель или месяцев, необходимых для регистрации местного юридического лица.",
+      },
+      {
+        question: "Какие страны охватывает услуга EoR компании Advizen?",
+        answer: "Услуга Employer of Record компании Advizen охватывает Узбекистан, Казахстан и Кыргызстан, предоставляя единый контакт для соблюдения трудового законодательства во всех трёх юрисдикциях Центральной Азии.",
+      },
+      {
+        question: "Когда компании лучше использовать EoR, а не регистрировать местное юрлицо в Узбекистане?",
+        answer: "EoR оптимален для компаний, нанимающих небольшую команду (как правило, до 20 сотрудников), быстро выходящих на рынок в период регистрации юридического лица или поддерживающих небольшую распределённую команду, где накладные расходы на местное юрлицо не оправданы. Для крупных команд, значительных местных контрактов или операций с активами, как правило, целесообразнее дочерняя компания.",
+      },
+    ],
   },
   uz: {
     subtitle: "Xorijiy kompaniyalar O'zbekistonda mahalliy yuridik shaxs ro'yxatdan o'tkazmasdan qanday qilib iste'dod topib, ularga haq to'lashi mumkin.",
@@ -311,6 +347,24 @@ export default {
       {
         type: "blockquote" as const,
         text: "To'g'ri odamni yollashning eng yaxshi vaqti — uni topganingizda, yuridik shaxs ro'yxatdan o'tkazilganidan olti oy o'tgach emas.",
+      },
+    ],
+    faq: [
+      {
+        question: "Employer of Record nima va u qanday ishlaydi?",
+        answer: "Employer of Record (EoR) — bu xorijiy kompaniya nomidan xodimlarni yollaydigan mahalliy yuridik shaxs. EoR mehnat shartnomasini imzolaydi, ish haqini hisoblaydi, daromad solig'i va ijtimoiy to'lovlarni ushlab qoladi va HR muvofiqligini boshqaradi. Xorijiy kompaniya xodimning ishi ustidan to'liq kunlik nazoratni saqlab qoladi, EoR esa barcha huquqiy va ma'muriy majburiyatlarni o'z zimmasiga oladi.",
+      },
+      {
+        question: "Xorijiy kompaniya mahalliy yuridik shaxssiz O'zbekistonda xodimlarni qanchalik tez yollashi mumkin?",
+        answer: "Advizen Employer of Record xizmati orqali xorijiy kompaniya O'zbekistonda xodimlarni bir necha kunda ishga qabul qilishi mumkin — bu mahalliy yuridik shaxsni ro'yxatdan o'tkazish uchun zarur bo'lgan bir necha hafta yoki oylardan ancha tez.",
+      },
+      {
+        question: "Advizen EoR xizmati qaysi mamlakatlarni qamrab oladi?",
+        answer: "Advizen Employer of Record xizmati O'zbekiston, Qozog'iston va Qirg'izistonni qamrab oladi va Markaziy Osiyoning uchala yurisdiksiyasida mehnat muvofiqligini boshqarish uchun yagona aloqa nuqtasini taqdim etadi.",
+      },
+      {
+        question: "Kompaniya O'zbekistonda mahalliy yuridik shaxs o'rnatish o'rniga qachon EoR dan foydalanishi kerak?",
+        answer: "EoR kichik jamoa (odatda 20 xodimsizdan kam) yollayotgan, yuridik shaxs ro'yxatdan o'tayotgan paytda tezda bozorga kirayotgan yoki mahalliy yuridik shaxs xarajatlari oqlanmaydigan kichik tarqoq jamoani saqlab turmoqchi bo'lgan kompaniyalar uchun ideal. Katta jamoalar, muhim mahalliy shartnomalar yoki aktivlar bilan bog'liq operatsiyalar uchun odatda to'liq mulkchilikdagi sho'ba korxona maqsadga muvofiqroq.",
       },
     ],
   },
