@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Google-Extended", allow: "/" },
       { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "Bingbot", allow: "/" },
+      { userAgent: "YandexBot", allow: "/" },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
