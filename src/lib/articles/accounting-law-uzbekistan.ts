@@ -179,6 +179,24 @@ export default {
         text: "Setting up an accounting function, choosing between in-house and outsourced models, drafting accounting policies, and ensuring compliance with reporting obligations requires careful attention to Uzbekistan's regulatory framework. Advizen advises clients on the organisation of accounting, the selection of the appropriate accounting model, compliance with reporting deadlines, and responses to regulatory inquiries.",
       },
     ],
+      faq: [
+      {
+        question: "Which entities must maintain accounting records in Uzbekistan?",
+        answer: "Under Law No. ЗРУ-404, all legal entities registered in Uzbekistan are required to maintain accounting records — including their subsidiaries, representative offices, branches, and other structural subdivisions, whether located inside or outside Uzbekistan. State authorities and management bodies are also accounting subjects. The director (head of the entity) is personally responsible for organising the accounting function.",
+      },
+      {
+        question: "Who is responsible for organising accounting in a company in Uzbekistan?",
+        answer: "The director (head of the entity) bears personal responsibility for organising accounting and reporting. The director may: establish an in-house accounting function headed by a chief accountant; engage an external accountant under a services agreement; delegate accounting to a specialised firm (audit organisation, tax consultancy, or accounting firm) under contract; or personally maintain the accounts. Where disputes arise between the director and the chief accountant, the director may issue a written instruction to proceed — but bears sole responsibility for the consequences.",
+      },
+      {
+        question: "What are the annual financial reporting obligations for companies in Uzbekistan?",
+        answer: "The reporting period is the calendar year from 1 January to 31 December. Annual financial statements comprise: a balance sheet; an income statement; a cash flow statement; a statement of changes in equity; and notes and explanatory disclosures. From 1 January 2023, entities are no longer required to submit quarterly financial reports to tax and statistical authorities. Entities paying turnover tax are also no longer required to submit annual financial reports to the tax authorities.",
+      },
+      {
+        question: "What are the penalties for accounting violations in Uzbekistan?",
+        answer: "Failure by the director or accounting officials to fulfil their statutory obligations — including failure to ensure accuracy of accounting data and financial statements, or failure to conduct required inventories — constitutes an administrative offence: first offence, a fine of 3 to 7 times the base calculation value (approximately USD 103–240) on officials; repeat offence within one year, a fine of 7 to 10 times the base calculation value (approximately USD 240–340) on officials.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практический обзор законодательства Узбекистана о бухгалтерском учёте — кто обязан соблюдать, как ведётся учёт, какая отчётность требуется и какие штрафы предусмотрены.",
@@ -360,7 +378,24 @@ export default {
         text: "Организация бухгалтерской службы, выбор между внутренней и аутсорсинговой моделью, разработка учётной политики и обеспечение соблюдения обязательств по отчётности требуют внимательного учёта особенностей регуляторной среды Узбекистана. Advizen консультирует клиентов по вопросам организации бухгалтерского учёта, выбора оптимальной учётной модели, соблюдения сроков отчётности и подготовки ответов на запросы регуляторов.",
       },
     ],
-  },
+      faq: [
+      {
+        question: "Какие юридические лица обязаны вести бухгалтерский учёт в Узбекистане?",
+        answer: "Согласно Закону № ЗРУ-404, все юридические лица, зарегистрированные в Узбекистане, обязаны вести бухгалтерский учёт — включая их дочерние организации, представительства, филиалы и иные структурные подразделения, независимо от их расположения внутри или за пределами Узбекистана. Государственные органы и органы управления также являются субъектами учёта. Директор (руководитель организации) несёт личную ответственность за организацию учётной функции.",
+      },
+      {
+        question: "Кто несёт ответственность за организацию бухгалтерского учёта в компании в Узбекистане?",
+        answer: "Директор (руководитель организации) несёт личную ответственность за организацию бухгалтерского учёта и отчётности. Директор вправе: создать собственную бухгалтерскую службу во главе с главным бухгалтером; привлечь внешнего бухгалтера по договору об оказании услуг; передать учёт специализированной компании (аудиторской, налоговой консалтинговой или бухгалтерской фирме) по договору; либо лично вести учёт. При возникновении разногласий с главным бухгалтером директор вправе дать письменное указание — однако ответственность за последствия несёт исключительно директор.",
+      },
+      {
+        question: "Каковы обязательства по годовой финансовой отчётности для компаний в Узбекистане?",
+        answer: "Отчётный период — календарный год с 1 января по 31 декабря. Годовая финансовая отчётность включает: бухгалтерский баланс; отчёт о финансовых результатах; отчёт о движении денежных средств; отчёт об изменениях в собственном капитале; примечания и пояснительные раскрытия. С 1 января 2023 года организации более не обязаны представлять квартальную финансовую отчётность в налоговые и статистические органы. Плательщики налога с оборота также освобождены от представления годовой отчётности в налоговые органы.",
+      },
+      {
+        question: "Какова ответственность за нарушения в области бухгалтерского учёта в Узбекистане?",
+        answer: "Неисполнение руководителем или должностными лицами бухгалтерской службы возложенных обязанностей — включая необеспечение достоверности учётных данных и финансовой отчётности или непроведение инвентаризации — является административным правонарушением: первое нарушение — штраф от 3 до 7 БРВ (приблизительно 103–240 долл. США) на должностных лиц; повторное нарушение в течение одного года — штраф от 7 до 10 БРВ (приблизительно 240–340 долл. США) на должностных лиц.",
+      },
+    ],},
   uz: {
     subtitle: "O'zbekistonning buxgalteriya hisobi to'g'risidagi qonunchiligiga amaliy umumiy nazar — kim rioya qilishi shart, hisob qanday yuritiladi, qanday hisobotlar talab etiladi va qanday jarimalar qo'llaniladi.",
     author: "Advizen Legal Practice",
@@ -539,6 +574,24 @@ export default {
       {
         type: "p" as const,
         text: "Buxgalteriya xizmatini tashkil etish, ichki va autsorsing modellari o'rtasida tanlash, hisob siyosatini ishlab chiqish va hisobot majburiyatlarini bajarishga rioya qilish O'zbekistonning tartibga soluvchi tizimi xususiyatlariga jiddiy e'tibor talab etadi. Advizen mijozlarga buxgalteriya hisobini tashkil etish, mos hisob modelini tanlash, hisobot muddatlariga rioya etish va tartibga soluvchilar so'rovlariga javob tayyorlash bo'yicha maslahat beradi.",
+      },
+    ],
+      faq: [
+      {
+        question: "O'zbekistonda qaysi tashkilotlar buxgalteriya hisobini yuritishi shart?",
+        answer: "ЗРУ-404-sonli Qonunga muvofiq, O'zbekistonda ro'yxatdan o'tgan barcha yuridik shaxslar buxgalteriya hisobini yuritishi shart — jumladan ularning sho'ba korxonalari, vakolatxonalari, filiallari va boshqa tarkibiy bo'linmalari, O'zbekiston ichida yoki tashqarisida joylashganligidan qat'i nazar. Davlat hokimiyati va boshqaruv organlari ham hisob subyektlari hisoblanadi. Direktor (tashkilot rahbari) buxgalteriya funksiyasini tashkil etish uchun shaxsan javobgardir.",
+      },
+      {
+        question: "O'zbekistonda kompaniyada buxgalteriya hisobini tashkil etish uchun kim javobgardir?",
+        answer: "Direktor (tashkilot rahbari) buxgalteriya hisobi va hisobotini tashkil etish uchun shaxsan javobgardir. Direktor: bosh buxgalter boshchiligidagi ichki buxgalteriya xizmatini tashkil etishi; tashqi buxgalterni xizmat ko'rsatish shartnomasi asosida jalb qilishi; hisobni ixtisoslashgan firmaga (audit tashkiloti, soliq konsalting yoki buxgalteriya firmasiga) topshirishi; yoki hisobni shaxsan yuritishi mumkin. Bosh buxgalter bilan kelishmovchilik yuzaga kelganda direktor yozma ko'rsatma berishi mumkin — biroq oqibatlari uchun javobgarlikni faqat direktor o'z bo'yniga oladi.",
+      },
+      {
+        question: "O'zbekistondagi kompaniyalar uchun yillik moliyaviy hisobot majburiyatlari qanday?",
+        answer: "Hisobot davri — 1 yanvardan 31 dekabrgacha bo'lgan kalendar yil. Yillik moliyaviy hisobot quyidagilarni o'z ichiga oladi: buxgalteriya balansi; moliyaviy natijalar to'g'risida hisobot; pul mablag'lari harakati to'g'risida hisobot; xususiy kapitaldagi o'zgarishlar to'g'risida hisobot; izohlar va tushuntiruvchi oshkor etishlar. 2023 yil 1 yanvardan tashkilotlar soliq va statistika organlariga choraklik moliyaviy hisobot taqdim etishi shart emas. Aylanma soliq to'lovchilari ham soliq organlariga yillik moliyaviy hisobot taqdim etishdan ozod qilindi.",
+      },
+      {
+        question: "O'zbekistonda buxgalteriya hisobi buzilishlari uchun qanday jarimalar qo'llaniladi?",
+        answer: "Rahbar yoki buxgalteriya xizmati mansabdor shaxslari tomonidan majburiyatlarning bajarilmasligi — jumladan hisob ma'lumotlari va moliyaviy hisobotning ishonchliligini ta'minlamaslik yoki inventarizatsiyani o'tkazmaslik — ma'muriy huquqbuzarlik hisoblanadi: birinchi huquqbuzarlik — mansabdor shaxslarga bazaviy hisoblash miqdorining 3 dan 7 baravarigacha jarima (taxminan 103–240 AQSh dollari); bir yil ichida takroriy huquqbuzarlik — 7 dan 10 baravarigacha jarima (taxminan 240–340 AQSh dollari).",
       },
     ],
   },
