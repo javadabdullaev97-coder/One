@@ -61,6 +61,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Developing a robust and compliant Accounting Policy for Tax Purposes requires a deep understanding of Uzbekistan's intricate tax legislation and accounting standards. Our experienced tax advisors specialise in assisting businesses with this critical task — ensuring your Policy is accurately drafted, fully compliant with current Uzbek tax law, and provides clear, defensible methodologies that minimise potential disputes with tax authorities.",
       },
     ],
+    faq: [
+      {
+        question: "Is an Accounting Policy for Tax Purposes mandatory in Uzbekistan?",
+        answer: "Yes. Chapter 7 of Uzbekistan's Tax Code requires all taxpayers — both legal entities and individual entrepreneurs — to approve an Accounting Policy for Tax Purposes. This document defines the methodology for calculating tax bases, assessing tax liabilities, and preparing tax reports.",
+      },
+      {
+        question: "Can an Accounting Policy for Tax Purposes be changed during the year in Uzbekistan?",
+        answer: "Generally no. The policy must remain unchanged throughout the calendar year. Exceptions are permitted only when tax or accounting legislation changes, and any such amendments typically take effect from 1 January of the following year.",
+      },
+      {
+        question: "What must an Accounting Policy for Tax Purposes cover in Uzbekistan?",
+        answer: "The policy must address: deductible and non-deductible expenses, depreciation and amortisation methods for tax purposes, VAT accounting (including offset conditions and separate accounting rules), loss carryforward methodology, expense reserves, and the forms and procedures for tax registers and document management.",
+      },
+      {
+        question: "How does an Accounting Policy for Tax Purposes protect a company during a tax audit in Uzbekistan?",
+        answer: "A detailed, well-articulated policy provides documented justification for every tax calculation methodology the company applies. During an audit, it serves as the primary defence document — demonstrating that methods were chosen deliberately and in compliance with the Tax Code, which significantly reduces the risk of tax reassessments or penalties.",
+      },
+    ],
   },
   ru: {
     subtitle: "Почему каждому юридическому лицу и индивидуальному предпринимателю в Узбекистане нужна продуманная учётная политика для целей налогообложения.",
@@ -122,6 +140,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "Разработка надёжной и соответствующей требованиям учётной политики для целей налогообложения требует глубокого понимания сложного налогового законодательства и стандартов бухгалтерского учёта Узбекистана. Наши опытные налоговые консультанты специализируются на решении этой важной задачи — гарантируя точность формулировок, полное соответствие действующему налоговому законодательству и чёткие защищаемые методологии, минимизирующие потенциальные споры с налоговыми органами.",
       },
     ],
+    faq: [
+      {
+        question: "Обязательна ли учётная политика для целей налогообложения в Узбекистане?",
+        answer: "Да. Глава 7 Налогового кодекса Узбекистана обязывает всех налогоплательщиков — как юридических лиц, так и индивидуальных предпринимателей — утвердить учётную политику для целей налогообложения. Этот документ определяет методологию расчёта налоговой базы, оценки налоговых обязательств и подготовки налоговой отчётности.",
+      },
+      {
+        question: "Можно ли изменить учётную политику для целей налогообложения в течение года в Узбекистане?",
+        answer: "Как правило, нет. Политика должна оставаться неизменной в течение всего календарного года. Исключения допускаются только при изменении налогового или бухгалтерского законодательства, при этом такие поправки обычно вступают в силу с 1 января следующего года.",
+      },
+      {
+        question: "Что должна охватывать учётная политика для целей налогообложения в Узбекистане?",
+        answer: "Политика должна охватывать: вычитаемые и невычитаемые расходы, методы амортизации для налоговых целей, учёт НДС (включая условия зачёта и правила раздельного учёта), методологию переноса убытков, резервы расходов, а также формы и процедуры ведения налоговых регистров и документооборота.",
+      },
+      {
+        question: "Как учётная политика для целей налогообложения защищает компанию при налоговой проверке в Узбекистане?",
+        answer: "Подробная, чётко сформулированная политика обеспечивает документальное обоснование каждой применяемой компанией методологии налогового расчёта. В ходе проверки она служит основным защитным документом — доказывая, что методы были выбраны осознанно и в соответствии с Налоговым кодексом, что существенно снижает риск доначислений и штрафов.",
+      },
+    ],
   },
   uz: {
     subtitle: "Nega Oʻzbekistondagi har bir yuridik shaxs va yakka tartibdagi tadbirkorga yaxshi tuzilgan soliq maqsadlaridagi hisob siyosati zarur.",
@@ -136,7 +172,7 @@ const article: Record<string, LocalizedArticle> = {
       {
         type: "ul",
         items: [
-          "Hisob-kitob metodologiyasini koʻrsatadi: turli soliqlarni hisoblashda qoʻllaniladigan aniq usul va tartiblarni aniq belgilab beradi, soliq majburiyatlari qanday shakllantirilganini shaffof qiladi.",
+          "Hisob-kitob metodologiyasini koʻrsatadi: turli soliqlarni hisoblashda qoʻlaniladigan aniq usul va tartiblarni aniq belgilab beradi, soliq majburiyatlari qanday shakllantirilganini shaffof qiladi.",
           "Asoslash va mantiqni taʼminlaydi: siyosat tanlangan soliq hisobi usullarining hujjatli asosini taqdim etadi — bu ayniqsa Soliq kodeksi soliq toʻlovchiga variantlar yoki mustaqil qaror qabul qilish imkonini bergan hollarda muhim.",
           "Izchillikni taʼminlaydi va xatolarni kamaytiradi: vaqt davomida bir xil hisob-kitob yondashuvlarini oʻrnatib, siyosat soliq hisobotidagi xato va nomuvofiqliklarni minimallashtiradi — bu soliq tekshiruvlarida nizolardan qochishning kalitidir.",
           "Soliq nizolarini kamaytiradi: batafsil va aniq tuzilgan siyosat soliq tekshiruvlari paytida mustahkam himoya vositasi sifatida xizmat qiladi. Soliq inspektorlari bilan muloqotda murojaat qiladigan hujjat aynan shu hisoblanadi.",
@@ -156,12 +192,12 @@ const article: Record<string, LocalizedArticle> = {
       { type: "h3", text: "Amortizatsiya va eskirish" },
       {
         type: "p",
-        text: "Soliq kodeksi soliq maqsadlari uchun aniq amortizatsiya stavkalarini belgilaydi va ular moliyaviy hisobda qoʻllaniladiganlardan farq qilishi mumkin. Siyosat bu farqlarni muvofiqlashtirishi va soliq maqsadlari uchun qoʻllaniladigan usullarni belgilashi kerak.",
+        text: "Soliq kodeksi soliq maqsadlari uchun aniq amortizatsiya stavkalarini belgilaydi va ular moliyaviy hisobda qoʻlaniladiganlardan farq qilishi mumkin. Siyosat bu farqlarni muvofiqlashtirishi va soliq maqsadlari uchun qoʻlaniladigan usullarni belgilashi kerak.",
       },
       { type: "h3", text: "Qoʻshilgan qiymat soligʻi (QQS) hisobi" },
       {
         type: "p",
-        text: "Eng murakkab soliqlardan biri sifatida siyosatda batafsil tasvirlanishi kerak: tovar va xizmatlar boʻyicha avval toʻlangan QQSni hisobga olish shartlari; chet el yuridik shaxslari bilan ish olib borishda QQSni hisobga olishning maxsus qoidalari; va biznesingiz turli QQS stavkalari yoki QQSdan ozod qilingan operatsiyalarga ega boʻlsa, alohida hisob yuritish metodologiyasi.",
+        text: "Eng murakkab soliqlardan biri sifatida siyosatda batafsil tasvirlanishi kerak: tovar va xizmatlar boʻzicha avval toʻlangan QQSni hisobga olish shartlari; chet el yuridik shaxslari bilan ish olib borishda QQSni hisobga olishning maxsus qoidalari; va biznesingiz turli QQS stavkalari yoki QQSdan ozod qilingan operatsiyalarga ega boʻlsa, alohida hisob yuritish metodologiyasi.",
       },
       { type: "h3", text: "Soliq registrlari va hujjatlar boshqaruvi" },
       {
@@ -174,13 +210,31 @@ const article: Record<string, LocalizedArticle> = {
         items: [
           "Tasdiqlash va oʻzgartirishlar: siyosat kompaniya rahbarining buyrugʻi yoki koʻrsatmasi bilan tasdiqlanadi. Odatda, kalendar yili davomida oʻzgartirilmaydi — istisno faqat soliq yoki buxgalteriya qonunchiligida oʻzgarishlar boʻlganda qilinadi va bunday oʻzgarishlar odatda keyingi yilning 1 yanvaridan kuchga kiradi.",
           "Moliyaviy hisob siyosati bilan integratsiya: siyosat alohida hujjat yoki umumiy moliyaviy hisob siyosatining alohida boʻlimi sifatida boʻlishi mumkin. Yagona tasdiqlangan shakl mavjud emas.",
-          "Oʻzbekistonda fiskal yoʻnaltirilganlik: Oʻzbekistonning buxgalteriya standartlari koʻpincha kuchli fiskal yoʻnalishga ega. Koʻplab tashkilotlar buxgalteriya va soliq maʼlumotlarini yaqinlashtiradigan usullarni qoʻllaydi — bu amaliyot odatda soliq organlari tomonidan qoʻllab-quvvatlanadi.",
+          "Oʻzbekistonda fiskal yoʻnaltirilganlik: Oʻzbekistonning buxgalteriya standartlari koʻpincha kuchli fiskal yoʻnalishga ega. Koʻplab tashkilotlar buxgalteriya va soliq maʼlumotlarini yaqinlashtiradigan usullarni qoʻlaydi — bu amaliyot odatda soliq organlari tomonidan qoʻlab-quvvatlanadi.",
         ],
       },
       { type: "h2", text: "Advizen: soliq siyosatini ishlab chiqishda ekspert hamkoringiz" },
       {
         type: "p",
         text: "Ishonchli va talablarga javob beradigan soliq maqsadlaridagi hisob siyosatini ishlab chiqish Oʻzbekistonning murakkab soliq qonunchiligi va buxgalteriya standartlarini chuqur tushunishni talab qiladi. Tajribali soliq maslahatchilarimiz biznesga shu muhim vazifada yordam berishga ixtisoslashgan — siyosatingiz aniq tuzilgan, joriy oʻzbek soliq qonunchiligiga toʻliq mos va soliq organlari bilan boʻlishi mumkin boʻlgan nizolarni kamaytiruvchi aniq, himoyalanadigan metodologiyalarni taʼminlashini kafolatlaymiz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Oʻzbekistonda soliq maqsadlaridagi hisob siyosati majburiymidir?",
+        answer: "Ha. Oʻzbekiston Soliq kodeksining 7-bobi barcha soliq toʻlovchilarni — ham yuridik shaxslarni, ham yakka tartibdagi tadbirkorlarni — soliq maqsadlaridagi hisob siyosatini tasdiqlashga majbur qiladi. Bu hujjat soliq bazasini hisoblash, soliq majburiyatlarini baholash va soliq hisobotlarini tayyorlash metodologiyasini belgilaydi.",
+      },
+      {
+        question: "Oʻzbekistonda soliq maqsadlaridagi hisob siyosatini yil davomida oʻzgartirish mumkinmi?",
+        answer: "Odatda, yoʻq. Siyosat butun kalendar yili davomida oʻzgarishsiz qolishi kerak. Istisnolar faqat soliq yoki buxgalteriya qonunchiligida oʻzgarishlar boʻlganda ruxsat etiladi va bunday oʻzgartirishlar odatda keyingi yilning 1 yanvaridan kuchga kiradi.",
+      },
+      {
+        question: "Oʻzbekistonda soliq maqsadlaridagi hisob siyosati nimalarni qamrab olishi kerak?",
+        answer: "Siyosat quyidagilarni qamrab olishi kerak: chegirib tashlanadigan va chegirib tashlanmaydigan xarajatlar, soliq maqsadlari uchun amortizatsiya usullari, QQS hisobi (hisobga olish shartlari va alohida hisob qoidalari), zararlarni keyingi davrlarga oʻtkazish metodologiyasi, xarajat zaxiralari, soliq registrlarini yuritish shakllari va tartiblari hamda hujjatlar boshqaruvi.",
+      },
+      {
+        question: "Oʻzbekistonda soliq tekshiruvi paytida soliq maqsadlaridagi hisob siyosati kompaniyani qanday himoya qiladi?",
+        answer: "Batafsil va aniq tuzilgan siyosat kompaniya qoʻllaydigan har bir soliq hisoblash metodologiyasi uchun hujjatli asosni taʼminlaydi. Tekshiruv davomida u asosiy himoya hujjati vazifasini oʻtaydi — usullar Soliq kodeksiga muvofiq va ongli ravishda tanlanganligini isbotlab, soliq qayta hisoblanishi va jarimalar xavfini sezilarli darajada kamaytiradi.",
       },
     ],
   },
