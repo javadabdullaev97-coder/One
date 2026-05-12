@@ -13,7 +13,7 @@ type Step = 1 | 2 | 3 | 4 | 5 | 6;
 type OrderType = "individual" | "legal";
 type Currency = "USD" | "UZS";
 
-const UZS_RATE = 12750;
+const UZS_RATE = 12000;
 
 function fmtPrice(price: number, currency: Currency, locale: string): string {
   if (currency === "USD") return `$${price}`;
@@ -333,6 +333,13 @@ export default function CheckoutModal({
                         {t("notice.emailNote")}
                       </span>
                     </div>
+
+                    {/* UZS billing disclosure */}
+                    {currency === "UZS" && (
+                      <p className="mt-4 text-[11px] text-white/35 leading-relaxed">
+                        {t("notice.uzsBillingNote")}
+                      </p>
+                    )}
                   </motion.div>
                 )}
 
