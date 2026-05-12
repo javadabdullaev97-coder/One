@@ -107,6 +107,24 @@ export default {
         text: "Navigating Uzbekistan's licensing and permitting landscape requires knowing which track applies to your activity, what conditions must be met, and how to respond if the authority pushes back. Advizen's legal team assists clients at every stage — from identifying the correct authorisation path and preparing application packages, to managing suspensions, amendments, and regulatory disputes.",
       },
     ],
+    faq: [
+      {
+        question: "What are the three authorisation tracks for businesses in Uzbekistan?",
+        answer: "Law No. ЗРУ-701 establishes three tracks: (1) Licensing — required for activities that could harm public health, safety, or the environment without restriction, listed in Appendix 1; (2) Permitting documents — a lighter authorisation for Appendix 2 activities, requiring advance approval under simpler conditions; (3) Notifications — the most flexible track, where you notify the relevant authority before starting with no approval needed, covering activities in Appendix 3. All applications are filed electronically via the License system (license.gov.uz) or the EPAGU portal with a digital signature.",
+      },
+      {
+        question: "How long does it take to obtain a licence or permitting document in Uzbekistan?",
+        answer: "The competent authority must issue or refuse the licence or permitting document within 20 working days of the application date. If no decision is made within the deadline, the applicant may begin operations after notifying the authority electronically. Where documents are deficient, the applicant has up to 30 working days to remedy them. The authority's decision is posted in the License system within one day, and the applicant is notified within one working hour of that posting.",
+      },
+      {
+        question: "On what grounds can a business licence be refused in Uzbekistan?",
+        answer: "A licence or permitting document may only be refused on three grounds: incomplete documents; false or distorted information; or failure to meet licensing conditions. Refusal on any other basis — including \"inexpediency\" — is not permitted by law. Where documents are deficient, the applicant has up to 30 working days to remedy them and reapply.",
+      },
+      {
+        question: "What are the penalties for operating without a licence in Uzbekistan?",
+        answer: "Individuals face administrative liability under Articles 165, 176³ and 241⁵ of the Administrative Responsibility Code, and criminal liability under Articles 190 and 192⁵ of the Criminal Code. Legal entities are subject to fines set out in Appendix 4 of the Law. If the entity voluntarily pays 70% of the fine and simultaneously applies for the required licence or permitting document, the remaining 30% is waived. Unpaid fines are referred to court within 5 working days.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практическое руководство по единой системе лицензирования, разрешительных документов и уведомлений в Узбекистане согласно Закону № ЗРУ-701.",
@@ -216,6 +234,24 @@ export default {
         text: "Ориентирование в системе лицензирования и разрешительной деятельности Узбекистана требует знания того, какой трек применяется к вашему виду деятельности, какие условия должны быть выполнены и как реагировать в случае противодействия со стороны органа. Юридическая команда Advizen сопровождает клиентов на каждом этапе — от определения правильного пути авторизации и подготовки пакетов документов до управления приостановлениями, внесения изменений и урегулирования регуляторных споров.",
       },
     ],
+    faq: [
+      {
+        question: "Какие три трека авторизации предусмотрены для бизнеса в Узбекистане?",
+        answer: "Закон № ЗРУ-701 устанавливает три трека: (1) Лицензирование — обязательно для видов деятельности, способных нанести вред здоровью, безопасности или окружающей среде без ограничений (Приложение 1); (2) Разрешительные документы — более лёгкая форма авторизации для видов деятельности из Приложения 2, требующая предварительного одобрения в упрощённом порядке; (3) Уведомления — наиболее гибкий трек: уведомите орган до начала деятельности — одобрение не требуется (Приложение 3). Все заявки подаются в электронном виде через систему «Лицензия» (license.gov.uz) или портал ЕПАГУ с электронной подписью.",
+      },
+      {
+        question: "Сколько времени занимает получение лицензии или разрешительного документа в Узбекистане?",
+        answer: "Компетентный орган обязан выдать или отказать в выдаче лицензии или разрешительного документа в течение 20 рабочих дней с даты подачи заявки. Если решение не принято в установленный срок, заявитель вправе начать деятельность, уведомив орган электронно. В случае неполноты документов заявителю предоставляется до 30 рабочих дней для устранения недостатков. Решение размещается в системе «Лицензия» в течение одного дня, а заявитель уведомляется в течение одного рабочего часа.",
+      },
+      {
+        question: "По каким основаниям может быть отказано в выдаче лицензии в Узбекистане?",
+        answer: "Лицензия или разрешительный документ могут быть отклонены только по трём основаниям: неполный пакет документов; ложные или искажённые сведения; несоответствие лицензионным условиям. Отказ по иным основаниям — в том числе по соображениям «нецелесообразности» — законом не допускается. В случае неполноты документов заявителю предоставляется до 30 рабочих дней для их устранения.",
+      },
+      {
+        question: "Какова ответственность за осуществление деятельности без лицензии в Узбекистане?",
+        answer: "Физические лица несут административную ответственность по статьям 165, 176³ и 241⁵ Кодекса об административной ответственности и уголовную ответственность по статьям 190 и 192⁵ Уголовного кодекса. Юридические лица подлежат штрафам согласно Приложению 4 к Закону. При добровольной уплате 70% штрафа и одновременной подаче заявки на требуемую лицензию оставшиеся 30% списываются. Неуплаченные штрафы передаются в суд в течение 5 рабочих дней.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekistonda ЗРУ-701-sonli Qonun asosidagi yagona litsenziyalash, ruxsat berish va xabardor qilish tartibi bo'yicha amaliy qo'llanma.",
@@ -323,6 +359,24 @@ export default {
       {
         type: "p" as const,
         text: "O'zbekistonning litsenziyalash va ruxsat berish tizimida mo'ljal olish faoliyatingizga qaysi yo'nalish qo'llanilishini, qanday shartlar bajarilishi kerakligini va organ qarshi chiqgan taqdirda qanday javob berishni bilishni talab etadi. Advizen yuridik jamoasi mijozlarga har bir bosqichda yordam beradi — to'g'ri avtorizatsiya yo'lini aniqlash va ariza paketlarini tayyorlashdan tortib, to'xtatib qo'yishlarni boshqarish, o'zgartirish kiritish va tartibga soluvchi nizolarni hal etishgacha.",
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistondagi biznes uchun qanday uchta avtorizatsiya yo'nalishi mavjud?",
+        answer: "ЗРУ-701-sonli Qonun uchta yo'nalishni belgilaydi: (1) Litsenziyalash — cheklovlarsiz amalga oshirilishi sog'liq, xavfsizlik yoki atrof-muhitga zarar etkazishi mumkin bo'lgan faoliyat turlari uchun majburiy (1-ilova); (2) Ruxsat hujjatlari — 2-ilovadagi faoliyat turlari uchun yengilroq avtorizatsiya shakli, oldindan tasdiqlashni talab qiladi; (3) Xabarnomalar — eng moslashuvchan yo'nalish: faoliyatni boshlamasdan oldin organni xabardor qiling — tasdiqlash talab etilmaydi (3-ilova). Barcha arizalar «Litsenziya» tizimi (license.gov.uz) yoki EPAGU portali orqali elektron raqamli imzo bilan taqdim etiladi.",
+      },
+      {
+        question: "O'zbekistonda litsenziya yoki ruxsat hujjatini olish qancha vaqt oladi?",
+        answer: "Vakolatli organ ariza sanasidan boshlab 20 ish kuni ichida litsenziya yoki ruxsat hujjatini berishi yoki berishdan bosh tortishi shart. Belgilangan muddatda qaror qabul qilinmasa, ariza beruvchi organni elektron tarzda xabardor qilib faoliyatni boshlash huquqiga ega. Hujjatlar to'liq bo'lmagan taqdirda ariza beruvchiga ularni bartaraf qilish uchun 30 ish kunigacha vaqt beriladi. Qaror bir kun ichida «Litsenziya» tizimida joylashtiriladi, ariza beruvchi esa bir ish soati ichida xabardor qilinadi.",
+      },
+      {
+        question: "O'zbekistonda litsenziya berishdan qanday asoslarda bosh tortilishi mumkin?",
+        answer: "Litsenziya yoki ruxsat hujjati faqat uchta asosda rad etilishi mumkin: to'liq bo'lmagan hujjatlar; noto'g'ri yoki buzib ko'rsatilgan ma'lumotlar; litsenziya shartlariga mos kelmaslik. Boshqa asoslarda — jumladan «maqsadga muvofiq emaslik» sababli — rad etishga qonun bo'yicha yo'l qo'yilmaydi. Hujjatlar to'liq bo'lmagan taqdirda ariza beruvchiga ularni bartaraf qilish uchun 30 ish kunigacha vaqt beriladi.",
+      },
+      {
+        question: "O'zbekistonda litsenziyasiz faoliyat yuritganlik uchun qanday jarimalar qo'llaniladi?",
+        answer: "Jismoniy shaxslar Ma'muriy javobgarlik to'g'risidagi kodeksning 165, 176³ va 241⁵-moddalari bo'yicha ma'muriy va Jinoyat kodeksining 190 va 192⁵-moddalari bo'yicha jinoiy javobgarlikka tortiladi. Yuridik shaxslar Qonunning 4-ilovasida belgilangan jarimalar to'laydi. Tashkilot jarimasining 70%ini ixtiyoriy to'lasa va shu bilan birga zarur litsenziyaga ariza bersa, qolgan 30% bekor qilinadi. To'lanmagan jarimalar 5 ish kuni ichida sudga o'tkaziladi.",
       },
     ],
   },
