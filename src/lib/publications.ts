@@ -18,11 +18,17 @@ export interface ArticleContentBlock {
   items?: string[];
 }
 
+export interface ArticleFaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface LocalizedArticle {
   subtitle?: string;
   author?: string;
   readTime?: string;
   content: ArticleContentBlock[];
+  faq?: ArticleFaqItem[];
 }
 
 export interface PublicationArticle extends Publication {
@@ -30,6 +36,7 @@ export interface PublicationArticle extends Publication {
   author?: string;
   readTime?: string;
   content: ArticleContentBlock[];
+  faq?: ArticleFaqItem[];
 }
 
 export const publications: Publication[] = [
