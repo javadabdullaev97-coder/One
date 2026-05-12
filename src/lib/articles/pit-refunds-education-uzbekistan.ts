@@ -70,6 +70,20 @@ const article: Record<string, LocalizedArticle> = {
         answer: "Additional PIT exemptions include: salary voluntarily directed to Individual Accumulative Pension Accounts (INPS) at the People's Bank; salary directed to individual investment accounts for purchasing shares (up to 100× MROT annually, with funds locked for 12 months); and certain employer-provided benefits within prescribed limits — including material assistance, medical compensation, children's camp vouchers, and non-cash gifts.",
       },
     ],
+    howTo: {
+      name: "How to Claim a PIT Refund for Education Expenses in Uzbekistan",
+      description: "The 2-step online process to reclaim overpaid personal income tax on education, mortgage, and pension expenses in Uzbekistan through my3.soliq.uz.",
+      steps: [
+        {
+          name: "Submit your annual income declaration",
+          text: "By April 1 of the year following the reporting year, file your annual income declaration at my3.soliq.uz using your Electronic Digital Signature (EDS). Attach income statements from all workplaces and scanned copies of your university enrolment, private school, or mortgage agreement plus payment receipts. In the 'Tax benefits' section, select the applicable benefit category — the system automatically calculates your refundable amount.",
+        },
+        {
+          name: "Submit your refund application",
+          text: "After your declaration is processed, submit a refund application via my3.soliq.uz or my.soliq.uz. Enter your bank card number, transit account, and bank MFO code. The refund is typically transferred to your specified bank card within 15 days.",
+        },
+      ],
+    },
   },
   ru: {
     subtitle: "Ваш гид по льготам и возвратам НДФЛ за образование, ипотеку и другие категории в Узбекистане.",
@@ -125,7 +139,7 @@ const article: Record<string, LocalizedArticle> = {
       faq: [
       {
         question: "Какие расходы на образование дают право на льготу по НДФЛ в Узбекистане?",
-        answer: "Оплата обучения за себя, супруга или детей (до 26 лет) в высших учебных заведениях Узбекистана освобождается от НДФЛ — в том числе образовательные кредиты и проценты по ним. Родители или усыновители также могут получить освобождение до 3 000 000 сум в месяц на ребёнка за услуги в негосударственных дошкольных учреждениях и частных школах. Льготы применяются в рамках стандартной ставки НДФЛ 12%.",
+        answer: "Оплата обучения за себя, супруга или детей (до 26 лет) в высших учебных заведениях Узбекистана освобождается от НДФЛ — в том числе образовательные кредиты и проценты по ним. Родители или усыновители также могут получить освобождение до 3 000 000 сум в месяц на ребёнка за услуги в негосударственных дошкольных учреждениях и частных школах. Льготы применяются в рамках стандартной ставки НДФЛ 12%.",
       },
       {
         question: "Каков срок подачи заявления на возврат НДФЛ в Узбекистане?",
@@ -140,32 +154,46 @@ const article: Record<string, LocalizedArticle> = {
         answer: "Дополнительные освобождения от НДФЛ: суммы зарплаты, добровольно направленные на индивидуальные накопительные пенсионные счета (ИНПС) в Народном банке; зарплата, направленная на индивидуальные инвестиционные счета для покупки акций (до 100 МРОТ в год, средства заблокированы на 12 месяцев); определённые льготы от работодателя в установленных лимитах — в том числе материальная помощь, медицинские компенсации, путёвки в детские лагеря и неденежные подарки.",
       },
     ],
+    howTo: {
+      name: "Как получить возврат НДФЛ за образование в Узбекистане",
+      description: "Двухшаговый онлайн-процесс возврата переплаты НДФЛ за образование, ипотеку и пенсионные взносы в Узбекистане через my3.soliq.uz.",
+      steps: [
+        {
+          name: "Подайте годовую декларацию о доходах",
+          text: "До 1 апреля года, следующего за отчётным, подайте декларацию на my3.soliq.uz с использованием ЭЦП. Приложите справки о доходах со всех мест работы, сканы договоров (университет, частная школа или ипотека) и платёжных документов. В разделе «Налоговые льготы» выберите нужную категорию льготы — система автоматически рассчитает возвращаемую сумму.",
+        },
+        {
+          name: "Подайте заявление на возврат",
+          text: "После обработки декларации подайте заявление на возврат через my3.soliq.uz или my.soliq.uz. Укажите номер банковской карты, транзитный счёт и МФО банка. Возврат, как правило, поступает на карту в течение 15 дней.",
+        },
+      ],
+    },
   },
   uz: {
-    subtitle: "Oʻzbekistonda taʼlim, ipoteka va boshqa toifalar boʻyicha JShDS imtiyozlari va qaytarimlari boʻyicha qoʻllanmangiz.",
+    subtitle: "Oʻzbekistonda taʼlim, ipoteka va boshqa toifalar boʻyicha JShDS imtiyozlari va qaytarimlari boʻyicha qoʻlanmangiz.",
     author: "Advizen soliq amaliyoti",
     readTime: "7 daqiqalik oʻqish",
     content: [
       {
         type: "p",
-        text: "Oʻzbekistonda rasmiy maoshga ega jismoniy shaxslarning Jismoniy shaxslar daromad soligʻi (JShDS) odatda har oy 12% stavkada ushlab qolinadi. Biroq muayyan daromad toifalari bu soliqdan toʻliq yoki qisman ozod qilinadi. Yana ham yaxshisi, agar bu summalardan soliq allaqachon toʻlangan boʻlsa, uning bir qismini qonuniy ravishda qaytarib olishingiz mumkin.",
+        text: "Oʻzbekistonda rasmiy maoshga ega jismoniy shaxslarning Jismoniy shaxslar daromad soligʻi (JShDS) odatda har oy 12% stavkada ushlab qolinadi. Biroq muayyan daromad toifalari bu soliqdan toʼliq yoki qisman ozod qilinadi. Yana ham yaxshisi, agar bu summalardan soliq allaqachon toʼlangan boʻsa, uning bir qismini qonuniy ravishda qaytarib olishingiz mumkin.",
       },
       { type: "h2", text: "Asosiy JShDS imtiyozlari va ozod qilishlar" },
       {
         type: "ul",
         items: [
-          "Taʼlim xarajatlari: oʻzingiz, turmush oʻrtogʻingiz yoki bolalaringiz (26 yoshgacha) uchun Oʻzbekiston oliy taʼlim muassasalaridagi oʻquv haqi, jumladan taʼlim kreditlari va ularning foizlari",
+          "Taʼlim xarajatlari: oʻzingiz, turmush oʻrtoʻgʻingiz yoki bolalaringiz (26 yoshgacha) uchun Oʻzbekiston oliy taʼlim muassasalaridagi oʻruv haqi, jumladan taʼlim kreditlari va ularning foizlari",
           "Xususiy maktablar va bogʻchalar: ota-onalar yoki farzandlikka olganlar nodavlat maktabgacha taʼlim muassasalari va maktablar xizmatlari uchun bola boshiga oyiga 3 mln soʻmgacha imtiyoz olishlari mumkin",
-          "Ipoteka foizlari: ipoteka kreditlari va hisoblangan foizlarga toʻlangan summalar — yiliga Pensiyaning eng kam miqdori (MROT)ning 80 baravarigacha, agar uy-joy byudjet subsidiyasi bilan olingan boʻlsa",
-          "Pensiya jamgʻarmalari: Xalq bankidagi Individual jamgʻarib boriladigan pensiya hisobvaraqlariga (INPS) ixtiyoriy ravishda yoʻnaltirilgan maosh summalari",
+          "Ipoteka foizlari: ipoteka kreditlari va hisoblangan foizlarga toʼlangan summalar — yiliga Pensiyaning eng kam miqdori (MROT)ning 80 baravarigacha, agar uy-joy byudjet subsidiyasi bilan olingan boʻsa",
+          "Pensiya jamgʻarmalar: Xalq bankidagi Individual jamgʻarib boriladigan pensiya hisobvaraqlariga (INPS) ixtiyoriy ravishda yoʻnaltirilgan maosh summalari",
           "Investitsiya hisobvaraqlari: aksiyalar sotib olish uchun individual investitsiya hisobvaraqlariga yoʻnaltirilgan maosh, yiliga MROTning 100 baravarigacha (mablagʻlar 12 oyga blokirovka qilinadi)",
-          "Ish beruvchi tomonidan beriladigan imtiyozlar: belgilangan limitlar doirasidagi muayyan moddiy yordam, tibbiy kompensatsiya, bolalar lagerlari yoʻllanmalari va naqd boʻlmagan sovgʻalar",
+          "Ish beruvchi tomonidan beriladigan imtiyozlar: belgilangan limitlar doirasidagi muayyan moddiy yordam, tibbiy kompensatsiya, bolalar lagerlari yoʻlanmalari va naqd boʻlmagan sovgʻalar",
         ],
       },
       { type: "h2", text: "JShDS qaytarimini qanday olish mumkin" },
       {
         type: "p",
-        text: "Bu imtiyozlardan foydalanishning ikki asosiy usuli mavjud: ish beruvchi bilan uch tomonlama shartnoma orqali bevosita ozod qilish yoki ortiqcha toʻlangan JShDS uchun yillik qaytarimni soʻrash. Yillik qaytarish jarayonini toʻliq onlayn tarzda yakunlash mumkin.",
+        text: "Bu imtiyozlardan foydalanishning ikki asosiy usuli mavjud: ish beruvchi bilan uch tomonlama shartnoma orqali bevosita ozod qilish yoki ortiqcha toʼlangan JShDS uchun yillik qaytarimni soʻrash. Yillik qaytarish jarayonini toʼliq onlayn tarzda yakunlash mumkin.",
       },
       { type: "h3", text: "1-qadam. Yillik daromad deklaratsiyangizni topshiring" },
       {
@@ -189,7 +217,7 @@ const article: Record<string, LocalizedArticle> = {
       },
       {
         type: "blockquote",
-        text: "Soliq imtiyozlarini ishlatish murakkab boʻlishi mumkin, ammo bu ozod qilishlarni tushunish sezilarli tejashga olib keladi. Deklaratsiyani tayyorlashda, imtiyozga huquq baholashda yoki muvofiqlikni taʼminlashda yordam kerak boʻlsa, Advizen ekspertlari yordam berishga tayyor.",
+        text: "Soliq imtiyozlarini ishlatish murakkab boʻlishi mumkin, ammo bu ozod qilishlarni tushunish sezilarli tejashga olib keladi. Deklaratsiyani tayyorlashda, imtiyozga huquq baholashda yoki muvofiqlikni taʼminlashda yordam kerak boʻsa, Advizen ekspertlari yordam berishga tayyor.",
       },
     ],
       faq: [
@@ -210,6 +238,20 @@ const article: Record<string, LocalizedArticle> = {
         answer: "Qo'shimcha JShDS imtiyozlari: Xalq bankidagi Individual jamg'arib boriladigan pensiya hisobvaraqlariga (INPS) ixtiyoriy ravishda yo'naltirilgan maosh summalari; aksiyalar sotib olish uchun individual investitsiya hisobvaraqlariga yo'naltirilgan maosh (yiliga MROTning 100 baravarigacha, mablag'lar 12 oyga blokirovka qilinadi); belgilangan limitlar doirasidagi ish beruvchi tomonidan beriladigan imtiyozlar — jumladan moddiy yordam, tibbiy kompensatsiya, bolalar lagerlari yo'llanmalari va naqd bo'lmagan sovg'alar.",
       },
     ],
+    howTo: {
+      name: "O'zbekistonda ta'lim xarajatlari uchun JShDS qaytarimini olish tartibi",
+      description: "O'zbekistonda ta'lim, ipoteka va pensiya xarajatlari bo'yicha ortiqcha to'langan JShDSni my3.soliq.uz orqali qaytarishning 2 bosqichli onlayn jarayoni.",
+      steps: [
+        {
+          name: "Yillik daromad deklaratsiyangizni topshiring",
+          text: "Hisobot yilidan keyingi yilning 1 aprelgacha my3.soliq.uz saytida Elektron raqamli imzo (ERI) yordamida deklaratsiya topshiring. Barcha ish joylaridan daromad ma'lumotnomalarini, universitet, xususiy maktab yoki ipoteka shartnomalarining skan nusxalarini va to'lov hujjatlarini biriktiring. «Soliq imtiyozlari» bo'limida tegishli imtiyoz toifasini tanlang — tizim qaytariladigan summani avtomatik hisoblaydi.",
+        },
+        {
+          name: "Qaytarish arizasini topshiring",
+          text: "Deklaratsiya qayta ishlangandan so'ng my3.soliq.uz yoki my.soliq.uz orqali qaytarish arizasini topshiring. Bank karta raqami, tranzit hisobvaraq va bank MFO kodini kiriting. Qaytarish odatda 15 kun ichida ko'rsatilgan bank kartasiga o'tkaziladi.",
+        },
+      ],
+    },
   },
 };
 
