@@ -56,6 +56,24 @@ const article: Record<string, LocalizedArticle> = {
         text: "From a tax perspective, if royalties are paid to a non-resident Licensor without a permanent establishment in Uzbekistan, the Licensee is required to withhold income tax at a 20% rate from each payment. This rate may be reduced or exempted by international double taxation agreements.",
       },
     ],
+    faq: [
+      {
+        question: "Must franchise agreements be registered in Uzbekistan?",
+        answer: "Yes. All franchise agreements and significant amendments must be registered at two authorities: the Public Service Center (PSC), which handles primary registration typically within one business day, and the Intellectual Property Department of the Ministry of Justice, which registers the intellectual property rights transfer (e.g., trademarks). An unregistered agreement is legally invalid.",
+      },
+      {
+        question: "What is the withholding tax rate on royalties paid to a foreign franchisor in Uzbekistan?",
+        answer: "The Uzbek Licensee must withhold income tax at 20% from each royalty payment to a non-resident Licensor that has no permanent establishment in Uzbekistan. This rate may be reduced or fully exempted under an applicable international double taxation treaty between Uzbekistan and the Licensor's country of residence.",
+      },
+      {
+        question: "Can a foreign franchisor repatriate royalty payments from Uzbekistan?",
+        answer: "Yes. Franchise agreements with foreign Licensors are treated as foreign trade contracts. Payments can be made in foreign currency under such contracts, and there are generally no significant restrictions on repatriation of royalty funds from Uzbekistan.",
+      },
+      {
+        question: "Who can be a party to a franchise agreement in Uzbekistan?",
+        answer: "Only commercial organisations and registered individual entrepreneurs can be parties to a franchise agreement in Uzbekistan. Natural persons who are not registered as individual entrepreneurs cannot enter into franchise agreements under Uzbek law.",
+      },
+    ],
   },
   ru: {
     subtitle: "Разбираемся в правовой базе и обязательных процедурах регистрации для успешных франчайзинговых соглашений в Узбекистане.",
@@ -112,17 +130,35 @@ const article: Record<string, LocalizedArticle> = {
         text: "С точки зрения налогообложения, если роялти выплачиваются нерезиденту-Лицензиару, не имеющему постоянного представительства в Узбекистане, Лицензиат обязан удерживать налог на доход по ставке 20% с каждой выплаты. Эта ставка может быть снижена или отменена международными соглашениями об избежании двойного налогообложения.",
       },
     ],
+    faq: [
+      {
+        question: "Обязательна ли регистрация франчайзинговых договоров в Узбекистане?",
+        answer: "Да. Все договоры франчайзинга и их существенные изменения подлежат регистрации в двух органах: в Центре государственных услуг (ЦГУ), где осуществляется первичная регистрация, как правило, в течение одного рабочего дня, и в Управлении по интеллектуальной собственности при Министерстве юстиции, которое регистрирует передачу прав на интеллектуальную собственность (например, товарные знаки). Незарегистрированный договор юридически недействителен.",
+      },
+      {
+        question: "Какова ставка налога у источника на роялти, выплачиваемые иностранному франчайзеру в Узбекистане?",
+        answer: "Узбекский Лицензиат обязан удерживать налог на доход по ставке 20% с каждой выплаты роялти нерезиденту-Лицензиару, не имеющему постоянного представительства в Узбекистане. Эта ставка может быть снижена или полностью освобождена в соответствии с применимым международным соглашением об избежании двойного налогообложения между Узбекистаном и страной резидентства Лицензиара.",
+      },
+      {
+        question: "Может ли иностранный франчайзер репатриировать платежи роялти из Узбекистана?",
+        answer: "Да. Договоры франчайзинга с иностранными Лицензиарами рассматриваются как внешнеторговые контракты. По таким договорам расчёты могут осуществляться в иностранной валюте, и существенных ограничений на репатриацию средств роялти из Узбекистана, как правило, нет.",
+      },
+      {
+        question: "Кто может быть стороной договора франчайзинга в Узбекистане?",
+        answer: "Сторонами договора франчайзинга в Узбекистане могут быть только коммерческие организации и зарегистрированные индивидуальные предприниматели. Физические лица, не зарегистрированные в качестве индивидуальных предпринимателей, не могут заключать договоры франчайзинга по узбекскому законодательству.",
+      },
+    ],
   },
   uz: {
-    subtitle: "Oʻzbekistonda muvaffaqiyatli franchayzing shartnomalari uchun huquqiy bazani va majburiy roʻyxatga olish jarayonlarini bilib oling.",
+    subtitle: "Oʻzbekistonda muvaffaqiyatli franchayzing shartnomalari uchun huquqiy bazani va majburiy roʻxatga olish jarayonlarini bilib oling.",
     author: "Advizen yuridik amaliyoti",
     readTime: "7 daqiqalik oʻqish",
     content: [
       {
         type: "p",
-        text: "Franchayzing Oʻzbekistonda biznesni rivojlantirish va bozorga kirish uchun kuchli vositadir. Biroq, bu modelni samarali qoʻllash uchun uning huquqiy asosi va majburiy roʻyxatga olish talablarini aniq tushunish zarur. Tegishli tartiblarga rioya qilmasdan ish olib borish katta jarimalarga olib kelishi mumkin.",
+        text: "Franchayzing Oʻzbekistonda biznesni rivojlantirish va bozorga kirish uchun kuchli vositadir. Biroq, bu modelni samarali qoʻlash uchun uning huquqiy asosi va majburiy roʻxatga olish talablarini aniq tushunish zarur. Tegishli tartiblarga rioya qilmasdan ish olib borish katta jarimalarga olib kelishi mumkin.",
       },
-      { type: "h2", text: "Huquqiy baza va asosiy taʼrif" },
+      { type: "h2", text: "Huquqiy baza va asosiy taʼmrif" },
       {
         type: "p",
         text: "Oʻzbekistondagi franchayzing shartnomalari asosan Oʻzbekiston Respublikasi Fuqarolik kodeksi, shuningdek, tovar belgilari, raqobat va tijorat siri toʻgʻrisidagi qonunlar bilan tartibga solinadi. Yuridik nuqtai nazardan franchayzing shartnomasi keng qamrovli biznes litsenziya shartnomasi sifatida belgilanadi, unga koʻra Litsenziar Litsenziatga toʻlov evaziga «kompleks litsenziya» — eksklyuziv huquqlar toʻplamini beradi. Bu paket odatda Litsenziarning firma nomi, tovar belgilari, tijorat sirlari va boshqa intellektual mulkidan Litsenziatning faoliyatida foydalanish huquqini oʻz ichiga oladi.",
@@ -131,41 +167,59 @@ const article: Record<string, LocalizedArticle> = {
       {
         type: "ul",
         items: [
-          "Yozma shakl va majburiy roʻyxatga olish: barcha franchayzing shartnomalari va ularga muhim oʻzgartirishlar yozma shaklda boʻlishi va yuridik roʻyxatga olinishi shart. Aks holda shartnoma haqiqiy emas hisoblanadi.",
-          "Talab qilingan tomonlar: franchayzing shartnomasining tomonlari sifatida faqat tijorat tashkilotlari va roʻyxatga olingan yakka tartibdagi tadbirkorlar boʻlishi mumkin.",
+          "Yozma shakl va majburiy roʻxatga olish: barcha franchayzing shartnomalari va ularga muhim oʻzgartirishlar yozma shaklda boʻlishi va yuridik roʻxatga olinishi shart. Aks holda shartnoma haqiqiy emas hisoblanadi.",
+          "Talab qilingan tomonlar: franchayzing shartnomasining tomonlari sifatida faqat tijorat tashkilotlari va roʻxatga olingan yakka tartibdagi tadbirkorlar boʻlishi mumkin.",
           "Aniq predmet: shartnomada beriladigan eksklyuziv huquqlar, foydalanish koʻlami va belgilangan hudud yoki faoliyat sohasi aniq belgilanishi shart.",
           "Muddat: shartnomalar muayyan muddatga yoki muddatsiz tuzilishi mumkin.",
           "Toʻlov: toʻlov turli koʻrinishlarda — qatʼiy toʻlov, davriy royalti, daromaddan ushlovlar yoki tovarlarga ustama sifatida belgilanishi mumkin.",
           "Maʼlumot va oʻqitish: Litsenziar Litsenziatga toʻgʻri faoliyat uchun zarur boʻlgan barcha texnik va tijorat hujjatlari, maʼlumot va treningni taqdim etishi shart.",
         ],
       },
-      { type: "h2", text: "Roʻyxatga olish tartiblari" },
+      { type: "h2", text: "Roʻxatga olish tartiblari" },
       {
         type: "ul",
         items: [
-          "Davlat xizmatlari markazlari (DXM): shartnomaning va unga oʻzgartirishlarning birlamchi roʻyxatga olinishi shu yerda amalga oshiriladi — odatda hujjatlar toʻliq boʻlsa, bir ish kuni ichida. Davlat boji (asosiy hisoblangan miqdorning 1/3) toʻlanadi, onlayn arizalar uchun 10% chegirma berilgan.",
-          "Intellektual mulk boshqarmasi: shartnomaning intellektual mulk huquqlarini (masalan, tovar belgilari) oʻtkazadigan qismi Adliya vazirligi huzuridagi Intellektual mulk boshqarmasida roʻyxatga olinishi kerak. Bu yerda talablarga rioya qilmaslik IM huquqini oʻtkazishni yoki butun shartnomani haqiqiy emas qilishi mumkin.",
-          "Tashqi savdo operatsiyalarining yagona tizimi: agar franchayzing shartnomasi xalqaro savdo (import/eksport) bilan bogʻliq boʻlsa, u ham bu tizimda roʻyxatga olinishi kerak.",
+          "Davlat xizmatlari markazlari (DXM): shartnomaning va unga oʻzgartirishlarning birlamchi roʻxatga olinishi shu yerda amalga oshiriladi — odatda hujjatlar toʻliq boʻlsa, bir ish kuni ichida. Davlat boji (asosiy hisoblangan miqdorning 1/3) toʻlanadi, onlayn arizalar uchun 10% chegirma berilgan.",
+          "Intellektual mulk boshqarmasi: shartnomaning intellektual mulk huquqlarini (masalan, tovar belgilari) oʻtkazadigan qismi Adliya vazirligi huzuridagi Intellektual mulk boshqarmasida roʻxatga olinishi kerak. Bu yerda talablarga rioya qilmaslik IM huquqini oʻtkazishni yoki butun shartnomani haqiqiy emas qilishi mumkin.",
+          "Tashqi savdo operatsiyalarining yagona tizimi: agar franchayzing shartnomasi xalqaro savdo (import/eksport) bilan bogʻliq boʻlsa, u ham bu tizimda roʻxatga olinishi kerak.",
         ],
       },
       { type: "h2", text: "Xalqaro jihatlar, IM himoyasi va javobgarlik" },
       {
         type: "ul",
         items: [
-          "Qoʻllaniladigan huquq: xalqaro franchayzing shartnomasining tomonlari qoʻllaniladigan huquqni tanlashi mumkin, biroq tanlov amalga oshirilmasa, oʻzbek qonuni standart qoidalarni belgilaydi.",
-          "Intellektual mulk: roʻyxatdan tashqari, «Tijorat siri toʻgʻrisida»gi qonunga rioya qilish orqali tijorat sirlarini himoya qilish muhim, ochib qoʻyganlik uchun jazolar koʻzda tutilgan.",
+          "Qoʻlaniladigan huquq: xalqaro franchayzing shartnomasining tomonlari qoʻlaniladigan huquqni tanlashi mumkin, biroq tanlov amalga oshirilmasa, oʻbek qonuni standart qoidalarni belgilaydi.",
+          "Intellektual mulk: roʻxatdan tashqari, «Tijorat siri toʻgʻrisida»gi qonunga rioya qilish orqali tijorat sirlarini himoya qilish muhim, ochib qoʻyanlik uchun jazolar koʻzda tutilgan.",
           "Raqobat: qonun muayyan eksklyuziv shartlarni (masalan, Litsenziatning raqobat qilmaslik majburiyati) qabul qiladi, lekin boshqalarni (masalan, Litsenziarning Litsenziat narxlarini belgilashi) haqiqiy emas deb tan oladi.",
-          "Javobgarlik: Litsenziar Litsenziat tomonidan taqdim etilgan tovar/xizmatlar sifati uchun subsidiar javobgarlik tashiydi. Litsenziar tomonidan ishlab chiqarilgan mahsulotlar boʻyicha esa muayyan talablar uchun birgalikdagi javobgarlik mavjud.",
+          "Javobgarlik: Litsenziar Litsenziat tomonidan taqdim etilgan tovar/xizmatlar sifati uchun subsidiar javobgarlik tashiydi. Litsenziar tomonidan ishlab chiqarilgan mahsulotlar boʻzicha esa muayyan talablar uchun birgalikdagi javobgarlik mavjud.",
         ],
       },
       { type: "h2", text: "Valyuta va soliq jihatlari" },
       {
         type: "p",
-        text: "Chet ellik Litsenziarlar uchun shartnoma tashqi savdo shartnomasi sifatida koʻriladi. Ichki toʻlovlar oʻzbek soʻmida amalga oshirilsa-da, tashqi savdo shartnomalari boʻyicha chet el valyutasidagi toʻlovlarga ruxsat etiladi va mablagʻlarni repatriatsiya qilishga sezilarli cheklovlar odatda yoʻq.",
+        text: "Chet ellik Litsenziarlar uchun shartnoma tashqi savdo shartnomasi sifatida koʻriladi. Ichki toʻlovlar oʻbek soʻmida amalga oshirilsa-da, tashqi savdo shartnomalari boʻzicha chet el valyutasidagi toʻlovlarga ruxsat etiladi va mablagʻlarni repatriatsiya qilishga sezilarli cheklovlar odatda yoʻq.",
       },
       {
         type: "p",
-        text: "Soliq nuqtai nazaridan, agar royalti Oʻzbekistonda doimiy vakolatxonasi boʻlmagan norezident Litsenziarga toʻlansa, Litsenziar har bir toʻlovdan 20% stavkada daromad soligʻini ushlab qolishi shart. Bu stavka qoʻsh soliqqa tortishni bartaraf etish toʻgʻrisidagi xalqaro shartnomalar bilan kamaytirilishi yoki bekor qilinishi mumkin.",
+        text: "Soliq nuqtai nazaridan, agar royalti Oʻzbekistonda doimiy vakolatxonasi boʻlmagan norezident Litsenziarga toʻlansa, Litsenziar har bir toʻlovdan 20% stavkada daromad soligʻiʻni ushlab qolishi shart. Bu stavka qoʻsh soliqqa tortishni bartaraf etish toʻgʻrisidagi xalqaro shartnomalar bilan kamaytirilishi yoki bekor qilinishi mumkin.",
+      },
+    ],
+    faq: [
+      {
+        question: "Oʻzbekistonda franchayzing shartnomalari roʻxatga olinishi shart bo'ladimi?",
+        answer: "Ha. Barcha franchayzing shartnomalari va ularga muhim oʻzgartirishlar ikkita organda roʻxatga olinishi kerak: birlamchi roʻxatga olishni odatda bir ish kuni ichida amalga oshiradigan Davlat xizmatlari markazida (DXM) va intellektual mulk huquqlari oʻtkazilishini (masalan, tovar belgilari) roʻxatga oladigan Adliya vazirligi huzuridagi Intellektual mulk boshqarmasida. Roʻxatga olinmagan shartnoma yuridik jihatdan haqiqiy emas hisoblanadi.",
+      },
+      {
+        question: "Oʻzbekistonda chet ellik franchayzer foydasiga toʻlanadigan royaltilardan ushlab qolinadigan soliq stavkasi qancha?",
+        answer: "Oʻzbekistonlik Litsenziat Oʻzbekistonda doimiy vakolatxonasi boʻlmagan norezident Litsenziarga har bir royalti toʻlovidan 20% stavkada daromad soligʻiʻni ushlab qolishi shart. Bu stavka Oʻzbekiston va Litsenziar rezidentligi mamlakatining qoʻsh soliqqa tortishni bartaraf etish toʻgʻrisidagi xalqaro shartnomasi asosida kamaytirilishi yoki toʻliq bekor qilinishi mumkin.",
+      },
+      {
+        question: "Chet ellik franchayzer Oʻzbekistondan royalti toʻlovlarini repatriatsiya qila oladimi?",
+        answer: "Ha. Chet ellik Litsenziarlar bilan tuzilgan franchayzing shartnomalari tashqi savdo shartnomalari sifatida koʻriladi. Bunday shartnomalar boʻzicha toʻlovlar chet el valyutasida amalga oshirilishi mumkin va Oʻzbekistondan royalti mablagʻlarini repatriatsiya qilishga sezilarli cheklovlar odatda mavjud emas.",
+      },
+      {
+        question: "Oʻzbekistonda franchayzing shartnomasining tomoni kim boʻlishi mumkin?",
+        answer: "Oʻzbekistonda franchayzing shartnomasining tomonlari sifatida faqat tijorat tashkilotlari va roʻxatga olingan yakka tartibdagi tadbirkorlar boʻlishi mumkin. Yakka tartibdagi tadbirkor sifatida roʻxatga olinmagan jismoniy shaxslar oʻbek qonunchiligiga muvofiq franchayzing shartnomalari tuzish huquqiga ega emas.",
       },
     ],
   },
