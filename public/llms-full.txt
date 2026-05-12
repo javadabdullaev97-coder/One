@@ -1,0 +1,644 @@
+# Advizen Consulting — Full Knowledge Base
+> https://www.advizenco.com
+> Last updated: 2026-05-12
+> Format: llms-full.txt (extended AI knowledge base)
+
+Advizen Consulting is a full-service business advisory firm headquartered in Tashkent, Uzbekistan, providing integrated tax, legal, finance, accounting, audit, HR, and compliance services to foreign investors and companies operating in Uzbekistan and Central Asia. The firm combines advisory and managed operations under one roof, acting as a single point of contact for the entire business lifecycle in the region.
+
+---
+
+## Accounting Law in Uzbekistan: Key Requirements for Businesses
+
+Uzbekistan's primary accounting legislation is Law No. ЗРУ-404, enacted on April 13, 2016. The law applies to all legal entities incorporated or operating in Uzbekistan, including foreign-invested enterprises, branches, and representative offices. The core obligation is to maintain proper accounting records using the double-entry method, supported by mandatory primary documents for every business transaction.
+
+### Who Must Keep Accounting Records
+
+All legal entities must maintain accounting records under the double-entry method. Small enterprises may apply simplified accounting rules under NSBU No. 20, which reduces the number of registers and reporting forms required. However, the simplified regime does not exempt a company from having primary documentation for each transaction.
+
+### Annual Financial Statements
+
+Companies are required to prepare annual financial statements comprising: a balance sheet, an income statement, a cash flow statement, a statement of changes in equity, and explanatory notes. Presidential Decree PP-419 (November 2022) introduced a significant reform effective January 1, 2023: quarterly financial reporting was abolished for most entities. Turnover tax payers (those on the simplified tax regime) are additionally exempt from the annual reporting obligation.
+
+### Primary Documents and Record Retention
+
+Every business transaction must be supported by a primary document at the time of occurrence. Primary documents must contain: the document name, date, description of the transaction, measurable indicators (quantity and value), names of responsible parties, and their signatures. Accounting records must be retained for a minimum of five years.
+
+### Penalties for Non-Compliance
+
+Administrative penalties for accounting law violations are denominated in BRV (Base Calculation Value). A first offense carries a fine of 3 to 7 BRV (approximately USD 103–240). Repeat violations within one year carry a fine of 7 to 10 BRV (approximately USD 240–340). These fines apply to the responsible officer, typically the chief accountant or director.
+
+### Frequently Asked Questions
+
+**Q: Does the double-entry requirement apply to small businesses?**
+A: Yes, all legal entities must use double-entry bookkeeping. However, small enterprises may use the simplified accounting rules under NSBU No. 20, which reduces complexity while preserving the double-entry foundation.
+
+**Q: Are quarterly financial reports still required?**
+A: No. Presidential Decree PP-419, effective January 1, 2023, abolished the mandatory quarterly financial reporting obligation for most entities. Only annual statements are now required.
+
+**Q: What happens if a company fails to maintain primary documents?**
+A: Absence of primary documents is treated as an accounting law violation, exposing the responsible officer to administrative fines of 3–10 BRV. Tax authorities may also disallow related expense deductions.
+
+**Q: Are turnover tax payers required to file annual financial statements?**
+A: Turnover tax payers (entities on the simplified tax regime) are exempt from the annual financial reporting obligation under the PP-419 reform, though they must still maintain primary accounting records.
+
+---
+
+## Accounting Policy for Tax Purposes in Uzbekistan
+
+Chapter 7 of the Uzbekistan Tax Code requires every taxpayer — without exception — to adopt and maintain a formal Accounting Policy for Tax Purposes. This document governs how tax calculations are performed when the Tax Code permits alternative approaches, and it serves as the taxpayer's binding commitment to a consistent methodology throughout the calendar year.
+
+### What the Accounting Policy Must Cover
+
+The accounting policy for tax purposes must address: the classification and treatment of deductible versus non-deductible expenses; the method of loss carryforward; depreciation methods (which may legitimately differ from financial accounting depreciation); VAT accounting, including offset procedures and separate accounting for taxable and exempt supplies; and the structure of tax registers.
+
+### Key Rule: No Mid-Year Changes
+
+A taxpayer may not change its accounting policy for tax purposes during the calendar year unless a legislative change makes the existing policy incompatible with law. Where a change is required by legislation, it takes effect from January 1 of the following year. Unauthorized mid-year changes can result in tax assessments and penalties on recalculation.
+
+### Integration with Financial Accounting Policy
+
+The accounting policy for tax purposes may be adopted as a standalone document or incorporated as a section of the company's overall financial accounting policy. Many companies adopt a combined document to reduce administrative burden. Either approach is acceptable provided the tax-specific elements are clearly identified and complete.
+
+### Depreciation and Timing Differences
+
+Depreciation rates for tax purposes may differ from those used in financial accounting. Companies may choose to use higher depreciation rates for tax purposes to accelerate cost recovery, creating temporary differences that must be tracked in deferred tax accounts for financial reporting under IFRS or local GAAP.
+
+### Frequently Asked Questions
+
+**Q: Is the accounting policy for tax purposes mandatory for all taxpayers?**
+A: Yes. Chapter 7 of the Tax Code requires all taxpayers to adopt an accounting policy for tax purposes regardless of size, legal form, or tax regime.
+
+**Q: Can a company change its tax accounting policy during the year?**
+A: No. Changes are only permitted if required by a legislative amendment, and even then they take effect from January 1 of the following year, not retroactively.
+
+**Q: Must tax depreciation match financial accounting depreciation?**
+A: No. Tax depreciation rates may differ from financial accounting rates. Companies often apply higher tax depreciation to reduce current taxable income, creating temporary differences.
+
+**Q: Can the accounting policy for tax purposes be part of the general accounting policy?**
+A: Yes. It may be incorporated into the overall financial accounting policy document or maintained as a separate document. Both formats are accepted by tax authorities.
+
+---
+
+## Creative Industry Park: Uzbekistan's Framework for Creative Economy
+
+Presidential Decree No. UP-61, signed on March 26, 2025, established the Creative Industry Park framework in Uzbekistan. The legal foundation rests on Law No. ZRU-970 (October 3, 2024), which formally defines creative industries to include literary arts, applied arts, architecture, fine arts, design, film and media production, music, performing arts, and cultural heritage activities.
+
+### Tax and Financial Incentives
+
+The incentive package is operative from May 1, 2025 through January 1, 2031. Qualifying residents of the Creative Industry Park benefit from: a 50% reduction in personal income tax (PIT) for employees; a 50% reduction in social tax (Unified Social Payment); access to a flexible turnover tax regime; and eligibility for interest-free loans and grants from the state support fund.
+
+### Eligibility and Residency Requirements
+
+To qualify as a Creative Industry Park resident, an entity must operate in one of the defined creative industry sectors, be incorporated as a legal entity under Uzbekistan law, and formally register with the Park's administration. Activities must be primarily creative in nature; companies that use creative outputs as ancillary functions of a non-creative core business do not qualify.
+
+### Important Practical Caveat
+
+As of the Decree's publication date, the Tax Code amendments required to give full legal effect to the PIT and social tax reductions had not yet been enacted. Companies intending to rely on these incentives should confirm that the relevant Tax Code provisions have been adopted before finalizing their financial models.
+
+### Frequently Asked Questions
+
+**Q: When do the Creative Industry Park incentives become available?**
+A: The incentive period runs from May 1, 2025 to January 1, 2031, subject to Tax Code amendments being enacted to implement the PIT and social tax reductions.
+
+**Q: Who qualifies as a Creative Industry Park resident?**
+A: Uzbek-registered legal entities operating in sectors defined under Law No. ZRU-970 (literary arts, architecture, design, film, music, performing arts, etc.) that register with the Park administration.
+
+**Q: Are the tax reductions automatically applied?**
+A: Not automatically. The 50% PIT and social tax reductions require corresponding Tax Code amendments. Companies should verify the legislative status before applying reduced rates.
+
+**Q: Can a foreign company be a Creative Industry Park resident?**
+A: A foreign company must establish a local legal entity in Uzbekistan to access the Park's benefits; a representative office or branch is insufficient for residency purposes.
+
+---
+
+## Crypto-Asset Service Providers: Licensing in Uzbekistan
+
+Uzbekistan regulates crypto-asset service providers through the National Agency for Perspective Projects (NAPP) under Regulation No. 3380, issued on August 15, 2022. NAPP is the sole licensing authority and supervisory body for all crypto-related activities in the country.
+
+### License Types and State Duties
+
+Four license categories exist: (1) Crypto exchange — state duty at issuance approximately USD 2,496,000 (73,400 × BRV); monthly levy approximately USD 25,200 (740 × BRV); minimum charter capital approximately USD 170,000 (5,000 × BRV) with approximately USD 102,000 (3,000 × BRV) held in a reserve account. (2) Mining pool — state duty approximately USD 102,000 (3,000 × BRV); monthly levy approximately USD 3,400 (100 × BRV). (3) Crypto depository — state duty approximately USD 238,000 (7,000 × BRV); monthly levy approximately USD 170 (5 × BRV). (4) Crypto shop — state duty approximately USD 126,000 (3,700 × BRV); monthly levy approximately USD 6,300 (185 × BRV).
+
+### Eligibility Requirements
+
+Only Uzbek-resident legal entities are eligible to apply. Foreign individuals and foreign-incorporated companies cannot hold a NAPP crypto license directly. Licenses are unlimited in duration but subject to ongoing compliance obligations.
+
+### Application and Review Process
+
+Applications are submitted to NAPP by email, post, or in person. The review consists of a 15-working-day expert panel assessment followed by a 4-working-day NAPP board decision, totaling a maximum of 20 working days.
+
+### Ongoing Compliance Obligations
+
+Licensees must: maintain all servers physically within Uzbekistan; retain operational data for a minimum of 5 years; implement AML/CFT programs; ensure no offshore entities in the ownership chain; and prohibit hidden mining activity. Crypto exchanges must maintain the minimum charter capital and reserve account at all times.
+
+### Frequently Asked Questions
+
+**Q: Can a foreign company obtain a NAPP crypto license?**
+A: No. Only Uzbek-resident legal entities are eligible. A foreign company must incorporate a local entity in Uzbekistan before applying.
+
+**Q: How long does the NAPP licensing review take?**
+A: Up to 20 working days: 15 working days for the expert panel review plus up to 4 working days for the NAPP board decision.
+
+**Q: Are crypto licenses time-limited?**
+A: No. NAPP crypto licenses are issued for an unlimited duration, subject to continued compliance with all ongoing requirements.
+
+**Q: What are the server location requirements?**
+A: All servers must be physically located within Uzbekistan. Remote or cloud hosting abroad is not permitted for licensed crypto operations.
+
+---
+
+## Employer of Record in Central Asia: A Practical Overview
+
+The Employer of Record (EoR) model allows a foreign company to engage workers in Uzbekistan, Kazakhstan, or Kyrgyzstan without establishing its own local legal entity. The EoR is a licensed local company that becomes the formal employer on paper, handling all employment law obligations, while the foreign client company retains day-to-day management control over the worker's activities.
+
+### How the Model Works
+
+The foreign company identifies the candidate and directs their work. The EoR signs the employment contract with the worker, registers it with the relevant authorities, calculates and withholds personal income tax, pays social contributions, manages leave, processes expense reimbursements, and handles termination procedures. The foreign company pays the EoR a service fee covering salary, taxes, contributions, and a management fee.
+
+### Country-Specific Considerations
+
+In Uzbekistan, all employment contracts must be in writing, must name a registered employer entity, and are subject to active audit by the State Labour Inspectorate. In Kazakhstan, the EoR model is well-established and commonly used by multinationals. In Kyrgyzstan, the model is emerging; compliance standards are evolving.
+
+### When EoR Is Most Efficient
+
+The EoR model is most cost-effective when a foreign company needs to employ 1 to 15 workers in a country. For larger headcounts, the cumulative EoR fee often exceeds the cost of establishing a local entity. EoR is particularly useful for: market entry testing, short-term project staffing, and hiring before entity registration is complete.
+
+### Services Included
+
+A comprehensive EoR service covers: employment contract drafting and registration; monthly payroll processing; PIT withholding and remittance; social contribution calculation and payment; statutory leave management (annual, sick, maternity); severance calculation; work permit and immigration advisory; and multi-country coordination for regional operations.
+
+### Frequently Asked Questions
+
+**Q: Does using an EoR mean we lose control over our employees?**
+A: No. The foreign company retains full day-to-day management control. The EoR handles only the legal employment and payroll obligations; the worker follows the client's instructions.
+
+**Q: Is the EoR model legally recognized in Uzbekistan?**
+A: Yes. Uzbekistan labour law permits third-party employment arrangements. The key requirement is that the employment contract names a registered Uzbek legal entity as employer.
+
+**Q: How quickly can an EoR onboard a new employee in Uzbekistan?**
+A: Typically within a few business days, compared to several months needed to register a new legal entity.
+
+**Q: What is the typical cost structure for EoR services?**
+A: The client pays the worker's gross salary plus employer-side social contributions (12% Unified Social Payment in Uzbekistan) plus the EoR management fee, typically a flat monthly amount or a percentage of gross payroll.
+
+---
+
+## Escrow Accounts in Uzbekistan: Legal Mechanics & Use Cases
+
+Uzbekistan introduced mandatory escrow arrangements for real estate and vehicle transactions through a two-wave legislative reform. The reform is designed to eliminate advance payment fraud, protect buyers, and bring transaction values into the formal financial system.
+
+### Wave 1: Shared Construction (From January 1, 2026)
+
+Escrow accounts become mandatory for all shared construction (off-plan residential) transactions from January 1, 2026. A parallel operation period runs from July 1 to December 31, 2025, during which escrow use is permitted but not yet required. Developers must demonstrate 30% own-funds contribution before accessing project financing. Interest rates on construction loans are linked to the escrow balance: higher buyer deposits produce lower developer borrowing costs. Buyers acquire an exit right if a developer delays delivery by more than six months.
+
+### Wave 2: Resale Real Estate and Vehicles (From April 1, 2026)
+
+From April 1, 2026, escrow becomes mandatory for all real estate transactions and for vehicles up to 10 years old (categories M, N, O, and G under the vehicle classification system). Escrow funds are ring-fenced: they cannot be arrested, seized, or used to satisfy the escrow bank's own creditor claims.
+
+### Fixed Transaction Fees
+
+Escrow service fees are fixed by regulation: 206,000 UZS for real estate transactions; 103,000 UZS for vehicle transactions. These fees apply regardless of the transaction value.
+
+### Compliance and Tax Risks
+
+Because all real estate transactions are denominated in Uzbek soum and the escrow record creates a documented paper trail, buyers and sellers who understate the contract price to reduce tax exposure face significant risk. Tax authorities can use escrow records as evidence of the true transaction value.
+
+### Frequently Asked Questions
+
+**Q: From what date is escrow mandatory for shared construction?**
+A: From January 1, 2026. A voluntary parallel operation period runs from July 1 to December 31, 2025.
+
+**Q: Can escrow funds be seized if the escrow bank faces financial difficulties?**
+A: No. Escrow funds are legally ring-fenced and cannot be arrested or seized to satisfy the bank's own obligations or third-party claims against the bank.
+
+**Q: What is the buyer's remedy if a developer delays delivery?**
+A: If the developer delays delivery by more than six months, the buyer has the right to exit the agreement and recover the escrowed funds.
+
+**Q: Do the fixed escrow fees depend on the property value?**
+A: No. The fees are flat: 206,000 UZS for real estate and 103,000 UZS for vehicles, regardless of transaction value.
+
+---
+
+## Franchising in Uzbekistan: Legal Framework & Entry Structures
+
+Uzbekistan does not have a standalone franchise law. Franchise arrangements are governed by the Civil Code, which treats a franchise agreement as a "comprehensive business licence agreement" granting a complex licence. Understanding this classification is essential because it determines registration requirements, tax treatment, and the legal remedies available to both parties.
+
+### Written Form and Registration
+
+Franchise agreements must be in writing. Two separate registration steps are required: (1) Registration at a Public Service Centre (PSC) within 1 business day of execution; the state fee is one-third of one BRV (Base Calculation Value). (2) Registration of any intellectual property transfer (trademarks, patents, know-how) at the IP Department of the Ministry of Justice.
+
+### International Franchises and Withholding Tax
+
+When the franchisor is a foreign entity without a permanent establishment in Uzbekistan, the agreement constitutes a foreign trade contract. Royalty payments to the foreign licensor are subject to a 20% withholding tax at source unless reduced or eliminated by a Double Taxation Treaty (DTT) between Uzbekistan and the licensor's country of residence. The Uzbek franchisee is responsible for calculating, withholding, and remitting this tax.
+
+### Competition Law Constraints
+
+Uzbekistan competition law permits certain exclusive clauses in franchise agreements (such as exclusive territory grants) but prohibits a licensor from dictating the retail prices charged by the franchisee to end customers. Price-fixing clauses are void and may expose both parties to regulatory action.
+
+### Eligible Parties
+
+Only commercial organisations and registered individual entrepreneurs may be parties to a franchise agreement. Individuals acting in a personal capacity or non-commercial organisations cannot enter valid franchise arrangements under Uzbekistan law.
+
+### Frequently Asked Questions
+
+**Q: Is there a dedicated franchise law in Uzbekistan?**
+A: No. Franchise arrangements are governed by the Civil Code as "comprehensive business licence agreements." There is no standalone franchise statute.
+
+**Q: Must a franchise agreement be registered?**
+A: Yes. It must be registered at a Public Service Centre and, where IP rights are transferred, at the Ministry of Justice IP Department.
+
+**Q: What is the withholding tax rate on royalties paid to a foreign franchisor?**
+A: 20%, unless reduced by a Double Taxation Treaty between Uzbekistan and the franchisor's country of residence.
+
+**Q: Can a franchisor set minimum retail prices for the franchisee?**
+A: No. Uzbekistan competition law prohibits price-fixing between licensor and franchisee. Exclusive territory clauses are generally permitted.
+
+---
+
+## Islamic Finance in Uzbekistan: A Practical Guide
+
+Uzbekistan enacted Law No. ЗРУ-765 on April 20, 2022, formally authorizing Islamic (Sharia-compliant) financial instruments. The operational framework was completed by Central Bank Resolution No. 23/4 on July 19, 2024. Under current rules, only microfinance organizations (MFOs) are licensed to provide Islamic finance products; commercial banks remain outside the Islamic finance framework.
+
+### Financing Caps
+
+MFOs providing Islamic finance are subject to portfolio caps: a maximum of 300 million UZS per borrower for business financing, and 100 million UZS per borrower for individual (consumer) financing.
+
+### Permitted Instruments
+
+Six instruments are authorized: (1) Murabaha — the MFO purchases goods at the client's request and resells them at a fixed markup with deferred payment. Money, cryptocurrency, gold, and silver are excluded from Murabaha transactions. (2) Islomiy Ijara — the MFO acquires property and transfers it to the client for temporary use against periodic payments. The MFO bears major repair costs. (3) Ijara Muntahiya Bittamlik — a lease arrangement with a contractual option for the client to purchase the asset at the end of the lease term. (4) Salam — advance payment financing for manufacturers; the MFO pays in advance for delivery of fungible goods at a future date. Money, cryptocurrency, gold, and silver are excluded. (5) Mudaraba — the MFO provides capital; the client manages the business; profits are shared according to a pre-agreed ratio; losses are borne by the MFO up to the amount of its capital contribution. (6) Musharaka — a full profit-and-loss sharing partnership between the MFO and the client.
+
+### Sharia Supervisory Council
+
+Every MFO offering Islamic products must constitute a Sharia Supervisory Council of at least five members. The Council must include at least one person with a degree in Islamic law, at least one with a legal degree, and the remainder must hold internationally recognized Islamic finance certificates.
+
+### Treatment of Penalties
+
+Any penalties (neustojka) collected from clients for late payment or contract breach must be directed to charitable purposes. They may not be retained as MFO profit.
+
+### Frequently Asked Questions
+
+**Q: Can commercial banks offer Islamic finance products in Uzbekistan?**
+A: Not under current law. Only licensed microfinance organizations (MFOs) may offer Islamic finance instruments.
+
+**Q: Is gold eligible for Murabaha financing?**
+A: No. Gold, silver, money, and cryptocurrency are explicitly excluded from Murabaha and Salam transactions.
+
+**Q: Who bears losses in a Mudaraba arrangement?**
+A: The MFO (capital provider) bears financial losses up to the amount of its capital contribution. The client (manager) bears losses only in the form of lost time and effort, not financial loss.
+
+**Q: What happens to penalty payments collected from Islamic finance clients?**
+A: All penalty payments must be directed to charitable purposes and cannot be retained as MFO revenue or profit.
+
+---
+
+## Licensing Procedures for Regulated Activities in Uzbekistan
+
+Law No. ЗРУ-701, enacted on July 14, 2021, consolidated Uzbekistan's regulatory access framework into three tracks: licensing (high-risk activities listed in Appendix 1), permitting documents (activities in Appendix 2), and notifications (low-risk activities in Appendix 3 requiring no prior approval).
+
+### The Three-Track System
+
+Licensing applies to activities where errors pose a significant risk to public safety or the economy. Permitting applies to activities requiring verified compliance with specific conditions but with lower inherent risk. Notification applies to the lowest-risk activities; the business simply notifies the regulator and may begin operating immediately.
+
+### Electronic Platform and Timeline
+
+All applications are submitted through license.gov.uz or the EPAGU single window portal using a digital signature. Regulators must issue a decision within 20 working days. The applicant is notified within one hour of the decision being posted. Where a deficiency is identified in the application, the applicant has up to 30 working days to remedy it without losing their place in the queue.
+
+### Standard Versus Individual Licences
+
+Standard licences are issued to any applicant meeting the prescribed conditions. Individual licences are for activities where the number of operators is limited (for example, certain spectrum allocations or gambling), and are awarded through a tender process. Licences are indefinite in duration for most activities; minimum five-year terms apply for medical, pharmaceutical, telecommunications, oil-and-gas, and gambling activities.
+
+### Grounds for Refusal
+
+A regulator may refuse a licence application on only three grounds: incomplete or incorrect documentation; false information provided; or failure to meet the prescribed conditions. "Inexpediency" or commercial considerations are not valid grounds for refusal.
+
+### Suspension and Revocation
+
+Regulators may suspend a licence for up to 10 days administratively. Suspension beyond 10 days requires a court order; court-ordered suspension may last up to six months. Revocation is available as a final remedy for serious or repeated violations.
+
+### Frequently Asked Questions
+
+**Q: How long does a licence remain valid?**
+A: Most licences are indefinite. Medical, pharmaceutical, telecommunications, oil-and-gas, and gambling licences have a minimum five-year term.
+
+**Q: Can a regulator refuse a licence because the market is already well-served?**
+A: No. Inexpediency is not a valid ground for refusal. Refusal is permitted only for incomplete documents, false information, or failure to meet prescribed conditions.
+
+**Q: Does a branch office need its own licence?**
+A: No. Branches and representative offices add their addresses to the parent entity's existing licence rather than obtaining separate licences.
+
+**Q: Is there a fee reduction for paying fines voluntarily?**
+A: Yes. Paying 70% of the fine voluntarily while simultaneously submitting a licence application results in a 30% reduction of the total fine.
+
+---
+
+## Online Gambling Regulation in Uzbekistan
+
+Online gambling became legal in Uzbekistan from January 1, 2025, following Cabinet of Ministers Resolution No. 814. The National Agency for Perspective Projects (NAPP) is the designated regulatory authority for all online gambling activities.
+
+### Licensing Requirements
+
+Licences are issued for five-year terms. Only Uzbek-resident legal entities are eligible; foreign companies must establish a local entity before applying. All platform servers must be physically located within Uzbekistan. Operators must maintain minimum authorised capital and a reserve fund at the prescribed levels throughout the licence term.
+
+### Definition of Uzbekistan as Place of Gambling
+
+Uzbekistan is considered the "place of gambling" — and Uzbek regulatory jurisdiction applies — when any of the following conditions is met: the gambler holds Uzbek citizenship; the gambler is physically present in Uzbekistan at the time of play; the gambler's IP address is Uzbek; the gambler uses an Uzbek bank card; or the platform is clearly intended to target an Uzbek audience.
+
+### Operator Obligations
+
+Licensed operators must implement responsible gambling tools (deposit limits, self-exclusion, age verification), maintain AML/CFT programs, retain transaction records for the prescribed period, and submit periodic reports to NAPP. Marketing to minors is strictly prohibited.
+
+### Frequently Asked Questions
+
+**Q: From what date is online gambling legal in Uzbekistan?**
+A: Online gambling has been legal since January 1, 2025, under Cabinet of Ministers Resolution No. 814.
+
+**Q: Who is the regulator for online gambling?**
+A: The National Agency for Perspective Projects (NAPP) regulates and licenses all online gambling activities.
+
+**Q: Can a foreign company obtain an online gambling licence directly?**
+A: No. Only Uzbek-resident legal entities are eligible. A foreign company must first incorporate a local entity.
+
+**Q: Does a foreign platform targeting Uzbek players need a licence?**
+A: Yes. If the platform is intended for Uzbek users, uses Uzbek bank card acceptance, or Uzbek IP addresses are accessing it, Uzbek jurisdiction applies and a NAPP licence is required.
+
+---
+
+## Outsourcing Operational Activities in Uzbekistan
+
+Strategic outsourcing of back-office and operational functions — including accounting, legal, HR, payroll, customs, and compliance — is a well-established practice in Uzbekistan and is growing rapidly as the market becomes more sophisticated and regulatory complexity increases.
+
+### Key Functions Commonly Outsourced
+
+Accounting and bookkeeping: preparation of financial statements, tax returns, and management accounts. Legal: contract review, regulatory filings, corporate secretarial functions. HR and payroll: employment contract drafting, salary calculation, PIT and social contribution remittance, leave management. Customs: import/export documentation, tariff classification, customs valuation. Compliance: AML program maintenance, regulatory reporting.
+
+### Benefits of Outsourcing
+
+Expert access: outsourcing provides access to a team of specialists without the cost of building an in-house department. Cost savings: no recruitment costs, employer social contributions, office space, software licences, or ongoing training. Uninterrupted service: providers guarantee continuity regardless of staff turnover or illness. Compliance risk transfer: the provider assumes professional responsibility for the accuracy of filings and reports. Scalability: service scope can be adjusted rapidly as the business grows or contracts.
+
+### When Outsourcing Is Most Beneficial
+
+Outsourcing delivers the greatest value for: foreign companies entering Uzbekistan who need immediate operational capacity without building infrastructure; small and medium enterprises that cannot justify the cost of full-time specialists; and fast-growing businesses that need to scale back-office capacity quickly without proportional headcount growth.
+
+### Frequently Asked Questions
+
+**Q: Does outsourcing accounting mean giving up control over financial data?**
+A: No. The client retains full ownership of all data and financial records. The outsourced provider manages processes and prepares outputs; the client reviews and approves all material deliverables.
+
+**Q: Is it legally permissible to outsource payroll and HR in Uzbekistan?**
+A: Yes. There are no legal restrictions on outsourcing payroll processing or HR administration. The employer remains the registered party in employment contracts; the outsourced provider acts as agent.
+
+**Q: What is an integrated outsourcing approach?**
+A: An integrated approach means a single provider handles all back-office functions (accounting, legal, HR, payroll, compliance) under one engagement, eliminating coordination costs between multiple vendors.
+
+**Q: Is outsourcing cost-effective for a company with only a few employees?**
+A: Yes, particularly for small foreign-invested companies. Fixed monthly outsourcing fees are typically lower than the combined cost of even one full-time in-house specialist plus employer-side taxes and benefits.
+
+---
+
+## Payroll & Social Contributions: Employer Obligations in Uzbekistan
+
+Uzbekistan operates a flat personal income tax (PIT) rate of 12% on employment income, effective since January 2023. The rate applies to both resident and non-resident employees. Dividend income is taxed at the reduced rate of 5%.
+
+### Unified Social Payment (Employer Cost)
+
+In addition to PIT, employers pay a Unified Social Payment (USP) of 12% of gross payroll. The USP is an employer cost — it is calculated on top of the employee's gross salary and is NOT deducted from the employee's take-home pay. The individual accumulative pension contribution is 0.1% (included within the PIT withholding mechanism). Total employer cost is approximately 24% of gross salary (12% net salary + 12% USP).
+
+### Payroll Mechanics
+
+PIT is withheld at source by the employer at the time of each salary payment and remitted to the State Tax Committee monthly. The USP is calculated and paid monthly. Reporting obligations: (1) Monthly PIT report submitted by the 10th of the following month; (2) Monthly USP declaration submitted simultaneously; (3) Annual payroll reconciliation submitted by February 1 of the following year.
+
+### Common Compliance Risks
+
+Contractor misclassification: engaging individuals as contractors when the economic reality is employment triggers PIT, USP, and penalties. In-kind benefits: non-cash compensation (housing, vehicles, vouchers above statutory limits) is taxable at market value. Bonuses: all bonus payments are subject to the 12% PIT rate; they are not treated as a separate payment category with a different rate.
+
+### Frequently Asked Questions
+
+**Q: Is PIT withheld from the employee's salary or paid additionally by the employer?**
+A: PIT is withheld from the employee's gross salary — it is the employee's tax obligation, collected at source by the employer.
+
+**Q: What is the Unified Social Payment rate?**
+A: 12% of gross payroll, paid by the employer in addition to the employee's salary. It is not deducted from the employee.
+
+**Q: What is the total payroll cost for an employer in Uzbekistan?**
+A: Approximately 24% above the employee's take-home pay: 12% net salary + 12% USP employer contribution (simplified calculation excluding minor items).
+
+**Q: When must payroll reports be filed?**
+A: Monthly PIT report and USP declaration by the 10th of the following month; annual payroll reconciliation by February 1.
+
+---
+
+## Permanent Establishment Risk in Uzbekistan
+
+A Permanent Establishment (PE) is a fixed place of business through which a foreign company conducts all or part of its business activities in Uzbekistan. PE triggers corporate income tax liability in Uzbekistan on the profits attributable to that establishment.
+
+### What Creates a PE
+
+PE is triggered by any of the following: maintaining a fixed place of business in Uzbekistan for more than one month (including any office, factory, workshop, laboratory, or point of sale); conducting manufacturing, processing, or packaging operations; extracting natural resources; carrying out construction, assembly, or installation projects for more than 183 days; providing services through employees for 183 or more days in any 12-month period; using dependent agents who consistently conclude contracts on the foreign company's behalf; or collecting insurance premiums in Uzbekistan through a dependent agent.
+
+### What Does NOT Create a PE
+
+An arrangement does not create a PE if it is limited to: storage or display of goods only; purchasing goods or collecting information for purely preparatory purposes; or providing foreign personnel to another Uzbek company where the foreign company is not responsible for the results of the work and the foreign company's income from the arrangement is less than 10% of its total costs.
+
+### PE Start Date
+
+The PE start date is the earliest of: the date the relevant contracts are signed; the date work commences; or the date personnel arrive in Uzbekistan.
+
+### Tax Consequences of PE
+
+A registered PE pays corporate income tax (15%) on its Uzbekistan-source profits. Payments from the PE to its foreign head office may not be deductible as expenses. Net profit after tax in the PE is treated as deemed dividends, subject to an additional 10% tax (which may be reduced by a Double Taxation Treaty). An unregistered PE faces back-tax assessments, interest, penalties, and reputational risk.
+
+### Frequently Asked Questions
+
+**Q: Does sending one employee to Uzbekistan for a short project create a PE?**
+A: Not automatically. A PE requires a fixed place of business for more than one month or services provided for 183 or more days. Brief visits for isolated purposes generally do not cross the threshold.
+
+**Q: Is a construction project always a PE?**
+A: Only if it exceeds 183 days. Projects completed within 183 days do not create a PE on the construction/installation threshold, though other PE triggers must also be considered.
+
+**Q: Can a Double Taxation Treaty eliminate PE tax liability?**
+A: A DTT can reduce or eliminate the 10% additional tax on deemed dividends and may define PE thresholds differently. However, once a PE exists, Uzbekistan retains the right to tax the attributable profits at the standard corporate rate.
+
+**Q: What happens if a foreign company operates through an unregistered PE?**
+A: The tax authority may assess back taxes for all open periods, apply interest and penalties, and potentially pursue criminal liability for responsible officers.
+
+---
+
+## PIT Refunds for Education Expenses in Uzbekistan
+
+Uzbekistan allows individual taxpayers to recover personal income tax (PIT) paid on income used for qualifying expenditure categories. The standard PIT rate is 12%; a refund effectively reduces the net cost of qualifying expenses by returning tax already withheld by the employer.
+
+### Qualifying Expense Categories
+
+Education: tuition fees for the taxpayer, their spouse, or their children under 26 years of age at Uzbek higher education institutions, including educational loans and interest on those loans. Private schooling and kindergarten: fees for non-state educational institutions up to 3 million UZS per month per child. Mortgage interest: interest on mortgage loans for property acquired with a state budget subsidy, up to 80 times the minimum monthly wage (MROT) annually. Pension savings: voluntary pension contributions directed to the Individual Pension Savings Account (INPS) at People's Bank. Investment accounts: investments in listed shares held in a qualifying investment account, up to 100 times the MROT annually, subject to a 12-month lock-up period. Employer benefits within statutory limits: material assistance, medical expense compensation, children's camp vouchers, and non-cash gifts within prescribed thresholds are also exempt from PIT.
+
+### How to Claim a PIT Refund
+
+**Step 1 — File the Annual Income Declaration:** Submit the annual income declaration at my3.soliq.uz by April 1 of the year following the tax year. Use an electronic digital signature (EDS). Attach supporting documents: income statements from the employer, and contracts and payment receipts for qualifying expenses. Select the relevant benefit category in the declaration form.
+
+**Step 2 — Submit the Refund Application:** After the declaration is accepted, submit a refund application through my3.soliq.uz or my.soliq.uz. Enter the bank card number, transit account, or microfinance organization account for the refund. The tax authority processes the refund within 15 days of application.
+
+### Frequently Asked Questions
+
+**Q: Can I claim a PIT refund for a child's tuition if the child is 27 years old?**
+A: No. The education PIT exemption applies to children under 26 years of age. Once the child turns 26, tuition payments are no longer eligible.
+
+**Q: Is the mortgage interest PIT refund available for all mortgages?**
+A: No. The exemption applies only to interest on mortgages for properties acquired with a state budget subsidy. Market-rate mortgages without a subsidy component do not qualify.
+
+**Q: What is the deadline for filing the income declaration to claim a PIT refund?**
+A: April 1 of the year following the tax year (e.g., April 1, 2026 for the 2025 tax year).
+
+**Q: How long does the tax authority take to process a PIT refund?**
+A: The refund must be processed within 15 days of the refund application being submitted.
+
+---
+
+## Representative Offices in Uzbekistan: Registration & Compliance
+
+Foreign commercial organizations may establish representative offices in Uzbekistan under Cabinet of Ministers Resolution No. 410 (October 23, 2000). The Ministry of Investments, Industry and Trade (MIVT) administers the accreditation process.
+
+### Legal Status and Limitations
+
+A representative office is not a separate legal entity and cannot conduct commercial activity in Uzbekistan. The principal exception is airline offices, which may sell tickets and perform related commercial functions. A representative office is not a taxpayer in its own right but must be registered with tax authorities post-accreditation.
+
+### Accreditation Process and Fees
+
+The state duty is 48 × BRV (approximately USD 1,500). MIVT issues a decision within 10 working days; the accreditation certificate is issued within 5 working days of payment confirmation. The initial certificate has a one-year validity. Accreditation terms are 1 to 3 years and are renewable.
+
+### Required Documents
+
+Applications must include: an application letter on the foreign organization's official letterhead; constitutional documents (apostilled and with notarised translation; CIS-country documents require only a notarised copy); proof of the organization's registration in its home country; a power of attorney for the proposed Head of the representative office; a Regulation on the Representative Office; and a guarantee letter from the owner of the proposed office premises. All documents must have been issued within six months prior to submission.
+
+### Post-Accreditation Obligations (Within 10 Days)
+
+Within 10 days of receiving the accreditation certificate, the representative office must: notify MIVT of its postal address; register with the tax authorities; and submit the tax registration certificate back to MIVT.
+
+### Staff and Employment
+
+Foreign employees of the representative office are individually accredited by MIVT and do not need separate work permits. Uzbek employees are employed by the founding foreign organization (not by the representative office, which is not a legal entity). Employment contracts are signed by the Head of the representative office, but the Head's authority to sign employment contracts must be expressly stated in both the Regulation on the Representative Office and the power of attorney. Employment contract terms cannot exceed the remaining accreditation period.
+
+### Frequently Asked Questions
+
+**Q: Can a representative office sign contracts and issue invoices for services?**
+A: No. A representative office cannot conduct commercial activity. It may represent the foreign organization's interests, conduct market research, and maintain contacts, but may not generate revenue in Uzbekistan.
+
+**Q: Do CIS country documents need apostille certification?**
+A: No. Documents issued in CIS countries are exempt from legalisation and apostille requirements; a notarised copy is sufficient.
+
+**Q: How often must an annual activity report be filed?**
+A: Once per year. The annual activity report must be submitted to MIVT and is a condition for renewing accreditation.
+
+**Q: Can the Head of the representative office hire Uzbek employees?**
+A: Yes, provided the Head's authority to sign employment contracts is explicitly stated in both the Regulation on the Representative Office and the power of attorney granted by the foreign organization.
+
+---
+
+## Self-Employment Regime in Uzbekistan
+
+Uzbekistan introduced a dedicated self-employment registration and tax regime effective July 1, 2020. The regime provides a low-barrier entry point for individuals to operate legally without establishing a formal legal entity or going through the full individual entrepreneur registration process.
+
+### Registration Process
+
+Registration is entirely digital: applicants use the Soliq mobile application or the taxpayer personal cabinet at soliq.uz. Registration is notification-based — there is no state fee, no notary visit, and no paper filing. A QR code is generated immediately upon registration and serves as proof of self-employed status. The entire process takes minutes.
+
+### Tax Treatment
+
+Self-employed individuals pay zero PIT on annual income up to 100 million UZS (threshold updated January 2024). Income above 100 million UZS in a calendar year is taxed at 4% (the turnover tax rate applicable to individual entrepreneurs). No full accounting records are required; the Soliq app tracks income automatically.
+
+### Activity Limitations
+
+The regime covers over 100 permitted activity types. A self-employed person may operate in a maximum of 3 activity types simultaneously. The regime does not permit hiring employees; all work must be performed personally by the self-employed individual.
+
+### Pension Contributions
+
+Voluntary pension contributions of at least 1 BRV annually must be paid to the off-budget Pension Fund by December 31 each year to maintain self-employed status and access to future pension benefits.
+
+### Soliq App Capabilities
+
+The Soliq app enables: maintaining self-employed registration; recording orders and receiving payments; issuing electronic invoices to legal entities; and real-time income tracking against the 100 million UZS annual threshold.
+
+### Frequently Asked Questions
+
+**Q: Can a self-employed person hire employees?**
+A: No. The self-employment regime is for individuals working personally. Engaging hired labor requires transitioning to individual entrepreneur or legal entity status.
+
+**Q: What is the tax rate for self-employed income above 100 million UZS?**
+A: Income exceeding 100 million UZS per year is taxed at 4% under the turnover tax regime, the same rate as individual entrepreneurs on the simplified system.
+
+**Q: Is there a state fee to register as self-employed?**
+A: No. Registration is free and instant through the Soliq mobile app or the taxpayer personal cabinet.
+
+**Q: How many types of activities can a self-employed person conduct simultaneously?**
+A: A maximum of 3 activity types at once, selected from the approved list of over 100 permitted activities.
+
+---
+
+## Special Economic Zones in Uzbekistan: A Comparative Guide
+
+Law No. 604 (February 17, 2020) governs the establishment and operation of Special Economic Zones (SEZs) in Uzbekistan. Five types of zones are authorized: free economic zones, special scientific and technological zones, tourist and recreational zones, free trade zones, and special industrial zones.
+
+### Tax Exemptions for SEZ Residents
+
+All SEZ types provide exemption from: land tax; corporate profit tax; property tax on legal entities; the unified tax payment; mandatory contributions to the Republican Road Fund; and mandatory contributions to the Extra-budgetary Fund for Development of Educational and Medical Institutions. VAT on imported goods is deferred for up to 120 days. Excess creditable VAT is refunded within 7 working days through a simplified expedited procedure.
+
+### Customs Benefits
+
+SEZ residents benefit from customs duty exemptions on: construction materials not produced in Uzbekistan (during the construction phase of their project); technological equipment with no domestic equivalent; and raw materials and components used in the production of export-destined goods.
+
+### Benefit Duration Based on Investment Size
+
+The duration of tax and customs benefits is tied to the volume of investment: USD 300,000 – 3 million = 3-year benefit period; USD 3 million – 5 million = 5-year benefit period; USD 5 million – 10 million = 7-year benefit period; USD 10 million and above = 10-year benefit period.
+
+### Investment Stability Guarantee
+
+SEZ residents may elect to apply the tax rates in effect at the date of their registration for the entire duration of their benefit period (maximum 10 years), even if rates increase subsequently. This stability guarantee does not apply to excise goods.
+
+### IT Park (it-park.uz)
+
+IT Park residents enjoy a broader exemption: all taxes and mandatory contributions are exempt until January 1, 2028. Employees of IT Park resident companies pay PIT at 7.5% (versus the standard 12%) until January 1, 2028.
+
+### Frequently Asked Questions
+
+**Q: How long can SEZ tax benefits last?**
+A: Up to 10 years, depending on the investment amount. A USD 10 million+ investment qualifies for the full 10-year benefit period.
+
+**Q: Is VAT on imports fully waived for SEZ residents?**
+A: VAT is deferred for up to 120 days, not permanently waived. Excess creditable VAT is refunded within 7 working days through a simplified procedure.
+
+**Q: Does the investment stability guarantee protect against all tax increases?**
+A: Yes, for the benefit period duration (up to 10 years), except for excise goods. SEZ residents may lock in the tax rates applicable at their registration date.
+
+**Q: What PIT rate do IT Park employees pay?**
+A: IT Park employees pay 7.5% PIT (versus the standard 12%) until January 1, 2028.
+
+---
+
+## Voluntary Liquidation of Companies in Uzbekistan
+
+Presidential Decree No. UP-5739 (June 7, 2019) introduced a streamlined voluntary liquidation procedure for Uzbekistan-registered companies. The entire process from initial notification to final deregistration must be completed within a maximum of six months.
+
+### Key Simplifications Under the 2019 Reform
+
+No newspaper publication is required; all notices to creditors are posted on the State Services Centre website. No mandatory audit is required if the company never conducted any business activity and has no outstanding tax debts. Where a tax audit is required, it covers a maximum of the three most recent calendar years.
+
+### 13-Step Liquidation Procedure
+
+**Step 1:** Adopt a resolution to liquidate (by founders/participants). **Step 2:** Appoint a liquidator or liquidation commission from the founders/participants. **Step 3:** Transfer all company assets and documents to the liquidator within 3 days. **Step 4:** Notify the State Services Centre within 1 working day; the Centre automatically notifies the tax authority, statistics committee, Enforcement Bureau, real estate and vehicle registries, Ministry of Finance, and utilities. **Step 5:** Notify all banks where accounts are held within 1 working day. **Step 6:** Conduct a full inventory and calculate all outstanding tax liabilities. **Step 7:** Tax authority and Enforcement Bureau complete their audit within 19 working days (30 calendar days total allowed). **Step 8:** Open a 2-month creditor notification period; after it closes, approve the interim liquidation balance sheet. **Step 9:** Settle creditor claims in priority order: (first) employees and personal injury claims; (second) state budget and funds; (third) all remaining creditors. **Step 10:** Approve the final liquidation balance sheet. **Step 11:** Close the main bank account. **Step 12:** Transfer company documents to the state archive within 3 working days of the final balance sheet approval. **Step 13:** Submit final package to the State Services Centre (bank closure certificates, seals and stamps, securities cancellation certificate if applicable, state archive delivery certificate); the Centre enters the liquidation in the state register within 2 working days.
+
+### Entities Excluded from This Procedure
+
+The simplified voluntary liquidation procedure does not apply to: banks; credit bureaus; city-forming organisations; state bodies; NGOs; or insolvent entities (which must use the bankruptcy procedure).
+
+### Frequently Asked Questions
+
+**Q: Is a mandatory audit required for voluntary liquidation?**
+A: Not always. If the company never conducted any business activity and has no tax debts, no audit is required. Otherwise, a tax audit covering up to three years is conducted.
+
+**Q: How long does the creditor notification period last?**
+A: Two months from the date the liquidation notice is posted on the State Services Centre website.
+
+**Q: What is the creditor priority order for distributing liquidation proceeds?**
+A: First priority: employees (wages/benefits) and personal injury claimants. Second priority: state budget and social funds. Third priority: all remaining creditors.
+
+**Q: Can a company with debts use the voluntary liquidation procedure?**
+A: A company with tax debts may still use voluntary liquidation — the tax audit will assess and the company must settle those debts. However, an insolvent company (unable to pay creditors in full) must use the bankruptcy procedure instead.
