@@ -1,0 +1,186 @@
+{
+  "ExpertisePage": {
+    "hero": {
+      "eyebrow": "Our Expertise",
+      "heading": "Integrated services, singular results",
+      "description": "Seven advisory disciplines. Seven managed operations services. One integrated practice built for the complexities of Central Asian markets."
+    },
+    "stats": {
+      "eyebrow": "Our track record",
+      "dealsAdvised": "Deals advised",
+      "registrations": "Registrations",
+      "dueDiligences": "Due diligences",
+      "lawsShaped": "Laws shaped"
+    },
+    "industries": {
+      "eyebrow": "Sector Experience",
+      "heading": "Deep expertise across six sectors",
+      "whatWeOffer": "What we offer",
+      "featuredEngagement": "Featured engagement"
+    },
+    "trackRecord": {
+      "eyebrow": "Track Record",
+      "heading": "Selected engagements of our team members"
+    },
+    "cta": {
+      "eyebrow": "Work with us",
+      "heading": "Ready to work together?",
+      "description": "Tell us about your business — we will identify where we can make the most impact and structure a scope that fits.",
+      "primary": "Schedule a consultation",
+      "secondary": "Browse our insights"
+    }
+  },
+  "Industries": {
+    "Financial Services": {
+      "name": "Financial Services",
+      "description": "Banks, investment funds, PE firms, and digital asset operators across Central Asia rely on Advizen for licensing, regulatory compliance, fund structuring, and cross-border transaction advisory.",
+      "offerings": [
+        "Licensing and regulatory compliance",
+        "Corporate governance advisory",
+        "IFRS & NAS financial reporting",
+        "Fund and SPV structuring",
+        "M&A and restructuring support",
+        "Transfer pricing documentation",
+        "Digital asset legal structuring"
+      ]
+    },
+    "Energy & Industrials": {
+      "name": "Energy & Industrials",
+      "description": "From nuclear power and renewables to oil & gas, agri-processing, and heavy manufacturing — we provide tax, customs, and legal advisory for capital-intensive projects and their investors across Uzbekistan.",
+      "offerings": [
+        "Tax and customs structuring for large projects",
+        "Transfer pricing documentation",
+        "Holdings and investment structuring",
+        "Due diligence for energy and industrial assets",
+        "Free economic zone advisory",
+        "HR and payroll at scale"
+      ]
+    },
+    "Technology & Digital": {
+      "name": "Technology & Digital",
+      "description": "Tech companies, fintechs, and telecoms entering Uzbekistan's growing digital economy rely on us for tax structuring, regulatory licensing, and the legal frameworks that support rapid scaling.",
+      "offerings": [
+        "Tax structuring for market entry",
+        "Fintech regulatory compliance",
+        "Software and IP licensing advisory",
+        "Investment and shareholder structuring",
+        "Digital asset legal structuring",
+        "HR for engineering teams"
+      ]
+    },
+    "Real Estate & Infrastructure": {
+      "name": "Real Estate & Infrastructure",
+      "description": "Large-scale property and infrastructure projects demand careful tax and legal planning from the outset. We advise developers, contractors, and investors on project structuring, permitting, and compliance.",
+      "offerings": [
+        "Project tax optimisation",
+        "Contract architecture and review",
+        "Labour law and workforce compliance",
+        "Permitting and regulatory advisory",
+        "Investment structuring for developers"
+      ]
+    },
+    "Consumer & Lifestyle": {
+      "name": "Consumer & Lifestyle",
+      "description": "From FMCG and retail to hospitality, media, and sports — we support consumer-facing businesses across Uzbekistan with market entry structuring, HR at scale, payroll, and operational compliance.",
+      "offerings": [
+        "Market entry and entity formation",
+        "M&A and expansion structuring",
+        "Payroll and HR outsourcing",
+        "Franchise and distribution agreements",
+        "IP and content contracts",
+        "Event and sponsorship structuring"
+      ]
+    },
+    "Healthcare & Social": {
+      "name": "Healthcare & Social",
+      "description": "International pharma companies, healthcare operators, private schools, and universities rely on us for smooth market entry, licensing advisory, and the HR and compliance infrastructure needed to operate at scale.",
+      "offerings": [
+        "Market entry and product registration",
+        "Regulatory compliance advisory",
+        "HR, payroll, and EOR services",
+        "Entity formation and licensing",
+        "Foreign staff work permits",
+        "Tax compliance and reporting"
+      ]
+    }
+  },
+  "IndustryFeatured": {
+    "Financial Services": {
+      "metric": "$200M",
+      "label": "Transaction",
+      "text": "Restructuring of an international digital bank's Uzbek subsidiaries"
+    },
+    "Energy & Industrials": {
+      "metric": "$10B+",
+      "label": "Project budget",
+      "text": "Tax, accounting and customs structuring for a nuclear power plant construction"
+    },
+    "Technology & Digital": {
+      "metric": "$5M",
+      "label": "Investment",
+      "text": "Tax structuring for a major Russian IT company during its Uzbek market launch"
+    },
+    "Real Estate & Infrastructure": {
+      "metric": "$20M",
+      "label": "Transaction",
+      "text": "M&A and restructuring of a large Uzbek cement producer"
+    },
+    "Consumer & Lifestyle": {
+      "metric": "$250M",
+      "label": "Transaction",
+      "text": "M&A of a large Uzbek bottler company"
+    },
+    "Healthcare & Social": {
+      "metric": "5+",
+      "label": "Companies",
+      "text": "Entity formation, payroll and compliance advisory for international pharma companies"
+    }
+  },
+  "Engagements": {
+    "metricLabels": {
+      "Project budget": "Project budget",
+      "Structured investment": "Structured investment",
+      "Transaction": "Transaction",
+      "Investment": "Investment",
+      "Seed round": "Seed round",
+      "State-owned": "State-owned",
+      "Built from scratch": "Built from scratch",
+      "Companies": "Companies",
+      "Entities incorporated": "Entities incorporated",
+      "Tax & Legal DDs": "Tax & Legal DDs"
+    },
+    "sectors": {
+      "Energy": "Energy",
+      "FMCG": "FMCG",
+      "Fintech": "Fintech",
+      "Manufacturing": "Manufacturing",
+      "Technology": "Technology",
+      "Retail": "Retail",
+      "Islamic Fintech": "Islamic Fintech",
+      "Public Sector": "Public Sector",
+      "Capital Markets": "Capital Markets",
+      "Banking": "Banking",
+      "Islamic Finance": "Islamic Finance",
+      "Pharma": "Pharma",
+      "Cross-Industry": "Cross-Industry",
+      "Due Diligence": "Due Diligence"
+    },
+    "headlines": [
+      "Tax, accounting, and customs structuring of a nuclear power plant construction for a Russian enterprise",
+      "Tax & legal due diligence, holdings structuring, and transfer pricing documentation for all operations of a Chinese energy group of companies in Uzbekistan",
+      "M&A of a large Uzbek bottler company",
+      "Two major restructuring projects of an international digital bank in its Uzbek subsidiaries",
+      "M&A and corporate restructuring of a large Uzbek cement producer",
+      "Tax structuring and ad-hoc consulting of a major Russian IT company during its market launch in Uzbekistan",
+      "M&A and structuring for a major local retailer",
+      "Tax and legal advisory for the seed investment phase structuring of an Uzbek-based fintech startup operating on Islamic finance principles",
+      "Reorganization and structuring of an Uzbek state-owned investment fund",
+      "Served as local tax, legal, and finance consultants for international firms hired by the government to develop capital market legislation",
+      "Served as local consultants for international firms advising the government on banking legislation, including derivatives and REPO frameworks",
+      "Served as local consultants for an international firm advising the government on integrating Islamic finance instruments into Uzbek legislation",
+      "Establishing, structuring, payroll consulting, and ongoing compliance advisory for international pharmaceutical companies in Uzbekistan",
+      "End-to-end incorporation and registration advisory for both local and international companies across multiple industries",
+      "Tax and legal due diligence across renewable energy, mining, oil & gas, FMCG, and manufacturing sectors"
+    ]
+  }
+}
