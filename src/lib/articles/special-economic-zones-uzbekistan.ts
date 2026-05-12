@@ -122,6 +122,24 @@ export default {
         text: "Selecting the right SEZ, structuring an investment project to maximise the available benefits, and managing ongoing compliance obligations requires careful legal and tax planning. Advizen's team assists clients in assessing eligibility, preparing applications for SEZ participant status, drafting investment agreements, and navigating the regulatory requirements of the zone directorate.",
       },
     ],
+    faq: [
+      {
+        question: "What tax benefits do Special Economic Zone participants receive in Uzbekistan?",
+        answer: "SEZ participants in Uzbekistan receive a comprehensive package including exemptions from corporate income tax, property tax, and land tax for periods of up to ten years. Customs duty exemptions apply to imported equipment and raw materials. The Tashkent IT Park additionally offers a 1% income tax rate and 7.5% personal income tax for resident employees until 1 January 2028.",
+      },
+      {
+        question: "What types of Special Economic Zones exist in Uzbekistan?",
+        answer: "Uzbekistan recognises five types of SEZs: free economic zones, special scientific and technological zones, tourist and recreational zones, free trade zones, and special industrial zones. Each type has its own regulatory framework and sector focus.",
+      },
+      {
+        question: "Are SEZ tax benefits guaranteed if legislation changes?",
+        answer: "Yes. When tax legislation changes, SEZ participants may continue to apply the tax rates and conditions in effect at the date of their registration for the duration of their benefits — but no longer than ten years. This legislative stability guarantee does not extend to excise goods.",
+      },
+      {
+        question: "How do companies apply for SEZ participant status in Uzbekistan?",
+        answer: "Companies apply to the relevant SEZ administration, meeting minimum investment thresholds set by the zone operator. The process involves signing an investment agreement, registration in the SEZ register, and issuance of a participant certificate. Advizen assists with eligibility assessment, application preparation, and regulatory compliance.",
+      },
+    ],
   },
   ru: {
     subtitle: "Структурированное руководство по налоговым, таможенным, правовым и валютным льготам, доступным участникам особых экономических зон Узбекистана.",
@@ -246,6 +264,24 @@ export default {
         text: "Выбор подходящей ОЭЗ, структурирование инвестиционного проекта с целью максимизации доступных льгот и управление текущими обязательствами по соблюдению требований требуют тщательного правового и налогового планирования. Команда Advizen помогает клиентам в оценке права на участие, подготовке заявлений для получения статуса участника ОЭЗ, составлении инвестиционных соглашений и прохождении нормативных требований дирекции зоны.",
       },
     ],
+    faq: [
+      {
+        question: "Какие налоговые льготы получают участники ОЭЗ в Узбекистане?",
+        answer: "Участники ОЭЗ в Узбекистане получают комплексный пакет льгот, включающий освобождение от налога на прибыль, налога на имущество и земельного налога на срок до десяти лет. Предусмотрено освобождение от таможенных пошлин на ввозимое оборудование и сырьё. Резиденты IT-парка Ташкента дополнительно пользуются ставкой налога на прибыль 1% и льготной ставкой НДФЛ 7,5% для сотрудников до 1 января 2028 года.",
+      },
+      {
+        question: "Какие виды ОЭЗ существуют в Узбекистане?",
+        answer: "В Узбекистане признаётся пять типов ОЭЗ: свободные экономические зоны, специальные научно-технологические зоны, туристско-рекреационные зоны, свободные торговые зоны и специальные промышленные зоны. Каждый тип имеет собственную нормативно-правовую базу и отраслевую направленность.",
+      },
+      {
+        question: "Сохраняются ли налоговые льготы ОЭЗ при изменении законодательства?",
+        answer: "Да. При изменении налогового законодательства участники ОЭЗ вправе продолжать применять ставки и условия уплаты налогов, действовавшие на дату их регистрации в реестре участников зоны, в течение срока действия льгот — но не более десяти лет. Гарантия законодательной стабильности не распространяется на подакцизные товары.",
+      },
+      {
+        question: "Как компании получают статус участника ОЭЗ в Узбекистане?",
+        answer: "Компании подают заявку в администрацию соответствующей ОЭЗ, выполнив минимальные инвестиционные пороговые условия. Процедура включает подписание инвестиционного соглашения, регистрацию в реестре участников и получение сертификата участника. Advizen оказывает помощь в оценке соответствия требованиям, подготовке заявки и выполнении регуляторных требований.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekiston maxsus iqtisodiy zonalari ishtirokchilari uchun mavjud soliq, bojxona, huquqiy va valyuta imtiyozlari bo'yicha tizimli qo'llanma.",
@@ -368,6 +404,24 @@ export default {
       {
         type: "p" as const,
         text: "To'g'ri MIZni tanlash, mavjud imtiyozlardan maksimal darajada foydalanish uchun investitsiya loyihasini tuzish va doimiy muvofiqlik majburiyatlarini boshqarish puxta huquqiy va soliqqa oid rejalashtirish talab etadi. Advizen jamoasi mijozlarga muvofiqligi baholashda, MIZ ishtirokchisi maqomini olish uchun arizalar tayyorlashda, investitsiya shartnomalari tuzishda va zona direksiyasining tartibga soluvchi talablarida mo'ljal olishda yordam beradi.",
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda SEZ ishtirokchilari qanday soliq imtiyozlariga ega?",
+        answer: "O'zbekistonda SEZ ishtirokchilari to'liq imtiyozlar paketini oladilar: korporativ daromad solig'i, mulk solig'i va yer solig'idan o'n yilgacha ozodlik. Importqilinadigan uskunalar va xom ashyo uchun bojxona to'lovlaridan ozodlik qo'llaniladi. Toshkent IT-park rezidentlari qo'shimcha ravishda 1% daromad solig'i stavkasi va 2028 yil 1 yanvargacha xodimlar uchun 7,5% shaxsiy daromad solig'idan foydalanadi.",
+      },
+      {
+        question: "O'zbekistonda qanday turdagi maxsus iqtisodiy zonalar mavjud?",
+        answer: "O'zbekiston beshta turdagi SEZni tan oladi: erkin iqtisodiy zonalar, maxsus ilmiy-texnologik zonalar, turistik-rekreatsion zonalar, erkin savdo zonalari va maxsus sanoat zonalari. Har bir tur o'zining tartibga solish tizimi va tarmoq yo'nalishiga ega.",
+      },
+      {
+        question: "Qonunchilik o'zgarganda SEZ soliq imtiyozlari saqlanadimi?",
+        answer: "Ha. Soliq qonunchiligi o'zgarganda SEZ ishtirokchilari zona ishtirokchilari reestriga ro'yxatdan o'tgan sanada amal qilgan soliq stavkalari va to'lov shartlarini imtiyozlari amal qilgan davr mobaynida, lekin o'n yildan ko'p bo'lmagan muddatda qo'llashni davom ettirishga haqli. Qonunchilik barqarorligi kafolati aksiz tovarlarga tatbiq etilmaydi.",
+      },
+      {
+        question: "O'zbekistonda kompaniyalar SEZ ishtirokchisi maqomini qanday oladi?",
+        answer: "Kompaniyalar tegishli SEZ ma'muriyatiga murojaat qilib, zona operatori tomonidan belgilangan minimal investitsiya chegarasini bajaradilar. Jarayon investitsiya shartnomasini imzolash, ishtirokchilar reestriga ro'yxatdan o'tish va ishtirokchi sertifikati olishni o'z ichiga oladi. Advizen muvofiqligi baholash, ariza tayyorlash va tartibga solish talablariga javob berishda yordam beradi.",
       },
     ],
   },
