@@ -1,84 +1,48 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { Josefin_Sans, Raleway, Inter, Inter_Tight, Onest } from "next/font/google";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
-import ScrollToTop from "@/components/ScrollToTop";
-import LoadingScreen from "@/components/LoadingScreen";
-import { GtmScript, GtmNoScript } from "@/components/Analytics";
-import { organizationJsonLd, websiteJsonLd, OG_IMAGE } from "@/lib/seo";
-import CookieBanner from "@/components/CookieBanner";
-import { routing, type Locale } from "@/i18n/routing";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
+import { Inter } from "next/font/google";
+import "../globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { seo } from "@/lib/seo";
+
+const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 const SITE_URL = "https://www.advizenco.com";
+const OG_IMAGE = "/Hero and CTA images/og-image.webp";
 
 const localeMetadata: Record<Locale, { title: string; description: string; ogLocale: string }> = {
   en: {
-    title: "Advizen Consulting | Premier Business Advisory in Uzbekistan",
+    title: "Advizen Consulting — Business Advisory in Uzbekistan",
     description:
-      "Advizen Consulting — your trusted partner for expert tax, legal, finance, accounting, HR, and business consulting in Uzbekistan. 8+ years of integrated advisory across 15+ industries in Central Asia.",
+      "Tax, legal, finance, accounting, HR and compliance advisory for foreign investors and businesses in Uzbekistan and Central Asia.",
     ogLocale: "en_US",
   },
   ru: {
-    title: "Advizen Consulting | Ведущий бизнес-консультант в Узбекистане",
+    title: "Advizen Consulting — Бизнес-консалтинг в Узбекистане",
     description:
-      "Advizen Consulting — надёжный партнёр в области налогового, юридического, финансового консалтинга, бухгалтерии и HR в Узбекистане. 8+ лет интегрированной экспертизы в 15+ отраслях Центраньной Азии.",
+      "Налоговый, юридический, финансовый консалтинг, бухгалтерия, HR и compliance для иностранных инвесторов и компаний в Узбекистане и Центральной Азии.",
     ogLocale: "ru_RU",
   },
   uz: {
-    title: "Advizen Consulting | O'zbekistondagi yetakchi biznes maslahatchi",
+    title: "Advizen Consulting — O'zbekistonda biznes-maslahat",
     description:
-      "Advizen Consulting — O'zbekistonda soliq, huquqiy, moliyaviy konsalting, buxgalteriya va HR sohasidagi ishonchli hamkoringiz. Markaziy Osiyodagi 15+ sohada 8+ yillik integratsiyalashgan tajriba.",
+      "O'zbekiston va Markaziy Osiyoda xorijiy investorlar va kompaniyalar uchun soliq, huquqiy, moliyaviy maslahat, buxgalteriya, HR va compliance xizmatlari.",
     ogLocale: "uz_UZ",
   },
 };
 
-function localePath(path: string, locale: string) {
-  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-  return `${SITE_URL}${prefix}${path}`;
+function localePath(path: string, locale: Locale): string {
+  const localePart = locale === routing.defaultLocale ? "" : `/${locale}`;
+  return `${SITE_URL}${localePart}${path}`;
 }
 
-const syne = Josefin_Sans({
-  subsets: ["latin"],
-  weight: ["300"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600"],
-  variable: "--font-hero",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-inter-tight",
-  display: "swap",
-});
-
-const onest = Onest({
-  subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-onest",
-  display: "swap",
-});
-
-export function generateStaticParams() {
-  return [{ locale: "ru" }, { locale: "uz" }];
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -134,6 +98,9 @@ export async function generateMetadata({
       description: m.description,
       images: [OG_IMAGE],
     },
+    verification: {
+      yandex: "e149c22fd0bc3d72",
+    },
   };
 }
 
@@ -141,7 +108,7 @@ export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -150,38 +117,20 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
+  const jsonLd = seo.websiteJsonLd();
+
   return (
-    <html
-      lang={locale}
-      className={`h-full antialiased ${syne.variable} ${raleway.variable} ${inter.variable} ${interTight.variable} ${onest.variable}`}
-    >
+    <html lang={locale} className={inter.className}>
       <head>
-        <meta name="theme-color" content="#000000" />
-        <link rel="manifest" href="/Advizen Logo/site.webmanifest" />
-        <script dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
-        <GtmScript />
       </head>
-      <body className="min-h-full flex flex-col relative">
-        <GtmNoScript />
-        <NextIntlClientProvider>
-          <LoadingScreen />
-          <ScrollProgress />
-          <Navbar />
-          <main className="flex-1 relative z-10">{children}</main>
-          <div className="relative z-10">
-            <Footer />
-          </div>
-          <ScrollToTop />
-          <CookieBanner />
-        </NextIntlClientProvider>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
