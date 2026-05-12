@@ -54,7 +54,7 @@ export default function InsightsSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="h-full"
           >
-            <Link href="/insights/doing-business-uzbekistan" className="group block h-full">
+            <Link href="/insights" className="group block h-full">
               <div className="relative h-full min-h-[420px] rounded-2xl overflow-hidden border border-white/[0.08] group-hover:border-white/[0.2] transition-colors duration-500">
 
                 {/* Background: cover image or dark gradient placeholder */}
