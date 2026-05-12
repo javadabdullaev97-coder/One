@@ -22,3 +22,5 @@ After committing locally with `git commit`, push using the `mcp__github__push_fi
 - message: same message as the local commit
 
 After a successful MCP push, run `git fetch origin main && git reset --hard origin/main` to sync local state with remote.
+
+> **Rule: One file per push — no exceptions.** Each `mcp__github__push_files` call must contain exactly one file. If multiple files were changed, make one push call per file, sequentially. Never bundle multiple files into a single push call.
