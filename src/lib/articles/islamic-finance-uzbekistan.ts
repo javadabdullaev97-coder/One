@@ -124,6 +124,24 @@ export default {
         text: "Members of the Advizen team bring hands-on experience with Islamic finance structuring in Uzbekistan from their prior careers — including work on the seed investment phase of an Uzbek-based Islamic fintech startup and participation in government-level advisory projects on integrating Islamic finance instruments into domestic legislation. We assist microfinance organisations and investors in assessing which instruments are appropriate for their business model, drafting Sharia-compliant contract documentation, establishing and advising Special Councils, and ensuring ongoing compliance with Central Bank requirements.",
       },
     ],
+      faq: [
+      {
+        question: "What Islamic finance instruments are available in Uzbekistan?",
+        answer: "Central Bank Resolution No. 23/4 (19 July 2024) authorises 6 instruments: Murabaha (deferred-sale financing — the MFO buys goods and resells to the client at a fixed mark-up); Islomiy Ijara (Islamic lease); Ijara Muntahiya Bittamlik (lease with purchase option); Salam (advance-payment financing for manufacturers needing working capital); Mudaraba (profit-sharing partnership where the MFO provides capital); and Musharaka (profit-and-loss sharing partnership). Only MFOs may provide these services, up to 300,000,000 UZS for businesses and 100,000,000 UZS for individuals.",
+      },
+      {
+        question: "Who can provide Islamic finance services in Uzbekistan?",
+        answer: "Exclusively microfinance organisations (MFOs) licensed under Law No. ЗРУ-765 and regulated by the Central Bank of Uzbekistan. Any MFO offering Islamic finance must establish a Special Council for the Coordination of Islamic Finance Issues — minimum 5 members: at least 1 with a higher education degree in Islamic law, 1 with a higher legal education degree, and the remaining members each with an international Islamic finance certificate. Alternatively, the Special Council may be outsourced on a contractual basis to a specialised association or union.",
+      },
+      {
+        question: "How does Murabaha work in Uzbekistan?",
+        answer: "The MFO purchases goods required by the client from a seller, then sells those goods to the client at a pre-agreed price plus a fixed mark-up, with deferred payment on an agreed schedule. The price and mark-up are fixed in the contract in advance and cannot be linked to future or uncertain indicators. Money, foreign currency, crypto-assets, gold, and silver may not be the subject of a murabaha transaction. Any penalties for late payment must be directed to charity, not treated as MFO profit.",
+      },
+      {
+        question: "What is the Special Council requirement for Islamic finance in Uzbekistan?",
+        answer: "Any MFO providing Islamic finance services must establish a Special Council responsible for ensuring Sharia compliance. It must have a minimum of 5 members — at least 1 must hold a higher education degree in Islamic law, 1 must hold a higher legal education degree, and the remaining members must each hold an international certificate in Islamic finance. The council may be established internally by the general meeting of shareholders, or outsourced on a contractual basis to a specialised association or union provided it meets the composition requirements.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практическое руководство по развивающейся системе исламских финансов в Узбекистане — законодательство, разрешённые инструменты и регуляторные обязательства МФО.",
@@ -250,6 +268,24 @@ export default {
         text: "Члены команды Advizen обладают практическим опытом структурирования исламских финансов в Узбекистане, накопленным в предыдущей карьере — включая работу на этапе посевных инвестиций узбекского исламского финтех-стартапа и участие в правительственных консультативных проектах по интеграции инструментов исламских финансов в национальное законодательство. Мы помогаем микрофинансовым организациям и инвесторам в оценке инструментов, подходящих для их бизнес-модели, разработке шариат-совместимой договорной документации, создании и сопровождении Специальных советов, а также обеспечении постоянного соблюдения требований Центрального банка.",
       },
     ],
+      faq: [
+      {
+        question: "Какие инструменты исламских финансов доступны в Узбекистане?",
+        answer: "Постановление Центрального банка № 23/4 (19 июля 2024 года) разрешает 6 инструментов: Мурабаха (финансирование с отсрочкой платежа — МФО покупает товары и перепродаёт клиенту с фиксированной наценкой); Исламий Иджара (исламская аренда); Иджара Мунтахия Биттамлик (аренда с правом выкупа); Салам (финансирование с предоплатой для производителей, нуждающихся в оборотном капитале); Мудараба (партнёрство с разделом прибыли, при котором МФО предоставляет капитал); Мушарака (партнёрство с распределением прибылей и убытков). Услуги вправе оказывать только МФО — до 300 000 000 сум для бизнеса и 100 000 000 сум для физических лиц.",
+      },
+      {
+        question: "Кто может предоставлять услуги исламских финансов в Узбекистане?",
+        answer: "Исключительно микрофинансовые организации (МФО), лицензированные согласно Закону № ЗРУ-765 и регулируемые Центральным банком Узбекистана. Любая МФО, предоставляющая услуги исламских финансов, обязана создать Специальный совет по координации вопросов исламских финансов — не менее 5 членов: минимум 1 с высшим образованием в области исламского права, 1 с высшим юридическим образованием, остальные — с международным сертификатом в области исламских финансов. В качестве альтернативы Специальный совет может быть привлечён на аутсорсинговой основе из специализированной ассоциации или союза.",
+      },
+      {
+        question: "Как работает Мурабаха в Узбекистане?",
+        answer: "МФО приобретает у продавца товары, необходимые клиенту, а затем продаёт их клиенту по заранее согласованной цене с фиксированной наценкой с отсрочкой платежа по согласованному графику. Цена и наценка фиксируются в договоре заранее и не могут быть привязаны к будущим или неопределённым показателям. Деньги, иностранная валюта, криптоактивы, золото и серебро не могут быть предметом сделки мурабаха. Неустойки за просрочку направляются на благотворительность, а не в прибыль МФО.",
+      },
+      {
+        question: "Каково требование о Специальном совете для исламских финансов в Узбекистане?",
+        answer: "Любая МФО, предоставляющая услуги исламских финансов, обязана создать Специальный совет, отвечающий за соответствие шариату. Минимум 5 членов — не менее 1 с высшим образованием в области исламского права, 1 с высшим юридическим образованием, остальные члены — с международным сертификатом в области исламских финансов. Совет может быть создан внутри организации по решению общего собрания акционеров или привлечён на аутсорсинге из специализированной ассоциации или союза при соответствии требованиям к составу.",
+      },
+    ],
   },
   uz: {
     subtitle: "O'zbekistonning rivojlanayotgan islom moliyasi tizimi bo'yicha amaliy qo'llanma — qonunchilik, ruxsat etilgan vositalar va MMTlar uchun tartibga soluvchi majburiyatlar.",
@@ -374,6 +410,24 @@ export default {
       {
         type: "p" as const,
         text: "Advizen jamoasi a'zolari o'zlarining oldingi karyeralarida — jumladan O'zbekistondagi islom fintex-startapining urug' investitsiya bosqichidagi ish va islom moliyasi vositalarini milliy qonunchilikka integratsiyalash bo'yicha hukumat darajasidagi maslahat loyihalarida ishtirok etish — O'zbekistonda islom moliyasini tuzilmalashtirish bo'yicha amaliy tajribaga ega. Biz mikromoliya tashkilotlari va investorlarga ularning biznes-modeli uchun mos vositalarni baholashda, shariatga mos shartnoma hujjatlarini ishlab chiqishda, Maxsus kengashlarni tashkil etish va ularga maslahat berishda hamda Markaziy bank talablariga doimiy muvofiqligini ta'minlashda yordam beramiz.",
+      },
+    ],
+      faq: [
+      {
+        question: "O'zbekistonda qanday islom moliyasi vositalari mavjud?",
+        answer: "Markaziy bankning 23/4-sonli Qarori (2024 yil 19 iyul) 6 ta vositaga ruxsat beradi: Murabaha (kechiktirilgan to'lovli moliyalashtirish — MMT tovarlarni sotib olib, mijozga belgilangan ustama bilan qayta sotadi); Islomiy Ijara (islom ijarasi); Ijara Muntahiya Bittamlik (sotib olish huquqi bilan ijara); Salam (aylanma kapitalga muhtoj ishlab chiqaruvchilar uchun oldindan to'lov asosidagi moliyalashtirish); Mudaraba (MMT kapital taqdim etadigan foydani taqsimlovchi sherikchilik); Musharaka (foyda va zararni taqsimlovchi sherikchilik). Faqat MMTlar bu xizmatlarni ko'rsatishi mumkin — biznes uchun 300 000 000 so'mgacha va jismoniy shaxslar uchun 100 000 000 so'mgacha.",
+      },
+      {
+        question: "O'zbekistonda islom moliyasi xizmatlarini kim ko'rsatishi mumkin?",
+        answer: "Faqat ЗРУ-765-sonli Qonun asosida litsenziyalangan va O'zbekiston Markaziy banki tomonidan tartibga solinadigan mikromoliya tashkilotlari (MMTlar). Islom moliyasi xizmatlarini ko'rsatuvchi har qanday MMT islom moliyasi masalalarini muvofiqlashtirish bo'yicha Maxsus kengash tashkil etishi shart — kamida 5 a'zo: kamida 1 islom huquqi bo'yicha oliy ma'lumotli, 1 oliy yuridik ma'lumotli, qolganlar islom moliyasi bo'yicha xalqaro sertifikatga ega. Muqobil ravishda, Maxsus kengash ixtisoslashgan uyushma yoki ittifoq huzurida shartnoma asosida autsorsing yo'li bilan jalb qilinishi mumkin.",
+      },
+      {
+        question: "O'zbekistonda Murabaha qanday ishlaydi?",
+        answer: "MMT mijozga kerakli tovarlarni sotuvchidan sotib oladi, so'ng shu tovarlarni mijozga kelishilgan jadval bo'yicha kechiktirilgan to'lov asosida oldindan kelishilgan narx va belgilangan ustama bilan sotadi. Narx va ustama shartnomada oldindan belgilanadi va kelajakdagi yoki noaniq ko'rsatkichlar bilan bog'lanishi mumkin emas. Pul, xorijiy valyuta, kriptoaktivlar, oltin va kumush murabaha bitimining predmeti bo'lishi mumkin emas. Kechiktirilgan to'lovlar uchun neustoykalar MMT foydasiga emas, xayriya maqsadlariga yo'naltirilishi shart.",
+      },
+      {
+        question: "O'zbekistonda islom moliyasi uchun Maxsus kengash talabi qanday?",
+        answer: "Islom moliyasi xizmatlarini ko'rsatuvchi har qanday MMT shariat muvofiqligini ta'minlash uchun mas'ul Maxsus kengash tashkil etishi shart. Kamida 5 a'zo — kamida 1 kishi islom huquqi bo'yicha oliy ma'lumotga, 1 kishi oliy yuridik ma'lumotga ega bo'lishi va qolgan a'zolarning har biri islom moliyasi bo'yicha xalqaro sertifikatga ega bo'lishi shart. Kengash aktsionerlarning umumiy yig'ilishi qaroriga ko'ra ichki ravishda tashkil etilishi yoki tarkib talablariga javob bergan taqdirda ixtisoslashgan uyushma yoki ittifoq huzuridagi kengash shartnoma asosida autsorsing yo'li bilan jalb qilinishi mumkin.",
       },
     ],
   },
