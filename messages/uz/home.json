@@ -88,6 +88,8 @@
     "eyebrow": "Operatsiyalar",
     "heading": "Siz topshirasiz — biz bajaramiz",
     "description": "Biz ijroni o'z zimmamizga oladigan to'liq boshqariladigan xizmatlar — bitta shartnoma, bitta aloqa nuqtasi, to'liq muvofiqlik.",
+    "operationsLabel": "Operatsiyalar",
+    "whoThisIsFor": "Bu kimga mo'ljallangan",
     "servicesCount": "{count} xizmat",
     "capabilities": "Imkoniyatlar",
     "relatedReading": "Mavzu bo'yicha"
