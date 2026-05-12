@@ -148,6 +148,24 @@ export default {
         text: "The crypto licensing process in Uzbekistan involves substantial upfront fees, strict technical and compliance requirements, and ongoing regulatory obligations. Advizen's legal team assists clients in assessing which licence category applies to their business model, preparing the full application package, structuring the ownership to meet NAPP's requirements, and managing the relationship with the regulator after licensing.",
       },
     ],
+    faq: [
+      {
+        question: "What types of crypto-asset service provider licences are available in Uzbekistan?",
+        answer: "Uzbekistan's NAPP framework provides four distinct licence categories: (1) Crypto exchange — an electronic platform for buying, selling, and/or exchanging crypto-assets; (2) Mining pool — a platform consolidating computing power for mining; (3) Crypto depository — a platform providing issuance, primary placement, and custody of crypto-assets; (4) Crypto shop — a platform for purchase and/or sale of crypto-assets. Each type requires a separate licence. All licences are issued for an unlimited duration and may only be held by Uzbek-resident legal entities.",
+      },
+      {
+        question: "How much does a crypto exchange licence cost in Uzbekistan?",
+        answer: "A crypto exchange licence carries the highest fees under the NAPP framework. The one-time state duty at licence issuance is 73,400 × BRV (Base Calculation Value) — approximately USD 2,496,000. In addition, licence holders pay a monthly activity levy of 740 × BRV — approximately USD 25,200 per month, due by the 10th of each month. Other licence types are significantly cheaper: mining pool (3,000 × BRV one-time; 100 × BRV/month), crypto depository (7,000 × BRV one-time; 5 × BRV/month), and crypto shop (3,700 × BRV one-time; 185 × BRV/month).",
+      },
+      {
+        question: "Can a foreign company obtain a crypto licence in Uzbekistan?",
+        answer: "No. Only legal entities that are residents of Uzbekistan are eligible to apply for a NAPP crypto-asset service provider licence. Individuals and foreign companies are expressly excluded. Foreign investors wishing to enter the Uzbek crypto market must first establish a local legal entity registered in Uzbekistan. Additionally, no offshore-registered companies may appear in the ownership structure, and the charter capital of a crypto exchange must be funded exclusively from the founders' own funds — not loans or borrowed capital.",
+      },
+      {
+        question: "What are the ongoing compliance requirements for crypto service providers in Uzbekistan?",
+        answer: "All four licence categories share the following ongoing obligations: the platform and all servers must be physically located in Uzbekistan; all transaction data, user identification records, and business correspondence must be retained for five years; full compliance with Uzbekistan's AML/CFT and personal data protection laws is required; advertising must carry mandatory risk warnings and may not promise returns, mention bonuses, or depict minors; hidden mining and operations with anonymous crypto-assets are prohibited; no offshore companies may appear in the ownership structure; and all activity levies must be paid in full by the 10th of each month.",
+      },
+    ],
   },
   ru: {
     subtitle: "Практическое руководство по получению и поддержанию лицензии поставщика услуг крипто-активов в Узбекистане в рамках регуляторной системы НАПП.",
@@ -298,6 +316,24 @@ export default {
         text: "Процесс лицензирования крипто-деятельности в Узбекистане сопровождается значительными первоначальными сборами, строгими техническими и комплаенс-требованиями и постоянными регуляторными обязательствами. Юридическая команда Advizen помогает клиентам в определении подходящей категории лицензии для их бизнес-модели, подготовке полного пакета документов, структурировании собственности с учётом требований НАПП и сопровождении взаимодействия с регулятором после лицензирования.",
       },
     ],
+    faq: [
+      {
+        question: "Какие виды лицензий поставщиков услуг крипто-активов доступны в Узбекистане?",
+        answer: "Регуляторная система НАПП предусматривает четыре отдельные категории лицензий: (1) Крипто-биржа — электронная платформа для купли, продажи и/или обмена крипто-активов; (2) Майнинг-пул — платформа, консолидирующая вычислительные мощности для майнинга; (3) Крипто-депозитарий — платформа, обеспечивающая выпуск, первичное размещение и хранение крипто-активов; (4) Крипто-магазин — платформа для покупки и/или продажи крипто-активов. Каждый вид требует отдельной лицензии. Все лицензии выдаются бессрочно и могут быть получены только узбекскими резидентными юридическими лицами.",
+      },
+      {
+        question: "Сколько стоит лицензия крипто-биржи в Узбекистане?",
+        answer: "Лицензия крипто-биржи предусматривает наиболее высокие сборы в рамках системы НАПП. Единовременная государственная пошлина при выдаче лицензии составляет 73 400 × БРВ (базовая расчётная величина) — приблизительно 2 496 000 долл. США. Кроме того, лицензиаты уплачивают ежемесячный сбор за деятельность в размере 740 × БРВ — около 25 200 долл. США в месяц, подлежащий уплате до 10-го числа каждого месяца. Другие виды лицензий значительно дешевле: майнинг-пул (3 000 × БРВ единовременно; 100 × БРВ/мес.), крипто-депозитарий (7 000 × БРВ единовременно; 5 × БРВ/мес.) и крипто-магазин (3 700 × БРВ единовременно; 185 × БРВ/мес.).",
+      },
+      {
+        question: "Может ли иностранная компания получить крипто-лицензию в Узбекистане?",
+        answer: "Нет. На получение лицензии поставщика услуг крипто-активов от НАПП вправе претендовать только юридические лица — резиденты Узбекистана. Физические лица и иностранные компании прямо исключены. Иностранные инвесторы, желающие выйти на узбекский крипторынок, обязаны предварительно создать местное юридическое лицо, зарегистрированное в Узбекистане. Помимо этого, в структуре собственности не может быть компаний, зарегистрированных в офшорных юрисдикциях, а уставный капитал крипто-биржи должен формироваться исключительно за счёт собственных средств учредителей.",
+      },
+      {
+        question: "Каковы текущие требования комплаенса для поставщиков крипто-услуг в Узбекистане?",
+        answer: "Все четыре категории лицензий предполагают следующие постоянные обязательства: платформа и все серверы должны физически располагаться на территории Узбекистана; все данные о сделках, идентификационные сведения пользователей и деловая переписка должны храниться пять лет; требуется полное соблюдение законодательства Узбекистана о ПОД/ФТ и о защите персональных данных; реклама должна содержать обязательные предупреждения о рисках и не обещать доходность, упоминать бонусы или изображать несовершеннолетних; запрещены скрытый майнинг и операции с анонимными крипто-активами; в структуре собственности не должно быть офшорных компаний; все сборы за деятельность должны уплачиваться в полном объёме до 10-го числа каждого месяца.",
+      },
+    ],
   },
   uz: {
     subtitle: "NAPP tartibga soluvchi tizimi doirasida O'zbekistonda kriptoaktivlar xizmati provayderi sifatida litsenziya olish va saqlash bo'yicha amaliy qo'llanma.",
@@ -446,6 +482,24 @@ export default {
       {
         type: "p" as const,
         text: "O'zbekistonda kriptoaktivlarni litsenziyalash jarayoni sezilarli boshlang'ich yig'imlar, qat'iy texnik va muvofiqlik talablari hamda doimiy tartibga soluvchi majburiyatlarni o'z ichiga oladi. Advizen yuridik jamoasi mijozlarga ularning biznes-modeliga qaysi litsenziya toifasi mos kelishini baholashda, hujjatlarning to'liq to'plamini tayyorlashda, NAPP talablariga muvofiq egalikni tuzishda va litsenziyalashdan keyin tartibga soluvchi bilan munosabatlarni boshqarishda yordam beradi.",
+      },
+    ],
+    faq: [
+      {
+        question: "O'zbekistonda kriptoaktivlar xizmati provayderlari uchun qanday litsenziya turlari mavjud?",
+        answer: "NAPP tartibga solish tizimi to'rtta alohida litsenziya toifasini nazarda tutadi: (1) Kripto-birja — kriptoaktivlarni sotib olish, sotish va/yoki ayirboshlash uchun elektron platforma; (2) Mayning-pul — mayning uchun hisoblash quvvatlarini birlashtiruvchi platforma; (3) Kripto-depozitariy — kriptoaktivlarni chiqarish, birlamchi joylashtirish va saqlashni ta'minlovchi platforma; (4) Kripto-do'kon — kriptoaktivlarni sotib olish va/yoki sotish uchun platforma. Har bir tur uchun alohida litsenziya talab etiladi. Barcha litsenziyalar muddatsiz beriladi va faqat O'zbekiston rezidenti yuridik shaxslar tomonidan olinishi mumkin.",
+      },
+      {
+        question: "O'zbekistonda kripto-birja litsenziyasi qancha turadi?",
+        answer: "Kripto-birja litsenziyasi NAPP tizimida eng yuqori yig'imlarni nazarda tutadi. Litsenziya berilganda bir martalik davlat boji 73 400 × BHM (Bazaviy hisoblash miqdori) ni tashkil etadi — taxminan 2 496 000 AQSh dollari. Bundan tashqari, litsenziya egalari har oyning 10-sanasigacha to'lanadigan 740 × BHM miqdorida oylik faoliyat yig'imini — taxminan 25 200 AQSh dollari oyiga — to'laydilar. Boshqa litsenziya turlari ancha arzonroq: mayning-pul (3 000 × BHM bir martalik; 100 × BHM/oy), kripto-depozitariy (7 000 × BHM bir martalik; 5 × BHM/oy) va kripto-do'kon (3 700 × BHM bir martalik; 185 × BHM/oy).",
+      },
+      {
+        question: "Xorijiy kompaniya O'zbekistonda kripto-litsenziya ola oladimi?",
+        answer: "Yo'q. NAPPdan kriptoaktivlar xizmati provayderi litsenziyasi olish uchun faqat O'zbekiston rezidenti yuridik shaxslar ariza berish huquqiga ega. Jismoniy shaxslar va xorijiy kompaniyalar aniq istisno qilingan. O'zbek kriptoaktivlar bozoriga kirmoqchi bo'lgan xorijiy investorlar avval O'zbekistonda ro'yxatdan o'tgan mahalliy yuridik shaxs tashkil etishi shart. Bundan tashqari, egalik tuzilmasida ofshor yurisdiktsiyalarda ro'yxatdan o'tgan kompaniyalar bo'lishi mumkin emas, kripto-birjaning ustav kapitali esa faqat ta'sischilarning o'z mablag'lari hisobidan shakllantirilishi shart.",
+      },
+      {
+        question: "O'zbekistondagi kriptoaktivlar xizmati provayderlari uchun doimiy muvofiqlik talablari qanday?",
+        answer: "Litsenziyaning to'rtta toifasi uchun quyidagi doimiy majburiyatlar qo'llaniladi: platforma va barcha serverlar O'zbekiston hududida fizik joylashgan bo'lishi shart; barcha bitim ma'lumotlari, foydalanuvchi identifikatsiyasi yozuvlari va biznes yozishmalari besh yil davomida saqlanishi kerak; O'zbekistonning JPM/TMM va shaxsiy ma'lumotlarni himoya qilish to'g'risidagi qonunchiligiga to'liq rioya etilishi shart; reklamada majburiy xavf ogohlantirishlari bo'lishi shart, daromadlilik va'da qilmasligi, bonuslarni eslatmasligi yoki voyaga yetmaganlarni tasvirlamasligi kerak; yashirin mayning va anonim kriptoaktivlar bilan operatsiyalarga yo'l qo'yilmaydi; egalik tuzilmasida ofshor kompaniyalar bo'lishi mumkin emas; barcha faoliyat yig'imlari har oyning 10-sanasigacha to'liq to'lanishi shart.",
       },
     ],
   },
