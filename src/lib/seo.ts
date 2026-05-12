@@ -205,6 +205,28 @@ export function articleJsonLd(slug: string, locale: string) {
     inLanguage: locale,
     articleSection: article.category,
     keywords: [article.category, article.tag, "Uzbekistan", "Tashkent"].filter(Boolean),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "p:first-of-type"],
+    },
+  };
+}
+
+export function faqJsonLd(slug: string, locale: string) {
+  const article = getArticleBySlug(slug, locale);
+  if (!article?.faq?.length) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: article.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 }
 
