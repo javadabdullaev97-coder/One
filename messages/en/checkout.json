@@ -19,7 +19,8 @@
       "badge": "Coming soon",
       "heading": "Online Payments Coming Soon",
       "bodyLine1": "Uzcard, Humo, Visa & Mastercard coming soon. For now, place your order via email.",
-      "emailNote": "Orders are currently accepted via email request"
+      "emailNote": "Orders are currently accepted via email request",
+      "uzsBillingNote": "All payments are processed in Uzbek soum (UZS). If you pay with a foreign-currency card (Visa/Mastercard), your issuing bank will convert the UZS charge to your card currency at its own rate, which may include conversion fees and commissions. The Seller is not responsible for the difference between the indicative USD price and the final amount charged by your bank."
     },
     "form": {
       "heading": "Order details",
