@@ -135,7 +135,7 @@ export async function generateMetadata({
       images: [OG_IMAGE],
     },
     verification: {
-      yandex: "e149c22fd0bc3d72",
+      yandex: ["e149c22fd0bc3d72", "5f2ab940e9bd79f4"],
     },
   };
 }
