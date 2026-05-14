@@ -37,67 +37,81 @@ export default function FloatingContactWidget() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className="fixed bottom-24 right-6 z-50 flex flex-col-reverse items-end gap-3"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      {/* Contact buttons */}
-      <AnimatePresence>
-        {isOpen &&
-          contacts.map((contact, i) => (
-            <motion.a
-              key={contact.name}
-              href={contact.href}
-              target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              aria-label={contact.name}
-              initial={{ opacity: 0, y: 12, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1, transition: { delay: i * 0.06, duration: 0.3, ease: [0.16, 1, 0.3, 1] } }}
-              exit={{ opacity: 0, y: 6, scale: 0.9, transition: { duration: 0.18, ease: "easeIn" } }}
-              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#1A1A1A] border border-white/[0.06] overflow-hidden hover:shadow-lg"
-            >
-              {/* Fill-up on hover — same as footer SocialIcons */}
-              <div
-                className="absolute bottom-0 left-0 w-full h-0 group-hover:h-full transition-all duration-300 ease-in-out"
-                style={{ backgroundColor: contact.color }}
-              />
-              <span className="relative z-10 text-[#999999] group-hover:text-white transition-colors duration-300">
-                {contact.icon}
-              </span>
-            </motion.a>
-          ))}
-      </AnimatePresence>
-
-      {/* Main trigger button */}
-      <div className="relative w-14 h-14">
-        {/* Pulse rings — visible only when closed */}
+    <>
+      {/* Mobile backdrop — closes widget when tapping outside */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+          aria-hidden
+        />
+      )}
+      <div
+        className="fixed bottom-6 right-5 md:bottom-24 md:right-6 z-50 flex flex-col-reverse items-end gap-3"
+        onPointerEnter={(e) => { if (e.pointerType === "mouse") setIsOpen(true); }}
+        onPointerLeave={(e) => { if (e.pointerType === "mouse") setIsOpen(false); }}
+      >
+        {/* Contact buttons */}
         <AnimatePresence>
-          {!isOpen && (
-            <>
-              <motion.div
-                key="ring1"
-                className="absolute inset-0 rounded-full border border-white/[0.25]"
-                initial={{ scale: 1, opacity: 0.6 }}
-                animate={{ scale: 1.75, opacity: 0 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeOut", repeatDelay: 0.2 }}
-              />
-              <motion.div
-                key="ring2"
-                className="absolute inset-0 rounded-full border border-white/[0.15]"
-                initial={{ scale: 1, opacity: 0.4 }}
-                animate={{ scale: 2.1, opacity: 0 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.7, repeatDelay: 0.2 }}
-              />
-            </>
-          )}
+          {isOpen &&
+            contacts.map((contact, i) => (
+              <motion.a
+                key={contact.name}
+                href={contact.href}
+                target={contact.href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                aria-label={contact.name}
+                onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, y: 12, scale: 0.85 }}
+                animate={{ opacity: 1, y: 0, scale: 1, transition: { delay: i * 0.06, duration: 0.3, ease: [0.16, 1, 0.3, 1] } }}
+                exit={{ opacity: 0, y: 6, scale: 0.9, transition: { duration: 0.18, ease: "easeIn" } }}
+                className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#1A1A1A] border border-white/[0.06] overflow-hidden hover:shadow-lg"
+              >
+                {/* Fill-up on hover — same as footer SocialIcons */}
+                <div
+                  className="absolute bottom-0 left-0 w-full h-0 group-hover:h-full transition-all duration-300 ease-in-out"
+                  style={{ backgroundColor: contact.color }}
+                />
+                <span className="relative z-10 text-[#999999] group-hover:text-white transition-colors duration-300">
+                  {contact.icon}
+                </span>
+              </motion.a>
+            ))}
         </AnimatePresence>
 
-        {/* Button face */}
-        <div className="absolute inset-0 flex items-center justify-center rounded-full bg-[#1A1A1A] border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.5)] cursor-pointer">
-          <MessageCircle className="w-5 h-5 text-white/60" />
+        {/* Main trigger button */}
+        <div className="relative w-14 h-14">
+          {/* Pulse rings — visible only when closed */}
+          <AnimatePresence>
+            {!isOpen && (
+              <>
+                <motion.div
+                  key="ring1"
+                  className="absolute inset-0 rounded-full border border-white/[0.25]"
+                  initial={{ scale: 1, opacity: 0.6 }}
+                  animate={{ scale: 1.75, opacity: 0 }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut", repeatDelay: 0.2 }}
+                />
+                <motion.div
+                  key="ring2"
+                  className="absolute inset-0 rounded-full border border-white/[0.15]"
+                  initial={{ scale: 1, opacity: 0.4 }}
+                  animate={{ scale: 2.1, opacity: 0 }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.7, repeatDelay: 0.2 }}
+                />
+              </>
+            )}
+          </AnimatePresence>
+
+          {/* Button face */}
+          <div
+            className="absolute inset-0 flex items-center justify-center rounded-full bg-[#1A1A1A] border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.5)] cursor-pointer"
+            onClick={() => setIsOpen((o) => !o)}
+          >
+            <MessageCircle className="w-5 h-5 text-white/60" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
