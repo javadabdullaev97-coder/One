@@ -30,7 +30,7 @@ function formatDate(dateStr?: string, year?: string): string {
   return year ?? "";
 }
 
-/* ── Data ────────────────────────────────────────── */
+/* ── Data ──────────────────────────────────────────── */
 
 const flagship = {
   tag: "Flagship Publication",
@@ -65,7 +65,7 @@ const categoryGradients: Record<string, string> = {
 const luxuryEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const ITEMS_PER_PAGE = 6;
 
-/* ── Article Card ───────────────────────────────────────────── */
+/* ── Article Card ──────────────────────────────────────────────── */
 
 function ArticleCard({ pub }: { pub: Publication }) {
   const gradient = categoryGradients[pub.category] ?? "from-stone-900/70 to-black";
@@ -118,7 +118,7 @@ function ArticleCard({ pub }: { pub: Publication }) {
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────────────────────────────────────────────────────── */
+/* ── Page ──────────────────────────────────────────────────────────────────────────────────────────────────────────── */
 
 export default function LibraryPage() {
   const [activeFilter, setActiveFilter] = useState<FilterTag>("All");
@@ -350,7 +350,7 @@ export default function LibraryPage() {
                   <button
                     key={f}
                     onClick={() => setActiveFilter(f)}
-                    className="relative px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer"
+                    className="relative px-4 py-2.5 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer"
                   >
                     {activeFilter === f && (
                       <motion.div
