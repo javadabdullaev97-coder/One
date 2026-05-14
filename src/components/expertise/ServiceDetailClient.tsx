@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Calculator, Scale, LineChart, Users, Landmark, Handshake, ScanSearch, LayoutDashboard, Briefcase, UserCheck, Wallet, Globe, MapPin, ShieldCheck, ChevronDown } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
@@ -146,6 +146,14 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
   const tEng = useTranslations("Engagements");
   const service = getServiceBySlug(slug);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
 
   if (!service) return null;
 
@@ -184,12 +192,14 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden flex flex-col" style={{ minHeight: "65vh" }}>
-        <div
-          className="absolute w-[800px] h-[800px] rounded-full -top-64 -left-64 opacity-[0.12] blur-[140px] pointer-events-none"
-          style={{ background: `rgba(${accent},1)` }}
-        />
+      {/* ── Hero ───────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden flex flex-col min-h-[320px] md:min-h-[65vh]">
+        {!isMobile && (
+          <div
+            className="absolute w-[800px] h-[800px] rounded-full -top-64 -left-64 opacity-[0.12] blur-[140px] pointer-events-none"
+            style={{ background: `rgba(${accent},1)` }}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 pointer-events-none" />
 
         <div className="relative z-10 flex-1 flex flex-col pt-28 pb-16 md:pt-36 md:pb-20 max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -234,9 +244,9 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           {/* Headline */}
           <h1 className="heading-luxury text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.05] mb-10">
             <motion.span
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: isMobile ? 0 : 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: isMobile ? 0.4 : 0.85, delay: isMobile ? 0.1 : 0.18, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: "block" }}
             >
               {serviceTitle}
@@ -244,9 +254,9 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
           </h1>
 
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0.15 : 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             <MagneticButton variant="primary" as="a" href="/contact">
               {c.discuss}
@@ -256,7 +266,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Description ──────────────────────────────────── */}
+      {/* ── Description ────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
@@ -298,7 +308,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Capabilities ─────────────────────────────────── */}
+      {/* ── Capabilities ────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="mb-14">
@@ -313,7 +323,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.45, delay: isMobile ? 0 : i * 0.055, ease: [0.16, 1, 0.3, 1] }}
                 className="group relative bg-black px-7 py-8 overflow-hidden transition-colors duration-300"
               >
                 <div
@@ -342,7 +352,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Selected work ────────────────────────────────── */}
+      {/* ── Selected work ────────────────────────────────────────── */}
       {filteredEngagements.length > 0 && (
         <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -366,10 +376,10 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
               {filteredEngagements.map((eng, i) => (
                 <motion.div
                   key={eng.idx}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: isMobile ? 0 : 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.5, delay: isMobile ? 0 : i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -4 }}
                   className="group relative rounded-xl overflow-hidden"
                 >
@@ -417,7 +427,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── Related services + From our store ────────────── */}
+      {/* ── Related services + From our store ──────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
@@ -490,7 +500,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────── */}
+      {/* ── FAQ ────────────────────────────────────────────────── */}
       {faqItems.length > 0 && (
         <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -540,12 +550,14 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
-        <div
-          className="absolute w-[600px] h-[600px] rounded-full -bottom-48 left-1/2 -translate-x-1/2 opacity-[0.08] blur-[110px] pointer-events-none"
-          style={{ background: `rgba(${accent},1)` }}
-        />
+      {/* ── CTA ────────────────────────────────────────────────── */}
+      <section className="py-16 md:py-24 lg:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
+        {!isMobile && (
+          <div
+            className="absolute w-[600px] h-[600px] rounded-full -bottom-48 left-1/2 -translate-x-1/2 opacity-[0.08] blur-[110px] pointer-events-none"
+            style={{ background: `rgba(${accent},1)` }}
+          />
+        )}
         <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <p className="tracking-luxury text-white/40 mb-6">{service.category}</p>
