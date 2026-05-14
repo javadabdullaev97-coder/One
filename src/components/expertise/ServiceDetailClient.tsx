@@ -135,7 +135,7 @@ const CHROME: Record<string, Record<string, string>> = {
     about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz",
     discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doʼirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
     selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bogʼliq xizmatlar", fromStore: "Doʼkonimizdan",
-    faqTitle: "Koʼp so\u02brraladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
+    faqTitle: "Koʼp soʻraladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
   },
 };
 
@@ -192,7 +192,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ── Hero ────────────────────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden flex flex-col min-h-[320px] md:min-h-[65vh]">
         {!isMobile && (
           <div
@@ -427,7 +427,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── Related services + From our store ──────────────────────── */}
+      {/* ── Related services + From our store ────────────────────── */}
       <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
@@ -500,7 +500,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────────────────── */}
+      {/* ── FAQ ──────────────────────────────────────────────────────────────────────── */}
       {faqItems.length > 0 && (
         <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -550,7 +550,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── CTA ──────────────────────────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────────────────────────────────── */}
       <section className="py-16 md:py-24 lg:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
         {!isMobile && (
           <div
