@@ -92,10 +92,7 @@ export default function ContactPage() {
   return (
     <div className="font-onest">
       {/* Hero */}
-      <div
-        className="relative overflow-hidden flex flex-col"
-        style={{ height: "65vh" }}
-      >
+      <div className="relative overflow-hidden flex flex-col h-[65vw] min-h-[320px] md:h-[65vh] md:min-h-0">
         <div className="absolute inset-0 hero-image-enter">
           <Image
             src="/Hero and CTA images/Contact Hero.webp"
