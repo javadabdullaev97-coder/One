@@ -22,8 +22,7 @@ export default function HeroSection() {
           fill
           priority
           unoptimized
-          className="object-cover"
-          style={{ objectPosition: "50% 0%", transform: "scale(1.4) translateY(-8%)", transformOrigin: "50% 50%" }}
+          className="object-cover object-center"
           aria-hidden
         />
       </div>
