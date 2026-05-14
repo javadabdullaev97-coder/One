@@ -23,6 +23,15 @@ export default function DisciplinesIntegration() {
   const shouldReduce = useReducedMotion();
   const N = disciplines.length;
   const PULSE_MS = 1800;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     if (!shouldReduce) return;
@@ -57,14 +66,14 @@ export default function DisciplinesIntegration() {
 
         {/* MIDDLE — beam track */}
         <div className="relative flex-1 h-28 md:h-32 z-0 -mx-14 md:-mx-16" aria-hidden="true">
-          {[0, 1, 2].map((i) => (
+          {(isMobile ? [1] : [0, 1, 2]).map((i) => (
             <div
               key={`line-${i}`}
               className="absolute inset-x-0 h-px bg-white/[0.06]"
               style={{ top: `calc(50% + ${(i - 1) * 12}px - 0.5px)` }}
             />
           ))}
-          {!shouldReduce && [0, 1, 2].map((i) => (
+          {!shouldReduce && (isMobile ? [1] : [0, 1, 2]).map((i) => (
             <motion.div
               key={`pulse-${active}-${i}`}
               className="absolute h-px w-20 md:w-24 -ml-10 md:-ml-12"
@@ -76,7 +85,7 @@ export default function DisciplinesIntegration() {
               initial={{ left: "0%" }}
               animate={{ left: "100%" }}
               transition={{ duration: PULSE_MS / 1000, ease: [0.42, 0, 0.58, 1] }}
-              onAnimationComplete={i === 2 ? advance : undefined}
+              onAnimationComplete={i === (isMobile ? 1 : 2) ? advance : undefined}
             />
           ))}
         </div>
