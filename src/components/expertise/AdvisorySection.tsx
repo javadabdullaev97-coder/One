@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ComponentType, type SVGProps } from "react";
+import { useState, useEffect, type ComponentType, type SVGProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -28,8 +28,6 @@ import { advisoryServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
 type LucideIcon = ComponentType<SVGProps<SVGSVGElement>>;
-
-const MotionLink = motion(Link);
 
 const serviceIcons: Record<string, LucideIcon> = {
   tax: Calculator,
@@ -88,10 +86,19 @@ const relatedArticle: Record<string, { slug: string; title: string; tag: string 
 export default function AdvisorySection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const t = useTranslations("AdvisorySection");
   const tServices = useTranslations("Services");
 
   const locale = useLocale();
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
   const active = advisoryServices[activeIndex];
   const ActiveIcon = serviceIcons[active.slug] ?? ArrowUpRight;
   const accent = serviceAccents[active.slug] ?? "255,255,255";
@@ -129,14 +136,14 @@ export default function AdvisorySection() {
               const ItemIcon = serviceIcons[service.slug] ?? ArrowUpRight;
               const svcAccent = serviceAccents[service.slug] ?? "255,255,255";
               return (
-                <MotionLink
+                <motion.button
                   key={service.slug}
-                  href={`/expertise/${service.slug}`}
+                  onClick={() => handleSelect(i)}
                   onMouseEnter={() => handleSelect(i)}
-                  initial={{ opacity: 0, x: -12 }}
+                  initial={{ opacity: 0, x: isMobile ? 0 : -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: i * 0.055, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: isMobile ? 0.25 : 0.45, delay: isMobile ? 0 : i * 0.055, ease: [0.16, 1, 0.3, 1] }}
                   className="group relative w-full flex flex-1 items-center gap-4 px-6 py-5 text-left transition-all duration-200"
                   style={{
                     background: isActive
@@ -180,7 +187,7 @@ export default function AdvisorySection() {
                     )}
                     style={isActive ? { color: `rgba(${svcAccent},0.7)` } : undefined}
                   />
-                </MotionLink>
+                </motion.button>
               );
             })}
           </div>
