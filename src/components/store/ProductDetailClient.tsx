@@ -137,7 +137,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      <div className="min-h-screen bg-black pt-20">
+      <div className="min-h-screen bg-black pt-20 pb-24 lg:pb-0">
         {/* Breadcrumb */}
         <div className="border-b border-white/[0.06]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center gap-2 text-xs text-white/35 tracking-wide">
@@ -452,6 +452,36 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
             </motion.div>
           )}
         </div>
+      </div>
+
+      {/* Mobile sticky bottom bar */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 flex items-center gap-4 px-5 py-3 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/[0.08]">
+        <div className="flex-1 min-w-0">
+          <motion.div
+            key={effectiveCurrency}
+            initial={{ opacity: 0, y: 3 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.15 }}
+            className="flex items-baseline gap-1"
+          >
+            <span className="text-[22px] font-extrabold tracking-tight text-foreground leading-none">
+              {priceMain}
+            </span>
+            {priceSuffix && (
+              <span className="text-white/45 text-xs">{priceSuffix}</span>
+            )}
+          </motion.div>
+          <p className="text-[10px] text-white/30 mt-0.5 truncate">
+            {ONE_TIME_LABEL[locale] ?? ONE_TIME_LABEL.en}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setCheckoutOpen(true)}
+          className="shrink-0 rounded-full bg-primary hover:bg-primary-light active:scale-95 px-6 py-3 text-[11px] tracking-[0.18em] uppercase font-medium text-foreground/90 hover:text-white transition-all duration-200 cursor-pointer"
+        >
+          {t("purchase")}
+        </button>
       </div>
 
       <CheckoutModal
