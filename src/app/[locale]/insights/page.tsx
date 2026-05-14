@@ -118,12 +118,20 @@ function ArticleCard({ pub }: { pub: Publication }) {
   );
 }
 
-/* ── Page ─────────────────────────────────────────────────────────────────────────────────────────────────────── */
+/* ── Page ───────────────────────────────────────────────────────────────────────────────────────────────────────── */
 
 export default function LibraryPage() {
   const [activeFilter, setActiveFilter] = useState<FilterTag>("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
   const tHero = useTranslations("InsightsPage.hero");
   const tFlagship = useTranslations("InsightsPage.flagship");
   const tPubs = useTranslations("InsightsPage.publications");
@@ -219,8 +227,8 @@ export default function LibraryPage() {
       </div>
 
       {/* ====== FLAGSHIP PUBLICATION ====== */}
-      <section className="py-24 md:py-32 bg-black relative overflow-hidden">
-        <div className="ambient-glow ambient-glow-oxblood w-[700px] h-[700px] top-1/2 right-0 translate-x-1/3 -translate-y-1/2 opacity-30" />
+      <section className="py-14 md:py-24 lg:py-32 bg-black relative overflow-hidden">
+        {!isMobile && <div className="ambient-glow ambient-glow-oxblood w-[700px] h-[700px] top-1/2 right-0 translate-x-1/3 -translate-y-1/2 opacity-30" />}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <AnimatedSection>
             <p className="tracking-luxury text-white/50 mb-12">{tFlagship("eyebrow")}</p>
@@ -228,7 +236,7 @@ export default function LibraryPage() {
             <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] overflow-hidden">
               <div className="grid lg:grid-cols-2">
                 {/* Left — content */}
-                <div className="p-10 md:p-14 lg:p-16 relative">
+                <div className="p-6 sm:p-10 md:p-14 lg:p-16 relative">
                   <span className="absolute top-8 right-8 font-serif text-[8rem] leading-none font-light text-white/[0.03] select-none pointer-events-none">
                     01
                   </span>
@@ -277,7 +285,7 @@ export default function LibraryPage() {
                 </div>
 
                 {/* Right — cover image with chapter overlay */}
-                <div className="relative border-t lg:border-t-0 lg:border-l border-white/[0.06] overflow-hidden min-h-[480px] lg:min-h-0">
+                <div className="relative border-t lg:border-t-0 lg:border-l border-white/[0.06] overflow-hidden min-h-[280px] sm:min-h-[380px] lg:min-h-0">
                   <Image
                     src="/Articles Image/DBU_cover.webp"
                     fill
@@ -298,10 +306,10 @@ export default function LibraryPage() {
                       {flagship.chapters.map((chapter, i) => (
                         <motion.div
                           key={chapter.num}
-                          initial={{ opacity: 0, x: -10 }}
+                          initial={{ opacity: 0, x: isMobile ? 0 : -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true, margin: "-40px" }}
-                          transition={{ duration: 0.38, delay: i * 0.06, ease: luxuryEase }}
+                          transition={{ duration: isMobile ? 0.2 : 0.38, delay: isMobile ? 0 : i * 0.06, ease: luxuryEase }}
                           className="flex items-center gap-4 py-2.5 border-b border-white/[0.05] last:border-0 group cursor-default"
                         >
                           <span className="font-mono text-[10px] text-primary-light/50 shrink-0 tabular-nums">
@@ -322,7 +330,7 @@ export default function LibraryPage() {
       </section>
 
       {/* ====== PUBLICATIONS ====== */}
-      <section className="py-24 md:py-32 bg-black border-t border-white/[0.06] relative overflow-hidden">
+      <section className="py-14 md:py-24 lg:py-32 bg-black border-t border-white/[0.06] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
           {/* Heading + filter + search */}
@@ -418,17 +426,17 @@ export default function LibraryPage() {
                 initial="hidden"
                 animate="visible"
                 exit={{ opacity: 0, transition: { duration: 0.15 } }}
-                variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
+                variants={{ visible: { transition: { staggerChildren: isMobile ? 0 : 0.07 } } }}
               >
                 {paginated.map((pub) => (
                   <motion.div
                     key={pub.slug}
                     variants={{
-                      hidden: { opacity: 0, y: 20 },
+                      hidden: { opacity: 0, y: isMobile ? 0 : 20 },
                       visible: {
                         opacity: 1,
                         y: 0,
-                        transition: { duration: 0.45, ease: luxuryEase },
+                        transition: { duration: isMobile ? 0.25 : 0.45, ease: luxuryEase },
                       },
                     }}
                     className="h-full"
@@ -485,8 +493,8 @@ export default function LibraryPage() {
       </section>
 
       {/* ====== CTA ====== */}
-      <section className="py-28 md:py-36 bg-black relative overflow-hidden">
-        <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <section className="py-16 md:py-28 lg:py-36 bg-black relative overflow-hidden">
+        {!isMobile && <div className="ambient-glow ambient-glow-warm w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />}
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <p className="tracking-luxury text-white/50 mb-6">
