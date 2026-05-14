@@ -12,7 +12,17 @@ import AnimatedSection from "@/components/AnimatedSection";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
 import HeroSection from "@/components/HeroSection";
-import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import dynamic from "next/dynamic";
+
+const RadialOrbitalTimeline = dynamic(
+  () => import("@/components/ui/radial-orbital-timeline"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-square max-w-[600px] mx-auto" />
+    ),
+  }
+);
 import UzbekistanMap from "@/components/UzbekistanMap";
 import DisciplinesIntegration from "@/components/DisciplinesIntegration";
 import InsightsSection from "@/components/InsightsSection";
@@ -146,7 +156,7 @@ const REGION_IMAGE: Record<string, string> = {
   "UZ-TO": "/Regions/Tashkent region.webp",
 };
 
-/* ── Region info panel ──────────────── */
+/* ── Region info panel ───────────── */
 
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const region = activeId ? REGION_DATA[activeId] : null;
@@ -242,7 +252,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   );
 }
 
-/* ── Page ─────────────────────── */
+/* ── Page ───────────────── */
 
 export default function Home() {
   const [activeRegionId, setActiveRegionId] = useState<string | null>("UZ-TK");
