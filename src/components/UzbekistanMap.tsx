@@ -10,6 +10,15 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
   const [hovered, setHovered] = useState<string | null>(null);
   const [cycleIdx, setCycleIdx] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     if (reduced) return;
@@ -19,11 +28,11 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
     }
     intervalRef.current = setInterval(() => {
       setCycleIdx(p => (p + 1) % CYCLE_ORDER.length);
-    }, 2800);
+    }, isMobile ? 5000 : 2800);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [reduced, hovered]);
+  }, [reduced, hovered, isMobile]);
 
   const activeId = hovered ?? CYCLE_ORDER[cycleIdx];
   const regionName = REGIONS.find(r => r.id === activeId)?.name ?? "";
@@ -96,7 +105,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
                   fill: active ? "var(--map-region-active-fill)" : "rgba(255,255,255,0.06)",
                   stroke: active ? "var(--map-region-active-stroke)" : "rgba(255,255,255,0.08)",
                   strokeWidth: active ? 1.5 : 1,
-                  filter: active ? "url(#uz-region-glow)" : "none",
+                  filter: active && !isMobile ? "url(#uz-region-glow)" : "none",
                   transition: "fill 280ms ease, stroke 280ms ease, stroke-width 280ms ease",
                   cursor: "default",
                   pointerEvents: "all",
@@ -106,7 +115,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
           })}
 
           {/* Tashkent pulse rings */}
-          {!reduced && (
+          {!reduced && !isMobile && (
             <>
               <motion.circle
                 cx={TASHKENT.cx}
