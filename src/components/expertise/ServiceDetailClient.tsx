@@ -135,7 +135,7 @@ const CHROME: Record<string, Record<string, string>> = {
     about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz",
     discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doʼirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
     selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bogʼliq xizmatlar", fromStore: "Doʼkonimizdan",
-    faqTitle: "Koʼp soʼraladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
+    faqTitle: "Koʼp so\u02brraladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
   },
 };
 
@@ -192,7 +192,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ── Hero ────────────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden flex flex-col min-h-[320px] md:min-h-[65vh]">
         {!isMobile && (
           <div
@@ -266,7 +266,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Description ────────────────────────────────────────── */}
+      {/* ── Description ──────────────────────────────────────────── */}
       <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
@@ -308,7 +308,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Capabilities ────────────────────────────────────────── */}
+      {/* ── Capabilities ──────────────────────────────────────────── */}
       <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="mb-14">
@@ -324,7 +324,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: isMobile ? 0 : i * 0.055, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-black px-7 py-8 overflow-hidden transition-colors duration-300"
+                className="group relative bg-black px-5 py-6 sm:px-7 sm:py-8 overflow-hidden transition-colors duration-300"
               >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
@@ -352,7 +352,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Selected work ────────────────────────────────────────── */}
+      {/* ── Selected work ──────────────────────────────────────────── */}
       {filteredEngagements.length > 0 && (
         <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -427,7 +427,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── Related services + From our store ────────────────────── */}
+      {/* ── Related services + From our store ──────────────────────── */}
       <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
@@ -500,7 +500,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── FAQ ────────────────────────────────────────────────────── */}
+      {/* ── FAQ ──────────────────────────────────────────────────────────────── */}
       {faqItems.length > 0 && (
         <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -516,10 +516,10 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
               <AnimatedSection delay={0.1}>
                 <div className="divide-y divide-white/[0.06]">
                   {faqItems.map((item, i) => (
-                    <div key={i} className="py-5">
+                    <div key={i}>
                       <button
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                        className="w-full flex items-start justify-between gap-4 text-left group"
+                        className="w-full flex items-start justify-between gap-4 text-left group py-4 min-h-[44px]"
                       >
                         <span className="text-[14px] text-white/65 group-hover:text-white/85 transition-colors leading-snug">
                           {item.q}
@@ -536,7 +536,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                           initial={{ opacity: 0, y: -6 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="mt-3 text-[13px] text-white/42 leading-relaxed"
+                          className="mt-3 text-[13px] text-white/42 leading-relaxed pb-4"
                         >
                           {item.a}
                         </motion.p>
@@ -550,7 +550,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── CTA ────────────────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <section className="py-16 md:py-24 lg:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
         {!isMobile && (
           <div
