@@ -11,7 +11,7 @@ import CheckoutModal from "@/components/CheckoutModal";
 import { cn } from "@/lib/utils";
 import FaqSection from "@/components/FaqSection";
 
-/* ── Types ─────────────────────────────────────── */
+/* ── Types ───────────────────────────────── */
 
 type Currency = "USD" | "UZS";
 
@@ -22,7 +22,7 @@ interface Product {
   updated: string;
 }
 
-/* ── Constants ─────────────────────────────────── */
+/* ── Constants ─────────────────────────────── */
 
 const CATEGORIES = ["All", "Company Formation", "Legal", "HR", "Tax", "Compliance", "Finance"] as const;
 const UZS_RATE = 12000;
@@ -36,7 +36,7 @@ const CATEGORY_META: Record<string, { icon: React.ReactNode }> = {
   "Finance":           { icon: <BarChart2 className="w-3 h-3" /> },
 };
 
-/* ── Data ───────────────────────────────────────── */
+/* ── Data ───────────────────────────────────── */
 
 const products: Product[] = [
   { id: "llc-formation",        category: "Company Formation", price: 299, updated: "Mar 2025" },
@@ -53,7 +53,7 @@ const products: Product[] = [
   { id: "due-diligence-pack",   category: "Finance",           price: 499, updated: "Mar 2026" },
 ];
 
-/* ── Helpers ─────────────────────────────────────── */
+/* ── Helpers ─────────────────────────────────── */
 
 function formatPrice(price: number, currency: Currency, locale: string): { main: string; suffix: string } {
   if (currency === "USD") {
@@ -64,7 +64,7 @@ function formatPrice(price: number, currency: Currency, locale: string): { main:
   return { main: rounded.toLocaleString("en-US"), suffix };
 }
 
-/* ── Product card ─────────────────────────────────────────── */
+/* ── Product card ───────────────────────────────────────────── */
 
 function ProductCard({ product, index, currency, onPurchase }: { product: Product; index: number; currency: Currency; onPurchase: (p: Product, title: string) => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -130,7 +130,7 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
       {/* Body */}
       <div className="flex-1 flex flex-col gap-4 p-3">
         {/* Description */}
-        <p className="text-white/40 text-sm leading-relaxed min-h-[5.25rem]">{description}</p>
+        <p className="text-white/40 text-sm leading-relaxed sm:min-h-[5.25rem]">{description}</p>
 
         {/* Separator */}
         <div className="flex items-center gap-3">
@@ -162,7 +162,7 @@ function ProductCard({ product, index, currency, onPurchase }: { product: Produc
   );
 }
 
-/* ── Store filters ────────────────────────────────────────────── */
+/* ── Store filters ──────────────────────────────────────────── */
 
 function StoreFilters({
   activeCategory, onCategoryChange,
@@ -177,15 +177,15 @@ function StoreFilters({
   return (
     <div className="sticky top-20 z-30 bg-black/80 backdrop-blur-xl border-b border-white/[0.06] py-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
           {/* Category pills */}
-          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1">
+          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shrink-0">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
-                className="relative shrink-0 px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer outline-none"
+                className="relative shrink-0 px-4 py-2.5 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer outline-none"
               >
                 {activeCategory === cat && (
                   <motion.div
@@ -203,12 +203,12 @@ function StoreFilters({
 
           {/* Currency toggle — hidden on UZ locale */}
           {locale !== "uz" && (
-            <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shrink-0 ml-auto">
+            <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 shrink-0">
               {(["USD", "UZS"] as Currency[]).map((curr) => (
                 <button
                   key={curr}
                   onClick={() => onCurrencyChange(curr)}
-                  className="relative shrink-0 px-4 py-2 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer outline-none"
+                  className="relative shrink-0 px-4 py-2.5 rounded-full text-xs uppercase tracking-[0.14em] transition-colors duration-200 cursor-pointer outline-none"
                 >
                   {currency === curr && (
                     <motion.div
@@ -231,7 +231,7 @@ function StoreFilters({
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────────────────────────── */
+/* ── Page ─────────────────────────────────────────────────────────────────────────────────── */
 
 export default function StoreListingClient() {
   const [activeCategory, setActiveCategory] = useState("All");
