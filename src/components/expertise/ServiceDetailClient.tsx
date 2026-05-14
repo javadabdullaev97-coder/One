@@ -133,9 +133,9 @@ const CHROME: Record<string, Record<string, string>> = {
   },
   uz: {
     about: "Bu xizmat haqida", whoFor: "Bu kim uchun", capabilities: "Imkoniyatlar", deliver: "Biz nima qilamiz",
-    discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
-    selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bog'liq xizmatlar", fromStore: "Do'konimizdan",
-    faqTitle: "Ko'p so'raladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
+    discuss: "Bu xizmatni muhokama qilish", ctaPrefix: "Muhokama qilishga tayyormisiz", ctaBody: "Jamoamiz hamkorlik doʼirasini muhokama qilish va savollarga javob berish uchun tayyor.", start: "Suhbatni boshlash",
+    selectedWork: "Tanlangan loyihalar", viewAll: "Barcha loyihalar", relatedServices: "Bogʼliq xizmatlar", fromStore: "Doʼkonimizdan",
+    faqTitle: "Koʼp soʼraladigan", faqSubtitle: "Eng muhim amaliy savollarga qisqa javoblar.", storeFrom: "dan",
   },
 };
 
@@ -192,7 +192,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden flex flex-col min-h-[320px] md:min-h-[65vh]">
         {!isMobile && (
           <div
@@ -267,7 +267,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── Description ────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+      <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
             <AnimatedSection>
@@ -309,7 +309,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── Capabilities ────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+      <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="mb-14">
             <p className="tracking-luxury text-white/40 mb-3">{c.capabilities}</p>
@@ -320,7 +320,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             {capabilities.map((cap, i) => (
               <motion.div
                 key={cap}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: isMobile ? 0 : 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: isMobile ? 0 : i * 0.055, ease: [0.16, 1, 0.3, 1] }}
@@ -354,7 +354,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
       {/* ── Selected work ────────────────────────────────────────── */}
       {filteredEngagements.length > 0 && (
-        <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+        <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex items-end justify-between mb-10 md:mb-12 gap-6">
               <AnimatedSection>
@@ -427,8 +427,8 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── Related services + From our store ──────────────────── */}
-      <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+      {/* ── Related services + From our store ────────────────────── */}
+      <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
 
@@ -500,9 +500,9 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── FAQ ────────────────────────────────────────────────── */}
+      {/* ── FAQ ────────────────────────────────────────────────────── */}
       {faqItems.length > 0 && (
-        <section className="py-20 md:py-28 bg-black border-t border-white/[0.05]">
+        <section className="py-14 md:py-20 lg:py-28 bg-black border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20">
               <AnimatedSection>
@@ -550,7 +550,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── CTA ────────────────────────────────────────────────── */}
+      {/* ── CTA ────────────────────────────────────────────────────── */}
       <section className="py-16 md:py-24 lg:py-32 bg-black border-t border-white/[0.05] relative overflow-hidden">
         {!isMobile && (
           <div
