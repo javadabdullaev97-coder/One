@@ -179,7 +179,7 @@ export default function CheckoutModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[100] flex items-center justify-center px-4 sm:px-6"
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center px-0 sm:px-6"
           onClick={onClose}
         >
           <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
@@ -189,7 +189,7 @@ export default function CheckoutModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-xl h-[700px] max-h-[calc(100vh-2rem)] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
+            className="relative w-full sm:max-w-xl h-[min(700px,calc(100dvh-2rem))] flex flex-col bg-[#0B0B0B] border border-white/[0.08] rounded-t-2xl sm:rounded-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             {/* ── Header ── */}
@@ -446,7 +446,7 @@ export default function CheckoutModal({
                     {/* Individual fields */}
                     {orderType === "individual" && (
                       <div className="space-y-3 mb-5">
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <Field
                             label={t("form.firstName")}
                             value={firstName}
@@ -807,7 +807,7 @@ export default function CheckoutModal({
   );
 }
 
-/* ── Field ─────────────────────────────────────────── */
+/* ── Field ──────────────────────────────────────────────────── */
 
 function Field({
   label,
@@ -840,7 +840,7 @@ function Field({
   );
 }
 
-/* ── Stepper ───────────────────────────────────────── */
+/* ── Stepper ──────────────────────────────────────────────────── */
 
 function Stepper({ step, labels }: { step: 1 | 2 | 3 | 4; labels: string[] }) {
   return (
