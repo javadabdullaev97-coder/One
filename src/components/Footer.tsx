@@ -52,7 +52,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Main footer */}
-        <div className="py-20 flex flex-col md:flex-row gap-12 md:gap-0">
+        <div className="py-12 md:py-20 flex flex-col md:flex-row gap-8 md:gap-0">
 
           {/* Brand */}
           <motion.div
@@ -71,23 +71,23 @@ export default function Footer() {
             <p className="mt-6 text-sm text-white/50 leading-relaxed">
               {t("tagline")}
             </p>
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-1">
               <a
                 href="tel:+998334884888"
-                className="flex items-center gap-3 text-sm text-white/50 hover:text-foreground transition-colors cursor-pointer w-fit"
+                className="flex items-center gap-3 text-sm text-white/50 hover:text-foreground transition-colors cursor-pointer w-fit py-2"
               >
-                <Phone className="w-4 h-4 text-primary" />
+                <Phone className="w-4 h-4 text-primary shrink-0" />
                 +998 (33) 488 48 88
               </a>
               <a
                 href="mailto:info@advizenco.com"
-                className="flex items-center gap-3 text-sm text-white/50 hover:text-foreground transition-colors cursor-pointer w-fit"
+                className="flex items-center gap-3 text-sm text-white/50 hover:text-foreground transition-colors cursor-pointer w-fit py-2"
               >
-                <Mail className="w-4 h-4 text-primary" />
+                <Mail className="w-4 h-4 text-primary shrink-0" />
                 info@advizenco.com
               </a>
-              <p className="flex items-center gap-3 text-sm text-muted-dark w-fit">
-                <MapPin className="w-4 h-4 text-primary" />
+              <p className="flex items-center gap-3 text-sm text-muted-dark w-fit py-2">
+                <MapPin className="w-4 h-4 text-primary shrink-0" />
                 {t("tashkent")}
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.08 } },
             }}
-            className="flex-1 flex flex-col md:flex-row md:justify-end gap-10 md:gap-16"
+            className="flex-1 grid grid-cols-2 md:flex md:flex-row md:justify-end gap-8 md:gap-16"
           >
             {Object.entries(footerLinks).map(([title, links]) => (
               <motion.div key={title} variants={itemVariants}>
