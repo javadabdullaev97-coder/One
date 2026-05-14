@@ -98,6 +98,19 @@ export function RevealLine({
   delay = 0,
   className = "",
 }: RevealLineProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <div className={`overflow-hidden ${className}`}>
       <motion.div
