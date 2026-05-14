@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 import {
@@ -22,14 +23,26 @@ export default function AnimatedSection({
   delay = 0,
 }: Props) {
   const shouldReduce = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+
+  const simple = shouldReduce || isMobile;
+
   return (
     <motion.div
-      initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
-      whileInView={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: simple ? 0 : 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{
-        duration: shouldReduce ? 0.3 : 0.7,
-        delay,
+        duration: simple ? 0.3 : 0.7,
+        delay: isMobile ? Math.min(delay, 0.05) : delay,
         ease: luxuryEase,
       }}
       className={className}
