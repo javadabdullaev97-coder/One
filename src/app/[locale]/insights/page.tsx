@@ -65,7 +65,7 @@ const categoryGradients: Record<string, string> = {
 const luxuryEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const ITEMS_PER_PAGE = 6;
 
-/* ── Article Card ──────────────────────────────────────────── */
+/* ── Article Card ───────────────────────────────────────────── */
 
 function ArticleCard({ pub }: { pub: Publication }) {
   const gradient = categoryGradients[pub.category] ?? "from-stone-900/70 to-black";
@@ -118,7 +118,7 @@ function ArticleCard({ pub }: { pub: Publication }) {
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────────────────────────────────────────── */
+/* ── Page ─────────────────────────────────────────────────────────────────────────────────────────────────────── */
 
 export default function LibraryPage() {
   const [activeFilter, setActiveFilter] = useState<FilterTag>("All");
@@ -162,7 +162,7 @@ export default function LibraryPage() {
   return (
     <>
       {/* ====== HERO ====== */}
-      <div className="relative overflow-hidden flex flex-col bg-black" style={{ height: "65vh" }}>
+      <div className="relative overflow-hidden flex flex-col bg-black h-[65vw] min-h-[320px] md:h-[65vh] md:min-h-0">
         {/* Background */}
         <div className="absolute inset-0 hero-image-enter">
           <Image
