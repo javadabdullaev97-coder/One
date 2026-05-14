@@ -34,7 +34,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
     };
   }, [reduced, hovered, isMobile]);
 
-  const activeId = isMobile ? hovered : (hovered ?? CYCLE_ORDER[cycleIdx]);
+  const activeId = isMobile ? (hovered ?? CYCLE_ORDER[0]) : (hovered ?? CYCLE_ORDER[cycleIdx]);
   const regionName = REGIONS.find(r => r.id === activeId)?.name ?? "";
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
   return (
     <div
       className="relative w-full max-w-2xl mx-auto select-none"
-      onPointerLeave={() => setHovered(null)}
+      onPointerLeave={!isMobile ? () => setHovered(null) : undefined}
     >
       {/* Region name label removed — shown in the side panel instead */}
 
@@ -100,14 +100,15 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
               <path
                 key={r.id}
                 d={r.d}
-                onPointerEnter={() => { setHovered(r.id); onActiveChange?.(r.id); }}
+                onPointerEnter={!isMobile ? () => { setHovered(r.id); onActiveChange?.(r.id); } : undefined}
+                onClick={isMobile ? () => setHovered(r.id) : undefined}
                 style={{
                   fill: active ? "var(--map-region-active-fill)" : "rgba(255,255,255,0.06)",
                   stroke: active ? "var(--map-region-active-stroke)" : "rgba(255,255,255,0.08)",
                   strokeWidth: active ? 1.5 : 1,
                   filter: active && !isMobile ? "url(#uz-region-glow)" : "none",
                   transition: "fill 280ms ease, stroke 280ms ease, stroke-width 280ms ease",
-                  cursor: "default",
+                  cursor: isMobile ? "pointer" : "default",
                   pointerEvents: "all",
                 }}
               />
