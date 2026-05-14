@@ -21,9 +21,47 @@ interface RadialOrbitalTimelineProps {
   timelineData: TimelineItem[];
 }
 
+function MobileValuesList({ timelineData }: RadialOrbitalTimelineProps) {
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      {timelineData.map((item) => {
+        const Icon = item.icon;
+        const isOpen = openId === item.id;
+        return (
+          <div key={item.id} className="border border-white/10 rounded-lg overflow-hidden">
+            <button
+              className="w-full flex items-center gap-4 px-4 py-3.5 text-left bg-black/40"
+              onClick={() => setOpenId(isOpen ? null : item.id)}
+            >
+              <div className="w-10 h-10 rounded-full border border-white/20 bg-black flex items-center justify-center shrink-0">
+                <Icon size={18} className="text-white" />
+              </div>
+              <span className="text-xs font-semibold tracking-wider uppercase text-white flex-1">
+                {item.title}
+              </span>
+              <ArrowRight
+                size={14}
+                className={`text-white/30 transition-transform duration-200 ${isOpen ? "rotate-90" : ""}`}
+              />
+            </button>
+            {isOpen && (
+              <div className="px-4 py-3 border-t border-white/[0.06] bg-black/20">
+                <p className="text-xs text-white/55 leading-relaxed">{item.content}</p>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function RadialOrbitalTimeline({
   timelineData,
 }: RadialOrbitalTimelineProps) {
+  const [isMobile, setIsMobile] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>(
     {}
   );
@@ -40,6 +78,15 @@ export default function RadialOrbitalTimeline({
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  // Mobile detection — must come before any early return
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -83,7 +130,7 @@ export default function RadialOrbitalTimeline({
     });
   };
 
-  // Pause all animation when component is off-screen
+  // Pause animation when component is off-screen
   useEffect(() => {
     if (!containerRef.current) return;
     const observer = new IntersectionObserver(
@@ -94,13 +141,14 @@ export default function RadialOrbitalTimeline({
     return () => observer.disconnect();
   }, []);
 
+  // RAF loop — disabled on mobile to prevent continuous re-renders
   useEffect(() => {
     let frameId: number;
     let lastTime: number | null = null;
     let frameCount = 0;
     const speed = 6; // degrees per second
 
-    if (autoRotate && isVisible) {
+    if (autoRotate && isVisible && !isMobile) {
       const animate = (time: number) => {
         if (lastTime !== null) {
           const delta = (time - lastTime) / 1000;
@@ -119,7 +167,7 @@ export default function RadialOrbitalTimeline({
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
     };
-  }, [autoRotate, isVisible]);
+  }, [autoRotate, isVisible, isMobile]);
 
   const centerViewOnNode = (nodeId: number) => {
     if (!nodeRefs.current[nodeId]) return;
@@ -171,6 +219,11 @@ export default function RadialOrbitalTimeline({
         return "text-white bg-black/40 border-white/50";
     }
   };
+
+  // Render lightweight static list on mobile — no RAF, no orbital math
+  if (isMobile) {
+    return <MobileValuesList timelineData={timelineData} />;
+  }
 
   return (
     <div
