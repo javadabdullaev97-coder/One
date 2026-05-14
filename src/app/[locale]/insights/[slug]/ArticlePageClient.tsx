@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
+  ChevronDown,
   Download,
   Clock,
   User,
@@ -29,7 +30,7 @@ function slugify(text: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
-/* ── Reading Progress ─────────────────────────── */
+/* ── Reading Progress ─────────────────────────────────── */
 
 function ReadingProgress() {
   const barRef = useRef<HTMLDivElement>(null);
@@ -65,11 +66,12 @@ function ReadingProgress() {
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────── */
+/* ── Page ─────────────────────────────────────────────────────────────────── */
 
 export default function ArticlePageClient({ slug }: { slug: string }) {
   /* Hooks must be declared before any early return */
   const [activeSection, setActiveSection] = useState<string>("");
+  const [tocOpen, setTocOpen] = useState(false);
   const tArticle = useTranslations("ArticlePage");
   const tPub = useTranslations("Publications");
   const tServices = useTranslations("Services");
@@ -83,7 +85,7 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
       .filter((b) => b.type === "h2" && b.text)
       .map((b) => ({ id: slugify(b.text!), text: b.text! })) ?? [];
 
-  /* ── Scroll-spy via IntersectionObserver ───────────────────────────── */
+  /* ── Scroll-spy via IntersectionObserver ───────────────────────────────────── */
   useEffect(() => {
     if (toc.length === 0) return;
 
@@ -107,7 +109,7 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
     return () => observer.disconnect();
   }, [toc]);
 
-  /* ── Not found ───────────────────────────────────────── */
+  /* ── Not found ───────────────────────────────────────────── */
   if (!article) {
     return (
       <section className="min-h-screen flex items-center justify-center bg-background">
@@ -126,7 +128,7 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
     );
   }
 
-  /* ── Adjacent articles ───────────────────────────────────────── */
+  /* ── Adjacent articles ───────────────────────────────────────────── */
   const readablePublications = publications
     .filter((p) => p.hasRead)
     .sort((a, b) => Number(b.year) - Number(a.year));
@@ -137,18 +139,18 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
       ? readablePublications[currentIndex + 1]
       : null;
 
-  /* ── Counters reset each render ───────────────────────────────────────────────── */
+  /* ── Counters reset each render ─────────────────────────────────────────────────────── */
   let h2Counter = 0;
   const firstParagraphIndex = article.content.findIndex((b) => b.type === "p");
 
-  /* ── Related services (first 5) ─────────────────────────────────── */
+  /* ── Related services (first 5) ───────────────────────────────────── */
   const relatedServices = servicesData.slice(0, 5);
 
   return (
     <>
       <ReadingProgress />
 
-      {/* ── Hero ───────────────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────────────────────── */}
       <AuroraBackground>
         <section className="relative pt-24 pb-12 md:pt-28 md:pb-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -227,12 +229,12 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
       {/* Gradient divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
-      {/* ── Article Body + Sidebar ─────────────────────────────────────────────── */}
+      {/* ── Article Body + Sidebar ────────────────────────────────────────────────────────── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-[220px_1fr] gap-12 lg:gap-20">
 
-            {/* ── Sidebar ────────────────────────────────────────────── */}
+            {/* ── Sidebar ────────────────────────────────────────────────────── */}
             <aside className="hidden lg:block">
               <motion.div
                 className="sticky top-28 space-y-10"
@@ -333,8 +335,54 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
               </motion.div>
             </aside>
 
-            {/* ── Article content ───────────────────────────────────────────────────────── */}
+            {/* ── Article content ───────────────────────────────────────────────────────────────────────── */}
             <article className="max-w-3xl">
+              {/* Mobile TOC — collapsible, visible only below lg breakpoint */}
+              {toc.length > 0 && (
+                <div className="lg:hidden mb-10">
+                  <button
+                    type="button"
+                    onClick={() => setTocOpen(o => !o)}
+                    className="w-full flex items-center justify-between px-4 py-3 border border-white/[0.08] rounded-xl bg-white/[0.02] text-left"
+                  >
+                    <span className="text-[11px] tracking-[0.16em] uppercase text-white/50">
+                      {tArticle("contents")}
+                    </span>
+                    <ChevronDown
+                      className="w-4 h-4 text-white/30 transition-transform duration-200"
+                      style={{ transform: tocOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {tocOpen && (
+                      <motion.div
+                        key="toc"
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <nav className="border border-t-0 border-white/[0.08] rounded-b-xl divide-y divide-white/[0.04]">
+                          {toc.map((item, i) => (
+                            <a
+                              key={item.id}
+                              href={`#${item.id}`}
+                              onClick={() => setTocOpen(false)}
+                              className="flex items-center gap-3 px-4 py-3 text-[13px] text-white/55 hover:text-white/85 hover:bg-white/[0.02] transition-colors"
+                            >
+                              <span className="font-mono text-[10px] text-white/22 tabular-nums shrink-0 w-5">
+                                {String(i + 1).padStart(2, "00")}
+                              </span>
+                              {item.text}
+                            </a>
+                          ))}
+                        </nav>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
               {article.content.map((block, i) => {
                 const delay = Math.min(i * 0.03, 0.3);
 
@@ -436,7 +484,7 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── Download CTA ───────────────────────────────────────────────────────── */}
+      {/* ── Download CTA ───────────────────────────────────────────────────────────────────────── */}
       {article.hasDownload && (
         <section className="py-16 bg-surface border-y border-white/[0.06]">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -460,10 +508,10 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ── Adjacent Article Nav ───────────────────────────────────────────────────────── */}
+      {/* ── Adjacent Article Nav ───────────────────────────────────────────────────────────────────────── */}
       <section className="bg-surface border-y border-white/[0.06]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-0 divide-x divide-white/[0.06]">
+          <div className="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/[0.06]">
             {prev ? (
               <Link
                 href={`/insights/${prev.slug}`}
@@ -504,7 +552,7 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────────────────────────────────────────── */}
       <section className="py-28 md:py-36 bg-background">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
