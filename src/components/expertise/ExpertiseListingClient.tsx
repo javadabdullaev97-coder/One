@@ -75,7 +75,7 @@ function StatsSection() {
   );
 }
 
-// ─── Industries ──────────────
+// ─── Industries ────────────
 
 function IndustriesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -256,7 +256,7 @@ function IndustriesSection() {
   );
 }
 
-// ─── Track record ──────────────
+// ─── Track record ────────────
 
 function TrackRecord() {
   const t = useTranslations("ExpertisePage.trackRecord");
@@ -329,17 +329,14 @@ function TrackRecord() {
   );
 }
 
-// ─── Page ────────────────────────────────────────────────────────────
+// ─── Page ────────────────────────────────────
 
 export default function ExpertiseListingClient() {
   const tHero = useTranslations("ExpertisePage.hero");
   const tCta = useTranslations("ExpertisePage.cta");
   return (
     <>
-      <div
-        className="relative overflow-hidden flex flex-col"
-        style={{ height: "65vh" }}
-      >
+      <div className="relative overflow-hidden flex flex-col h-[65vw] min-h-[320px] md:h-[65vh] md:min-h-0">
         <div className="absolute inset-0 hero-image-enter">
           <Image
             src="/Hero and CTA images/Expertise Hero.webp"
