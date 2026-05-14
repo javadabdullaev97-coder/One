@@ -18,6 +18,41 @@ const disciplines: { num: string; title: string; short: string; blurb: string; i
   { num: "07", title: "Entity Management", short: "Entity Mgmt", blurb: "Full-service outsourced management of your UZ entity.", icon: LayoutDashboard },
 ];
 
+function MobileDisciplines() {
+  const [active, setActive] = useState(0);
+  const current = disciplines[active];
+  const Icon = current.icon;
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2 mb-6">
+        {disciplines.map((d, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={cn(
+              "text-[11px] tracking-[0.18em] uppercase px-3 py-1.5 rounded border transition-colors",
+              active === i
+                ? "border-primary-light/60 text-primary-light bg-primary-light/10"
+                : "border-white/10 text-white/35 hover:border-white/20 hover:text-white/55",
+            )}
+          >
+            {d.short}
+          </button>
+        ))}
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="w-14 h-14 rounded-xl border border-white/10 bg-[#0D0D0D] flex items-center justify-center shrink-0">
+          <Icon className="w-7 h-7 text-primary-light" strokeWidth={1.15} />
+        </div>
+        <div>
+          <p className="text-sm text-foreground/90 font-light mb-0.5">{current.title}</p>
+          <p className="text-xs text-white/45 leading-relaxed">{current.blurb}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function DisciplinesIntegration() {
   const [active, setActive] = useState(0);
   const shouldReduce = useReducedMotion();
@@ -43,6 +78,8 @@ export default function DisciplinesIntegration() {
 
   const advance = () => setActive((p) => (p + 1) % N);
 
+  if (isMobile) return <MobileDisciplines />;
+
   const current = disciplines[active];
   const Icon = current.icon;
 
@@ -66,14 +103,14 @@ export default function DisciplinesIntegration() {
 
         {/* MIDDLE — beam track */}
         <div className="relative flex-1 h-28 md:h-32 z-0 -mx-14 md:-mx-16" aria-hidden="true">
-          {(isMobile ? [1] : [0, 1, 2]).map((i) => (
+          {[0, 1, 2].map((i) => (
             <div
               key={`line-${i}`}
               className="absolute inset-x-0 h-px bg-white/[0.06]"
               style={{ top: `calc(50% + ${(i - 1) * 12}px - 0.5px)` }}
             />
           ))}
-          {!shouldReduce && (isMobile ? [1] : [0, 1, 2]).map((i) => (
+          {!shouldReduce && [0, 1, 2].map((i) => (
             <motion.div
               key={`pulse-${active}-${i}`}
               className="absolute h-px w-20 md:w-24 -ml-10 md:-ml-12"
@@ -85,7 +122,7 @@ export default function DisciplinesIntegration() {
               initial={{ left: "0%" }}
               animate={{ left: "100%" }}
               transition={{ duration: PULSE_MS / 1000, ease: [0.42, 0, 0.58, 1] }}
-              onAnimationComplete={i === (isMobile ? 1 : 2) ? advance : undefined}
+              onAnimationComplete={i === 2 ? advance : undefined}
             />
           ))}
         </div>
