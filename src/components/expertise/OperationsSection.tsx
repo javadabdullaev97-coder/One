@@ -71,8 +71,8 @@ export default function OperationsSection() {
   };
 
   return (
-    <section id="operations" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/[0.06]">
-      <div className="ambient-glow ambient-glow-warm w-[700px] h-[700px] top-1/4 right-0 translate-x-1/2 opacity-[0.06]" />
+    <section id="operations" className="py-14 md:py-24 lg:py-32 bg-black relative overflow-hidden border-t border-white/[0.06]">
+      {!isMobile && <div className="ambient-glow ambient-glow-warm w-[700px] h-[700px] top-1/4 right-0 translate-x-1/2 opacity-[0.06]" />}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
         <AnimatedSection className="mb-14 md:mb-16">
@@ -158,7 +158,7 @@ export default function OperationsSection() {
           </div>
 
           {/* Right: active service detail */}
-          <div className="relative bg-[#070707] min-h-[480px] md:h-[520px]">
+          <div className={cn("relative bg-[#070707]", isMobile ? "" : "min-h-[480px] md:h-[520px]")}>
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={active.slug}
@@ -166,7 +166,7 @@ export default function OperationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: direction * -10 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 flex flex-col overflow-y-auto"
+                className={isMobile ? "relative flex flex-col" : "absolute inset-0 flex flex-col overflow-y-auto"}
               >
                 {/* Gradient header */}
                 <div
