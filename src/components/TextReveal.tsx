@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   textRevealContainer,
@@ -24,6 +25,19 @@ export default function TextReveal({
   mode = "word",
   delay = 0,
 }: TextRevealProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
+
+  if (isMobile) {
+    return <Tag className={className}>{text}</Tag>;
+  }
+
   if (mode === "line") {
     const lines = text.split("\n");
     return (
