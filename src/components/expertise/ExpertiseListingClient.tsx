@@ -75,7 +75,7 @@ function StatsSection() {
   );
 }
 
-// ─── Industries ────────────
+// ─── Industries ──────────
 
 function IndustriesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -105,9 +105,35 @@ function IndustriesSection() {
           </h2>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-[5fr_7fr] border border-white/[0.07] overflow-hidden md:h-[760px]">
-          {/* Left — sector list */}
-          <div className="border-r border-white/[0.07] divide-y divide-white/[0.04] flex flex-col h-full">
+        <div className="border border-white/[0.07] overflow-hidden md:grid md:grid-cols-[5fr_7fr] md:h-[760px]">
+          {/* Mobile — horizontal scrollable tab bar */}
+          <div className="md:hidden flex overflow-x-auto border-b border-white/[0.07] bg-[#090909] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {industryGroups.map((ind, i) => {
+              const isActive = i === activeIndex;
+              return (
+                <button
+                  key={ind.name}
+                  onClick={() => setActiveIndex(i)}
+                  className={cn(
+                    "relative flex flex-col items-center gap-1.5 px-4 py-3 shrink-0 transition-colors duration-200 cursor-pointer min-w-[68px]",
+                    isActive ? "text-foreground" : "text-white/40"
+                  )}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="sector-tab-indicator"
+                      className="absolute bottom-0 left-2 right-2 h-[2px] bg-primary rounded-t-full"
+                    />
+                  )}
+                  <ind.icon className={cn("w-4 h-4 shrink-0", isActive ? "text-primary-light" : "text-white/35")} />
+                  <span className="text-[9px] font-medium text-center leading-tight">{tIndustries(`${ind.name}.name`)}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Desktop — left sector list */}
+          <div className="hidden md:flex border-r border-white/[0.07] divide-y divide-white/[0.04] flex-col h-full">
             {industryGroups.map((ind, i) => {
               const IconComp = ind.icon;
               const isActive = i === activeIndex;
@@ -143,7 +169,7 @@ function IndustriesSection() {
           </div>
 
           {/* Right — detail panel */}
-          <div className="relative bg-[#080808] h-full overflow-hidden">
+          <div className="relative bg-[#080808] overflow-hidden min-h-[480px] md:min-h-0 md:h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active.name}
@@ -256,7 +282,7 @@ function IndustriesSection() {
   );
 }
 
-// ─── Track record ────────────
+// ─── Track record ──────────
 
 function TrackRecord() {
   const t = useTranslations("ExpertisePage.trackRecord");
@@ -329,7 +355,7 @@ function TrackRecord() {
   );
 }
 
-// ─── Page ────────────────────────────────────
+// ─── Page ────────────────────────────────────────────
 
 export default function ExpertiseListingClient() {
   const tHero = useTranslations("ExpertisePage.hero");
