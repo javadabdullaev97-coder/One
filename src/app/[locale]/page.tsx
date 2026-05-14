@@ -156,7 +156,7 @@ const REGION_IMAGE: Record<string, string> = {
   "UZ-TO": "/Regions/Tashkent region.webp",
 };
 
-/* ── Region info panel ───────────── */
+/* ── Region info panel ───────────────── */
 
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const region = activeId ? REGION_DATA[activeId] : null;
@@ -252,11 +252,11 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   );
 }
 
-/* ── Page ───────────────── */
+/* ── Page ────────────── */
 
 export default function Home() {
   const [activeRegionId, setActiveRegionId] = useState<string | null>("UZ-TK");
-  const handleActiveChange = useCallback((id: string) => {
+  const handleActiveChange = useCallback((id: string | null) => {
     setActiveRegionId(id);
   }, []);
 
