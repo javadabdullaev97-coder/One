@@ -48,25 +48,25 @@ export default function ContactPage() {
 
   const infoCards = [
     {
-      icon: <MapPin className="w-8 h-8" strokeWidth={1.4} />,
+      icon: <MapPin className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.4} />,
       title: tInfo("office"),
       value: tInfo("officeValue"),
       href: undefined,
     },
     {
-      icon: <Phone className="w-8 h-8" strokeWidth={1.4} />,
+      icon: <Phone className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.4} />,
       title: tInfo("phone"),
       value: "+998 (33) 488 48 88",
       href: "tel:+998334884888",
     },
     {
-      icon: <Mail className="w-8 h-8" strokeWidth={1.4} />,
+      icon: <Mail className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.4} />,
       title: tInfo("email"),
       value: "info@advizenco.com",
       href: "mailto:info@advizenco.com",
     },
     {
-      icon: <Clock className="w-8 h-8" strokeWidth={1.4} />,
+      icon: <Clock className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.4} />,
       title: tInfo("workingHours"),
       value: tInfo("workingHoursValue"),
       href: undefined,
@@ -136,9 +136,9 @@ export default function ContactPage() {
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {infoCards.map((card) => {
               const inner = (
-                <div className="group relative bg-[#141414] border border-white/[0.08] rounded-2xl p-7 md:p-9 text-center hover:border-white/[0.2] hover:-translate-y-1 transition-all duration-300 h-full shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden">
+                <div className="group relative bg-[#141414] border border-white/[0.08] rounded-2xl p-4 md:p-7 lg:p-9 text-center hover:border-white/[0.2] hover:-translate-y-1 transition-all duration-300 h-full shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden">
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                  <div className="flex justify-center mb-5 md:mb-6 text-white/60 group-hover:text-white transition-colors duration-300">
+                  <div className="flex justify-center mb-3 md:mb-5 lg:mb-6 text-white/60 group-hover:text-white transition-colors duration-300">
                     {card.icon}
                   </div>
                   <p className="text-[11px] md:text-xs uppercase tracking-[0.22em] text-white/45 group-hover:text-white/75 mb-3 font-semibold transition-colors duration-300">
@@ -173,7 +173,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
 
-            <AnimatedSection className="lg:col-span-7">
+            <AnimatedSection className="lg:col-span-7 order-2 lg:order-1">
               <p className="tracking-luxury text-white/35 mb-4">{tForm("eyebrow")}</p>
               <TextReveal
                 text={tForm("heading")}
@@ -359,7 +359,7 @@ export default function ContactPage() {
               )}
             </AnimatedSection>
 
-            <AnimatedSection delay={0.2} className="lg:col-span-5">
+            <AnimatedSection delay={0.2} className="lg:col-span-5 order-1 lg:order-2">
               <div className="lg:sticky lg:top-32">
                 <p className="tracking-luxury text-white/35 mb-4">{tQuick("eyebrow")}</p>
                 <h2 className="heading-luxury text-3xl md:text-4xl text-foreground mb-4">
