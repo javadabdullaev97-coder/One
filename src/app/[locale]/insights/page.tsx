@@ -294,11 +294,11 @@ export default function LibraryPage() {
                     className="object-cover object-top"
                     priority
                   />
-                  {/* Gradient: top keeps image visible, bottom is dark for chapter legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/10" />
+                  {/* Gradient: light on mobile (image only), dark on sm+ for chapter legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent sm:from-black sm:via-black/65 sm:to-black/10" />
 
-                  {/* Chapter list overlaid at bottom */}
-                  <div className="absolute bottom-0 inset-x-0 px-8 md:px-12 lg:px-14 pt-6 pb-8">
+                  {/* Chapter list overlaid at bottom — hidden on mobile, visible sm+ */}
+                  <div className="absolute bottom-0 inset-x-0 px-8 md:px-12 lg:px-14 pt-6 pb-8 hidden sm:block">
                     <p className="tracking-luxury text-white/30 mb-3 text-[10px] uppercase">
                       {tFlagship("contents")}
                     </p>
@@ -345,7 +345,7 @@ export default function LibraryPage() {
             {/* Filter pills + search bar on same row */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               {/* Filter pills */}
-              <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 w-fit shrink-0 flex-wrap">
+              <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-full p-1 max-w-full sm:w-fit shrink-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {filters.map((f) => (
                   <button
                     key={f}
