@@ -110,7 +110,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 ml-auto text-foreground cursor-pointer"
+          className="md:hidden p-3 ml-auto text-foreground cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -139,7 +139,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   style={{ fontFamily: inter }}
-                  className={`block py-3 font-medium tracking-wide transition-colors border-b border-white/[0.06] cursor-pointer ${
+                  className={`block py-4 font-medium tracking-wide transition-colors border-b border-white/[0.06] cursor-pointer ${
                     pathname === link.href ? "text-foreground" : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
