@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -8,6 +9,14 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function HeroSection() {
   const t = useTranslations("Hero");
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const h = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", h);
+    return () => mq.removeEventListener("change", h);
+  }, []);
 
   return (
     <section
@@ -23,6 +32,7 @@ export default function HeroSection() {
           priority
           unoptimized
           className="object-cover object-center"
+          style={isMobile ? undefined : { objectPosition: "50% 0%", transform: "scale(1.4) translateY(-8%)", transformOrigin: "50% 50%" }}
           aria-hidden
         />
       </div>
