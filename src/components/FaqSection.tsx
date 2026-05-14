@@ -66,13 +66,21 @@ export default function FaqSection({
                 {open === i && (
                   <motion.div
                     key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="overflow-hidden"
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ overflow: "hidden" }}
                   >
-                    <p className="pb-3 text-[11px] text-white/65 leading-relaxed">{a}</p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.18, delay: 0.06 }}
+                      className="pb-3 text-[11px] text-white/65 leading-relaxed"
+                    >
+                      {a}
+                    </motion.p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -112,13 +120,21 @@ export default function FaqSection({
                 {open === i && (
                   <motion.div
                     key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="overflow-hidden"
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ overflow: "hidden" }}
                   >
-                    <p className="pb-5 text-white/55 leading-relaxed">{a}</p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.18, delay: 0.06 }}
+                      className="pb-5 text-white/55 leading-relaxed"
+                    >
+                      {a}
+                    </motion.p>
                   </motion.div>
                 )}
               </AnimatePresence>
