@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { W, H, REGIONS, ARAL_D, TASHKENT, CYCLE_ORDER } from "./uzbekistan-map.data";
 
 
-export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id: string) => void }) {
+export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id: string | null) => void }) {
   const reduced = useReducedMotion();
   const [hovered, setHovered] = useState<string | null>(null);
   const [cycleIdx, setCycleIdx] = useState(0);
@@ -21,20 +21,20 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
   }, []);
 
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || isMobile) return;
     if (hovered) {
       if (intervalRef.current) clearInterval(intervalRef.current);
       return;
     }
     intervalRef.current = setInterval(() => {
       setCycleIdx(p => (p + 1) % CYCLE_ORDER.length);
-    }, isMobile ? 5000 : 2800);
+    }, 2800);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [reduced, hovered, isMobile]);
 
-  const activeId = hovered ?? CYCLE_ORDER[cycleIdx];
+  const activeId = isMobile ? hovered : (hovered ?? CYCLE_ORDER[cycleIdx]);
   const regionName = REGIONS.find(r => r.id === activeId)?.name ?? "";
 
   useEffect(() => {
