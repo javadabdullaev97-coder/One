@@ -165,7 +165,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const regionName = activeId ? tRegions(activeId) : "";
 
   return (
-    <div className="h-[560px] overflow-hidden relative">
+    <div className="min-h-[300px] lg:h-[560px] overflow-hidden relative">
       <AnimatePresence mode="sync">
         <motion.div
           key={activeId ?? "default"}
