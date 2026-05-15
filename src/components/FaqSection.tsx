@@ -51,7 +51,7 @@ export default function FaqSection({
           {items.map(({ q, a }, i) => (
             <div key={i} className="border-b border-white/[0.07] last:border-b-0">
               <button
-                className="w-full flex items-start justify-between py-3 text-left gap-3 focus-visible:outline-none"
+                className="w-full flex items-start justify-between py-3 text-left gap-3 focus-visible:outline-none touch-manipulation"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
@@ -105,7 +105,7 @@ export default function FaqSection({
           {items.map(({ q, a }, i) => (
             <div key={i} className="border-b border-white/10">
               <button
-                className="w-full flex items-center justify-between py-5 text-left gap-4 focus-visible:outline-none"
+                className="w-full flex items-center justify-between py-5 text-left gap-4 focus-visible:outline-none touch-manipulation"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
