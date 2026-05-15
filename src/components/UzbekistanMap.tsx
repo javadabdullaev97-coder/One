@@ -34,7 +34,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
     };
   }, [reduced, hovered, isMobile]);
 
-  const activeId = isMobile ? (hovered ?? CYCLE_ORDER[0]) : (hovered ?? CYCLE_ORDER[cycleIdx]);
+  const activeId = isMobile ? (hovered ?? "UZ-TK") : (hovered ?? CYCLE_ORDER[cycleIdx]);
   const regionName = REGIONS.find(r => r.id === activeId)?.name ?? "";
 
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function UzbekistanMap({ onActiveChange }: { onActiveChange?: (id
                 key={r.id}
                 d={r.d}
                 onPointerEnter={!isMobile ? () => { setHovered(r.id); onActiveChange?.(r.id); } : undefined}
-                onClick={isMobile ? () => setHovered(r.id) : undefined}
+                onClick={isMobile ? () => { setHovered(r.id); onActiveChange?.(r.id); } : undefined}
                 style={{
                   fill: active ? "var(--map-region-active-fill)" : "rgba(255,255,255,0.06)",
                   stroke: active ? "var(--map-region-active-stroke)" : "rgba(255,255,255,0.08)",

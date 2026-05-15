@@ -28,7 +28,7 @@ import DisciplinesIntegration from "@/components/DisciplinesIntegration";
 import InsightsSection from "@/components/InsightsSection";
 import FaqSection from "@/components/FaqSection";
 
-/* ── Region data ───────────────────── */
+/* ── Region data ─────────────────── */
 
 interface RegionData {
   name: string;
@@ -156,7 +156,7 @@ const REGION_IMAGE: Record<string, string> = {
   "UZ-TO": "/Regions/Tashkent region.webp",
 };
 
-/* ── Region info panel ───────────────── */
+/* ── Region info panel ─────────────────── */
 
 function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const region = activeId ? REGION_DATA[activeId] : null;
@@ -165,7 +165,7 @@ function RegionInfoPanel({ activeId }: { activeId: string | null }) {
   const regionName = activeId ? tRegions(activeId) : "";
 
   return (
-    <div className="min-h-[300px] lg:h-[560px] overflow-hidden relative">
+    <div className="min-h-[480px] lg:h-[560px] overflow-hidden relative">
       <AnimatePresence mode="sync">
         <motion.div
           key={activeId ?? "default"}
