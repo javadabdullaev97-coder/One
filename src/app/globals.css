@@ -141,3 +141,18 @@ select:-webkit-autofill:focus {
 .hero-image-enter {
   animation: hero-entrance 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* ── Mobile scroll performance ──────────────────────────────────────────────
+   Two elements cause page-wide jank during scroll on mobile:
+   1. body::after  — position:fixed repainted every scroll frame
+   2. .ambient-glow — filter:blur(120-150px) on 500-800px elements forces
+      a full-region repaint; multiple per section compounds the cost.
+   Both are decorative-only and invisible at mobile scale anyway.          */
+@media (max-width: 767px) {
+  body::after {
+    display: none;
+  }
+  .ambient-glow {
+    display: none;
+  }
+}
