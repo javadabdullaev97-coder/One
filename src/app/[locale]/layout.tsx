@@ -12,6 +12,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import { GtmScript, GtmNoScript } from "@/components/Analytics";
 import { organizationJsonLd, websiteJsonLd, OG_IMAGE } from "@/lib/seo";
 import CookieBanner from "@/components/CookieBanner";
+import ScrollRestoration from "@/components/ScrollRestoration";
 import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = "https://www.advizenco.com";
@@ -184,6 +185,7 @@ export default async function LocaleLayout({
           </div>
           <ScrollToTop />
           <CookieBanner />
+          <ScrollRestoration />
         </NextIntlClientProvider>
       </body>
     </html>
