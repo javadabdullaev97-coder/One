@@ -25,7 +25,7 @@ export default function TextReveal({
   mode = "word",
   delay = 0,
 }: TextRevealProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
     setIsMobile(mq.matches);
@@ -86,7 +86,7 @@ export default function TextReveal({
   );
 }
 
-/* ── Single-line paragraph reveal ───────────────────── */
+/* ── Single-line paragraph reveal ──────────────────── */
 interface RevealLineProps {
   children: ReactNode;
   delay?: number;
@@ -98,7 +98,7 @@ export function RevealLine({
   delay = 0,
   className = "",
 }: RevealLineProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
     setIsMobile(mq.matches);
