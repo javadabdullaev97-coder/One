@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import MagneticButton from "@/components/MagneticButton";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import LanguageSwitcher, { MobileLanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Link, usePathname } from "@/i18n/navigation";
 
 const inter = "var(--font-inter), Inter, system-ui, sans-serif";
@@ -148,12 +148,12 @@ export default function Navbar() {
               </motion.div>
             ))}
             <div className="mt-6 flex items-center justify-between gap-4">
-              <LanguageSwitcher compact />
-              <span onClick={() => setMobileOpen(false)} className="flex-1">
-                <MagneticButton as="a" href="/store" className="w-full justify-center px-6 py-3 text-sm">
+              <span onClick={() => setMobileOpen(false)}>
+                <MagneticButton as="a" href="/store" className="px-6 py-3 text-sm">
                   Store
                 </MagneticButton>
               </span>
+              <MobileLanguageSwitcher />
             </div>
           </motion.div>
         )}
