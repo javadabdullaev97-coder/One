@@ -23,7 +23,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { advisoryServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
@@ -84,7 +84,7 @@ const relatedArticle: Record<string, { slug: string; title: string; tag: string 
   "due-diligence":{ slug: "accounting-policy-tax-purposes",      title: "Accounting Policy for Tax Purposes",            tag: "Tax Briefing"   },
 };
 
-// ─── Shared section header ────────────────────────────────────────────
+// ─── Shared section header ────────────────────────────────────────
 function SectionHeader({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <AnimatedSection className="mb-14 md:mb-16">
@@ -101,7 +101,7 @@ function SectionHeader({ t }: { t: ReturnType<typeof useTranslations> }) {
   );
 }
 
-// ─── Mobile: accordion ────────────────────────────────────────────
+// ─── Mobile: accordion ────────────────────────────────────────
 function AdvisorySectionMobile({
   t,
   tServices,
@@ -247,7 +247,7 @@ function AdvisorySectionMobile({
   );
 }
 
-// ─── Desktop: tab panel ───────────────────────────────────────────
+// ─── Desktop: tab panel ───────────────────────────────────────
 function AdvisorySectionDesktop({
   t,
   tServices,
@@ -257,6 +257,7 @@ function AdvisorySectionDesktop({
   tServices: ReturnType<typeof useTranslations>;
   locale: string;
 }) {
+  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
 
@@ -284,7 +285,7 @@ function AdvisorySectionDesktop({
           return (
             <motion.button
               key={service.slug}
-              onClick={() => handleSelect(i)}
+              onClick={() => router.push(`/expertise/${service.slug}`)}
               onMouseEnter={() => handleSelect(i)}
               initial={{ opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -464,7 +465,7 @@ function AdvisorySectionDesktop({
   );
 }
 
-// ─── Root export ────────────────────────────────────────────
+// ─── Root export ───────────────────────────────────────────
 export default function AdvisorySection() {
   const t = useTranslations("AdvisorySection");
   const tServices = useTranslations("Services");
