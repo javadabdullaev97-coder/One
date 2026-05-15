@@ -147,11 +147,13 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            <div className="mt-6 flex items-center justify-between gap-4" onClick={() => setMobileOpen(false)}>
+            <div className="mt-6 flex items-center justify-between gap-4">
               <LanguageSwitcher compact />
-              <MagneticButton as="a" href="/store" className="flex-1 justify-center px-6 py-3 text-sm">
-                Store
-              </MagneticButton>
+              <span onClick={() => setMobileOpen(false)} className="flex-1">
+                <MagneticButton as="a" href="/store" className="w-full justify-center px-6 py-3 text-sm">
+                  Store
+                </MagneticButton>
+              </span>
             </div>
           </motion.div>
         )}
