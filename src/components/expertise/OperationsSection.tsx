@@ -4,7 +4,7 @@ import { useState, type ComponentType, type SVGProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Briefcase, ChevronDown, LayoutDashboard, MapPin, UserCheck } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { operationsServices } from "@/lib/services";
 import { cn } from "@/lib/utils";
@@ -44,7 +44,7 @@ const VIEW_LABEL: Record<string, string> = {
   uz: "Xizmat sahifasini ko'rish",
 };
 
-// ─── Mobile: accordion ────────────────────────────────────────────
+// ─── Mobile: accordion ────────────────────────────────────────
 function OperationsSectionMobile({
   t,
   tServices,
@@ -175,7 +175,7 @@ function OperationsSectionMobile({
   );
 }
 
-// ─── Desktop: tab panel ───────────────────────────────────────────
+// ─── Desktop: tab panel ───────────────────────────────────────
 function OperationsSectionDesktop({
   t,
   tServices,
@@ -185,6 +185,7 @@ function OperationsSectionDesktop({
   tServices: ReturnType<typeof useTranslations>;
   locale: string;
 }) {
+  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
 
@@ -211,7 +212,7 @@ function OperationsSectionDesktop({
           return (
             <motion.button
               key={service.slug}
-              onClick={() => handleSelect(i)}
+              onClick={() => router.push(`/expertise/${service.slug}`)}
               onMouseEnter={() => handleSelect(i)}
               initial={{ opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -375,7 +376,7 @@ function OperationsSectionDesktop({
   );
 }
 
-// ─── Root export ────────────────────────────────────────────
+// ─── Root export ───────────────────────────────────────────
 export default function OperationsSection() {
   const t = useTranslations("OperationsSection");
   const tServices = useTranslations("Services");
