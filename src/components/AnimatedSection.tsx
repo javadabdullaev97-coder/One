@@ -23,7 +23,7 @@ export default function AnimatedSection({
   delay = 0,
 }: Props) {
   const shouldReduce = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
