@@ -16,13 +16,29 @@ const labels: Record<Locale, { code: string; name: string }> = {
   uz: { code: "UZ", name: "O'zbek" },
 };
 
-export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
+function useLangSwitch() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
   const params = useParams();
-  const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+
+  const switchTo = (next: Locale) => {
+    if (next === locale) return;
+    document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=${60 * 60 * 24 * 365}`;
+    startTransition(() => {
+      // @ts-expect-error -- pathname is dynamic
+      router.replace({ pathname, params }, { locale: next });
+    });
+  };
+
+  return { locale, isPending, switchTo };
+}
+
+/* ── Desktop dropdown ─────────────────────────────────── */
+export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
+  const { locale, isPending, switchTo } = useLangSwitch();
+  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,16 +53,8 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
     };
   }, []);
 
-  const switchTo = (next: Locale) => {
-    if (next === locale) {
-      setOpen(false);
-      return;
-    }
-    document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    startTransition(() => {
-      // @ts-expect-error -- pathname is dynamic
-      router.replace({ pathname, params }, { locale: next });
-    });
+  const handleSwitch = (l: Locale) => {
+    switchTo(l);
     setOpen(false);
   };
 
@@ -82,7 +90,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
                 <button
                   key={l}
                   type="button"
-                  onClick={() => switchTo(l)}
+                  onClick={() => handleSwitch(l)}
                   className={cn(
                     "w-full flex items-center justify-between gap-3 px-4 py-2.5 text-left text-[12px] tracking-wide transition-colors duration-150 cursor-pointer border-b border-white/[0.04] last:border-0",
                     active ? "text-foreground bg-white/[0.03]" : "text-muted hover:text-foreground hover:bg-white/[0.02]"
@@ -99,6 +107,36 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+/* ── Mobile inline row — three flag+code pills, tap to select ── */
+export function MobileLanguageSwitcher() {
+  const { locale, isPending, switchTo } = useLangSwitch();
+
+  return (
+    <div className="flex items-center gap-2">
+      {routing.locales.map((l) => {
+        const active = l === locale;
+        return (
+          <button
+            key={l}
+            type="button"
+            disabled={isPending}
+            onClick={() => switchTo(l)}
+            className={cn(
+              "flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border transition-colors touch-manipulation",
+              active
+                ? "border-white/30 text-foreground bg-white/[0.06]"
+                : "border-white/[0.08] text-white/40"
+            )}
+          >
+            <FlagBadge code={l} size={15} />
+            <span className="text-[11px] font-medium tracking-wide">{labels[l].code}</span>
+          </button>
+        );
+      })}
     </div>
   );
 }
