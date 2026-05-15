@@ -24,16 +24,16 @@ function MobileDisciplines() {
   const Icon = current.icon;
   return (
     <div>
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex gap-2 mb-6 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {disciplines.map((d, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
             className={cn(
-              "text-[11px] tracking-[0.18em] uppercase px-3 py-1.5 rounded border transition-colors",
+              "shrink-0 text-[11px] tracking-[0.18em] uppercase px-3 py-1.5 rounded-full border transition-colors touch-manipulation",
               active === i
                 ? "border-primary-light/60 text-primary-light bg-primary-light/10"
-                : "border-white/10 text-white/35 hover:border-white/20 hover:text-white/55",
+                : "border-white/10 text-white/35",
             )}
           >
             {d.short}
@@ -58,7 +58,7 @@ export default function DisciplinesIntegration() {
   const shouldReduce = useReducedMotion();
   const N = disciplines.length;
   const PULSE_MS = 1800;
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
