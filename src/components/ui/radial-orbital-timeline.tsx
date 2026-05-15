@@ -61,7 +61,7 @@ function MobileValuesList({ timelineData }: RadialOrbitalTimelineProps) {
 export default function RadialOrbitalTimeline({
   timelineData,
 }: RadialOrbitalTimelineProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 768);
   const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>(
     {}
   );
