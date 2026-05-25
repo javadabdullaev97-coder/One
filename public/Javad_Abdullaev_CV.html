@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Javad Abdullaev — CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 10pt;
+      color: #1a1a2e;
+      background: #f4f4f4;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 10mm;
+      display: flex;
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      page-break-after: always;
+    }
+
+    .sidebar {
+      width: 72mm;
+      min-height: 297mm;
+      background: #1b3a6b;
+      color: #fff;
+      padding: 32px 20px 32px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-name {
+      font-size: 17pt;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.3px;
+    }
+
+    .sidebar-title {
+      font-size: 9pt;
+      color: #a8c4e8;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .sidebar-section-title {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #a8c4e8;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-block { }
+
+    .sidebar-item {
+      font-size: 9pt;
+      color: #dce8f7;
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    .sidebar-item span {
+      display: block;
+      font-size: 8pt;
+      color: #a8c4e8;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-bottom: 7px;
+      font-size: 9pt;
+      color: #dce8f7;
+      line-height: 1.4;
+    }
+
+    .contact-icon { font-size: 10pt; margin-top: 1px; flex-shrink: 0; }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .lang-name { font-size: 9pt; color: #dce8f7; }
+    .lang-level { font-size: 8pt; color: #a8c4e8; }
+
+    .area-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      padding: 3px 8px;
+      font-size: 7.5pt;
+      color: #dce8f7;
+      margin: 2px 2px 2px 0;
+      line-height: 1.4;
+    }
+
+    .main {
+      flex: 1;
+      padding: 32px 26px 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-header {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #1b3a6b;
+      border-bottom: 2px solid #1b3a6b;
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-text {
+      font-size: 9.5pt;
+      line-height: 1.65;
+      color: #333;
+    }
+
+    .job { margin-bottom: 15px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-company {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1b3a6b;
+    }
+
+    .job-title {
+      font-size: 9pt;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .job-bullets { padding-left: 14px; list-style: disc; }
+
+    .job-bullets li {
+      font-size: 9pt;
+      color: #333;
+      line-height: 1.55;
+      margin-bottom: 2px;
+    }
+
+    .sector-group-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1b3a6b;
+      margin: 14px 0 7px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #c5d4e8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .sector-group-title:first-of-type { margin-top: 0; }
+
+    .project {
+      margin-bottom: 11px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eef1f7;
+    }
+    .project:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 3px;
+    }
+
+    .project-title {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1b3a6b;
+      flex: 1;
+    }
+
+    .project-scale {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #fff;
+      background: #1b3a6b;
+      padding: 2px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-tags { margin-bottom: 3px; }
+
+    .project-tag {
+      display: inline-block;
+      background: #e8edf3;
+      color: #1b3a6b;
+      font-size: 7pt;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-right: 3px;
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 8.5pt;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        width: 100%;
+      }
+      .sidebar { min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <div class="sidebar">
+    <div>
+      <div class="sidebar-name">Javad<br>Abdullaev</div>
+      <div class="sidebar-title">Tax &amp; Legal Advisor</div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Contact</div>
+      <div class="contact-row"><span class="contact-icon">✉</span><span>javadabdullaev97@gmail.com</span></div>
+      <div class="contact-row"><span class="contact-icon">📞</span><span>+998 (33) 995 99 95</span></div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Education</div>
+      <div class="sidebar-item">BA in Business Economics<span>MDIS Tashkent, 2020</span></div>
+      <div class="sidebar-item">Staatsexamen, Corporate &amp; Commercial Law<span>University of Hamburg, 2019</span></div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Languages</div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Professional</span></div>
+      <div class="lang-row"><span class="lang-name">German</span><span class="lang-level">Professional</span></div>
+      <div class="lang-row"><span class="lang-name">Russian</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">Uzbek</span><span class="lang-level">Native</span></div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Areas of Focus</div>
+      <span class="area-pill">Corporate Taxation</span>
+      <span class="area-pill">Tax Structuring</span>
+      <span class="area-pill">International Tax Planning</span>
+      <span class="area-pill">M&amp;A &amp; Due Diligence</span>
+      <span class="area-pill">Transfer Pricing &amp; CFC</span>
+      <span class="area-pill">Payroll Taxation</span>
+      <span class="area-pill">Market Entry Advisory</span>
+      <span class="area-pill">Distributor Structuring</span>
+    </div>
+  </div>
+
+  <div class="main">
+    <div>
+      <div class="section-header">Summary</div>
+      <p class="summary-text">Senior tax and legal advisor with over 6 years of experience advising multinational and local companies across Uzbekistan and Central Asia. Combines a Big Four foundation (EY, PwC) and international law firm background (Centil) with entrepreneurial leadership as founder and Director of Advizen Consulting. Deep expertise in corporate taxation, M&amp;A structuring, distributor and agency taxation, market entry, and complex cross-border transactions. Sector coverage spans FMCG, pharma, energy, telecom, aviation, financial services, and retail. Track record includes $10B+ in deals advised, 30+ due diligences, and 80+ entities incorporated.</p>
+    </div>
+    <div>
+      <div class="section-header">Work Experience</div>
+
+      <div class="job">
+        <div class="job-company">Advizen Consulting</div>
+        <div class="job-title">Director — Tax &amp; Legal Services</div>
+        <ul class="job-bullets">
+          <li>Founded and leads a boutique tax and legal advisory practice focused on Uzbekistan and Central Asia</li>
+          <li>Advises multinational companies on market entry, corporate structuring, distributor taxation, ongoing compliance, and disputes with tax authorities</li>
+          <li>Client portfolio spans FMCG (Mars, P&amp;G, Herbalife, Oriflame, Carrefour), pharma (Abbott, Berlin Chemie, Nizhfarm, Corteva), aviation (Turkish Airlines), and telecom (Unitel, Megafon)</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-company">Wallet in Telegram</div>
+        <div class="job-title">Head of Office — Uzbekistan</div>
+        <ul class="job-bullets">
+          <li>Leads Uzbek regional operations of a global fintech platform integrated into Telegram</li>
+          <li>Manages regulatory, legal, operational, and strategic matters for the Uzbekistan market</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-company">Centil Law Firm</div>
+        <div class="job-title">Associate — Tax Department</div>
+        <ul class="job-bullets">
+          <li>Led high-value tax structuring, M&amp;A due diligence, and transactional advisory engagements across energy, banking, FMCG, pharma, and consulting sectors</li>
+          <li>Reviewed and negotiated transactional documents including SPAs and option agreements</li>
+          <li>Managed junior staff across multiple concurrent mandates</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-company">PwC Uzbekistan</div>
+        <div class="job-title">Associate — Tax Department</div>
+        <ul class="job-bullets">
+          <li>Full-scope tax advisory for major international and local clients — corporate tax, VAT, payroll, ad-hoc regulatory matters</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-company">Ernst &amp; Young Uzbekistan</div>
+        <div class="job-title">Associate — Tax Department</div>
+        <ul class="job-bullets">
+          <li>Tax advisory across oil &amp; gas, energy, IT, telecom, chemical, aviation, and financial industries</li>
+          <li>Supported senior advisors on complex cross-border tax planning engagements</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-company">Metro Cash &amp; Carry</div>
+        <div class="job-title">Legal Associate (Germany)</div>
+        <ul class="job-bullets">
+          <li>In-house legal support for wholesale FMCG operations in Germany</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="page">
+  <div class="sidebar">
+    <div>
+      <div class="sidebar-name">Javad<br>Abdullaev</div>
+      <div class="sidebar-title">Tax &amp; Legal Advisor</div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Track Record</div>
+      <div class="sidebar-item">$10B+ in deals advised</div>
+      <div class="sidebar-item">30+ due diligences completed</div>
+      <div class="sidebar-item">80+ entities incorporated</div>
+      <div class="sidebar-item">15+ major engagements</div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Sector Coverage</div>
+      <div class="sidebar-item">FMCG &amp; Consumer Goods</div>
+      <div class="sidebar-item">Pharma &amp; Healthcare</div>
+      <div class="sidebar-item">Energy &amp; Industrials</div>
+      <div class="sidebar-item">Telecom &amp; Technology</div>
+      <div class="sidebar-item">Financial Services</div>
+      <div class="sidebar-item">Aviation</div>
+      <div class="sidebar-item">Real Estate &amp; Infrastructure</div>
+      <div class="sidebar-item">Islamic Finance</div>
+    </div>
+    <div class="sidebar-block">
+      <div class="sidebar-section-title">Selected Clients</div>
+      <div class="sidebar-item">Mars Inc.</div>
+      <div class="sidebar-item">Procter &amp; Gamble</div>
+      <div class="sidebar-item">Herbalife</div>
+      <div class="sidebar-item">Oriflame</div>
+      <div class="sidebar-item">Carrefour</div>
+      <div class="sidebar-item">Золотое яблоко</div>
+      <div class="sidebar-item">Abbott</div>
+      <div class="sidebar-item">Berlin Chemie</div>
+      <div class="sidebar-item">Nizhfarm · Biotisk · Apogee</div>
+      <div class="sidebar-item">Corteva</div>
+      <div class="sidebar-item">Turkish Airlines</div>
+      <div class="sidebar-item">Unitel · Megafon</div>
+      <div class="sidebar-item">Scanoil · Taycan Oil</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="section-header">Project Experience</div>
+
+    <div class="sector-group-title">FMCG &amp; Consumer Goods</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">M&amp;A Tax Due Diligence — Major Uzbek Bottler Company</div><span class="project-scale">$250M</span></div>
+      <div class="project-tags"><span class="project-tag">M&amp;A</span><span class="project-tag">Due Diligence</span></div>
+      <div class="project-desc">Led tax due diligence for the acquisition of a large Uzbek beverage bottler. Conducted negotiations with auditors and management of the target company; identified key tax risks and structuring recommendations.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Taxation Advisory &amp; Distributor Structuring — Mars Inc.</div></div>
+      <div class="project-tags"><span class="project-tag">Mars Inc.</span><span class="project-tag">Ongoing Advisory</span><span class="project-tag">Distributor Tax</span></div>
+      <div class="project-desc">Ongoing tax advisory for Uzbek operations; structuring of taxation arising from interactions with local distributors, including VAT treatment, withholding tax, and agency fee classification.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Distributor Operations Structuring — Herbalife</div></div>
+      <div class="project-tags"><span class="project-tag">Herbalife</span><span class="project-tag">Structuring</span><span class="project-tag">Direct Sales</span></div>
+      <div class="project-desc">Advised on structuring of the distributor network in Uzbekistan, including tax classification of distributor relationships, compliance with local legislation, and optimal operational model for direct-sales activities.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax &amp; Legal Advisory — Oriflame</div></div>
+      <div class="project-tags"><span class="project-tag">Oriflame</span><span class="project-tag">Ongoing Advisory</span></div>
+      <div class="project-desc">Tax and legal advisory covering operational structuring, distributor taxation, and regulatory compliance for Oriflame's direct-sales model in Uzbekistan.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax Advisory — Procter &amp; Gamble</div></div>
+      <div class="project-tags"><span class="project-tag">P&amp;G</span><span class="project-tag">Tax Advisory</span></div>
+      <div class="project-desc">Tax advisory and compliance support for P&amp;G's operations in Uzbekistan.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Market Entry, Restructuring &amp; M&amp;A Sale — Carrefour</div></div>
+      <div class="project-tags"><span class="project-tag">Carrefour</span><span class="project-tag">Market Entry</span><span class="project-tag">M&amp;A</span><span class="project-tag">Restructuring</span></div>
+      <div class="project-desc">Advised on market entry strategy and legal structuring for Carrefour's Uzbekistan operations; subsequently supported corporate restructuring and the M&amp;A sale process.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Market Entry Advisory — Золотое яблоко (Golden Apple)</div></div>
+      <div class="project-tags"><span class="project-tag">Golden Apple</span><span class="project-tag">Market Entry</span><span class="project-tag">Retail</span></div>
+      <div class="project-desc">Advised the leading Russian beauty and cosmetics retail chain on entry into Uzbekistan, covering legal structure, tax optimization, and regulatory requirements.</div>
+    </div>
+
+    <div class="sector-group-title">Pharma &amp; Consumer Health</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Incorporation, Structuring &amp; Compliance — International Pharma Companies</div></div>
+      <div class="project-tags"><span class="project-tag">Abbott</span><span class="project-tag">Berlin Chemie</span><span class="project-tag">Nizhfarm</span><span class="project-tag">Biotisk</span><span class="project-tag">Apogee</span><span class="project-tag">5+ companies</span></div>
+      <div class="project-desc">Incorporation, structuring, payroll, and ongoing compliance advisory for multiple international pharmaceutical companies entering or operating in Uzbekistan, including VAT, distributor agreements, and PE risk analysis.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Market Entry Report &amp; Ongoing Tax Advisory — Corteva</div></div>
+      <div class="project-tags"><span class="project-tag">Corteva</span><span class="project-tag">Market Entry</span><span class="project-tag">Ongoing</span></div>
+      <div class="project-desc">Prepared a comprehensive market entry report covering Uzbekistan's regulatory, tax, and operational landscape for Corteva's agrochemical business; provided ongoing tax advisory thereafter.</div>
+    </div>
+
+    <div class="sector-group-title">Energy &amp; Industrials</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax, Accounting &amp; Customs Structuring — Nuclear Power Plant Construction</div><span class="project-scale">$10B+</span></div>
+      <div class="project-tags"><span class="project-tag">Energy</span><span class="project-tag">Russian Enterprise</span><span class="project-tag">Structuring</span></div>
+      <div class="project-desc">Tax structuring across all construction phases, assistance on accounting treatment of each phase, customs structuring; managed junior team throughout engagement.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax &amp; Legal Due Diligence, Holdings Structuring &amp; Transfer Pricing — Chinese Energy Group</div><span class="project-scale">$2B+</span></div>
+      <div class="project-tags"><span class="project-tag">Energy</span><span class="project-tag">Due Diligence</span><span class="project-tag">Transfer Pricing</span><span class="project-tag">Holdings</span></div>
+      <div class="project-desc">Full tax and legal due diligence, holding structure design, and transfer pricing analysis for a major Chinese energy group's investment in Uzbekistan.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Market Investment Entry Advisory — Scanoil &amp; Taycan Oil</div></div>
+      <div class="project-tags"><span class="project-tag">Scanoil</span><span class="project-tag">Taycan Oil</span><span class="project-tag">Market Entry</span></div>
+      <div class="project-desc">Advised on market investment entry into Uzbekistan for two oil sector companies, covering corporate structuring, tax planning, and regulatory requirements.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">M&amp;A &amp; Corporate Restructuring — Uzbek Cement Producer</div><span class="project-scale">$20M</span></div>
+      <div class="project-tags"><span class="project-tag">Manufacturing</span><span class="project-tag">M&amp;A</span><span class="project-tag">Restructuring</span></div>
+      <div class="project-desc">Tax structuring and corporate restructuring advisory for the M&amp;A of a major Uzbek cement producer.</div>
+    </div>
+
+    <div class="sector-group-title">Telecom &amp; Technology</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Ongoing Tax Advisory &amp; Restructuring — Unitel</div></div>
+      <div class="project-tags"><span class="project-tag">Unitel</span><span class="project-tag">Ongoing</span><span class="project-tag">Restructuring</span></div>
+      <div class="project-desc">Ongoing and case-by-case tax advisory for one of Uzbekistan's leading telecom operators, including restructuring advisory and ad-hoc regulatory matters.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Market Investment Entry Advisory — Megafon</div></div>
+      <div class="project-tags"><span class="project-tag">Megafon</span><span class="project-tag">Market Entry</span></div>
+      <div class="project-desc">Advised Megafon on market investment entry into Uzbekistan — tax structuring, corporate setup, and regulatory compliance.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax Structuring — Russian IT Company (Food Delivery &amp; Mobility)</div><span class="project-scale">$5M</span></div>
+      <div class="project-tags"><span class="project-tag">Technology</span><span class="project-tag">Market Entry</span><span class="project-tag">Structuring</span></div>
+      <div class="project-desc">Tax structuring and ad-hoc consulting for a major Russian IT company during the launch of food delivery, taxi, and other consumer services in Uzbekistan.</div>
+    </div>
+
+    <div class="sector-group-title">Aviation</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Ongoing Tax Support &amp; Tax Committee Appeals — Turkish Airlines</div></div>
+      <div class="project-tags"><span class="project-tag">Turkish Airlines</span><span class="project-tag">Ongoing</span><span class="project-tag">Tax Dispute</span></div>
+      <div class="project-desc">Ongoing tax support for Uzbekistan operations and formal representation in appeals before the Uzbek Tax Committee.</div>
+    </div>
+
+    <div class="sector-group-title">Financial Services &amp; Institutional</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Two Major Restructurings — International Digital Bank (Uzbek Subsidiaries)</div><span class="project-scale">$200M</span></div>
+      <div class="project-tags"><span class="project-tag">Fintech</span><span class="project-tag">Restructuring</span><span class="project-tag">Holding Structure</span></div>
+      <div class="project-desc">Two restructuring projects of the holding structure for an international digital bank's Uzbek subsidiaries (bank and payment organization). Tax structuring; review of SPAs and option agreements.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax &amp; Legal Advisory — Islamic Fintech Seed Investment</div><span class="project-scale">~$1M</span></div>
+      <div class="project-tags"><span class="project-tag">Islamic Fintech</span><span class="project-tag">Seed Round</span></div>
+      <div class="project-desc">Tax and legal advisory for the seed investment phase of an Uzbek fintech operating on Islamic finance principles.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Reorganization — Uzbek State-Owned Investment Fund</div></div>
+      <div class="project-tags"><span class="project-tag">Public Sector</span><span class="project-tag">Reorganization</span></div>
+      <div class="project-desc">Corporate reorganization and structuring advisory for an Uzbek state-owned investment fund.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Capital Markets, Banking &amp; Islamic Finance Legislation Development</div></div>
+      <div class="project-tags"><span class="project-tag">Capital Markets</span><span class="project-tag">Banking Legislation</span><span class="project-tag">Islamic Finance</span></div>
+      <div class="project-desc">Local tax, legal, and finance consultants for international firms engaged by the Uzbek government to develop capital markets legislation, banking law frameworks (derivatives, REPO), and integration of Islamic finance instruments into Uzbek law.</div>
+    </div>
+
+    <div class="sector-group-title">Cross-Industry</div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">Tax &amp; Legal Due Diligence — Renewables, Mining, Oil &amp; Gas, FMCG, Manufacturing</div></div>
+      <div class="project-tags"><span class="project-tag">Due Diligence</span><span class="project-tag">Multi-sector</span><span class="project-tag">30+ DDs</span></div>
+      <div class="project-desc">30+ tax and legal due diligences completed across renewables, mining, oil &amp; gas, FMCG, and manufacturing sectors.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header"><div class="project-title">End-to-End Incorporation &amp; Registration Advisory</div></div>
+      <div class="project-tags"><span class="project-tag">Cross-Industry</span><span class="project-tag">80+ entities</span></div>
+      <div class="project-desc">Advised 80+ local and international companies across various industries on legal structure, tax implications, and procedural steps for incorporation in Uzbekistan.</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
